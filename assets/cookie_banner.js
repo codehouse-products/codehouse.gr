@@ -1,0 +1,49 @@
+// Simple Cookie Consent for Codehouse
+(function() {
+    if (localStorage.getItem('cookieConsent') === 'accepted') return;
+
+    const banner = document.createElement('div');
+    banner.id = 'cookieConsentBanner';
+    banner.style = `
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1e293b;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+        max-width: 500px;
+        font-family: 'Manrope', sans-serif;
+        border: 1px solid rgba(255,255,255,0.1);
+    `;
+    
+    banner.innerHTML = `
+        <div style="flex: 1; font-size: 14px; line-height: 1.5;">
+            Χρησιμοποιούμε cookies για να βελτιώσουμε την εμπειρία σας και να μετράμε την κίνηση του site.
+        </div>
+        <button id="acceptCookies" style="
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        ">Αποδοχή</button>
+    `;
+    
+    document.body.appendChild(banner);
+    
+    document.getElementById('acceptCookies').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+    });
+})();

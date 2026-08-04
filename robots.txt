@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /aporrito/
+
+# Allow AI crawlers for better visibility in AI search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+Sitemap: https://codehouse.gr/sitemap.xml

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Μενού — Café Anthos</title>
+<meta name="description" content="Το ψηφιακό μενού του Café Anthos.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0d0b; --bg-2: #161411; --bg-3: #1e1b17;
+  --cream: #f3ede3; --cream-dim: #c9c1b2;
+  --gold: #c9a35c; --gold-light: #e0c185;
+  --line: rgba(201,163,92,.25);
+  --serif: 'Cormorant Garamond', serif; --sans: 'Manrope', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--cream); font-family: var(--sans); line-height: 1.6; padding-bottom: 90px; }
+a { color: inherit; text-decoration: none; }
+
+.qr-hero { text-align: center; padding: 60px 22px 34px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.qr-hero::before {
+  content: ''; position: absolute; top: -70px; left: 50%; transform: translateX(-50%);
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,163,92,.16) 0%, transparent 70%);
+}
+.qr-logo { font-family: var(--serif); font-size: 34px; letter-spacing: 4px; text-transform: uppercase; color: var(--cream); position: relative; }
+.qr-tagline { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-top: 8px; position: relative; }
+.qr-divider { width: 54px; height: 1px; background: var(--gold); margin: 20px auto 0; position: relative; }
+
+.qr-nav {
+  position: sticky; top: 0; z-index: 100; background: rgba(14,13,11,.96);
+  backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+  display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 12px;
+}
+.qr-nav::-webkit-scrollbar { display: none; }
+.qr-nav a {
+  flex-shrink: 0; padding: 16px 16px; font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--cream-dim); position: relative; transition: color .3s;
+}
+.qr-nav a.active, .qr-nav a:hover { color: var(--gold-light); }
+.qr-nav a.active::after {
+  content: ''; position: absolute; bottom: 0; left: 16px; right: 16px; height: 2px; background: var(--gold);
+}
+
+.qr-section { max-width: 640px; margin: 0 auto; padding: 40px 22px 6px; }
+.qr-section-title {
+  font-family: var(--serif); font-size: 30px; font-weight: 600; color: var(--gold-light);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 8px;
+}
+.qr-section-title::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.qr-section-note { font-size: 13px; color: var(--cream-dim); font-weight: 300; margin-bottom: 10px; }
+
+.qr-item { display: flex; align-items: baseline; gap: 12px; padding: 17px 0; border-bottom: 1px solid rgba(243,237,227,.07); }
+.qr-item:last-child { border-bottom: none; }
+.qr-item-info { flex: 1; }
+.qr-item-name { font-family: var(--serif); font-size: 21px; font-weight: 600; }
+.qr-badge {
+  display: inline-block; margin-left: 8px; font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold);
+  padding: 2px 8px; vertical-align: middle;
+}
+.qr-item-desc { font-size: 13px; color: var(--cream-dim); font-weight: 300; margin-top: 3px; }
+.qr-dots { flex: 1; border-bottom: 1px dotted rgba(201,163,92,.4); min-width: 24px; }
+.qr-price { font-family: var(--serif); font-size: 21px; color: var(--gold-light); white-space: nowrap; }
+
+.qr-footer { text-align: center; padding: 46px 22px 20px; color: var(--cream-dim); font-size: 13px; }
+.qr-footer .wifi {
+  display: inline-block; margin-top: 10px; border: 1px dashed var(--line);
+  padding: 10px 20px; font-size: 12px; letter-spacing: 1px;
+}
+.qr-footer .powered { display: block; margin-top: 26px; font-size: 11px; letter-spacing: 1px; color: rgba(243,237,227,.4); }
+.qr-footer .powered a { color: var(--gold); }
+
+.qr-call {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: var(--gold); color: #14120e; text-align: center;
+  padding: 16px; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+<header class="qr-hero">
+  <h1 class="qr-logo">Café Anthos</h1>
+  <p class="qr-tagline">Specialty Coffee & Bistro</p>
+  <div class="qr-divider"></div>
+</header>
+
+<nav class="qr-nav" id="qrNav">
+  <a href="#qr-coffee" class="active">Καφές</a>
+  <a href="#qr-brunch">Brunch</a>
+  <a href="#qr-food">Κυρίως</a>
+  <a href="#qr-desserts">Γλυκά</a>
+  <a href="#qr-drinks">Ποτά &amp; Cocktails</a>
+</nav>
+
+<main>
+  <section class="qr-section" id="qr-coffee"><h2 class="qr-section-title">Καφές</h2><p class="qr-section-note">Όλοι οι καφέδες διατίθενται και με φυτικά γάλατα (+0.50€)</p>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Espresso</span><p class="qr-item-desc">Single origin Ethiopia Yirgacheffe, νότες βερίκοκου</p></div><span class="qr-dots"></span><span class="qr-price">3.00€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Flat White</span><span class="qr-badge">Best Seller</span><p class="qr-item-desc">Διπλό ristretto με βελούδινο αφρόγαλα</p></div><span class="qr-dots"></span><span class="qr-price">4.20€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Freddo Espresso</span><p class="qr-item-desc">Το αγαπημένο της πόλης, πάντα σε παγωμένο ποτήρι</p></div><span class="qr-dots"></span><span class="qr-price">3.80€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">V60 Pour Over</span><span class="qr-badge">Specialty</span><p class="qr-item-desc">Φίλτρου μονοποικιλιακός, σερβίρεται σε καράφα</p></div><span class="qr-dots"></span><span class="qr-price">5.50€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Matcha Latte</span><p class="qr-item-desc">Τελετουργικό matcha από την Uji της Ιαπωνίας</p></div><span class="qr-dots"></span><span class="qr-price">4.80€</span></div>
+  </section>
+  <section class="qr-section" id="qr-brunch"><h2 class="qr-section-title">Brunch</h2><p class="qr-section-note">Σερβίρεται καθημερινά έως τις 17:00</p>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Avocado Toast</span><span class="qr-badge">Signature</span><p class="qr-item-desc">Προζυμένιο ψωμί, αβοκάντο, ποσέ αυγό, ντοματίνια, φέτα</p></div><span class="qr-dots"></span><span class="qr-price">9.50€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Anthos Benedict</span><p class="qr-item-desc">Αυγά ποσέ, σπανάκι, sauce hollandaise, μπριός</p></div><span class="qr-dots"></span><span class="qr-price">10.80€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Pancakes Σοκολάτα</span><p class="qr-item-desc">Βελγική σοκολάτα, φρέσκα φρούτα, σιρόπι σφενδάμου</p></div><span class="qr-dots"></span><span class="qr-price">8.90€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Greek Yogurt Bowl</span><p class="qr-item-desc">Στραγγιστό γιαούρτι, γκρανόλα σπιτική, μέλι Κρήτης</p></div><span class="qr-dots"></span><span class="qr-price">7.20€</span></div>
+  </section>
+  <section class="qr-section" id="qr-food"><h2 class="qr-section-title">Κυρίως</h2>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Σουβλάκι Κοτόπουλο Deluxe</span><span class="qr-badge">Νέο</span><p class="qr-item-desc">Μαριναρισμένο σε γιαούρτι &amp; λεμόνι, πίτα ολικής, τζατζίκι</p></div><span class="qr-dots"></span><span class="qr-price">12.50€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Μεσογειακή Σαλάτα</span><p class="qr-item-desc">Κινόα, ψητά λαχανικά, φέτα ΠΟΠ, βινεγκρέτ εσπεριδοειδών</p></div><span class="qr-dots"></span><span class="qr-price">10.90€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Χειροποίητο Burger</span><p class="qr-item-desc">Μοσχαρίσιο 100%, cheddar, καραμελωμένα κρεμμύδια, brioche</p></div><span class="qr-dots"></span><span class="qr-price">13.80€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Λινγκουίνι Γαρίδας</span><p class="qr-item-desc">Φρέσκια γαρίδα, ντοματίνια, ούζο, άνηθος</p></div><span class="qr-dots"></span><span class="qr-price">15.50€</span></div>
+  </section>
+  <section class="qr-section" id="qr-desserts"><h2 class="qr-section-title">Γλυκά</h2>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Coffee Cheesecake</span><span class="qr-badge">Signature</span><p class="qr-item-desc">Με βάση μπισκότου cacao και mousse espresso</p></div><span class="qr-dots"></span><span class="qr-price">6.80€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Σοκολατόπιτα</span><p class="qr-item-desc">Ζεστή, με παγωτό μαδαγασκάρης βανίλια</p></div><span class="qr-dots"></span><span class="qr-price">7.20€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Πορτοκαλόπιτα</span><p class="qr-item-desc">Η συνταγή της γιαγιάς, με σιρόπι ανθόνερου</p></div><span class="qr-dots"></span><span class="qr-price">5.90€</span></div>
+  </section>
+  <section class="qr-section" id="qr-drinks"><h2 class="qr-section-title">Ποτά &amp; Cocktails</h2><p class="qr-section-note">Cocktail list από τις 18:00</p>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Anthos Spritz</span><span class="qr-badge">Signature</span><p class="qr-item-desc">Aperol, προσέκο, άνθος πορτοκαλιάς</p></div><span class="qr-dots"></span><span class="qr-price">9.00€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Espresso Martini</span><p class="qr-item-desc">Vodka, λικέρ καφέ, φρέσκο espresso</p></div><span class="qr-dots"></span><span class="qr-price">10.00€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Κρασί ποτήρι (λευκό/κόκκινο)</span><p class="qr-item-desc">Ελληνικός αμπελώνας, ρωτήστε μας για ετικέτες</p></div><span class="qr-dots"></span><span class="qr-price">6.50€</span></div>
+    <div class="qr-item"><div class="qr-item-info"><span class="qr-item-name">Σπιτική Λεμονάδα</span><p class="qr-item-desc">Με δυόσμο και τζίντζερ</p></div><span class="qr-dots"></span><span class="qr-price">4.50€</span></div>
+  </section>
+</main>
+
+<footer class="qr-footer">
+  <p>Ανθέων 24, Κουκάκι, 117 42 Αθήνα<br>Δευτέρα – Παρασκευή: 08:00 – 23:00 · Σάββατο – Κυριακή: 09:00 – 00:00</p>
+  <span class="wifi">WiFi: CafeAnthos_Guest — Κωδικός: anthos2018</span>
+  <span class="powered">Ψηφιακό μενού από <a href="https://artivoai.com" target="_blank" rel="noopener">Artivo AI</a></span>
+</footer>
+
+<a href="tel:+302109234567" class="qr-call">☎ Κάλεσε για παραγγελία</a>
+
+<script>
+/* Active section highlight */
+(function () {
+  var navLinks = document.querySelectorAll('.qr-nav a');
+  var sections = document.querySelectorAll('.qr-section');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        navLinks.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function (s) { io.observe(s); });
+})();
+</script>
+</body>
+</html>

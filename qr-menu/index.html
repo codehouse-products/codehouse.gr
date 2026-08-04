@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9JE7KSR99"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G9JE7KSR99', { 'anonymize_ip': true });
+  document.addEventListener('DOMContentLoaded', function() {
+    const t=document.querySelectorAll('a[href^="tel:"]');
+    t.forEach(e=>{e.addEventListener('click',function(){gtag('event','contact',{'event_category':'engagement','event_label':'phone_call','value':1})})});
+    const n=document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp.com"]');
+    n.forEach(e=>{e.addEventListener('click',function(){gtag('event','contact',{'event_category':'engagement','event_label':'whatsapp_click','value':1})})});
+  });
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "p9o7k2u3x5");
+</script>
+<title>Ψηφιακό Μενού QR για Εστιατόρια &amp; Καφέ | QR Menu — Codehouse</title>
+<meta name="description" content="Ψηφιακό μενού QR για εστιατόρια, καφέ και bar. Ο πελάτης σκανάρει και βλέπει το μενού στο κινητό — με φωτογραφίες, πολλές γλώσσες και αλλαγές τιμών σε λεπτά. Παράδοση σε λίγες ημέρες σε όλη την Ελλάδα.">
+<meta name="keywords" content="ψηφιακό μενού QR, QR μενού εστιατόριο, QR menu, ψηφιακό μενού καφέ, QR μενού Σαντορίνη, ηλεκτρονικό μενού, μενού με barcode">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Ψηφιακό Μενού QR για Εστιατόρια &amp; Καφέ — Codehouse">
+<meta property="og:description" content="Σκανάρει, βλέπει, παραγγέλνει. Ψηφιακά μενού QR με custom σχεδιασμό, φωτογραφίες πιάτων και έτοιμα καρτάκια για τα τραπέζια.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="el_GR">
+<meta property="og:site_name" content="Codehouse">
+<meta property="og:url" content="https://codehouse.gr/qr-menu/">
+<meta property="og:image" content="https://codehouse.gr/qr-menu/img/hero-phone.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ψηφιακό Μενού QR για Εστιατόρια &amp; Καφέ — Codehouse">
+<meta name="twitter:description" content="Ψηφιακά μενού QR με custom σχεδιασμό, φωτογραφίες πιάτων και έτοιμα QR καρτάκια για τα τραπέζια.">
+<meta name="twitter:image" content="https://codehouse.gr/qr-menu/img/hero-phone.webp">
+<link rel="canonical" href="https://codehouse.gr/qr-menu/">
+<link rel="icon" href="/favicon.ico?v=9" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=9">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=9">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=9">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/qr-menu/img/hero-phone.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=8">
+<style>
+/* ===== QR MENU PAGE — page-specific ===== */
+.qr-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(112px, 14vw, 150px) clamp(20px, 5vw, 56px) clamp(50px, 7vw, 90px);
+}
+.qr-hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none; }
+.qr-hero-orb-1 { width: 460px; height: 460px; background: rgba(198,255,74,.13); top: -150px; right: -110px; }
+.qr-hero-orb-2 { width: 340px; height: 340px; background: rgba(80,120,255,.10); bottom: -120px; left: -100px; }
+.qr-hero-inner {
+  position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 64px); align-items: center;
+}
+.qr-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--lime-dim); border: 1px solid rgba(198,255,74,.35); color: var(--lime);
+  padding: 8px 18px; border-radius: 999px; font-size: 13.5px; font-weight: 700; margin-bottom: 22px;
+}
+.qr-hero h1 {
+  font-family: var(--font-head); font-size: clamp(32px, 5vw, 56px); font-weight: 700;
+  line-height: 1.11; letter-spacing: -.018em;
+}
+.qr-lead { color: var(--text-dim); font-size: clamp(16px, 1.9vw, 18.5px); line-height: 1.72; margin: 22px 0 0; max-width: 560px; }
+.qr-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.qr-hero-meta { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 30px; }
+.qr-hero-meta span { font-size: 13.5px; color: var(--text-dim); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+.qr-hero-meta span::before { content: '✓'; color: var(--lime); font-weight: 800; }
+.qr-hero-visual { position: relative; }
+.qr-hero-visual img {
+  display: block; width: 100%; height: auto; border-radius: 26px;
+  border: 1px solid var(--line); box-shadow: 0 40px 90px rgba(0,0,0,.55);
+}
+/* Split feature rows */
+.qr-split { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.qr-split.rev .qr-split-media { order: 2; }
+.qr-split-media img {
+  display: block; width: 100%; height: auto; border-radius: 22px;
+  border: 1px solid var(--line); box-shadow: 0 30px 70px rgba(0,0,0,.45);
+}
+.qr-split-text h2 { font-family: var(--font-head); font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; line-height: 1.18; letter-spacing: -.012em; margin-bottom: 18px; }
+.qr-split-text p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.qr-check { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 11px; }
+.qr-check li { position: relative; padding-left: 30px; font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+.qr-check li::before {
+  content: '✓'; position: absolute; left: 0; top: -1px;
+  width: 20px; height: 20px; border-radius: 50%; background: var(--lime-dim); color: var(--lime);
+  display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800;
+}
+.qr-check strong { color: var(--text); }
+/* Case study */
+.qr-case { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.qr-case-card {
+  max-width: 1000px; margin: 0 auto; background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line); border-radius: 26px; padding: clamp(28px, 4.5vw, 52px);
+}
+.qr-case-tag { font-family: var(--font-head); font-size: 12.5px; font-weight: 700; letter-spacing: .12em; color: var(--lime); margin-bottom: 14px; }
+.qr-case-card h2 { font-family: var(--font-head); font-size: clamp(24px, 3.4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+.qr-case-card p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.qr-case-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 30px 0 26px; }
+.qr-case-stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; }
+.qr-case-stat strong { display: block; font-family: var(--font-head); font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--lime); line-height: 1.1; }
+.qr-case-stat span { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+/* Pricing */
+.qr-price-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.qr-price {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 22px;
+  padding: 34px 28px; display: flex; flex-direction: column;
+  transition: border-color .35s, transform .35s var(--ease);
+}
+.qr-price:hover { border-color: rgba(198,255,74,.35); transform: translateY(-5px); }
+.qr-price.featured { border-color: rgba(198,255,74,.45); box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.qr-price-flag { font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--lime); margin-bottom: 12px; min-height: 14px; }
+.qr-price h3 { font-family: var(--font-head); font-size: 21px; margin-bottom: 8px; }
+.qr-price .qr-price-tag { font-family: var(--font-head); font-size: clamp(28px, 3.4vw, 38px); font-weight: 700; color: var(--text); line-height: 1.1; margin: 12px 0 4px; }
+.qr-price .qr-price-tag em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--text-dim); }
+.qr-price > p { color: var(--text-dim); font-size: 14.5px; line-height: 1.65; margin-bottom: 18px; }
+.qr-price ul { list-style: none; margin-bottom: 26px; }
+.qr-price li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 24px; position: relative; }
+.qr-price li::before { content: '✓'; position: absolute; left: 0; color: var(--lime); font-weight: 700; }
+.qr-price .btn { margin-top: auto; justify-content: center; }
+.qr-price-note { max-width: 760px; margin: 30px auto 0; text-align: center; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.qr-price-note a { color: var(--lime); font-weight: 700; }
+/* Breadcrumbs */
+.qr-crumbs { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.qr-crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--text-dim); }
+.qr-crumbs a { color: var(--text-dim); }
+.qr-crumbs a:hover { color: var(--lime); }
+.qr-crumbs li + li::before { content: '/'; margin-right: 8px; opacity: .5; }
+/* Inline text link */
+.qr-inline-link { color: var(--lime); font-weight: 700; }
+@media (max-width: 900px) {
+  .qr-hero-inner { grid-template-columns: 1fr; }
+  .qr-hero-visual { max-width: 400px; margin: 8px auto 0; }
+  .qr-split { grid-template-columns: 1fr; }
+  .qr-split.rev .qr-split-media { order: 0; }
+}
+@media (max-width: 560px) {
+  .qr-hero-actions .btn { width: 100%; justify-content: center; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://codehouse.gr/qr-menu/#service",
+      "serviceType": "Ψηφιακό Μενού QR",
+      "name": "Ψηφιακό Μενού QR για εστιατόρια, καφέ και bar",
+      "description": "Κατασκευή ψηφιακού μενού QR με custom σχεδιασμό στα χρώματα της επιχείρησης, φωτογραφίες πιάτων, πολλές γλώσσες και έτοιμα τυπωμένα QR καρτάκια για τα τραπέζια.",
+      "url": "https://codehouse.gr/qr-menu/",
+      "image": "https://codehouse.gr/qr-menu/img/hero-phone.webp",
+      "provider": { "@id": "https://codehouse.gr/#business" },
+      "areaServed": [
+        { "@type": "Country", "name": "Greece" },
+        { "@type": "City", "name": "Αθήνα" },
+        { "@type": "City", "name": "Γλυφάδα" },
+        { "@type": "City", "name": "Σαντορίνη" },
+        { "@type": "City", "name": "Μύκονος" }
+      ],
+      "audience": { "@type": "BusinessAudience", "name": "Εστιατόρια, καφετέριες, bar, ξενοδοχεία" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "200",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "EUR",
+          "minPrice": "200",
+          "maxPrice": "600"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://codehouse.gr/qr-menu/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://codehouse.gr/" },
+        { "@type": "ListItem", "position": 2, "name": "Ψηφιακό Μενού QR", "item": "https://codehouse.gr/qr-menu/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Τι είναι το ψηφιακό μενού QR;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Είναι το μενού της επιχείρησής σου σε ψηφιακή μορφή. Ο πελάτης σκανάρει με την κάμερα του κινητού ένα QR code στο τραπέζι και βλέπει αμέσως το μενού με φωτογραφίες, κατηγορίες και ενημερωμένες τιμές — χωρίς να κατεβάσει καμία εφαρμογή." }
+        },
+        {
+          "@type": "Question",
+          "name": "Πόσο κοστίζει ένα QR μενού;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ένα ποιοτικό ψηφιακό μενού με custom σχεδιασμό κοστίζει στην ελληνική αγορά περίπου 200 € έως 600 € εφάπαξ, ανάλογα με τον αριθμό προϊόντων, τις φωτογραφίες και τις γλώσσες. Εναλλακτικά προσφέρουμε και μοντέλο χωρίς κόστος κατασκευής με μικρή μηνιαία συνδρομή." }
+        },
+        {
+          "@type": "Question",
+          "name": "Χρειάζεται ο πελάτης να κατεβάσει εφαρμογή;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Όχι. Το μενού ανοίγει στο browser του κινητού μέσα σε δευτερόλεπτα. Καμία εγκατάσταση, κανένας λογαριασμός, καμία εγγραφή." }
+        },
+        {
+          "@type": "Question",
+          "name": "Μπορώ να αλλάζω μόνος μου τιμές και πιάτα;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Σου δίνουμε εύκολο τρόπο ενημέρωσης για τιμές, νέα πιάτα και διαθεσιμότητα. Αν προτιμάς, στέλνεις τις αλλαγές σε εμάς και τις περνάμε την ίδια μέρα — χωρίς επιπλέον χρέωση στη συνδρομή." }
+        },
+        {
+          "@type": "Question",
+          "name": "Υποστηρίζει πολλές γλώσσες για τουρίστες;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Το μενού μπορεί να εμφανίζεται σε ελληνικά, αγγλικά και όποια άλλη γλώσσα χρειάζεσαι, με εναλλαγή με ένα κλικ. Είναι ιδιαίτερα χρήσιμο σε τουριστικές περιοχές όπως η Σαντορίνη, η Μύκονος και τα παράλια της Αττικής." }
+        },
+        {
+          "@type": "Question",
+          "name": "Παίρνω και τυπωμένα QR καρτάκια για τα τραπέζια;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Σχεδιάζουμε τα καρτάκια στα χρώματα της επιχείρησής σου, με το λογότυπο, το QR code και προαιρετικά τα στοιχεία του WiFi, έτοιμα για εκτύπωση σε σταντ ή αυτοκόλλητο." }
+        },
+        {
+          "@type": "Question",
+          "name": "Σε πόσο καιρό είναι έτοιμο;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ένα τυπικό ψηφιακό μενού παραδίδεται σε 2 έως 5 εργάσιμες ημέρες από τη στιγμή που θα μας στείλεις τα προϊόντα και τις τιμές. Αν έχεις πολλά προϊόντα και θέλεις φωτογράφιση, χρειάζεται λίγο περισσότερο." }
+        },
+        {
+          "@type": "Question",
+          "name": "Το μενού είναι δικό μου ή κλειδωμένο σε πλατφόρμα;",
+          "acceptedAnswer": { "@type": "Answer", "text": "Είναι δικό σου. Το χτίζουμε στο δικό σου domain, όχι σε πλατφόρμα τρίτου που θα σε χρεώνει για πάντα. Αν κάποια στιγμή θέλεις να το μεταφέρεις, το παίρνεις μαζί σου." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- PROMO BANNER -->
+<div class="promo-banner" id="promoBanner" role="region" aria-label="Προσφορά">
+  <a href="/prosfora/" class="promo-banner-link">
+    <span class="promo-gift" aria-hidden="true">🎁</span>
+    <span class="promo-text"><strong>Δωρεάν Κατασκευή Ιστοσελίδας</strong><span class="promo-sub"> — με μια μικρή μηνιαία συνδρομή</span></span>
+    <span class="promo-cta">Δες την προσφορά →</span>
+  </a>
+  <button class="promo-close" id="promoClose" aria-label="Κλείσιμο προσφοράς">×</button>
+</div>
+
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <a href="/" class="nav-brand" aria-label="Codehouse — Αρχική">
+    <img src="/assets/img/logo-ch-mark.webp?v=5" alt="Codehouse Logo Mark" class="nav-logo-mark" width="168" height="158">
+    <img src="/assets/img/logo-ch-text.webp?v=5" alt="Codehouse" class="nav-logo" width="300" height="52">
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="/#services">Υπηρεσίες</a>
+    <a href="/qr-menu/" aria-current="page">QR Μενού</a>
+    <a href="/douleies/">Δουλειές</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/blog/">Blog</a>
+    <a href="#qr-form" class="nav-cta">Ζήτα προσφορά</a>
+  </nav>
+  <button class="nav-burger" id="navBurger" aria-label="Μενού" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="mobile-menu-logo" aria-hidden="true" width="168" height="158">
+  <nav>
+    <a href="/#services" style="--i:0">Υπηρεσίες</a>
+    <a href="/qr-menu/" style="--i:1">QR Μενού</a>
+    <a href="/douleies/" style="--i:2">Δουλειές</a>
+    <a href="/#faq" style="--i:3">FAQ</a>
+    <a href="/blog/" style="--i:4">Blog</a>
+    <a href="#qr-form" class="mobile-cta" style="--i:5">Ζήτα προσφορά →</a>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="qr-hero">
+    <div class="qr-hero-orb qr-hero-orb-1" aria-hidden="true"></div>
+    <div class="qr-hero-orb qr-hero-orb-2" aria-hidden="true"></div>
+    <div class="qr-hero-inner">
+      <div class="qr-hero-text">
+        <span class="qr-badge">▦ Ψηφιακό Μενού QR</span>
+        <h1>Το μενού σου στο κινητό του πελάτη <span class="accent">με ένα σκανάρισμα</span></h1>
+        <p class="qr-lead">Φτιάχνουμε ψηφιακά μενού QR για εστιατόρια, καφετέριες και bar — με custom σχεδιασμό στα χρώματα του μαγαζιού, φωτογραφίες πιάτων, πολλές γλώσσες και έτοιμα τυπωμένα καρτάκια για τα τραπέζια. Αλλάζεις τιμή σε λεπτά, χωρίς να ξανατυπώσεις τίποτα.</p>
+        <div class="qr-hero-actions">
+          <a href="#qr-form" class="btn btn-primary btn-lg">Ζήτα δωρεάν πρόταση <span class="btn-arrow">→</span></a>
+          <a href="https://highhopeathens.gr/menu.html" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Δες ένα ζωντανό μενού</a>
+        </div>
+        <div class="qr-hero-meta">
+          <span>Παράδοση σε 2-5 ημέρες</span>
+          <span>Χωρίς εφαρμογή για τον πελάτη</span>
+          <span>Δικό σου domain</span>
+        </div>
+      </div>
+      <div class="qr-hero-visual">
+        <img src="/qr-menu/img/hero-phone.webp" width="1400" height="1866" alt="Ψηφιακό μενού QR σε κινητό — μενού καφετέριας με φωτογραφίες πιάτων και τιμές" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <nav class="qr-crumbs" aria-label="Διαδρομή">
+    <ol>
+      <li><a href="/">Αρχική</a></li>
+      <li aria-current="page">Ψηφιακό Μενού QR</li>
+    </ol>
+  </nav>
+
+  <!-- ΤΙ ΕΙΝΑΙ / ΟΦΕΛΗ -->
+  <section class="services" id="ofeli">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Γιατί αξίζει</p>
+      <h2>Πέντε πράγματα που αλλάζουν <span class="accent">από την πρώτη μέρα</span></h2>
+      <p class="section-sub">Το ψηφιακό μενού δεν είναι μόδα. Είναι το πιο φθηνό εργαλείο που έχεις για να μειώσεις έξοδα, να πουλάς περισσότερο και να ξέρεις τι θέλουν οι πελάτες σου.</p>
+    </header>
+    <div class="service-cards">
+      <article class="service-card reveal">
+        <div class="service-icon">🖨️</div>
+        <h3>Τέλος στα έξοδα εκτύπωσης</h3>
+        <p>Κάθε αλλαγή τιμής σε έντυπο μενού σημαίνει νέα εκτύπωση. Με τις τιμές να ανεβαίνουν συνεχώς, αυτό μεταφράζεται σε εκατοντάδες ευρώ τον χρόνο.</p>
+        <ul><li>Ενημέρωση δωρεάν και άμεση</li><li>Καμία επανεκτύπωση</li><li>Απόσβεση σε λίγους μήνες</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📸</div>
+        <h3>Φωτογραφίες που πουλάνε</h3>
+        <p>Στο χαρτί, οι φωτογραφίες κοστίζουν ακριβά στην εκτύπωση. Στο ψηφιακό, κάθε πιάτο έχει τη δική του — και τα πιάτα με φωτογραφία παραγγέλνονται πιο συχνά.</p>
+        <ul><li>Φωτογραφία σε κάθε προϊόν</li><li>Προβολή προσφορών</li><li>Ανεβάζει τη μέση απόδειξη</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">⚡</div>
+        <h3>Υγιεινή και ταχύτητα</h3>
+        <p>Κανένα λαδωμένο μενού που περνάει από χέρι σε χέρι. Ο πελάτης διαβάζει πριν έρθει ο σερβιτόρος, η παραγγελία κλείνει γρηγορότερα και τα τραπέζια γυρίζουν πιο συχνά.</p>
+        <ul><li>Καθαρή εμπειρία</li><li>Λιγότερος χρόνος αναμονής</li><li>Πιο γρήγορο service</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">🌍</div>
+        <h3>Πολλές γλώσσες για τουρίστες</h3>
+        <p>Σε τουριστικές περιοχές, το μενού σε αγγλικά ή σε τρεις γλώσσες με ένα κλικ είναι τεράστιο πλεονέκτημα — χωρίς να τυπώνεις διπλά και τριπλά μενού.</p>
+        <ul><li>Ελληνικά, Αγγλικά και όσες θες</li><li>Εναλλαγή με ένα κλικ</li><li>Ιδανικό για νησιά και παραλιακή</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📊</div>
+        <h3>Δεδομένα που δεν είχες ποτέ</h3>
+        <p>Βλέπεις πόσοι σκανάρουν, ποιες ώρες και ποια προϊόντα κοιτάνε περισσότερο. Το χάρτινο μενού δεν σου λέει τίποτα — το ψηφιακό σου δείχνει τι θέλει ο πελάτης.</p>
+        <ul><li>Σύνδεση με Google Analytics</li><li>Δημοφιλή προϊόντα</li><li>Ώρες αιχμής</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📶</div>
+        <h3>WiFi, τηλέφωνο και social μαζί</h3>
+        <p>Ένα σκανάρισμα δίνει στον πελάτη τα πάντα: μενού, κωδικό WiFi, τηλέφωνο για κρατήσεις και τα social σου. Χωρίς να ρωτήσει κανέναν.</p>
+        <ul><li>Κωδικός WiFi στο καρτάκι</li><li>Κρατήσεις με ένα τap</li><li>Περισσότεροι followers</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ΠΩΣ ΛΕΙΤΟΥΡΓΕΙ (table card visual) -->
+  <section id="pos-leitourgei">
+    <div class="qr-split">
+      <div class="qr-split-media reveal">
+        <img src="/qr-menu/img/table-card.webp" width="1400" height="1050" alt="Τυπωμένο QR καρτάκι σε τραπέζι καφετέριας με το λογότυπο και τον κωδικό WiFi" loading="lazy" decoding="async">
+      </div>
+      <div class="qr-split-text reveal">
+        <p class="section-kicker">// Πώς λειτουργεί</p>
+        <h2>Τρία βήματα, καμία εφαρμογή</h2>
+        <p>Ο πελάτης κάθεται στο τραπέζι, ανοίγει την κάμερα του κινητού και σκανάρει το καρτάκι. Το μενού εμφανίζεται μέσα σε δευτερόλεπτα, χωρίς να κατεβάσει εφαρμογή, να φτιάξει λογαριασμό ή να δώσει email.</p>
+        <ul class="qr-check">
+          <li><strong>1. Σκανάρει.</strong> Με την κάμερα του κινητού, από το σταντ ή το αυτοκόλλητο στο τραπέζι.</li>
+          <li><strong>2. Βλέπει.</strong> Κατηγορίες, φωτογραφίες, τιμές, αλλεργιογόνα και προσφορές, σε μενού που ανοίγει αστραπιαία.</li>
+          <li><strong>3. Παραγγέλνει.</strong> Ξέρει τι θέλει πριν έρθει ο σερβιτόρος — και συχνά παραγγέλνει περισσότερα.</li>
+        </ul>
+        <p style="margin-top:24px">Τα καρτάκια τα σχεδιάζουμε εμείς στα χρώματα του μαγαζιού σου, με το λογότυπο, το QR code και προαιρετικά τον κωδικό WiFi, έτοιμα για εκτύπωση.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ΠΟΛΥΓΛΩΣΣΙΑ -->
+  <section id="glosses" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="qr-split rev">
+      <div class="qr-split-media reveal">
+        <img src="/qr-menu/img/multilang.webp" width="1400" height="787" alt="Ψηφιακό μενού QR σε τρεις γλώσσες — ελληνικά, αγγλικά και ρωσικά σε τρία κινητά" loading="lazy" decoding="async">
+      </div>
+      <div class="qr-split-text reveal">
+        <p class="section-kicker">// Για τουριστικές περιοχές</p>
+        <h2>Ένα μενού, όσες γλώσσες χρειάζεσαι</h2>
+        <p>Στη Σαντορίνη, στη Μύκονο, στη Γλυφάδα και σε κάθε τουριστικό προορισμό, ο πελάτης που δεν καταλαβαίνει το μενού παραγγέλνει λιγότερα και ρωτάει περισσότερα. Το ψηφιακό μενού λύνει το πρόβλημα χωρίς κόστος: ο επισκέπτης επιλέγει γλώσσα και βλέπει τα ίδια πιάτα στη δική του.</p>
+        <ul class="qr-check">
+          <li><strong>Αυτόματη πρόταση γλώσσας</strong> με βάση τις ρυθμίσεις του κινητού του επισκέπτη.</li>
+          <li><strong>Μία πηγή αλήθειας.</strong> Αλλάζεις την τιμή μία φορά και ενημερώνονται όλες οι γλώσσες.</li>
+          <li><strong>Σωστές περιγραφές,</strong> γραμμένες για τουρίστα και όχι μηχανική μετάφραση λέξη προς λέξη.</li>
+          <li><strong>Χωρίς διπλά έντυπα</strong> και χωρίς σερβιτόρο να εξηγεί τι είναι το κάθε πιάτο.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="qr-case" id="case-study">
+    <div class="qr-case-card reveal">
+      <p class="qr-case-tag">// CASE STUDY · ΓΛΥΦΑΔΑ</p>
+      <h2>High Hope: 119 προϊόντα, ένα σκανάρισμα</h2>
+      <p>Για τη specialty καφετέρια <strong>High Hope</strong> στη Γλυφάδα φτιάξαμε πλήρες ψηφιακό μενού με 119 προϊόντα, φωτογραφίες σε κάθε πιάτο και custom 3D στοιχεία στο σχεδιασμό, μαζί με τυπωμένα QR καρτάκια για τα τραπέζια που περιλαμβάνουν και τα στοιχεία WiFi του καταστήματος.</p>
+      <p>Ο πελάτης σκανάρει μία φορά και έχει τα πάντα: μενού, WiFi, τηλέφωνο και social media. Οι αλλαγές τιμών γίνονται σε λεπτά, χωρίς κανένα κόστος επανεκτύπωσης.</p>
+      <div class="qr-case-stats">
+        <div class="qr-case-stat"><strong>119</strong><span>προϊόντα στο μενού</span></div>
+        <div class="qr-case-stat"><strong>0 €</strong><span>κόστος ανά αλλαγή τιμής</span></div>
+        <div class="qr-case-stat"><strong>3</strong><span>ημέρες παράδοση</span></div>
+        <div class="qr-case-stat"><strong>1</strong><span>σκανάρισμα για μενού + WiFi</span></div>
+      </div>
+      <a href="https://highhopeathens.gr/menu.html" class="btn btn-primary" target="_blank" rel="noopener">Δες το μενού ζωντανά <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- ΤΙΜΕΣ -->
+  <section id="times">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Τιμές</p>
+      <h2>Πόσο κοστίζει ένα <span class="accent">QR μενού</span></h2>
+      <p class="section-sub">Δύο τρόποι να το αποκτήσεις: εφάπαξ, ή χωρίς κόστος κατασκευής με μικρή μηνιαία συνδρομή. Και στις δύο περιπτώσεις το μενού είναι δικό σου, στο δικό σου domain.</p>
+    </header>
+    <div class="qr-price-grid">
+      <div class="qr-price reveal">
+        <p class="qr-price-flag">ΒΑΣΙΚΟ</p>
+        <h3>Essential</h3>
+        <p class="qr-price-tag">από 200 € <em>εφάπαξ</em></p>
+        <p>Για καφετέριες και μικρά μαγαζιά με ευθύ κατάλογο.</p>
+        <ul>
+          <li>Έως 40 προϊόντα</li>
+          <li>Custom σχεδιασμός στα χρώματά σου</li>
+          <li>Κατηγορίες και τιμές</li>
+          <li>QR καρτάκι έτοιμο για εκτύπωση</li>
+          <li>Μία γλώσσα</li>
+        </ul>
+        <a href="#qr-form" class="btn btn-ghost">Ζήτα προσφορά</a>
+      </div>
+      <div class="qr-price featured reveal">
+        <p class="qr-price-flag">ΔΗΜΟΦΙΛΕΣ</p>
+        <h3>Pro</h3>
+        <p class="qr-price-tag">από 380 € <em>εφάπαξ</em></p>
+        <p>Για εστιατόρια και bar που θέλουν το μενού να πουλάει.</p>
+        <ul>
+          <li>Έως 150 προϊόντα</li>
+          <li>Φωτογραφία σε κάθε πιάτο</li>
+          <li>Δύο γλώσσες (π.χ. EL / EN)</li>
+          <li>WiFi, τηλέφωνο και social στο ίδιο QR</li>
+          <li>Σύνδεση με Google Analytics</li>
+          <li>Σχεδιασμός καρτακίων για τα τραπέζια</li>
+        </ul>
+        <a href="#qr-form" class="btn btn-primary">Ζήτα προσφορά <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="qr-price reveal">
+        <p class="qr-price-flag">ΧΩΡΙΣ ΑΡΧΙΚΟ ΚΟΣΤΟΣ</p>
+        <h3>Συνδρομή</h3>
+        <p class="qr-price-tag">0 € <em>κατασκευή + μηνιαία συνδρομή</em></p>
+        <p>Δεν πληρώνεις κατασκευή. Καλύπτεις μόνο μια μικρή μηνιαία συνδρομή.</p>
+        <ul>
+          <li>Κατασκευή μενού χωρίς χρέωση</li>
+          <li>Hosting, domain και SSL μέσα</li>
+          <li>Αλλαγές τιμών και πιάτων από εμάς</li>
+          <li>Τεχνική υποστήριξη</li>
+          <li>Ιδανικό για νέα μαγαζιά</li>
+        </ul>
+        <a href="/prosfora/" class="btn btn-ghost">Δες την προσφορά</a>
+      </div>
+    </div>
+    <p class="qr-price-note">Οι τελικές τιμές εξαρτώνται από τον αριθμό προϊόντων, τις φωτογραφίες και τις γλώσσες. Σύγκρινε το κόστος με δύο ή τρεις επανεκτυπώσεις έντυπου μενού τον χρόνο και η απόσβεση γίνεται συνήθως μέσα στους πρώτους μήνες. Διάβασε επίσης τον <a href="/blog/poso-kostizei-mia-istoselida/">πλήρη οδηγό τιμών για ιστοσελίδες</a> και το <a href="/blog/qr-menou-estiatorio-kafe/">αναλυτικό άρθρο για τα QR μενού</a>.</p>
+  </section>
+
+  <!-- ΤΙ ΝΑ ΠΡΟΣΕΞΕΙΣ -->
+  <section id="prosoxi" style="background:var(--bg-2);border-top:1px solid var(--line)">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Πριν υπογράψεις κάπου αλλού</p>
+      <h2>Δεν είναι όλα τα QR μενού <span class="accent">ίδια</span></h2>
+    </header>
+    <ol class="process-steps">
+      <li class="reveal"><span class="step-num">01</span><h3>Απόφυγε τις αιώνιες συνδρομές</h3><p>Πλατφόρμες που χρεώνουν 20-40 € τον μήνα για πάντα σου κοστίζουν σε δύο χρόνια πολλαπλάσια από ένα δικό σου custom μενού — και δεν σου ανήκει τίποτα στο τέλος.</p></li>
+      <li class="reveal"><span class="step-num">02</span><h3>Ζήτα ταχύτητα</h3><p>Ο πελάτης στο τραπέζι δεν περιμένει. Το μενού πρέπει να ανοίγει σε ένα με δύο δευτερόλεπτα, ακόμη και με μέτριο σήμα.</p></li>
+      <li class="reveal"><span class="step-num">03</span><h3>Έλεγξε το σε κινητό</h3><p>Το 100% των πελατών θα το δει σε κινητό. Αν το μενού σχεδιάστηκε για υπολογιστή και μετά «στριμώχτηκε», φαίνεται.</p></li>
+      <li class="reveal"><span class="step-num">04</span><h3>Να είναι δικό σου</h3><p>Το μενού να βρίσκεται στο δικό σου domain και όχι κλειδωμένο σε λογαριασμό τρίτου. Έτσι κρατάς τον έλεγχο και το SEO του μαγαζιού σου.</p></li>
+    </ol>
+  </section>
+
+  <!-- ΦΟΡΜΑ -->
+  <section class="quiz" id="qr-form">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Ζήτα προσφορά</p>
+      <h2>Πες μας για το μαγαζί σου <span class="accent">σε 1 λεπτό</span></h2>
+      <p class="section-sub">Συμπλήρωσε τρία βήματα και θα σου στείλουμε συγκεκριμένη πρόταση για ψηφιακό μενού QR — χωρίς καμία δέσμευση.</p>
+    </header>
+    <div class="quiz-shell">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="qrBar" style="width:33.3%"></div></div>
+      <form id="qrForm" novalidate>
+        <input type="hidden" name="service" value="ΨΗΦΙΑΚΟ ΜΕΝΟΥ QR">
+        <input type="hidden" name="source" value="Landing /qr-menu/">
+
+        <fieldset class="quiz-step active" data-step="1">
+          <legend><span class="q-num">1/3</span> Τι επιχείρηση έχεις;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="business_type" value="Καφετέρια"><span><em>☕</em>Καφετέρια</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Εστιατόριο / Ταβέρνα"><span><em>🍽️</em>Εστιατόριο · Ταβέρνα</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Bar / Cocktail bar"><span><em>🍸</em>Bar · Cocktail bar</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Beach bar / Ξενοδοχείο"><span><em>🏖️</em>Beach bar · Ξενοδοχείο</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Fast food / Delivery"><span><em>🍔</em>Fast food · Delivery</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✦</em>Κάτι άλλο</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="2">
+          <legend><span class="q-num">2/3</span> Πόσα προϊόντα έχει το μενού σου;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="products" value="Έως 40 προϊόντα"><span><em>🔹</em>Έως 40</span></label>
+            <label class="opt"><input type="radio" name="products" value="40-100 προϊόντα"><span><em>🔸</em>40 – 100</span></label>
+            <label class="opt"><input type="radio" name="products" value="100-200 προϊόντα"><span><em>🔶</em>100 – 200</span></label>
+            <label class="opt"><input type="radio" name="products" value="Πάνω από 200 προϊόντα"><span><em>🔷</em>Πάνω από 200</span></label>
+          </div>
+          <p class="q-sublabel">Θέλεις το μενού σε περισσότερες γλώσσες;</p>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="languages" value="Μόνο ελληνικά"><span><em>🇬🇷</em>Μόνο ελληνικά</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Ελληνικά + Αγγλικά"><span><em>🇬🇧</em>Ελληνικά + Αγγλικά</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Τρεις ή περισσότερες γλώσσες"><span><em>🌍</em>Τρεις ή περισσότερες</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Δεν είμαι σίγουρος"><span><em>🤔</em>Δεν είμαι σίγουρος</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="3">
+          <legend><span class="q-num">3/3</span> Πώς να επικοινωνήσουμε;</legend>
+          <div class="field-grid">
+            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
+            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Όνειρο"></label>
+            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
+            <label class="field">Περιοχή<input type="text" name="area" placeholder="π.χ. Γλυφάδα, Σαντορίνη"></label>
+            <label class="field field-full">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
+            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω και τυπωμένα καρτάκια με τον κωδικό WiFi..."></textarea></label>
+          </div>
+        </fieldset>
+
+        <div class="quiz-success" id="qrSuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h3>Το λάβαμε!</h3>
+          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το ψηφιακό μενού QR του μαγαζιού σου.</p>
+          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
+        </div>
+
+        <div class="quiz-nav" id="qrNav">
+          <button type="button" class="btn btn-ghost" id="qrPrev" disabled>← Πίσω</button>
+          <button type="button" class="btn btn-primary" id="qrNext">Επόμενο →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Συχνές ερωτήσεις</p>
+      <h2>Ό,τι ρωτούν οι ιδιοκτήτες <span class="accent">πριν ξεκινήσουν</span></h2>
+    </header>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>Τι είναι το ψηφιακό μενού QR;</summary><p>Είναι το μενού της επιχείρησής σου σε ψηφιακή μορφή. Ο πελάτης σκανάρει με την κάμερα του κινητού ένα QR code στο τραπέζι και βλέπει αμέσως το μενού με φωτογραφίες, κατηγορίες και ενημερωμένες τιμές — χωρίς να κατεβάσει καμία εφαρμογή.</p></details>
+      <details class="faq-item reveal"><summary>Πόσο κοστίζει ένα QR μενού;</summary><p>Ένα ποιοτικό ψηφιακό μενού με custom σχεδιασμό κοστίζει στην ελληνική αγορά περίπου 200 € έως 600 € εφάπαξ, ανάλογα με τον αριθμό προϊόντων, τις φωτογραφίες και τις γλώσσες. Εναλλακτικά προσφέρουμε και μοντέλο χωρίς κόστος κατασκευής, με μικρή μηνιαία συνδρομή που καλύπτει hosting, domain και αλλαγές.</p></details>
+      <details class="faq-item reveal"><summary>Χρειάζεται ο πελάτης να κατεβάσει εφαρμογή;</summary><p>Όχι. Το μενού ανοίγει στο browser του κινητού μέσα σε δευτερόλεπτα. Καμία εγκατάσταση, κανένας λογαριασμός, καμία εγγραφή — και αυτός είναι ο λόγος που τα QR μενού δουλεύουν στην πράξη.</p></details>
+      <details class="faq-item reveal"><summary>Μπορώ να αλλάζω μόνος μου τιμές και πιάτα;</summary><p>Ναι. Σου δίνουμε εύκολο τρόπο ενημέρωσης για τιμές, νέα πιάτα και διαθεσιμότητα. Αν προτιμάς, στέλνεις τις αλλαγές σε εμάς και τις περνάμε την ίδια μέρα — χωρίς επιπλέον χρέωση στη συνδρομή.</p></details>
+      <details class="faq-item reveal"><summary>Υποστηρίζει πολλές γλώσσες για τουρίστες;</summary><p>Ναι. Το μενού μπορεί να εμφανίζεται σε ελληνικά, αγγλικά και όποια άλλη γλώσσα χρειάζεσαι, με εναλλαγή με ένα κλικ. Είναι ιδιαίτερα χρήσιμο σε τουριστικές περιοχές όπως η Σαντορίνη, η Μύκονος και η παραλιακή της Αττικής.</p></details>
+      <details class="faq-item reveal"><summary>Παίρνω και τυπωμένα QR καρτάκια για τα τραπέζια;</summary><p>Ναι. Σχεδιάζουμε τα καρτάκια στα χρώματα της επιχείρησής σου, με το λογότυπο, το QR code και προαιρετικά τα στοιχεία του WiFi, έτοιμα για εκτύπωση σε σταντ, αυτοκόλλητο ή πλαστικοποιημένη κάρτα.</p></details>
+      <details class="faq-item reveal"><summary>Σε πόσο καιρό είναι έτοιμο;</summary><p>Ένα τυπικό ψηφιακό μενού παραδίδεται σε 2 έως 5 εργάσιμες ημέρες από τη στιγμή που θα μας στείλεις τα προϊόντα και τις τιμές. Αν έχεις πολλά προϊόντα και θέλεις φωτογράφιση πιάτων, χρειάζεται λίγο περισσότερο.</p></details>
+      <details class="faq-item reveal"><summary>Δουλεύει και για delivery ή παραγγελίες;</summary><p>Το βασικό μενού είναι για ανάγνωση στο τραπέζι. Μπορούμε όμως να προσθέσουμε κουμπιά για τηλεφωνική παραγγελία, WhatsApp, κρατήσεις ή σύνδεση με πλατφόρμα delivery, αν το χρειάζεσαι.</p></details>
+      <details class="faq-item reveal"><summary>Το μενού είναι δικό μου ή κλειδωμένο σε πλατφόρμα;</summary><p>Είναι δικό σου. Το χτίζουμε στο δικό σου domain, όχι σε πλατφόρμα τρίτου που θα σε χρεώνει για πάντα. Αν κάποια στιγμή θέλεις να το μεταφέρεις, το παίρνεις μαζί σου.</p></details>
+      <details class="faq-item reveal"><summary>Καλύπτετε περιοχές εκτός Αθήνας;</summary><p>Ναι. Έχουμε έδρα στη Γλυφάδα αλλά δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα — από τη Σαντορίνη και τη Μύκονο μέχρι τη Θεσσαλονίκη. Όλη η διαδικασία γίνεται εξ αποστάσεως, με τηλέφωνο και email.</p></details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-inner reveal">
+      <h2>Έτοιμος να δουν οι πελάτες σου <span class="accent">το μενού στο κινητό;</span></h2>
+      <a href="#qr-form" class="btn btn-primary btn-lg">Ζήτα δωρεάν πρόταση <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/img/logo-ch-wordmark.webp?v=5" alt="Codehouse" class="footer-logo">
+      <p>Χτίζουμε ψηφιακά σπίτια για επιχειρήσεις.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Πλοήγηση</h4>
+      <a href="/#services">Υπηρεσίες</a>
+      <a href="/qr-menu/">QR Μενού</a>
+      <a href="/douleies/">Δουλειές</a>
+      <a href="/blog/">Blog</a>
+      <a href="/prosfora/">Προσφορά</a>
+      <a href="/aporrito/">Πολιτική Απορρήτου</a>
+    </div>
+    <div class="footer-col">
+      <h4>Επικοινωνία</h4>
+      <a href="tel:+306986804138">698 680 4138</a>
+      <a href="mailto:hello@codehouse.gr">hello@codehouse.gr</a>
+      <a href="https://artivoai.com" target="_blank" rel="noopener">artivoai.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Οδηγοί</h4>
+      <a href="/blog/qr-menou-estiatorio-kafe/">QR μενού για εστιατόρια</a>
+      <a href="/blog/poso-kostizei-mia-istoselida/">Πόσο κοστίζει μια ιστοσελίδα</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Codehouse — codehouse.gr · Με ❤ και AI από την Αθήνα</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Promo banner ---------- */
+  var promo = document.getElementById('promoBanner');
+  var promoClose = document.getElementById('promoClose');
+  if (promo) {
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('promoClosed') === '1'; } catch (e) {}
+    if (dismissed) { promo.classList.add('hidden'); promo.style.display = 'none'; }
+    else { document.body.classList.add('has-promo'); }
+    if (promoClose) {
+      promoClose.addEventListener('click', function () {
+        promo.classList.add('hidden');
+        document.body.classList.remove('has-promo');
+        try { sessionStorage.setItem('promoClosed', '1'); } catch (e) {}
+        setTimeout(function () { promo.style.display = 'none'; }, 500);
+      });
+    }
+  }
+
+  /* ---------- Nav ---------- */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 30); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (burger && mobileMenu) {
+    var toggleMenu = function (open) {
+      var isOpen = typeof open === 'boolean' ? open : !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function () { toggleMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggleMenu(false); });
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Service card glow ---------- */
+  document.querySelectorAll('.service-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- FORM (3 steps) ---------- */
+  var TOTAL = 3;
+  var current = 1;
+  var form = document.getElementById('qrForm');
+  var bar = document.getElementById('qrBar');
+  var btnPrev = document.getElementById('qrPrev');
+  var btnNext = document.getElementById('qrNext');
+  var formNav = document.getElementById('qrNav');
+  var successBox = document.getElementById('qrSuccess');
+
+  if (form && bar && btnPrev && btnNext && formNav && successBox) {
+    var showStep = function (n) {
+      form.querySelectorAll('.quiz-step').forEach(function (s) {
+        s.classList.toggle('active', parseInt(s.getAttribute('data-step'), 10) === n);
+      });
+      bar.style.width = (n / TOTAL * 100) + '%';
+      btnPrev.disabled = n === 1;
+      btnNext.textContent = n === TOTAL ? 'Αποστολή ✓' : 'Επόμενο →';
+      current = n;
+    };
+
+    var validateStep = function (n) {
+      if (n !== TOTAL) return true;
+      var name = form.querySelector('input[name="name"]');
+      var phone = form.querySelector('input[name="phone"]');
+      var ok = true;
+      [name, phone].forEach(function (f) {
+        var bad = !f.value.trim();
+        f.classList.toggle('error', bad);
+        if (bad) ok = false;
+      });
+      return ok;
+    };
+
+    var collectData = function () {
+      var data = {};
+      new FormData(form).forEach(function (v, k) {
+        if (data[k]) { data[k] += ' | ' + v; } else { data[k] = v; }
+      });
+      data._timestamp = new Date().toISOString();
+      data._page = location.href;
+      return data;
+    };
+
+    var submitForm = function () {
+      var data = collectData();
+      btnNext.disabled = true;
+      try {
+        var all = JSON.parse(localStorage.getItem('ch_leads') || '[]');
+        all.push(data);
+        localStorage.setItem('ch_leads', JSON.stringify(all));
+      } catch (e) {}
+      fetch('/lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'qr_menu_form_success' });
+        }
+      }).catch(function () {});
+      form.querySelectorAll('.quiz-step').forEach(function (s) { s.classList.remove('active'); });
+      formNav.style.display = 'none';
+      bar.style.width = '100%';
+      successBox.hidden = false;
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    btnNext.addEventListener('click', function () {
+      if (!validateStep(current)) return;
+      if (current === TOTAL) { submitForm(); return; }
+      showStep(current + 1);
+    });
+    btnPrev.addEventListener('click', function () {
+      if (current > 1) showStep(current - 1);
+    });
+
+    form.querySelectorAll('.quiz-step input[type="radio"]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        var stepEl = input.closest('.quiz-step');
+        var stepNum = parseInt(stepEl.getAttribute('data-step'), 10);
+        if (stepNum !== 1) return;
+        setTimeout(function () { if (current === stepNum) showStep(stepNum + 1); }, 420);
+      });
+    });
+
+    showStep(1);
+  }
+
+  /* ---------- Smooth anchor offset ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+<script src="/assets/cookie_banner.js"></script>
+</body>
+</html>

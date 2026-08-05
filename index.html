@@ -189,6 +189,123 @@
     </div>
   </section>
 
+  <!-- QUIZ / QUESTIONNAIRE -->
+  <section class="quiz" id="quiz">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Ξεκίνα εδώ</p>
+      <h2>Πες μας για το project σου <span class="accent">σε 2 λεπτά</span></h2>
+      <p class="section-sub">Απάντησε σε λίγες εύκολες ερωτήσεις και θα σου στείλουμε πρόταση — χωρίς καμία δέσμευση.</p>
+    </header>
+
+    <div class="quiz-shell reveal" id="quizShell">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar"></div></div>
+
+      <form id="quizForm" novalidate>
+
+        <!-- Step 1: Τύπος επιχείρησης -->
+        <fieldset class="quiz-step active" data-step="1">
+          <legend><span class="q-num">1/7</span> Τι επιχείρηση έχεις;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="business_type" value="Καφέ / Εστιατόριο / Bar"><span><em>☕</em>Καφέ · Εστιατόριο · Bar</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Κατάστημα / Λιανική"><span><em>🏪</em>Κατάστημα · Λιανική</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Υπηρεσίες / Ελ. επαγγελματίας"><span><em>💼</em>Υπηρεσίες · Ελ. επαγγελματίας</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Ομορφιά / Υγεία"><span><em>💇</em>Ομορφιά · Υγεία</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Τουρισμός / Καταλύματα"><span><em>🏖️</em>Τουρισμός · Καταλύματα</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✨</em>Άλλο</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 2: Τι χρειάζεσαι -->
+        <fieldset class="quiz-step" data-step="2">
+          <legend><span class="q-num">2/7</span> Τι χρειάζεσαι; <small>(διάλεξε όσα θες)</small></legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="checkbox" name="needs" value="Νέα ιστοσελίδα"><span><em>🆕</em>Νέα ιστοσελίδα</span></label>
+            <label class="opt"><input type="checkbox" name="needs" value="Ανανέωση υπάρχουσας"><span><em>🔄</em>Ανανέωση υπάρχουσας</span></label>
+            <label class="opt"><input type="checkbox" name="needs" value="E-shop"><span><em>🛒</em>E-shop</span></label>
+            <label class="opt"><input type="checkbox" name="needs" value="QR Μενού"><span><em>📱</em>QR Μενού</span></label>
+            <label class="opt"><input type="checkbox" name="needs" value="Λογότυπο / Branding"><span><em>🎨</em>Λογότυπο · Branding</span></label>
+            <label class="opt"><input type="checkbox" name="needs" value="Δεν ξέρω — θέλω πρόταση"><span><em>💡</em>Δεν ξέρω — θέλω πρόταση</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 3: Παλέτα χρωμάτων -->
+        <fieldset class="quiz-step" data-step="3">
+          <legend><span class="q-num">3/7</span> Ποια χρώματα σου ταιριάζουν;</legend>
+          <div class="opt-grid palette-grid">
+            <label class="opt palette"><input type="radio" name="palette" value="Σκούρο premium (μαύρο/χρυσό)"><span><i class="sw" style="--c1:#111114;--c2:#c9a227;--c3:#f4f0e6"></i>Σκούρο premium</span></label>
+            <label class="opt palette"><input type="radio" name="palette" value="Φωτεινό μίνιμαλ (λευκό/γκρι)"><span><i class="sw" style="--c1:#fafafa;--c2:#d4d4d8;--c3:#18181b"></i>Φωτεινό μίνιμαλ</span></label>
+            <label class="opt palette"><input type="radio" name="palette" value="Γήινο ζεστό (μπεζ/καφέ/πράσινο)"><span><i class="sw" style="--c1:#e8e0d0;--c2:#8a9a7b;--c3:#5b4636"></i>Γήινο ζεστό</span></label>
+            <label class="opt palette"><input type="radio" name="palette" value="Μπλε επαγγελματικό"><span><i class="sw" style="--c1:#0f2647;--c2:#2f6fdb;--c3:#eef3fb"></i>Μπλε επαγγελματικό</span></label>
+            <label class="opt palette"><input type="radio" name="palette" value="Ζωηρό bold (έντονα χρώματα)"><span><i class="sw" style="--c1:#ff4d5a;--c2:#ffd23f;--c3:#3423a6"></i>Ζωηρό bold</span></label>
+            <label class="opt palette expert"><input type="radio" name="palette" value="Να το σχεδιάσει ο ειδικός σας"><span><em>🧑‍🎨</em>Αφήνω τον ειδικό σας να διαλέξει</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 4: Στυλ -->
+        <fieldset class="quiz-step" data-step="4">
+          <legend><span class="q-num">4/7</span> Τι στυλ σου αρέσει;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="style" value="Μοντέρνο & εντυπωσιακό"><span><em>⚡</em>Μοντέρνο &amp; εντυπωσιακό</span></label>
+            <label class="opt"><input type="radio" name="style" value="Απλό & καθαρό"><span><em>◽</em>Απλό &amp; καθαρό</span></label>
+            <label class="opt"><input type="radio" name="style" value="Ζεστό & φιλικό"><span><em>🤝</em>Ζεστό &amp; φιλικό</span></label>
+            <label class="opt"><input type="radio" name="style" value="Πολυτελές & κομψό"><span><em>👑</em>Πολυτελές &amp; κομψό</span></label>
+            <label class="opt"><input type="radio" name="style" value="Να αποφασίσει ο ειδικός σας"><span><em>🧑‍🎨</em>Να αποφασίσει ο ειδικός σας</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 5: Υπάρχοντα assets -->
+        <fieldset class="quiz-step" data-step="5">
+          <legend><span class="q-num">5/7</span> Τι έχεις ήδη; <small>(διάλεξε όσα ισχύουν)</small></legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="checkbox" name="assets" value="Λογότυπο"><span><em>🎯</em>Λογότυπο</span></label>
+            <label class="opt"><input type="checkbox" name="assets" value="Domain (π.χ. onoma.gr)"><span><em>🌐</em>Domain</span></label>
+            <label class="opt"><input type="checkbox" name="assets" value="Φωτογραφίες"><span><em>📷</em>Φωτογραφίες</span></label>
+            <label class="opt"><input type="checkbox" name="assets" value="Κείμενα"><span><em>📝</em>Κείμενα</span></label>
+            <label class="opt"><input type="checkbox" name="assets" value="Παλιό site"><span><em>🕸️</em>Παλιό site</span></label>
+            <label class="opt"><input type="checkbox" name="assets" value="Τίποτα — ξεκινάμε από το μηδέν"><span><em>🚀</em>Τίποτα ακόμα</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 6: Budget -->
+        <fieldset class="quiz-step" data-step="6">
+          <legend><span class="q-num">6/7</span> Budget </legend>
+          <p class="q-sublabel">Budget Κατασκευής</p>
+          <div class="opt-grid opt-grid-3">
+          <label class="opt"><input type="radio" name="budget" value="99,00€ - 500,00€"><span>99,00€ - 500,00€ </span></label>
+            <label class="opt"><input type="radio" name="budget" value="501,00€ - 1000,00€"><span>501,00€ - 1000,00€ </span></label>
+            <label class="opt"><input type="radio" name="budget" value="1000,00€ - 1500,00€"><span>1000,00€ - 1500,00€  </span></label>
+            <label class="opt"><input type="radio" name="budget" value="1500€ +"><span>1500€ +</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Step 7: Στοιχεία -->
+        <fieldset class="quiz-step" data-step="7">
+          <legend><span class="q-num">7/7</span> Πώς να επικοινωνήσουμε;</legend>
+          <div class="field-grid">
+            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
+            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Ονειρο"></label>
+            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
+            <label class="field">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
+            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω κάτι σαν το site του ανταγωνιστή μου..."></textarea></label>
+          </div>
+        </fieldset>
+
+        <!-- Success -->
+        <div class="quiz-success" id="quizSuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h3>Το λάβαμε!</h3>
+          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το project σου.</p>
+          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
+        </div>
+
+        <div class="quiz-nav" id="quizNav">
+          <button type="button" class="btn btn-ghost" id="quizPrev" disabled>← Πίσω</button>
+          <button type="button" class="btn btn-primary" id="quizNext">Επόμενο →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <!-- STATS -->
   <section class="stats">
     <div class="stat reveal"><strong data-count="3">0</strong><span>ημέρες μέση παράδοση</span></div>
@@ -308,124 +425,6 @@
       <li class="reveal"><span class="step-num">03</span><h3>Χτίζουμε</h3><p>Κατασκευή με AI Chat — παραδίδουμε σε 24 ώρες, όχι μήνες. Βλέπεις πρόοδο ζωντανά.</p></li>
       <li class="reveal"><span class="step-num">04</span><h3>Βγαίνεις online</h3><p>Domain, hosting, SSL, Google — τα αναλαμβάνουμε όλα. Και μένουμε δίπλα σου για ό,τι χρειαστείς.</p></li>
     </ol>
-  </section>
-
-  <!-- QUIZ / QUESTIONNAIRE -->
-  <section class="quiz" id="quiz">
-    <header class="section-head reveal">
-      <p class="section-kicker">// Ξεκίνα εδώ</p>
-      <h2>Πες μας για το project σου <span class="accent">σε 2 λεπτά</span></h2>
-      <p class="section-sub">Απάντησε σε λίγες εύκολες ερωτήσεις και θα σου στείλουμε πρόταση — χωρίς καμία δέσμευση.</p>
-    </header>
-
-    <div class="quiz-shell reveal" id="quizShell">
-      <div class="quiz-progress"><div class="quiz-progress-bar" id="quizBar"></div></div>
-
-      <form id="quizForm" novalidate>
-
-        <!-- Step 1: Τύπος επιχείρησης -->
-        <fieldset class="quiz-step active" data-step="1">
-          <legend><span class="q-num">1/7</span> Τι επιχείρηση έχεις;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="business_type" value="Καφέ / Εστιατόριο / Bar"><span><em>☕</em>Καφέ · Εστιατόριο · Bar</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Κατάστημα / Λιανική"><span><em>🏪</em>Κατάστημα · Λιανική</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Υπηρεσίες / Ελ. επαγγελματίας"><span><em>💼</em>Υπηρεσίες · Ελ. επαγγελματίας</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Ομορφιά / Υγεία"><span><em>💇</em>Ομορφιά · Υγεία</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Τουρισμός / Καταλύματα"><span><em>🏖️</em>Τουρισμός · Καταλύματα</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✨</em>Άλλο</span></label>
-          </div>
-        </fieldset>
-
-        <!-- Step 2: Τι χρειάζεσαι -->
-        <fieldset class="quiz-step" data-step="2">
-          <legend><span class="q-num">2/7</span> Τι χρειάζεσαι; <small>(διάλεξε όσα θες)</small></legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="checkbox" name="needs" value="Νέα ιστοσελίδα"><span><em>🆕</em>Νέα ιστοσελίδα</span></label>
-            <label class="opt"><input type="checkbox" name="needs" value="Ανανέωση υπάρχουσας"><span><em>🔄</em>Ανανέωση υπάρχουσας</span></label>
-            <label class="opt"><input type="checkbox" name="needs" value="E-shop"><span><em>🛒</em>E-shop</span></label>
-            <label class="opt"><input type="checkbox" name="needs" value="QR Μενού"><span><em>📱</em>QR Μενού</span></label>
-            <label class="opt"><input type="checkbox" name="needs" value="Λογότυπο / Branding"><span><em>🎨</em>Λογότυπο · Branding</span></label>
-            <label class="opt"><input type="checkbox" name="needs" value="Δεν ξέρω — θέλω πρόταση"><span><em>💡</em>Δεν ξέρω — θέλω πρόταση</span></label>
-          </div>
-        </fieldset>
-
-        <!-- Step 3: Παλέτα χρωμάτων -->
-        <fieldset class="quiz-step" data-step="3">
-          <legend><span class="q-num">3/7</span> Ποια χρώματα σου ταιριάζουν;</legend>
-          <div class="opt-grid palette-grid">
-            <label class="opt palette"><input type="radio" name="palette" value="Σκούρο premium (μαύρο/χρυσό)"><span><i class="sw" style="--c1:#111114;--c2:#c9a227;--c3:#f4f0e6"></i>Σκούρο premium</span></label>
-            <label class="opt palette"><input type="radio" name="palette" value="Φωτεινό μίνιμαλ (λευκό/γκρι)"><span><i class="sw" style="--c1:#fafafa;--c2:#d4d4d8;--c3:#18181b"></i>Φωτεινό μίνιμαλ</span></label>
-            <label class="opt palette"><input type="radio" name="palette" value="Γήινο ζεστό (μπεζ/καφέ/πράσινο)"><span><i class="sw" style="--c1:#e8e0d0;--c2:#8a9a7b;--c3:#5b4636"></i>Γήινο ζεστό</span></label>
-            <label class="opt palette"><input type="radio" name="palette" value="Μπλε επαγγελματικό"><span><i class="sw" style="--c1:#0f2647;--c2:#2f6fdb;--c3:#eef3fb"></i>Μπλε επαγγελματικό</span></label>
-            <label class="opt palette"><input type="radio" name="palette" value="Ζωηρό bold (έντονα χρώματα)"><span><i class="sw" style="--c1:#ff4d5a;--c2:#ffd23f;--c3:#3423a6"></i>Ζωηρό bold</span></label>
-            <label class="opt palette expert"><input type="radio" name="palette" value="Να το σχεδιάσει ο ειδικός σας"><span><em>🧑‍🎨</em>Αφήνω τον ειδικό σας να διαλέξει</span></label>
-          </div>
-        </fieldset>
-
-        <!-- Step 4: Στυλ -->
-        <fieldset class="quiz-step" data-step="4">
-          <legend><span class="q-num">4/7</span> Τι στυλ σου αρέσει;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="style" value="Μοντέρνο & εντυπωσιακό"><span><em>⚡</em>Μοντέρνο &amp; εντυπωσιακό</span></label>
-            <label class="opt"><input type="radio" name="style" value="Απλό & καθαρό"><span><em>◽</em>Απλό &amp; καθαρό</span></label>
-            <label class="opt"><input type="radio" name="style" value="Ζεστό & φιλικό"><span><em>🤝</em>Ζεστό &amp; φιλικό</span></label>
-            <label class="opt"><input type="radio" name="style" value="Πολυτελές & κομψό"><span><em>👑</em>Πολυτελές &amp; κομψό</span></label>
-            <label class="opt"><input type="radio" name="style" value="Να αποφασίσει ο ειδικός σας"><span><em>🧑‍🎨</em>Να αποφασίσει ο ειδικός σας</span></label>
-          </div>
-        </fieldset>
-
-        <!-- Step 5: Υπάρχοντα assets -->
-        <fieldset class="quiz-step" data-step="5">
-          <legend><span class="q-num">5/7</span> Τι έχεις ήδη; <small>(διάλεξε όσα ισχύουν)</small></legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="checkbox" name="assets" value="Λογότυπο"><span><em>🎯</em>Λογότυπο</span></label>
-            <label class="opt"><input type="checkbox" name="assets" value="Domain (π.χ. onoma.gr)"><span><em>🌐</em>Domain</span></label>
-            <label class="opt"><input type="checkbox" name="assets" value="Φωτογραφίες"><span><em>📷</em>Φωτογραφίες</span></label>
-            <label class="opt"><input type="checkbox" name="assets" value="Κείμενα"><span><em>📝</em>Κείμενα</span></label>
-            <label class="opt"><input type="checkbox" name="assets" value="Παλιό site"><span><em>🕸️</em>Παλιό site</span></label>
-            <label class="opt"><input type="checkbox" name="assets" value="Τίποτα — ξεκινάμε από το μηδέν"><span><em>🚀</em>Τίποτα ακόμα</span></label>
-          </div>
-        </fieldset>
-
-        <!-- Step 6:  Budget -->
-        <fieldset class="quiz-step" data-step="6">
-          <legend><span class="q-num">6/7</span> Budget </legend>
-          <p class="q-sublabel">Budget Κατασκευής</p>
-          <div class="opt-grid opt-grid-3">
-          <label class="opt"><input type="radio" name="budget" value="99,00€ - 500,00€"><span>99,00€ - 500,00€ </span></label>
-            <label class="opt"><input type="radio" name="budget" value="501,00€ - 1000,00€"><span>501,00€ - 1000,00€ </span></label>
-            <label class="opt"><input type="radio" name="budget" value="1000,00€ - 1500,00€"><span>1000,00€ - 1500,00€  </span></label>
-            <label class="opt"><input type="radio" name="budget" value="1500€ +"><span>1500€ +</span></label>
-          </div>
-          
-        </fieldset>
-
-        <!-- Step 8: Στοιχεία -->
-        <fieldset class="quiz-step" data-step="7">
-          <legend><span class="q-num">7/7</span> Πώς να επικοινωνήσουμε;</legend>
-          <div class="field-grid">
-            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
-            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Ονειρο"></label>
-            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
-            <label class="field">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
-            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω κάτι σαν το site του ανταγωνιστή μου..."></textarea></label>
-          </div>
-        </fieldset>
-
-        <!-- Success -->
-        <div class="quiz-success" id="quizSuccess" hidden>
-          <div class="success-icon">✓</div>
-          <h3>Το λάβαμε!</h3>
-          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το project σου.</p>
-          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
-        </div>
-
-        <div class="quiz-nav" id="quizNav">
-          <button type="button" class="btn btn-ghost" id="quizPrev" disabled>← Πίσω</button>
-          <button type="button" class="btn btn-primary" id="quizNext">Επόμενο →</button>
-        </div>
-      </form>
-    </div>
   </section>
 
   <!-- FAQ -->

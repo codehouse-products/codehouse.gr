@@ -151,6 +151,27 @@
 @media (max-width: 560px) {
   .qr-hero-actions .btn { width: 100%; justify-content: center; }
 }
+/* Billing toggle */
+.billing-toggle {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin: 0 auto 36px; flex-wrap: wrap;
+}
+.billing-label { font-size: 15px; font-weight: 600; color: var(--text-dim); display: flex; align-items: center; gap: 8px; }
+.billing-badge {
+  background: var(--lime-dim); border: 1px solid rgba(198,255,74,.4); color: var(--lime);
+  font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.toggle-track {
+  width: 52px; height: 28px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 999px; cursor: pointer; position: relative; transition: background .25s, border-color .25s;
+  flex-shrink: 0;
+}
+.toggle-track[aria-checked="true"] { background: var(--lime); border-color: var(--lime); }
+.toggle-thumb {
+  position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  background: var(--text); border-radius: 50%; transition: transform .25s var(--ease);
+}
+.toggle-track[aria-checked="true"] .toggle-thumb { transform: translateX(24px); background: #111; }
 </style>
 <script type="application/ld+json">
 {
@@ -246,10 +267,10 @@
 <body>
 <!-- PROMO BANNER -->
 <div class="promo-banner" id="promoBanner" role="region" aria-label="Προσφορά">
-  <a href="/prosfora/" class="promo-banner-link">
+  <a href="#times" class="promo-banner-link">
     <span class="promo-gift" aria-hidden="true">🎁</span>
-    <span class="promo-text"><strong>Δωρεάν Κατασκευή Ιστοσελίδας</strong><span class="promo-sub"> — με μια μικρή μηνιαία συνδρομή</span></span>
-    <span class="promo-cta">Δες την προσφορά →</span>
+    <span class="promo-text"><strong>Πλήρωσε ετήσια και κέρδισε 2 μήνες δωρεάν</strong><span class="promo-sub"> — Essential από 99€/χρόνο · Pro από 149€/χρόνο</span></span>
+    <span class="promo-cta">Δες τις τιμές →</span>
   </a>
   <button class="promo-close" id="promoClose" aria-label="Κλείσιμο προσφοράς">×</button>
 </div>
@@ -500,13 +521,27 @@
     <header class="section-head reveal">
       <p class="section-kicker">// Τιμές</p>
       <h2>Πόσο κοστίζει ένα <span class="accent">QR μενού</span></h2>
-      <p class="section-sub">Δύο τρόποι να το αποκτήσεις: εφάπαξ, ή χωρίς κόστος κατασκευής με μικρή μηνιαία συνδρομή. Και στις δύο περιπτώσεις το μενού είναι δικό σου, στο δικό σου domain.</p>
+      <p class="section-sub">Επίλεξε μηνιαία ή ετήσια χρέωση — με την ετήσια <strong style="color:var(--lime)">κερδίζεις 2 μήνες δωρεάν</strong>.</p>
     </header>
+
+    <!-- Billing toggle -->
+    <div class="billing-toggle" id="billingToggle">
+      <span class="billing-label" id="lblMonthly">Μηνιαία</span>
+      <button class="toggle-track" id="toggleBtn" aria-checked="false" role="switch" aria-label="Εναλλαγή ετήσιας / μηνιαίας χρέωσης">
+        <span class="toggle-thumb"></span>
+      </button>
+      <span class="billing-label" id="lblAnnual">Ετήσια <span class="billing-badge">-2 μήνες δωρεάν</span></span>
+    </div>
+
     <div class="qr-price-grid">
       <div class="qr-price reveal">
         <p class="qr-price-flag">ΒΑΣΙΚΟ</p>
         <h3>Essential</h3>
-        <p class="qr-price-tag">9,90 € <em>/μήνα</em></p>
+        <p class="qr-price-tag">
+          <span class="price-monthly">9,90 € <em>/μήνα</em></span>
+          <span class="price-annual" hidden>99,00 € <em>/χρόνο</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 19,80€ — 2 μήνες δωρεάν</p>
         <p>Για καφετέριες και μικρά μαγαζιά με ευθύ κατάλογο.</p>
         <ul>
           <li>Έως 40 προϊόντα</li>
@@ -520,7 +555,11 @@
       <div class="qr-price featured reveal">
         <p class="qr-price-flag">ΔΗΜΟΦΙΛΕΣ</p>
         <h3>Pro</h3>
-        <p class="qr-price-tag">14,90 € <em>/μήνα</em></p>
+        <p class="qr-price-tag">
+          <span class="price-monthly">14,90 € <em>/μήνα</em></span>
+          <span class="price-annual" hidden>149,00 € <em>/χρόνο</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 29,80€ — 2 μήνες δωρεάν</p>
         <p>Για εστιατόρια και bar που θέλουν το μενού να πουλάει.</p>
         <ul>
           <li>Έως 150 προϊόντα</li>
@@ -547,7 +586,7 @@
         <a href="/prosfora/" class="btn btn-ghost">Δες την προσφορά</a>
       </div>
     </div>
-    <p class="qr-price-note">Οι τελικές τιμές εξαρτώνται από τον αριθμό προϊόντων, τις φωτογραφίες και τις γλώσσες. Σύγκρινε το κόστος με δύο ή τρεις επανεκτυπώσεις έντυπου μενού τον χρόνο και η απόσβεση γίνεται συνήθως μέσα στους πρώτους μήνες. Διάβασε επίσης τον <a href="/blog/poso-kostizei-mia-istoselida/">πλήρη οδηγό τιμών για ιστοσελίδες</a> και το <a href="/blog/qr-menou-estiatorio-kafe/">αναλυτικό άρθρο για τα QR μενού</a>.</p>
+    <p class="qr-price-note">Η ετήσια χρέωση γίνεται εφάπαξ και ισοδυναμεί με 10 μήνες — οι 2 είναι δώρο. Διάβασε επίσης το <a href="/blog/qr-menou-estiatorio-kafe/">αναλυτικό άρθρο για τα QR μενού</a>.</p>
   </section>
 
   <!-- ΤΙ ΝΑ ΠΡΟΣΕΞΕΙΣ -->
@@ -777,6 +816,19 @@
     });
 
     showStep(1);
+  }
+
+  /* ---------- Billing toggle ---------- */
+  var toggleBtn = document.getElementById('toggleBtn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      var isAnnual = toggleBtn.getAttribute('aria-checked') === 'true';
+      var nowAnnual = !isAnnual;
+      toggleBtn.setAttribute('aria-checked', String(nowAnnual));
+      document.querySelectorAll('.price-monthly').forEach(function (el) { el.hidden = nowAnnual; });
+      document.querySelectorAll('.price-annual').forEach(function (el) { el.hidden = !nowAnnual; });
+      document.querySelectorAll('.price-saving').forEach(function (el) { el.hidden = !nowAnnual; });
+    });
   }
 
   /* ---------- Smooth anchor offset ---------- */

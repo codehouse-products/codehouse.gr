@@ -309,7 +309,7 @@
         </div>
       </div>
       <div class="qr-hero-visual">
-        <img src="/qr-menu/img/hero-phone.webp" width="1400" height="1866" alt="Ψηφιακό μενού QR σε κινητό — μενού καφετέριας με φωτογραφίες πιάτων και τιμές" fetchpriority="high" decoding="async">
+        <img src="/qr-menu/img/restaurant-real.webp" width="1400" height="933" alt="Εστιατόριο με ψηφιακό μενού QR — τραπέζι με κεριά και premium σερβίρισμα" fetchpriority="high" decoding="async">
       </div>
     </div>
   </section>
@@ -321,6 +321,75 @@
       <li aria-current="page">Ψηφιακό Μενού QR</li>
     </ol>
   </nav>
+
+  <!-- ΦΟΡΜΑ (αμέσως μετά το hero) -->
+  <section class="quiz" id="qr-form">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Ζήτα προσφορά</p>
+      <h2>Πες μας για το μαγαζί σου <span class="accent">σε 1 λεπτό</span></h2>
+      <p class="section-sub">Συμπλήρωσε τρία βήματα και θα σου στείλουμε συγκεκριμένη πρόταση για ψηφιακό μενού QR — χωρίς καμία δέσμευση.</p>
+    </header>
+    <div class="quiz-shell">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="qrBar" style="width:33.3%"></div></div>
+      <form id="qrForm" novalidate>
+        <input type="hidden" name="service" value="ΨΗΦΙΑΚΟ ΜΕΝΟΥ QR">
+        <input type="hidden" name="source" value="Landing /qr-menu/">
+
+        <fieldset class="quiz-step active" data-step="1">
+          <legend><span class="q-num">1/3</span> Τι επιχείρηση έχεις;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="business_type" value="Καφετέρια"><span><em>☕</em>Καφετέρια</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Εστιατόριο / Ταβέρνα"><span><em>🍽️</em>Εστιατόριο · Ταβέρνα</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Bar / Cocktail bar"><span><em>🍸</em>Bar · Cocktail bar</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Beach bar / Ξενοδοχείο"><span><em>🏖️</em>Beach bar · Ξενοδοχείο</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Fast food / Delivery"><span><em>🍔</em>Fast food · Delivery</span></label>
+            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✦</em>Κάτι άλλο</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="2">
+          <legend><span class="q-num">2/3</span> Πόσα προϊόντα έχει το μενού σου;</legend>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="products" value="Έως 40 προϊόντα"><span><em>🔹</em>Έως 40</span></label>
+            <label class="opt"><input type="radio" name="products" value="40-100 προϊόντα"><span><em>🔸</em>40 – 100</span></label>
+            <label class="opt"><input type="radio" name="products" value="100-200 προϊόντα"><span><em>🔶</em>100 – 200</span></label>
+            <label class="opt"><input type="radio" name="products" value="Πάνω από 200 προϊόντα"><span><em>🔷</em>Πάνω από 200</span></label>
+          </div>
+          <p class="q-sublabel">Θέλεις το μενού σε περισσότερες γλώσσες;</p>
+          <div class="opt-grid">
+            <label class="opt"><input type="radio" name="languages" value="Μόνο ελληνικά"><span><em>🇬🇷</em>Μόνο ελληνικά</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Ελληνικά + Αγγλικά"><span><em>🇬🇧</em>Ελληνικά + Αγγλικά</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Τρεις ή περισσότερες γλώσσες"><span><em>🌍</em>Τρεις ή περισσότερες</span></label>
+            <label class="opt"><input type="radio" name="languages" value="Δεν είμαι σίγουρος"><span><em>🤔</em>Δεν είμαι σίγουρος</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="quiz-step" data-step="3">
+          <legend><span class="q-num">3/3</span> Πώς να επικοινωνήσουμε;</legend>
+          <div class="field-grid">
+            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
+            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Όνειρο"></label>
+            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
+            <label class="field">Περιοχή<input type="text" name="area" placeholder="π.χ. Γλυφάδα, Σαντορίνη"></label>
+            <label class="field field-full">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
+            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω και τυπωμένα καρτάκια με τον κωδικό WiFi..."></textarea></label>
+          </div>
+        </fieldset>
+
+        <div class="quiz-success" id="qrSuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h3>Το λάβαμε!</h3>
+          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το ψηφιακό μενού QR του μαγαζιού σου.</p>
+          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
+        </div>
+
+        <div class="quiz-nav" id="qrNav">
+          <button type="button" class="btn btn-ghost" id="qrPrev" disabled>← Πίσω</button>
+          <button type="button" class="btn btn-primary" id="qrNext">Επόμενο →</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
   <!-- ΤΙ ΕΙΝΑΙ / ΟΦΕΛΗ -->
   <section class="services" id="ofeli">
@@ -437,7 +506,7 @@
       <div class="qr-price reveal">
         <p class="qr-price-flag">ΒΑΣΙΚΟ</p>
         <h3>Essential</h3>
-        <p class="qr-price-tag">από 200 € <em>εφάπαξ</em></p>
+        <p class="qr-price-tag">9,90 € <em>/μήνα</em></p>
         <p>Για καφετέριες και μικρά μαγαζιά με ευθύ κατάλογο.</p>
         <ul>
           <li>Έως 40 προϊόντα</li>
@@ -451,7 +520,7 @@
       <div class="qr-price featured reveal">
         <p class="qr-price-flag">ΔΗΜΟΦΙΛΕΣ</p>
         <h3>Pro</h3>
-        <p class="qr-price-tag">από 380 € <em>εφάπαξ</em></p>
+        <p class="qr-price-tag">14,90 € <em>/μήνα</em></p>
         <p>Για εστιατόρια και bar που θέλουν το μενού να πουλάει.</p>
         <ul>
           <li>Έως 150 προϊόντα</li>
@@ -493,75 +562,6 @@
       <li class="reveal"><span class="step-num">03</span><h3>Έλεγξε το σε κινητό</h3><p>Το 100% των πελατών θα το δει σε κινητό. Αν το μενού σχεδιάστηκε για υπολογιστή και μετά «στριμώχτηκε», φαίνεται.</p></li>
       <li class="reveal"><span class="step-num">04</span><h3>Να είναι δικό σου</h3><p>Το μενού να βρίσκεται στο δικό σου domain και όχι κλειδωμένο σε λογαριασμό τρίτου. Έτσι κρατάς τον έλεγχο και το SEO του μαγαζιού σου.</p></li>
     </ol>
-  </section>
-
-  <!-- ΦΟΡΜΑ -->
-  <section class="quiz" id="qr-form">
-    <header class="section-head reveal">
-      <p class="section-kicker">// Ζήτα προσφορά</p>
-      <h2>Πες μας για το μαγαζί σου <span class="accent">σε 1 λεπτό</span></h2>
-      <p class="section-sub">Συμπλήρωσε τρία βήματα και θα σου στείλουμε συγκεκριμένη πρόταση για ψηφιακό μενού QR — χωρίς καμία δέσμευση.</p>
-    </header>
-    <div class="quiz-shell">
-      <div class="quiz-progress"><div class="quiz-progress-bar" id="qrBar" style="width:33.3%"></div></div>
-      <form id="qrForm" novalidate>
-        <input type="hidden" name="service" value="ΨΗΦΙΑΚΟ ΜΕΝΟΥ QR">
-        <input type="hidden" name="source" value="Landing /qr-menu/">
-
-        <fieldset class="quiz-step active" data-step="1">
-          <legend><span class="q-num">1/3</span> Τι επιχείρηση έχεις;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="business_type" value="Καφετέρια"><span><em>☕</em>Καφετέρια</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Εστιατόριο / Ταβέρνα"><span><em>🍽️</em>Εστιατόριο · Ταβέρνα</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Bar / Cocktail bar"><span><em>🍸</em>Bar · Cocktail bar</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Beach bar / Ξενοδοχείο"><span><em>🏖️</em>Beach bar · Ξενοδοχείο</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Fast food / Delivery"><span><em>🍔</em>Fast food · Delivery</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✦</em>Κάτι άλλο</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="quiz-step" data-step="2">
-          <legend><span class="q-num">2/3</span> Πόσα προϊόντα έχει το μενού σου;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="products" value="Έως 40 προϊόντα"><span><em>🔹</em>Έως 40</span></label>
-            <label class="opt"><input type="radio" name="products" value="40-100 προϊόντα"><span><em>🔸</em>40 – 100</span></label>
-            <label class="opt"><input type="radio" name="products" value="100-200 προϊόντα"><span><em>🔶</em>100 – 200</span></label>
-            <label class="opt"><input type="radio" name="products" value="Πάνω από 200 προϊόντα"><span><em>🔷</em>Πάνω από 200</span></label>
-          </div>
-          <p class="q-sublabel">Θέλεις το μενού σε περισσότερες γλώσσες;</p>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="languages" value="Μόνο ελληνικά"><span><em>🇬🇷</em>Μόνο ελληνικά</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Ελληνικά + Αγγλικά"><span><em>🇬🇧</em>Ελληνικά + Αγγλικά</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Τρεις ή περισσότερες γλώσσες"><span><em>🌍</em>Τρεις ή περισσότερες</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Δεν είμαι σίγουρος"><span><em>🤔</em>Δεν είμαι σίγουρος</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="quiz-step" data-step="3">
-          <legend><span class="q-num">3/3</span> Πώς να επικοινωνήσουμε;</legend>
-          <div class="field-grid">
-            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
-            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Όνειρο"></label>
-            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
-            <label class="field">Περιοχή<input type="text" name="area" placeholder="π.χ. Γλυφάδα, Σαντορίνη"></label>
-            <label class="field field-full">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
-            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω και τυπωμένα καρτάκια με τον κωδικό WiFi..."></textarea></label>
-          </div>
-        </fieldset>
-
-        <div class="quiz-success" id="qrSuccess" hidden>
-          <div class="success-icon">✓</div>
-          <h3>Το λάβαμε!</h3>
-          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το ψηφιακό μενού QR του μαγαζιού σου.</p>
-          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
-        </div>
-
-        <div class="quiz-nav" id="qrNav">
-          <button type="button" class="btn btn-ghost" id="qrPrev" disabled>← Πίσω</button>
-          <button type="button" class="btn btn-primary" id="qrNext">Επόμενο →</button>
-        </div>
-      </form>
-    </div>
   </section>
 
   <!-- FAQ -->

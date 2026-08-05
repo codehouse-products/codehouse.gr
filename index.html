@@ -517,90 +517,97 @@
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var MOBILE = window.innerWidth < 768;
-  var N = MOBILE ? 38 : 72;
-  var RANGE = 380;
-  var CONN = MOBILE ? 130 : 155;
-  var FOV = 560;
+  var N     = MOBILE ? 14 : 26;
+  var RANGE = 320;
+  var CONN  = 160;
+  var FOV   = 500;
+  var FPS   = 30;
+  var STEP  = 1000 / FPS;
+  var last  = 0;
   var angle = 0, mx = 0, my = 0;
   var W, H, cx, cy;
 
   var pts = [];
   for (var i = 0; i < N; i++) {
     pts.push({
-      x: (Math.random() - .5) * RANGE * 2.2,
-      y: (Math.random() - .5) * RANGE * 1.1,
-      z: (Math.random() - .5) * RANGE * 2.2,
-      vx: (Math.random() - .5) * .18,
-      vy: (Math.random() - .5) * .12,
-      vz: (Math.random() - .5) * .18
+      x: (Math.random() - .5) * RANGE * 2,
+      y: (Math.random() - .5) * RANGE,
+      z: (Math.random() - .5) * RANGE * 2,
+      vx: (Math.random() - .5) * .14,
+      vy: (Math.random() - .5) * .09,
+      vz: (Math.random() - .5) * .14
     });
   }
 
   function resize() {
     var hero = document.getElementById('hero');
-    W = canvas.width = hero ? hero.offsetWidth : window.innerWidth;
+    W = canvas.width  = hero ? hero.offsetWidth  : window.innerWidth;
     H = canvas.height = hero ? hero.offsetHeight : window.innerHeight;
     cx = W / 2; cy = H / 2;
   }
 
   function project(p) {
-    var ca = Math.cos(angle + mx * .00025), sa = Math.sin(angle + mx * .00025);
-    var rx = p.x * ca - p.z * sa, rz = p.z * ca + p.x * sa;
-    var cb = Math.cos(my * .00015), sb = Math.sin(my * .00015);
-    var ry = p.y * cb - rz * sb, rz2 = rz * cb + p.y * sb;
-    var sc = FOV / (FOV + rz2 + RANGE * .8);
+    var a = angle + mx * .0002;
+    var rx = p.x * Math.cos(a) - p.z * Math.sin(a);
+    var rz = p.z * Math.cos(a) + p.x * Math.sin(a);
+    var b  = my * .00012;
+    var ry = p.y * Math.cos(b) - rz * Math.sin(b);
+    var rz2 = rz * Math.cos(b) + p.y * Math.sin(b);
+    var sc = FOV / (FOV + rz2 + RANGE);
     return { sx: cx + rx * sc, sy: cy + ry * sc, sc: sc };
   }
 
   document.addEventListener('mousemove', function (e) {
     mx = e.clientX - cx; my = e.clientY - cy;
-  });
+  }, { passive: true });
 
-  function frame() {
+  function frame(ts) {
+    requestAnimationFrame(frame);
+    if (ts - last < STEP) return;
+    last = ts;
+
     ctx.clearRect(0, 0, W, H);
-    angle += .0012;
+    angle += .001;
 
     for (var i = 0; i < N; i++) {
       var p = pts[i];
       p.x += p.vx; p.y += p.vy; p.z += p.vz;
-      if (Math.abs(p.x) > RANGE * 1.1) p.vx *= -1;
-      if (Math.abs(p.y) > RANGE * .55) p.vy *= -1;
-      if (Math.abs(p.z) > RANGE * 1.1) p.vz *= -1;
+      if (Math.abs(p.x) > RANGE) p.vx *= -1;
+      if (Math.abs(p.y) > RANGE * .5) p.vy *= -1;
+      if (Math.abs(p.z) > RANGE) p.vz *= -1;
     }
 
     var proj = pts.map(project);
 
-    for (var i = 0; i < N; i++) {
+    /* lines */
+    ctx.lineWidth = .8;
+    for (var i = 0; i < N - 1; i++) {
       for (var j = i + 1; j < N; j++) {
         var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, dz = pts[i].z - pts[j].z;
-        var d = Math.sqrt(dx*dx + dy*dy + dz*dz);
+        var d  = Math.sqrt(dx*dx + dy*dy + dz*dz);
         if (d < CONN) {
-          var a = (1 - d / CONN) * .22 * proj[i].sc * proj[j].sc * 6;
           ctx.beginPath();
           ctx.moveTo(proj[i].sx, proj[i].sy);
           ctx.lineTo(proj[j].sx, proj[j].sy);
-          ctx.strokeStyle = 'rgba(255,255,255,' + Math.min(a, .28) + ')';
-          ctx.lineWidth = .7;
+          ctx.strokeStyle = 'rgba(255,255,255,' + ((1 - d / CONN) * .22).toFixed(3) + ')';
           ctx.stroke();
         }
       }
     }
 
+    /* dots */
     for (var i = 0; i < N; i++) {
       var p = proj[i];
-      var r = Math.max(1.5 * p.sc * 2.5, .6);
       ctx.beginPath();
-      ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,' + Math.min(.55 * p.sc * 3, .55) + ')';
+      ctx.arc(p.sx, p.sy, Math.max(p.sc * 3, .8), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + Math.min(p.sc * 1.8, .6).toFixed(2) + ')';
       ctx.fill();
     }
-
-    requestAnimationFrame(frame);
   }
 
   resize();
-  window.addEventListener('resize', resize);
-  frame();
+  window.addEventListener('resize', resize, { passive: true });
+  requestAnimationFrame(frame);
 })();
 </script>
 </body>

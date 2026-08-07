@@ -277,6 +277,87 @@
 @media (max-width: 480px) {
   .tour-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── Lead Modal ─── */
+.lead-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(12,10,24,.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lead-overlay.open { display: flex; }
+.lead-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 100%; max-width: 460px;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,.25);
+  animation: modalIn .22s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.lead-modal-close {
+  position: absolute; top: 16px; right: 18px;
+  background: none; border: none; cursor: pointer;
+  font-size: 22px; color: #9ca3af; line-height: 1;
+  padding: 4px;
+}
+.lead-modal-close:hover { color: #111; }
+.lead-modal h3 {
+  font-size: 20px; font-weight: 800; color: #0c0a18;
+  margin: 0 0 4px;
+}
+.lead-modal .lm-sub {
+  font-size: 14px; color: #6b7280; margin: 0 0 24px;
+}
+.lm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.lm-field { margin-bottom: 14px; }
+.lm-field label {
+  display: block; font-size: 12px; font-weight: 700;
+  color: #374151; margin-bottom: 5px; letter-spacing: .03em;
+}
+.lm-field input {
+  width: 100%; box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px; color: #111;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .18s;
+}
+.lm-field input:focus { border-color: #0c0a18; }
+.lm-submit {
+  width: 100%; padding: 14px;
+  background: #0c0a18; color: #fff;
+  border: none; border-radius: 12px;
+  font-size: 15px; font-weight: 800;
+  cursor: pointer; font-family: inherit;
+  margin-top: 6px;
+  transition: background .18s, transform .12s;
+}
+.lm-submit:hover { background: #1e1a3a; }
+.lm-submit:active { transform: scale(.98); }
+.lm-submit:disabled { opacity: .6; cursor: default; }
+.lm-success {
+  display: none;
+  text-align: center; padding: 20px 0;
+}
+.lm-success .ls-icon { font-size: 44px; margin-bottom: 12px; }
+.lm-success h4 { font-size: 18px; font-weight: 800; color: #0c0a18; margin: 0 0 6px; }
+.lm-success p  { font-size: 14px; color: #6b7280; margin: 0; }
+.lm-error { font-size: 13px; color: #dc2626; margin-top: 8px; display: none; }
+@media (max-width: 480px) {
+  .lead-modal { padding: 28px 20px; }
+  .lm-row { grid-template-columns: 1fr; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -342,7 +423,7 @@
     <a href="/qr-menu/">QR Μενού</a>
     <a href="/douleies/">Δουλειές</a>
     <a href="/blog/">Blog</a>
-    <a href="/#quiz" class="bnav-cta">Δωρεάν πρόταση</a>
+    <button onclick="openLeadModal()" class="bnav-cta">Δωρεάν πρόταση</button>
   </nav>
 </header>
 
@@ -527,7 +608,7 @@
     <div class="price-box-right">
       <div class="pb-price"><span class="pb-currency">€</span>1.100</div>
       <div class="pb-sub">εφάπαξ · χωρίς μηνιαία συνδρομή</div>
-      <a href="/#quiz" class="pb-cta">Ζήτα δωρεάν πρόταση →</a>
+      <button onclick="openLeadModal()" class="pb-cta">Ζήτα δωρεάν πρόταση →</button>
     </div>
   </div>
 
@@ -551,7 +632,7 @@
   <div class="cta-box">
     <h3>Θες website σαν αυτό για τη δική σου εταιρεία;</h3>
     <p>Φτιάχνουμε websites για εταιρείες transfer & tours σε Σαντορίνη, Μύκονο, Κρήτη και όλα τα τουριστικά νησιά — από 1.100€ εφάπαξ, παράδοση σε 2 εβδομάδες.</p>
-    <a href="/#quiz" class="btn">Ζήτα δωρεάν πρόταση →</a>
+    <button onclick="openLeadModal()" class="btn">Ζήτα δωρεάν πρόταση →</button>
   </div>
 </article>
 
@@ -561,5 +642,110 @@
 </footer>
 
 <script src="/assets/cookie_banner.js"></script>
+
+<!-- ─── Lead Modal ─── -->
+<div class="lead-overlay" id="leadOverlay" onclick="closeLeadModal(event)">
+  <div class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lmTitle">
+    <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="Κλείσιμο">×</button>
+
+    <div id="lmForm">
+      <h3 id="lmTitle">Ζήτα δωρεάν πρόταση</h3>
+      <p class="lm-sub">Απαντάμε μέσα σε 24 ώρες — χωρίς καμία δέσμευση.</p>
+
+      <div class="lm-row">
+        <div class="lm-field">
+          <label for="lmName">Όνομα *</label>
+          <input type="text" id="lmName" placeholder="π.χ. Νίκος" autocomplete="given-name" required>
+        </div>
+        <div class="lm-field">
+          <label for="lmSurname">Επώνυμο *</label>
+          <input type="text" id="lmSurname" placeholder="π.χ. Παπαδόπουλος" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="lm-field">
+        <label for="lmCompany">Όνομα Εταιρίας / Brand name</label>
+        <input type="text" id="lmCompany" placeholder="π.χ. Santorini Elite Transfers" autocomplete="organization">
+      </div>
+
+      <div class="lm-field">
+        <label for="lmEmail">Email *</label>
+        <input type="email" id="lmEmail" placeholder="you@company.gr" autocomplete="email" required>
+      </div>
+
+      <button class="lm-submit" id="lmSubmit" onclick="submitLead()">Στείλε πρόταση →</button>
+      <p class="lm-error" id="lmError">Κάτι πήγε στραβά — δοκίμασε ξανά.</p>
+    </div>
+
+    <div class="lm-success" id="lmSuccess">
+      <div class="ls-icon">✅</div>
+      <h4>Λάβαμε το αίτημά σου!</h4>
+      <p>Θα επικοινωνήσουμε μαζί σου στο <strong id="lmConfirmEmail"></strong><br>μέσα σε 24 ώρες.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLeadModal() {
+  document.getElementById('leadOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('lmName').focus(), 50);
+}
+function closeLeadModal(e) {
+  if (e && e.target !== document.getElementById('leadOverlay')) return;
+  document.getElementById('leadOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLeadModal();
+});
+
+async function submitLead() {
+  const name    = document.getElementById('lmName').value.trim();
+  const surname = document.getElementById('lmSurname').value.trim();
+  const company = document.getElementById('lmCompany').value.trim();
+  const email   = document.getElementById('lmEmail').value.trim();
+  const errEl   = document.getElementById('lmError');
+
+  errEl.style.display = 'none';
+
+  if (!name || !surname || !email || !email.includes('@')) {
+    errEl.textContent = 'Συμπλήρωσε τουλάχιστον Όνομα, Επώνυμο και Email.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('lmSubmit');
+  btn.disabled = true;
+  btn.textContent = 'Αποστολή…';
+
+  try {
+    const res = await fetch('/lead.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name + ' ' + surname,
+        company: company,
+        email: email,
+        source: 'blog/website-transfer-santorini'
+      })
+    });
+    const json = await res.json();
+    if (json.ok) {
+      document.getElementById('lmForm').style.display = 'none';
+      document.getElementById('lmConfirmEmail').textContent = email;
+      document.getElementById('lmSuccess').style.display = 'block';
+      gtag('event', 'generate_lead', { event_category: 'engagement', event_label: 'blog_transfer_modal' });
+    } else {
+      throw new Error(json.error || 'error');
+    }
+  } catch(e) {
+    errEl.textContent = 'Κάτι πήγε στραβά — δοκίμασε ξανά ή γράψε μας στο hello@codehouse.gr';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Στείλε πρόταση →';
+  }
+}
+</script>
 </body>
 </html>

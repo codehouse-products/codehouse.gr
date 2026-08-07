@@ -64,8 +64,8 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 1px 0 var(--line); padding-top: 12px; padding-bottom: 12px;
 }
 .nav-brand { display: inline-flex; align-items: center; gap: 9px; }
-.nav-logo-mark { height: 36px; width: auto; }
-.nav-logo { height: 22px; width: auto; }
+.nav-logo-mark { height: 36px; width: auto; opacity: .45; }
+.nav-logo { height: 22px; width: auto; opacity: .45; }
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a {
   font-size: 14.5px; font-weight: 600; color: var(--text-dim);

@@ -173,8 +173,8 @@ body.anim-on .pulse-dot { animation: pulse-dot 1.8s infinite; }
 
 /* hero code window */
 .hero-code {
-  position: absolute; right: clamp(20px, 6vw, 90px); top: 50%;
-  transform: translateY(-52%); z-index: 1; width: min(420px, 34vw);
+  position: absolute; right: clamp(20px, 6vw, 90px); top: clamp(96px, 12vw, 130px);
+  z-index: 1; width: min(420px, 34vw);
 }
 .code-window {
   background: rgba(0,0,0,.88); border: 1px solid var(--line); border-radius: 16px;

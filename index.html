@@ -615,5 +615,143 @@
   requestAnimationFrame(frame);
 })();
 </script>
+
+<!-- hero code typewriter animation -->
+<script>
+(function(){
+  'use strict';
+  var codeEl = document.querySelector('.code-body code');
+  if (!codeEl) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var SEGS = [
+    {cls:'c-key', t:'const'},
+    {t:' '},
+    {cls:'c-var', t:'site'},
+    {t:' = '},
+    {cls:'c-fn',  t:'codehouse'},
+    {t:'.'},
+    {cls:'c-fn',  t:'build'},
+    {t:'({\n  brand: '},
+    {cls:'c-str', t:"'η επιχείρησή σου'"},
+    {t:',\n  design: '},
+    {cls:'c-str', t:"'premium'"},
+    {t:',\n  mobile: '},
+    {cls:'c-bool',t:'true'},
+    {t:',\n  seo: '},
+    {cls:'c-bool',t:'true'},
+    {t:',\n  days: '},
+    {cls:'c-num', t:'3'},
+    {t:'\n});'}
+  ];
+
+  var LOGS = [
+    '// ⚡ Building...',
+    '// ✓ Design: premium',
+    '// ✓ Mobile: optimized',
+    '// ✓ SEO: ready',
+    '// ✓ Deploying to your-business.gr...'
+  ];
+
+  var RESULT   = '// → online. πελάτες. ✓';
+  var CHAR_SPD = 34;   /* ms per character  */
+  var LOG_GAP  = 210;  /* ms between logs   */
+  var HOLD     = 3400; /* ms before reset   */
+  var FADE     = 480;  /* ms fade-out       */
+
+  var _t = [];
+  function later(fn, ms){ var id = setTimeout(fn, ms); _t.push(id); }
+  function stopAll(){ _t.forEach(clearTimeout); _t = []; }
+
+  var caret, curSpan, curCls;
+
+  function reset(){
+    stopAll();
+    codeEl.innerHTML = '';
+    codeEl.style.cssText = '';
+    caret   = document.createElement('span');
+    caret.className = 'caret';
+    curSpan = null; curCls = null;
+    codeEl.appendChild(caret);
+  }
+
+  function put(ch, cls){
+    if (caret.parentNode) caret.parentNode.removeChild(caret);
+    if (ch === '\n'){
+      codeEl.appendChild(document.createTextNode('\n'));
+      curSpan = null; curCls = null;
+    } else if (cls){
+      if (cls !== curCls){
+        curSpan = document.createElement('span');
+        curSpan.className = cls;
+        codeEl.appendChild(curSpan);
+        curCls = cls;
+      }
+      curSpan.textContent += ch;
+    } else {
+      curCls = null; curSpan = null;
+      var last = codeEl.lastChild;
+      if (last && last.nodeType === 3){ last.textContent += ch; }
+      else { codeEl.appendChild(document.createTextNode(ch)); }
+    }
+    codeEl.appendChild(caret);
+  }
+
+  function typeCode(done){
+    var si = 0, ci = 0;
+    function tick(){
+      if (si >= SEGS.length){ done(); return; }
+      var seg = SEGS[si];
+      put(seg.t[ci], seg.cls || null);
+      if (++ci >= seg.t.length){ si++; ci = 0; }
+      later(tick, Math.max(16, CHAR_SPD + (Math.random() * 18 | 0) - 9));
+    }
+    tick();
+  }
+
+  function showLogs(done){
+    var i = 0;
+    function next(){
+      if (i >= LOGS.length){ done(); return; }
+      if (caret.parentNode) caret.parentNode.removeChild(caret);
+      codeEl.appendChild(document.createTextNode('\n'));
+      var sp = document.createElement('span');
+      sp.className = 'c-cm c-log';
+      sp.textContent = LOGS[i++];
+      codeEl.appendChild(sp);
+      codeEl.appendChild(caret);
+      later(next, LOG_GAP);
+    }
+    later(next, 280);
+  }
+
+  function showResult(done){
+    if (caret.parentNode) caret.parentNode.removeChild(caret);
+    codeEl.appendChild(document.createTextNode('\n'));
+    var sp = document.createElement('span');
+    sp.className = 'c-result';
+    sp.textContent = RESULT;
+    codeEl.appendChild(sp);
+    later(done, 500);
+  }
+
+  function cycle(){
+    reset();
+    typeCode(function(){
+      showLogs(function(){
+        showResult(function(){
+          later(function(){
+            codeEl.style.transition = 'opacity ' + FADE + 'ms';
+            codeEl.style.opacity = '0';
+            later(cycle, FADE);
+          }, HOLD);
+        });
+      });
+    });
+  }
+
+  later(cycle, 800);
+})();
+</script>
 </body>
 </html>

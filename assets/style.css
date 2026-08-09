@@ -464,6 +464,20 @@ section { padding: clamp(70px, 10vw, 130px) clamp(20px, 5vw, 56px); }
 body { -webkit-tap-highlight-color: transparent; }
 .btn, .opt span, .nav-cta, summary { touch-action: manipulation; }
 
+/* === hero code animation === */
+@keyframes log-appear {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+.c-log { display: inline; animation: log-appear .22s var(--ease) both; }
+
+@keyframes result-glow {
+  0%       { opacity: 0; text-shadow: none; }
+  35%      { opacity: 1; color: rgba(244,244,234,.35); }
+  80%, 100%{ color: var(--lime); text-shadow: 0 0 22px rgba(212,168,83,.55); }
+}
+.c-result { animation: result-glow 1.5s var(--ease) both; }
+
 /* reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

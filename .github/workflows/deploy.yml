@@ -19,6 +19,3 @@ jobs:
             cd /home/websites/artivoai.com
             git fetch origin
             git reset --hard origin/main
-            # Apply Nginx performance config
-            cp nginx-perf.conf /etc/nginx/conf.d/codehouse-perf.conf
-            nginx -t && systemctl reload nginx

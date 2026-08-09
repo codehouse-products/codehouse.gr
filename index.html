@@ -364,31 +364,35 @@
       <h2>Sites που ζουν <span class="accent">και αναπνέουν</span></h2>
       <p class="section-sub">Πραγματικά projects, σε δικά τους domain, που δουλεύουν τώρα. Δες τα live.</p>
     </header>
-    <div class="work-grid">
-      <a class="work-card reveal" href="https://www.gerakos.gr/" target="_blank" rel="noopener">
-        <div class="work-thumb work-thumb-gerakos"><img src="assets/img/work-gerakos.webp" alt="Gerakos Souvlaki site Σαντορίνη" loading="lazy" width="660" height="412"><span class="work-tag">Live</span></div>
-        <div class="work-info">
-          <h3>Gerakos — Σουβλάκι</h3>
-          <p>Site για ψητοπωλείο στη Σαντορίνη · δίγλωσσο για τουρίστες · κρατήσεις</p>
-          <span class="work-link">Δες το live ↗</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="https://www.highhopeathens.gr/" target="_blank" rel="noopener">
-        <div class="work-thumb work-thumb-hh"><img src="assets/img/work-highhope.webp" alt="High Hope specialty coffee site" loading="lazy" width="660" height="412"><span class="work-tag">Live</span></div>
-        <div class="work-info">
-          <h3>High Hope — Specialty Coffee</h3>
-          <p>Site &amp; QR μενού για specialty καφετέρια στη Γλυφάδα · 119 προϊόντα · custom 3D ποτήρι</p>
-          <span class="work-link">Δες το live ↗</span>
-        </div>
-      </a>
-      <a class="work-card reveal" href="/douleies/">
-        <div class="work-thumb work-thumb-anthos"><img src="assets/img/work-anthos.webp" alt="Δες όλες τις δουλειές μας" loading="lazy" width="660" height="412"><span class="work-tag">Portfolio</span></div>
-        <div class="work-info">
-          <h3>Όλες οι δουλειές μας</h3>
-          <p>Case studies με στοιχεία, demo εστίασης και τι φτιάχνουμε για κάθε τύπο επιχείρησης</p>
-          <span class="work-link">Δες το portfolio →</span>
-        </div>
-      </a>
+    <div class="work-grid work-slider">
+      <div class="swiper-wrapper">
+        <a class="work-card swiper-slide reveal" href="https://www.gerakos.gr/" target="_blank" rel="noopener">
+          <div class="work-thumb work-thumb-gerakos"><img src="assets/img/work-gerakos.webp" alt="Gerakos Souvlaki site Σαντορίνη" loading="lazy" width="660" height="412"><span class="work-tag">Live</span></div>
+          <div class="work-info">
+            <h3>Gerakos — Σουβλάκι</h3>
+            <p>Site για ψητοπωλείο στη Σαντορίνη · δίγλωσσο για τουρίστες · κρατήσεις</p>
+            <span class="work-link">Δες το live ↗</span>
+          </div>
+        </a>
+        <a class="work-card swiper-slide reveal" href="https://www.highhopeathens.gr/" target="_blank" rel="noopener">
+          <div class="work-thumb work-thumb-hh"><img src="assets/img/work-highhope.webp" alt="High Hope specialty coffee site" loading="lazy" width="660" height="412"><span class="work-tag">Live</span></div>
+          <div class="work-info">
+            <h3>High Hope — Specialty Coffee</h3>
+            <p>Site &amp; QR μενού για specialty καφετέρια στη Γλυφάδα · 119 προϊόντα · custom 3D ποτήρι</p>
+            <span class="work-link">Δες το live ↗</span>
+          </div>
+        </a>
+        <a class="work-card swiper-slide reveal" href="/douleies/">
+          <div class="work-thumb work-thumb-anthos"><img src="assets/img/work-anthos.webp" alt="Δες όλες τις δουλειές μας" loading="lazy" width="660" height="412"><span class="work-tag">Portfolio</span></div>
+          <div class="work-info">
+            <h3>Όλες οι δουλειές μας</h3>
+            <p>Case studies με στοιχεία, demo εστίασης και τι φτιάχνουμε για κάθε τύπο επιχείρησης</p>
+            <span class="work-link">Δες το portfolio →</span>
+          </div>
+        </a>
+      </div>
+      <div class="work-btn-prev" aria-label="Προηγούμενο">&#8592;</div>
+      <div class="work-btn-next" aria-label="Επόμενο">&#8594;</div>
     </div>
     <div class="work-more reveal">
       <a href="/douleies/" class="btn btn-ghost">Δες όλες τις δουλειές <span class="btn-arrow">→</span></a>
@@ -614,6 +618,22 @@
   window.addEventListener('resize', resize, { passive: true });
   requestAnimationFrame(frame);
 })();
+</script>
+
+<!-- work slider (mobile only) -->
+<script>
+window.addEventListener('load', function(){
+  if (typeof Swiper === 'undefined') return;
+  new Swiper('.work-slider', {
+    slidesPerView: 1,
+    spaceBetween: 18,
+    grabCursor: true,
+    navigation: { nextEl: '.work-btn-next', prevEl: '.work-btn-prev' },
+    breakpoints: {
+      820: { slidesPerView: 3, spaceBetween: 20, allowTouchMove: false, noSwiping: true }
+    }
+  });
+});
 </script>
 
 <!-- hero code typewriter animation -->

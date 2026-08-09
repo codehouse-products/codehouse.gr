@@ -344,72 +344,62 @@
   </nav>
 
   <!-- ΦΟΡΜΑ (αμέσως μετά το hero) -->
-  <section class="quiz" id="qr-form">
+  <section id="times">
     <header class="section-head reveal">
-      <p class="section-kicker">// Ζήτα προσφορά</p>
-      <h2>Πες μας για το μαγαζί σου <span class="accent">σε 1 λεπτό</span></h2>
-      <p class="section-sub">Συμπλήρωσε τρία βήματα και θα σου στείλουμε συγκεκριμένη πρόταση για ψηφιακό μενού QR — χωρίς καμία δέσμευση.</p>
+      <p class="section-kicker">// Τιμές</p>
+      <h2>Πόσο κοστίζει ένα <span class="accent">QR μενού</span></h2>
+      <p class="section-sub">Επίλεξε μηνιαία ή ετήσια χρέωση — με την ετήσια <strong style="color:var(--lime)">κερδίζεις 2 μήνες δωρεάν</strong>.</p>
     </header>
-    <div class="quiz-shell">
-      <div class="quiz-progress"><div class="quiz-progress-bar" id="qrBar" style="width:33.3%"></div></div>
-      <form id="qrForm" novalidate>
-        <input type="hidden" name="service" value="ΨΗΦΙΑΚΟ ΜΕΝΟΥ QR">
-        <input type="hidden" name="source" value="Landing /qr-menu/">
 
-        <fieldset class="quiz-step active" data-step="1">
-          <legend><span class="q-num">1/3</span> Τι επιχείρηση έχεις;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="business_type" value="Καφετέρια"><span><em>☕</em>Καφετέρια</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Εστιατόριο / Ταβέρνα"><span><em>🍽️</em>Εστιατόριο · Ταβέρνα</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Bar / Cocktail bar"><span><em>🍸</em>Bar · Cocktail bar</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Beach bar / Ξενοδοχείο"><span><em>🏖️</em>Beach bar · Ξενοδοχείο</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Fast food / Delivery"><span><em>🍔</em>Fast food · Delivery</span></label>
-            <label class="opt"><input type="radio" name="business_type" value="Άλλο"><span><em>✦</em>Κάτι άλλο</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="quiz-step" data-step="2">
-          <legend><span class="q-num">2/3</span> Πόσα προϊόντα έχει το μενού σου;</legend>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="products" value="Έως 40 προϊόντα"><span><em>🔹</em>Έως 40</span></label>
-            <label class="opt"><input type="radio" name="products" value="40-100 προϊόντα"><span><em>🔸</em>40 – 100</span></label>
-            <label class="opt"><input type="radio" name="products" value="100-200 προϊόντα"><span><em>🔶</em>100 – 200</span></label>
-            <label class="opt"><input type="radio" name="products" value="Πάνω από 200 προϊόντα"><span><em>🔷</em>Πάνω από 200</span></label>
-          </div>
-          <p class="q-sublabel">Θέλεις το μενού σε περισσότερες γλώσσες;</p>
-          <div class="opt-grid">
-            <label class="opt"><input type="radio" name="languages" value="Μόνο ελληνικά"><span><em>🇬🇷</em>Μόνο ελληνικά</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Ελληνικά + Αγγλικά"><span><em>🇬🇧</em>Ελληνικά + Αγγλικά</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Τρεις ή περισσότερες γλώσσες"><span><em>🌍</em>Τρεις ή περισσότερες</span></label>
-            <label class="opt"><input type="radio" name="languages" value="Δεν είμαι σίγουρος"><span><em>🤔</em>Δεν είμαι σίγουρος</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="quiz-step" data-step="3">
-          <legend><span class="q-num">3/3</span> Πώς να επικοινωνήσουμε;</legend>
-          <div class="field-grid">
-            <label class="field">Όνομα *<input type="text" name="name" required placeholder="π.χ. Γιώργος Παπαδόπουλος"></label>
-            <label class="field">Επιχείρηση<input type="text" name="company" placeholder="π.χ. Καφέ Όνειρο"></label>
-            <label class="field">Τηλέφωνο *<input type="tel" name="phone" required placeholder="π.χ. 69XXXXXXXX"></label>
-            <label class="field">Περιοχή<input type="text" name="area" placeholder="π.χ. Γλυφάδα, Σαντορίνη"></label>
-            <label class="field field-full">Email<input type="email" name="email" placeholder="π.χ. info@onoma.gr"></label>
-            <label class="field field-full">Κάτι άλλο που θες να μας πεις; (προαιρετικό)<textarea name="notes" rows="3" placeholder="π.χ. Θέλω και τυπωμένα καρτάκια με τον κωδικό WiFi..."></textarea></label>
-          </div>
-        </fieldset>
-
-        <div class="quiz-success" id="qrSuccess" hidden>
-          <div class="success-icon">✓</div>
-          <h3>Το λάβαμε!</h3>
-          <p>Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το ψηφιακό μενού QR του μαγαζιού σου.</p>
-          <p class="success-alt">Βιάζεσαι; Κάλεσέ μας τώρα: <a href="tel:+306986804138">698 680 4138</a></p>
-        </div>
-
-        <div class="quiz-nav" id="qrNav">
-          <button type="button" class="btn btn-ghost" id="qrPrev" disabled>← Πίσω</button>
-          <button type="button" class="btn btn-primary" id="qrNext">Επόμενο →</button>
-        </div>
-      </form>
+    <!-- Billing toggle -->
+    <div class="billing-toggle" id="billingToggle">
+      <span class="billing-label" id="lblMonthly">Μηνιαία</span>
+      <button class="toggle-track" id="toggleBtn" aria-checked="false" role="switch" aria-label="Εναλλαγή ετήσιας / μηνιαίας χρέωσης">
+        <span class="toggle-thumb"></span>
+      </button>
+      <span class="billing-label" id="lblAnnual">Ετήσια <span class="billing-badge">-2 μήνες δωρεάν</span></span>
     </div>
+
+    <div class="qr-price-grid">
+      <div class="qr-price reveal">
+        <p class="qr-price-flag">ΒΑΣΙΚΟ</p>
+        <h3>Essential</h3>
+        <p class="qr-price-tag">
+          <span class="price-monthly">9,90 € <em>/μήνα</em></span>
+          <span class="price-annual" hidden>99,00 € <em>/χρόνο</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 19,80€ — 2 μήνες δωρεάν</p>
+        <p>Για καφετέριες και μικρά μαγαζιά με ευθύ κατάλογο.</p>
+        <ul>
+          <li>Έως 40 προϊόντα</li>
+          <li>Custom σχεδιασμός στα χρώματά σου</li>
+          <li>Κατηγορίες και τιμές</li>
+          <li>QR καρτάκι έτοιμο για εκτύπωση</li>
+          <li>Μία γλώσσα</li>
+        </ul>
+        <a href="#qr-form" class="btn btn-ghost">Ζήτα προσφορά</a>
+      </div>
+      <div class="qr-price featured reveal">
+        <p class="qr-price-flag">ΔΗΜΟΦΙΛΕΣ</p>
+        <h3>Pro</h3>
+        <p class="qr-price-tag">
+          <span class="price-monthly">14,90 € <em>/μήνα</em></span>
+          <span class="price-annual" hidden>149,00 € <em>/χρόνο</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 29,80€ — 2 μήνες δωρεάν</p>
+        <p>Για εστιατόρια και bar που θέλουν το μενού να πουλάει.</p>
+        <ul>
+          <li>Έως 150 προϊόντα</li>
+          <li>Φωτογραφία σε κάθε πιάτο</li>
+          <li>Δύο γλώσσες (π.χ. EL / EN)</li>
+          <li>WiFi, τηλέφωνο και social στο ίδιο QR</li>
+          <li>Σύνδεση με Google Analytics</li>
+          <li>Σχεδιασμός καρτακίων για τα τραπέζια</li>
+        </ul>
+        <a href="#qr-form" class="btn btn-primary">Ζήτα προσφορά <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+    <p class="qr-price-note">Η ετήσια χρέωση γίνεται εφάπαξ και ισοδυναμεί με 10 μήνες — οι 2 είναι δώρο. Διάβασε επίσης το <a href="/blog/qr-menou-estiatorio-kafe/">αναλυτικό άρθρο για τα QR μενού</a>.</p>
   </section>
 
   <!-- ΤΙ ΕΙΝΑΙ / ΟΦΕΛΗ -->
@@ -517,64 +507,6 @@
   </section>
 
   <!-- ΤΙΜΕΣ -->
-  <section id="times">
-    <header class="section-head reveal">
-      <p class="section-kicker">// Τιμές</p>
-      <h2>Πόσο κοστίζει ένα <span class="accent">QR μενού</span></h2>
-      <p class="section-sub">Επίλεξε μηνιαία ή ετήσια χρέωση — με την ετήσια <strong style="color:var(--lime)">κερδίζεις 2 μήνες δωρεάν</strong>.</p>
-    </header>
-
-    <!-- Billing toggle -->
-    <div class="billing-toggle" id="billingToggle">
-      <span class="billing-label" id="lblMonthly">Μηνιαία</span>
-      <button class="toggle-track" id="toggleBtn" aria-checked="false" role="switch" aria-label="Εναλλαγή ετήσιας / μηνιαίας χρέωσης">
-        <span class="toggle-thumb"></span>
-      </button>
-      <span class="billing-label" id="lblAnnual">Ετήσια <span class="billing-badge">-2 μήνες δωρεάν</span></span>
-    </div>
-
-    <div class="qr-price-grid">
-      <div class="qr-price reveal">
-        <p class="qr-price-flag">ΒΑΣΙΚΟ</p>
-        <h3>Essential</h3>
-        <p class="qr-price-tag">
-          <span class="price-monthly">9,90 € <em>/μήνα</em></span>
-          <span class="price-annual" hidden>99,00 € <em>/χρόνο</em></span>
-        </p>
-        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 19,80€ — 2 μήνες δωρεάν</p>
-        <p>Για καφετέριες και μικρά μαγαζιά με ευθύ κατάλογο.</p>
-        <ul>
-          <li>Έως 40 προϊόντα</li>
-          <li>Custom σχεδιασμός στα χρώματά σου</li>
-          <li>Κατηγορίες και τιμές</li>
-          <li>QR καρτάκι έτοιμο για εκτύπωση</li>
-          <li>Μία γλώσσα</li>
-        </ul>
-        <a href="#qr-form" class="btn btn-ghost">Ζήτα προσφορά</a>
-      </div>
-      <div class="qr-price featured reveal">
-        <p class="qr-price-flag">ΔΗΜΟΦΙΛΕΣ</p>
-        <h3>Pro</h3>
-        <p class="qr-price-tag">
-          <span class="price-monthly">14,90 € <em>/μήνα</em></span>
-          <span class="price-annual" hidden>149,00 € <em>/χρόνο</em></span>
-        </p>
-        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Εξοικονόμηση 29,80€ — 2 μήνες δωρεάν</p>
-        <p>Για εστιατόρια και bar που θέλουν το μενού να πουλάει.</p>
-        <ul>
-          <li>Έως 150 προϊόντα</li>
-          <li>Φωτογραφία σε κάθε πιάτο</li>
-          <li>Δύο γλώσσες (π.χ. EL / EN)</li>
-          <li>WiFi, τηλέφωνο και social στο ίδιο QR</li>
-          <li>Σύνδεση με Google Analytics</li>
-          <li>Σχεδιασμός καρτακίων για τα τραπέζια</li>
-        </ul>
-        <a href="#qr-form" class="btn btn-primary">Ζήτα προσφορά <span class="btn-arrow">→</span></a>
-      </div>
-    </div>
-    <p class="qr-price-note">Η ετήσια χρέωση γίνεται εφάπαξ και ισοδυναμεί με 10 μήνες — οι 2 είναι δώρο. Διάβασε επίσης το <a href="/blog/qr-menou-estiatorio-kafe/">αναλυτικό άρθρο για τα QR μενού</a>.</p>
-  </section>
-
   <!-- ΤΙ ΝΑ ΠΡΟΣΕΞΕΙΣ -->
   <section id="prosoxi" style="background:var(--bg-2);border-top:1px solid var(--line)">
     <header class="section-head reveal">

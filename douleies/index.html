@@ -142,6 +142,29 @@
 .wk-proc-num { font-family: var(--font-head); font-size: 26px; font-weight: 700; color: var(--lime); line-height: 1; }
 .wk-proc-item h3 { font-family: var(--font-head); font-size: 17.5px; margin-bottom: 7px; }
 .wk-proc-item p { color: var(--text-dim); font-size: 14.5px; line-height: 1.7; }
+/* ── Category filter tabs ── */
+.wk-filter {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  max-width: 1160px; margin: 0 auto 36px;
+  padding: 0 clamp(20px, 5vw, 56px);
+}
+.wk-filter-btn {
+  font-family: var(--font-head); font-size: 13.5px; font-weight: 700;
+  padding: 10px 22px; border-radius: 999px; border: 1.5px solid var(--line);
+  background: transparent; color: var(--text-dim); cursor: pointer;
+  transition: border-color .22s, background .22s, color .22s, transform .18s;
+  letter-spacing: .03em;
+}
+.wk-filter-btn:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+.wk-filter-btn.active {
+  background: var(--lime); border-color: var(--lime);
+  color: var(--bg); transform: none;
+}
+/* hidden category card */
+.wk-case[hidden] { display: none !important; }
+.wk-case { transition: opacity .3s, transform .3s var(--ease); }
+.wk-case.fade-out { opacity: 0; transform: translateY(10px); }
+
 @media (max-width: 900px) {
   .wk-case { grid-template-columns: 1fr; }
   .wk-case.rev .wk-case-media { order: 0; }
@@ -151,6 +174,8 @@
   .wk-hero-actions .btn { width: 100%; justify-content: center; }
   .wk-case-actions .btn { width: 100%; justify-content: center; }
   .wk-proc-item { grid-template-columns: 1fr; gap: 8px; }
+  .wk-filter { gap: 6px; }
+  .wk-filter-btn { font-size: 12.5px; padding: 9px 16px; }
 }
 </style>
 <script type="application/ld+json">
@@ -349,8 +374,15 @@
       <p class="section-sub">Εστίαση, specialty coffee, transfer & tours — κάθε επιχείρηση χρειάζεται κάτι άλλο. Δες πώς λύσαμε το καθένα.</p>
     </header>
 
+    <!-- FILTER TABS -->
+    <div class="wk-filter" role="group" aria-label="Φίλτρο κατηγορίας">
+      <button class="wk-filter-btn active" data-filter="all">Όλα</button>
+      <button class="wk-filter-btn" data-filter="estiasi">🍽 Εστίαση</button>
+      <button class="wk-filter-btn" data-filter="tourismos">✈️ Τουρισμός</button>
+    </div>
+
     <!-- GERAKOS -->
-    <article class="wk-case reveal">
+    <article class="wk-case reveal" data-cat="estiasi">
       <div class="wk-case-media">
         <span class="wk-flag">LIVE</span>
         <img src="/douleies/img/work-gerakos.webp" width="800" height="461" alt="Ιστοσελίδα Gerakos Souvlaki στη Σαντορίνη — hero με γύρο σε ψησταριά και χρυσή τυπογραφία" fetchpriority="high" decoding="async">
@@ -375,7 +407,7 @@
     </article>
 
     <!-- HIGH HOPE -->
-    <article class="wk-case rev reveal">
+    <article class="wk-case rev reveal" data-cat="estiasi">
       <div class="wk-case-media">
         <span class="wk-flag">LIVE</span>
         <img src="/douleies/img/work-highhope.webp" width="800" height="461" alt="Ιστοσελίδα High Hope Specialty Coffee στη Γλυφάδα — custom 3D ποτήρι take away σε ανοιχτό πράσινο φόντο" loading="lazy" decoding="async">
@@ -401,7 +433,7 @@
     </article>
 
     <!-- AMMO TRANSFERS -->
-    <article class="wk-case rev reveal">
+    <article class="wk-case rev reveal" data-cat="tourismos">
       <div class="wk-case-media">
         <span class="wk-flag">LIVE</span>
         <img src="/douleies/img/work-ammo.webp" width="800" height="461" alt="Ιστοσελίδα AMMO Santorini Private Transfers & Tours — minimal λευκό design με booking widget" loading="lazy" decoding="async">
@@ -426,7 +458,7 @@
     </article>
 
     <!-- KC TOURS -->
-    <article class="wk-case reveal">
+    <article class="wk-case reveal" data-cat="tourismos">
       <div class="wk-case-media">
         <span class="wk-flag">LIVE</span>
         <img src="/douleies/img/work-kc.webp" width="800" height="461" alt="Ιστοσελίδα KC Tours Santorini Private Transfers — modern design με Mercedes-Benz fleet" loading="lazy" decoding="async">
@@ -451,7 +483,7 @@
     </article>
 
     <!-- ELITE TRANSFER -->
-    <article class="wk-case rev reveal">
+    <article class="wk-case rev reveal" data-cat="tourismos">
       <div class="wk-case-media">
         <span class="wk-flag">LIVE</span>
         <img src="/douleies/img/work-elite.webp" width="800" height="461" alt="Ιστοσελίδα Elite Transfer & Tours Σαντορίνη — luxury dark design με Santorini sunset hero" loading="lazy" decoding="async">
@@ -476,7 +508,7 @@
     </article>
 
     <!-- CAFE ANTHOS -->
-    <article class="wk-case reveal">
+    <article class="wk-case reveal" data-cat="estiasi">
       <div class="wk-case-media">
         <span class="wk-flag demo">DEMO</span>
         <img src="/douleies/img/work-anthos.webp" width="800" height="461" alt="Demo ιστοσελίδα Café Anthos — σκούρο premium θέμα με φωτογραφία εσωτερικού μπιστρό και χρυσή τυπογραφία" loading="lazy" decoding="async">
@@ -693,5 +725,25 @@
 })();
 </script>
 <script src="/assets/cookie_banner.min.js" defer></script>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.wk-filter-btn');
+  var cards = document.querySelectorAll('.wk-case[data-cat]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.dataset.filter;
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      cards.forEach(function(c){
+        if(f === 'all' || c.dataset.cat === f){
+          c.removeAttribute('hidden');
+        } else {
+          c.setAttribute('hidden','');
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

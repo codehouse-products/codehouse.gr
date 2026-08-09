@@ -174,7 +174,15 @@ body.anim-on .pulse-dot { animation: pulse-dot 1.8s infinite; }
 /* hero code window */
 .hero-code {
   position: absolute; right: clamp(20px, 6vw, 90px); top: clamp(96px, 12vw, 130px);
+  bottom: 90px; /* stop before marquee */
   z-index: 1; width: min(420px, 34vw);
+  overflow: hidden;
+}
+.hero-code .code-window {
+  height: 100%; display: flex; flex-direction: column;
+}
+.hero-code .code-body {
+  flex: 1; overflow: hidden;
 }
 .code-window {
   background: rgba(0,0,0,.88); border: 1px solid var(--line); border-radius: 16px;
@@ -442,9 +450,12 @@ section { padding: clamp(70px, 10vw, 130px) clamp(20px, 5vw, 56px); }
 /* mobile: show compact code window under hero content instead of hiding it */
 @media (max-width: 1100px) {
   .hero-code {
-    display: block; position: relative; right: auto; top: auto; transform: none;
+    display: block; position: relative; right: auto; top: auto; bottom: auto; transform: none;
     width: min(440px, 100%); margin: 42px auto 0; z-index: 2;
+    overflow: visible;
   }
+  .hero-code .code-window { height: auto; }
+  .hero-code .code-body { flex: none; overflow: visible; }
   .code-window { transform: none !important; }
   .code-body { font-size: 12.5px; padding: 16px; }
 }

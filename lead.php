@@ -4,13 +4,14 @@
  * Αποθηκεύει κάθε υποβολή σε JSON αρχείο (leads/leads.jsonl)
  * και στέλνει email ειδοποίηση στο hello@codehouse.gr μέσω Zoho Mail API (HTTPS).
  */
-header('Content-Type: application/json; charset=utf-8');
-
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['ok' => false, 'error' => 'method']);
+    // lead.php is a form endpoint, not a content page. Send direct visits
+    // to the public offer page instead of exposing a confusing 405 response.
+    header('Location: /prosfora/', true, 301);
     exit;
 }
+
+header('Content-Type: application/json; charset=utf-8');
 
 $raw = file_get_contents('php://input');
 $data = json_decode($raw, true);

@@ -1,0 +1,232 @@
+PROMPT ΓΙΑ REPLIT — CODEHOUSE.GR
+
+Πρόσθεσε στο υπάρχον website codehouse.gr ένα νέο blog article με θέμα:
+
+«Μπορώ να πάρω δωρεάν ιστοσελίδα; Η αλήθεια πίσω από το “δωρεάν website”»
+
+ΥΠΟΧΡΕΩΤΙΚΗ ΔΙΑΔΙΚΑΣΙΑ ΕΓΚΡΙΣΗΣ
+
+1. Read-only inspect
+
+Πριν τροποποιήσεις οτιδήποτε, κάνε πλήρη read-only έλεγχο του project:
+
+* framework, δομή και Git status
+* υπάρχον blog/CMS, content model και publishing workflow
+* router, routes, sitemap και media manager
+* layouts, templates, components και design system
+* metadata, schema και internal linking patterns
+* διαθέσιμα tests, build, lint και validation scripts
+* τυχόν uncommitted ή άσχετες αλλαγές
+
+Μην δημιουργήσεις ή τροποποιήσεις αρχεία, CMS records, media ή περιεχόμενο σε αυτή τη φάση.
+
+2. Σχέδιο αλλαγών
+
+Σταμάτησε και παρουσίασε αναλυτικό σχέδιο που να περιλαμβάνει:
+
+* αρχιτεκτονική και υπάρχοντα components που θα επαναχρησιμοποιηθούν
+* αρχεία, CMS records και media που ενδέχεται να δημιουργηθούν ή τροποποιηθούν
+* προτεινόμενο route και slug, αφού ελεγχθούν για duplicates
+* metadata, structured data, internal links και sitemap
+* backup ή Git checkpoint
+* tests και validation checks
+* πιθανούς κινδύνους ή στοιχεία που απαιτούν επιβεβαίωση
+* εκτίμηση του τελικού diff και επιβεβαίωση ότι δεν περιλαμβάνει άσχετες αλλαγές
+
+Μην προχωρήσεις χωρίς ρητή έγκριση. Αν χρειαστεί αλλαγή εκτός εγκεκριμένου σχεδίου, σταμάτησε και ζήτησε νέα έγκριση.
+
+ΑΣΦΑΛΕΙΑ ΚΑΙ ΠΡΟΣΤΑΣΙΑ ΥΠΑΡΧΟΝΤΟΣ WEBSITE
+
+Μετά την έγκριση:
+
+* Δημιούργησε Git checkpoint ή ασφαλές backup χωρίς να συμπεριλάβεις άσχετες αλλαγές.
+* Χρησιμοποίησε αποκλειστικά το υπάρχον CMS, blog architecture, content model, schema, metadata, media workflow και publishing process.
+* Μην δημιουργήσεις δεύτερο CMS, blog system, schema mechanism ή παράλληλο workflow.
+* Μην αλλάξεις υπάρχουσες σελίδες, URLs, routes, navigation, header, footer, CSS, global styles, components, forms, performance settings ή λειτουργίες.
+* Μην δημιουργήσεις duplicate route, slug, content ή sitemap entry.
+* Μην επινοήσεις authors, prices, services, testimonials, ratings, certifications, URLs, company claims ή schema στοιχεία.
+* Πρόσθεσε μόνο ό,τι απαιτείται για το νέο άρθρο και ακολούθησε το υπάρχον design, typography, spacing και responsive behavior.
+
+ΠΕΡΙΕΧΟΜΕΝΟ ΑΡΘΡΟΥ
+
+Δημιούργησε original, factual, people-first και authoritative άρθρο περίπου 2.000–3.000 λέξεων, μόνο εφόσον το μήκος εξυπηρετεί ουσιαστικά το θέμα.
+
+Το άρθρο πρέπει να:
+
+* απαντά άμεσα στην ερώτηση «Μπορώ να πάρω δωρεάν ιστοσελίδα;»
+* εξηγεί τι σημαίνει πραγματικά «δωρεάν ιστοσελίδα»
+* αναλύει domain, hosting, SSL, email, maintenance, security, backups, SEO και support
+* συγκρίνει δωρεάν και επαγγελματικές λύσεις χωρίς απόλυτες κρίσεις
+* εξηγεί πότε αξίζει δωρεάν λύση και πότε χρειάζεται επαγγελματική ιστοσελίδα
+* εξηγεί ότι website δεν σημαίνει αυτόματα traffic ή πελάτες
+* βοηθά τον αναγνώστη να πάρει τεκμηριωμένη επιχειρηματική απόφαση
+* οδηγεί φυσικά στις σχετικές υπηρεσίες της Codehouse, χωρίς μη επαληθευμένους ισχυρισμούς
+
+Χρησιμοποίησε ένα H1, σωστή H2/H3 ιεραρχία, σύντομες παραγράφους, bullets, πίνακες, checklists και FAQ.
+
+Περιέλαβε ενότητες για:
+
+* τι σημαίνει δωρεάν ιστοσελίδα
+* κρυφά ή πρόσθετα κόστη
+* δωρεάν vs επαγγελματική λύση
+* πότε αξίζει κάθε επιλογή
+* πραγματικό κόστος ιστοσελίδας
+* website, SEO, visibility, trust και conversions
+* χαρακτηριστικά σύγχρονης επαγγελματικής ιστοσελίδας
+* ερωτήσεις πριν την αγορά website
+* συμπέρασμα
+
+Περιέλαβε comparison table με:
+
+Παράγοντας	Δωρεάν λύση	Επαγγελματική λύση
+Domain		
+Hosting		
+Design		
+Customization		
+SEO		
+Performance		
+Security		
+Support		
+Scalability		
+Business credibility		
+Conversions		
+
+Περιέλαβε επίσης τη λογική:
+
+Website → Technical SEO → Content → Search visibility → UX → Trust → Conversion → Leads / Customers
+
+και checklist με mobile-first design, performance, HTTPS, navigation, CTA, forms, SEO, structured data, analytics, Search Console, accessibility, security, backups και maintenance.
+
+SEO ΚΑΙ GEO
+
+Κύριο keyword:
+
+δωρεάν ιστοσελίδα
+
+Χρησιμοποίησε φυσικά σχετικά terms όπως δωρεάν website, δωρεάν ιστοσελίδα για επιχείρηση, κατασκευή ιστοσελίδας, κόστος ιστοσελίδας, επαγγελματική ιστοσελίδα, SEO, hosting, domain, SSL και συντήρηση.
+
+Για SEO/GEO:
+
+* δώσε άμεσες απαντήσεις νωρίς
+* χρησιμοποίησε descriptive headings, bullets, tables και σαφείς ορισμούς
+* κράτησε σύντομες παραγράφους
+* απόφυγε keyword stuffing και vague marketing language
+* μην παρουσιάσεις μη επαληθευμένες πληροφορίες ως γεγονότα
+* απάντησε καθαρά σε ερωτήσεις όπως «Αξίζει δωρεάν ιστοσελίδα;», «Τι πληρώνω;», «Χρειάζομαι domain, hosting ή SEO;»
+
+METADATA ΚΑΙ STRUCTURED DATA
+
+Χρησιμοποίησε τον υπάρχοντα μηχανισμό του project για:
+
+* μοναδικό SEO title έως περίπου 60 χαρακτήρες
+* meta description περίπου 150–160 χαρακτήρες
+* SEO-friendly slug, ενδεικτικά /blog/dorean-istoselida
+* ένα H1 με τον τίτλο του άρθρου
+* canonical URL
+* Open Graph και Twitter/X metadata
+* robots directives
+* breadcrumbs
+* Article ή BlogPosting Schema
+* BreadcrumbList Schema
+* FAQPage Schema μόνο εφόσον υποστηρίζεται και είναι συμβατό με τις τρέχουσες οδηγίες
+
+Μην δημιουργήσεις fake authors, reviews, ratings ή organization data.
+
+FAQ
+
+Πρόσθεσε 8–10 πραγματικές ερωτήσεις με σύντομες και ακριβείς απαντήσεις, όπως:
+
+* Μπορώ να φτιάξω πραγματικά δωρεάν ιστοσελίδα;
+* Είναι κατάλληλη για επιχείρηση;
+* Ποια είναι η διαφορά δωρεάν και επαγγελματικής λύσης;
+* Πόσο κοστίζει μια επαγγελματική ιστοσελίδα;
+* Χρειάζομαι domain ή hosting;
+* Μπορεί δωρεάν ιστοσελίδα να εμφανιστεί στη Google;
+* Χρειάζεται SEO;
+* Πόσο συχνά χρειάζεται συντήρηση;
+* Πότε χρειάζεται ανανέωση;
+
+Χρησιμοποίησε υπάρχον FAQ component, εφόσον υπάρχει.
+
+INTERNAL LINKS
+
+Μετά από έλεγχο των routes και CMS URLs:
+
+* πρόσθεσε semantic links μόνο προς πραγματικές σχετικές σελίδες
+* σύνδεσε, εφόσον υπάρχουν, υπηρεσίες κατασκευής ιστοσελίδων, SEO, maintenance ή digital services
+* πρόσθεσε 2–4 σχετικά blog links
+* χρησιμοποίησε descriptive anchor text
+* μην επινοήσεις ή αλλάξεις URLs
+
+MEDIA, UX ΚΑΙ PERFORMANCE
+
+Χρησιμοποίησε υπάρχον κατάλληλο asset ή πρόσθεσε μία μοναδική hero εικόνα μέσω του υπάρχοντος media manager.
+
+Η εικόνα πρέπει να:
+
+* μην περιέχει ανθρώπινα πρόσωπα ή stock-photo αισθητική
+* ταιριάζει με το ύφος της Codehouse
+* σχετίζεται με website/digital business
+* είναι optimized, responsive και σε σύγχρονο format
+* έχει descriptive filename και φυσικό alt text
+
+Ακολούθησε το υπάρχον design και χρησιμοποίησε διαθέσιμα components για table of contents, answer boxes, comparison table, checklist, FAQ και CTA.
+
+Μην προσθέσεις unnecessary JavaScript, βαριές dependencies, νέα packages, υπερβολικά animations ή global style changes.
+
+CTA ΚΑΙ E-E-A-T
+
+Πρόσθεσε φυσικό CTA στο τέλος, χρησιμοποιώντας υπάρχον route ή form:
+
+Έχεις ήδη ιστοσελίδα αλλά δεν ξέρεις αν πραγματικά λειτουργεί σωστά;
+
+Ζήτησε αξιολόγηση της ιστοσελίδας σου
+
+Χρησιμοποίησε μόνο πραγματικά στοιχεία του website ή CMS για author και E-E-A-T. Μην δημιουργήσεις αυθαίρετο author profile.
+
+SITEMAP ΚΑΙ VALIDATION
+
+Χρησιμοποίησε τον υπάρχοντα dynamic sitemap mechanism. Μην τροποποιήσεις χειροκίνητα το sitemap αν δημιουργείται αυτόματα.
+
+Μετά την υλοποίηση εκτέλεσε και κατέγραψε:
+
+* tests, build και lint
+* route και CMS publishing check
+* broken-link check
+* structured-data validation
+* sitemap και duplicate-entry check
+* console-error check
+* mobile, tablet και desktop έλεγχο
+* accessibility και readability check
+* image optimization check
+* SEO metadata, canonical, indexability, breadcrumbs και social metadata
+* έλεγχο για duplicate content, keyword stuffing και αυθαίρετους ισχυρισμούς
+* έλεγχο ότι δεν επηρεάστηκαν υπάρχουσες σελίδες, routes, components, forms, navigation ή global settings
+* έλεγχο ότι το τελικό diff περιλαμβάνει μόνο εγκεκριμένες αλλαγές
+
+Δημοσίευσε το άρθρο μόνο μετά την επιτυχή ολοκλήρωση των ελέγχων.
+
+ΤΕΛΙΚΗ ΑΝΑΦΟΡΑ
+
+Παρουσίασε αναφορά με:
+
+* δημιουργημένα και τροποποιημένα αρχεία
+* route, slug, CMS record και status δημοσίευσης
+* metadata, schema και media asset
+* sitemap αποτέλεσμα
+* Git branch/checkpoint, commit hash ή backup location
+* tests, build, lint και validation results
+* warnings, αποτυχίες ή εκκρεμότητες που απαιτούν χειροκίνητη επιβεβαίωση
+
+ΥΠΟΧΡΕΩΤΙΚΗ ΣΕΙΡΑ
+
+1. Read-only inspect
+2. Παρουσίαση σχεδίου
+3. Ρητή έγκριση
+4. Backup ή Git checkpoint
+5. Υλοποίηση μόνο εγκεκριμένων αλλαγών
+6. Tests και validation
+7. Δημοσίευση
+8. Τελική αναφορά
+
+Μην τροποποιήσεις αρχεία, δημιουργήσεις CMS records, ανεβάσεις media ή δημοσιεύσεις περιεχόμενο πριν ολοκληρωθούν το inspect, το σχέδιο και η ρητή έγκριση.

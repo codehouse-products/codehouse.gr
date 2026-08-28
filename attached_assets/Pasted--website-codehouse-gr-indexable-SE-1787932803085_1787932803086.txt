@@ -1,0 +1,625 @@
+
+
+
+
+Θέλω να δημιουργήσεις στο υπάρχον website codehouse.gr μία νέα, αυτόνομη και πλήρως indexable SEO landing page με URL:
+
+https://codehouse.gr/dimioyrgia-site
+
+Ο βασικός στόχος είναι να δημιουργηθεί ένα νέο SEO entry point που μπορεί να εμφανιστεί οργανικά στη Google όταν κάποιος αναζητά όρους όπως:
+
+* δημιουργία site
+* δημιουργία website
+* δημιουργία ιστοσελίδας
+* δημιουργία site για επιχείρηση
+* επαγγελματικό site
+* επαγγελματική ιστοσελίδα
+* κατασκευή site
+* κατασκευή ιστοσελίδας
+
+⸻
+
+⚠️ ΠΟΛΥ ΣΗΜΑΝΤΙΚΟ — ΜΗΝ ΑΛΛΑΞΕΙΣ ΤΟ ΥΠΑΡΧΟΝ WEBSITE
+
+Πριν κάνεις οποιαδήποτε αλλαγή, κάνε read-only inspection του project.
+
+Εντόπισε:
+
+* framework
+* router
+* υπάρχοντα routes
+* homepage
+* header
+* navigation
+* footer
+* υπάρχον blog architecture
+* SEO metadata system
+* sitemap
+* structured data
+* reusable components
+* contact/CTA components
+* design system
+* image/media system
+
+Μην τροποποιήσεις τίποτα κατά τη διάρκεια του inspection.
+
+Μετά το inspection, παρουσίασε σχέδιο αλλαγών και περίμενε ρητή έγκριση πριν προχωρήσεις.
+
+⸻
+
+1. ΝΕΟ URL
+
+Δημιούργησε:
+
+/dimioyrgia-site
+
+Το URL πρέπει να λειτουργεί κανονικά και να επιστρέφει:
+
+HTTP 200 OK
+
+Μην αλλάξεις κανένα υπάρχον URL.
+
+Ιδιαίτερα:
+
+ΜΗΝ αλλάξεις το υπάρχον homepage URL.
+
+⸻
+
+2. Η ΣΕΛΙΔΑ ΠΡΕΠΕΙ ΝΑ ΕΙΝΑΙ INDEXABLE
+
+Η σελίδα πρέπει να μπορεί να ευρετηριαστεί από Google και άλλες search engines.
+
+Επομένως:
+
+* ΜΗΝ χρησιμοποιήσεις noindex
+* ΜΗΝ χρησιμοποιήσεις nofollow
+* ΜΗΝ την αποκλείσεις στο robots.txt
+* ΜΗΝ κάνεις redirect προς την homepage
+* ΜΗΝ χρησιμοποιήσεις canonical προς την homepage
+
+Χρησιμοποίησε self-referencing canonical:
+
+https://codehouse.gr/dimioyrgia-site
+
+Η σελίδα πρέπει να είναι crawlable και indexable.
+
+⸻
+
+3. ΔΕΝ ΘΕΛΩ ΝΑ ΕΜΦΑΝΙΖΕΤΑΙ ΩΣ ΕΠΙΛΟΓΗ ΣΤΟ MENU
+
+Αυτό είναι πολύ σημαντικό.
+
+Το /dimioyrgia-site ΔΕΝ πρέπει να προστεθεί ως link στο υπάρχον website navigation.
+
+Μην το προσθέσεις σε:
+
+* Header navigation
+* Main menu
+* Footer links
+* Dropdown menus
+* Services navigation
+* Homepage navigation
+* Sitewide navigation
+
+Ο χρήστης που επισκέπτεται κανονικά το codehouse.gr δεν πρέπει να βλέπει κάποια επιλογή:
+
+«Δημιουργία Site»
+
+μέσα στο υπάρχον menu.
+
+⸻
+
+4. ΟΜΩΣ ΟΤΑΝ Ο ΧΡΗΣΤΗΣ ΜΠΕΙ ΣΤΗ ΣΕΛΙΔΑ
+
+Εδώ θέλω ιδιαίτερη προσοχή.
+
+Όταν ένας χρήστης επισκεφθεί:
+
+codehouse.gr/dimioyrgia-site
+
+θέλω να βλέπει κανονικά το υπάρχον Header και Navigation του Codehouse.
+
+Δηλαδή:
+
+Google
+↓
+/dimioyrgia-site
+↓
+Κανονικό Header Codehouse
+↓
+Ο χρήστης μπορεί να πατήσει το Logo ή «Αρχική»
+↓
+Homepage
+
+Επομένως:
+
+ΜΗΝ κρύψεις το Header.
+
+ΜΗΝ δημιουργήσεις ξεχωριστό header.
+
+ΜΗΝ δημιουργήσεις ξεχωριστό menu.
+
+ΜΗΝ αφαιρέσεις το υπάρχον navigation.
+
+Απλώς μην προσθέσεις το /dimioyrgia-site ως νέα επιλογή μέσα στο υπάρχον menu.
+
+Η νέα landing page πρέπει να χρησιμοποιεί το υπάρχον global layout/header/footer.
+
+⸻
+
+5. SEO CONTENT
+
+Δημιούργησε original, useful και people-first περιεχόμενο περίπου 1.500–2.000 λέξεων, μόνο εφόσον το μήκος εξυπηρετεί το search intent.
+
+Primary keyword:
+
+δημιουργία site
+
+Secondary/semantic terms:
+
+* δημιουργία website
+* δημιουργία ιστοσελίδας
+* δημιουργία site για επιχείρηση
+* επαγγελματικό site
+* επαγγελματική ιστοσελίδα
+* κατασκευή site
+* κατασκευή ιστοσελίδας
+* website για επιχείρηση
+* σχεδιασμός ιστοσελίδας
+* κόστος website
+* SEO ιστοσελίδας
+* responsive website
+* mobile friendly website
+* domain
+* hosting
+* SSL
+* συντήρηση ιστοσελίδας
+
+Μην κάνεις keyword stuffing.
+
+Χρησιμοποίησε φυσική γλώσσα και semantic SEO.
+
+⸻
+
+6. H1
+
+Χρησιμοποίησε μόνο ένα H1:
+
+Δημιουργία Site για την Επιχείρησή σας
+
+Στην εισαγωγή απάντησε άμεσα:
+
+Τι είναι η δημιουργία site, τι χρειάζεται μία επιχείρηση και γιατί ένα σύγχρονο website πρέπει να σχεδιάζεται με βάση τόσο τον χρήστη όσο και τις μηχανές αναζήτησης.
+
+⸻
+
+7. ΠΕΡΙΕΧΟΜΕΝΟ
+
+Δημιούργησε τις παρακάτω βασικές ενότητες:
+
+Τι είναι η δημιουργία site;
+
+Τι περιλαμβάνει η δημιουργία ενός επαγγελματικού site;
+
+Ανάπτυξε:
+
+* design
+* development
+* responsive design
+* mobile optimization
+* domain
+* hosting
+* SSL
+* SEO
+* analytics
+* security
+* maintenance
+
+Πώς δημιουργείται ένα site βήμα προς βήμα;
+
+1. Ανάλυση επιχείρησης
+2. Στρατηγική
+3. Δομή
+4. UX/UI
+5. Development
+6. Mobile optimization
+7. Technical SEO
+8. Content
+9. Testing
+10. Launch
+11. Monitoring
+12. Maintenance
+
+Τι πρέπει να έχει ένα σύγχρονο επαγγελματικό site;
+
+Χρησιμοποίησε checklist:
+
+✓ Responsive design
+✓ Mobile-first experience
+✓ Fast loading
+✓ HTTPS
+✓ SEO-ready architecture
+✓ Clear navigation
+✓ Strong CTA
+✓ Contact forms
+✓ Analytics
+✓ Search Console
+✓ Structured data
+✓ Security
+✓ Backups
+✓ Maintenance
+
+Πόσο κοστίζει η δημιουργία ενός site;
+
+Μην επινοήσεις τιμές.
+
+Εξήγησε ότι το κόστος εξαρτάται από:
+
+* μέγεθος
+* αριθμό σελίδων
+* design
+* functionality
+* integrations
+* CMS
+* e-commerce
+* custom development
+* SEO
+* maintenance
+
+Δημιουργία site ή έτοιμο template;
+
+Κάνε αντικειμενική σύγκριση.
+
+Μπορεί ένα site να φέρει πελάτες;
+
+Εξήγησε ότι το website από μόνο του δεν εγγυάται πελάτες.
+
+Χρησιμοποίησε:
+
+Website → Technical SEO → Content → Search Visibility → Traffic → UX → Trust → Conversion → Leads
+
+Γιατί το SEO πρέπει να ξεκινά από την κατασκευή του site;
+
+Εξήγησε:
+
+* crawlability
+* indexability
+* URL structure
+* headings
+* metadata
+* internal linking
+* structured data
+* performance
+* mobile optimization
+
+⸻
+
+8. GEO / AI SEARCH OPTIMIZATION
+
+Θέλω το περιεχόμενο να είναι optimized και για AI/answer engines.
+
+Χρησιμοποίησε:
+
+* direct answers
+* clear definitions
+* question-based headings
+* concise paragraphs
+* bullet lists
+* comparison tables
+* semantic terminology
+* factual statements
+
+Απάντησε φυσικά σε ερωτήματα όπως:
+
+Τι είναι η δημιουργία site;
+
+Πώς δημιουργείται ένα επαγγελματικό site;
+
+Πόσο κοστίζει η δημιουργία site;
+
+Τι χρειάζεται μία επιχείρηση για να δημιουργήσει website;
+
+Χρειάζεται SEO ένα νέο site;
+
+Πόσο χρόνο χρειάζεται η δημιουργία ενός site;
+
+⸻
+
+9. FAQ
+
+Πρόσθεσε FAQ section με 8–10 πραγματικές ερωτήσεις.
+
+Ενδεικτικά:
+
+* Τι είναι η δημιουργία site;
+* Πόσο κοστίζει ένα επαγγελματικό site;
+* Πόσο χρόνο χρειάζεται η δημιουργία ενός website;
+* Χρειάζομαι domain;
+* Χρειάζομαι hosting;
+* Χρειάζεται SEO ένα νέο site;
+* Μπορεί ένα site να εμφανιστεί στη Google;
+* Χρειάζεται συντήρηση ένα website;
+
+Οι απαντήσεις να είναι σύντομες, ακριβείς και χρήσιμες.
+
+⸻
+
+10. SEO METADATA
+
+Δημιούργησε:
+
+Title
+
+Δημιουργία Site για Επιχειρήσεις | Codehouse
+
+ή καλύτερη παραλλαγή εντός λογικού title length.
+
+Meta Description
+
+Δημιούργησε φυσικό meta description που περιλαμβάνει το keyword:
+
+δημιουργία site
+
+και εξηγεί στον χρήστη τι θα βρει στη σελίδα.
+
+Canonical
+
+https://codehouse.gr/dimioyrgia-site
+
+Open Graph
+
+Δημιούργησε σωστά:
+
+* og:title
+* og:description
+* og:url
+* og:image
+
+Twitter/X metadata
+
+Χρησιμοποίησε το υπάρχον implementation.
+
+⸻
+
+11. STRUCTURED DATA
+
+Χρησιμοποίησε το υπάρχον schema mechanism του website.
+
+Όπου είναι πραγματικά κατάλληλο, χρησιμοποίησε:
+
+* WebPage
+* BreadcrumbList
+* Organization
+* FAQPage
+
+Μην δημιουργήσεις fake:
+
+* reviews
+* ratings
+* prices
+* testimonials
+* authors
+* certifications
+* statistics
+
+⸻
+
+12. INTERNAL LINKS
+
+Κάνε scan στα υπάρχοντα routes.
+
+Πρόσθεσε contextual internal links μόνο προς πραγματικές υπάρχουσες σελίδες.
+
+Ιδανικά προς σχετικές υπηρεσίες:
+
+* κατασκευή ιστοσελίδων
+* SEO
+* website maintenance
+* digital services
+
+μόνο εφόσον υπάρχουν.
+
+ΜΗΝ δημιουργήσεις sitewide link προς:
+
+/dimioyrgia-site
+
+Η σελίδα πρέπει να παραμείνει εκτός του κανονικού navigation.
+
+⸻
+
+13. CTA
+
+Στο τέλος πρόσθεσε φυσικό CTA.
+
+Προτεινόμενο:
+
+Θέλεις ένα site σχεδιασμένο για την επιχείρησή σου;
+
+Button:
+
+Μίλησε με την Codehouse
+
+Χρησιμοποίησε υπάρχον contact/service route.
+
+Μην δημιουργήσεις νέο contact system.
+
+⸻
+
+14. DESIGN
+
+Η νέα σελίδα πρέπει να χρησιμοποιεί το υπάρχον:
+
+* Header
+* Navigation
+* Footer
+* Typography
+* Buttons
+* Components
+* Spacing
+* Colors
+* Responsive behavior
+
+ΜΗΝ κάνεις redesign.
+
+ΜΗΝ αλλάξεις global CSS.
+
+ΜΗΝ δημιουργήσεις νέο header.
+
+ΜΗΝ δημιουργήσεις νέο menu.
+
+⸻
+
+15. IMAGE
+
+Πρόσθεσε μία μοναδική hero image σχετική με:
+
+δημιουργία website / digital business
+
+Χωρίς ανθρώπινα πρόσωπα.
+
+Χρησιμοποίησε το υπάρχον media workflow.
+
+Βελτιστοποίησε:
+
+* format
+* dimensions
+* compression
+* responsive loading
+* filename
+* alt text
+
+⸻
+
+16. SITEMAP
+
+Επειδή η σελίδα πρέπει να είναι indexable:
+
+Πρόσθεσε το:
+
+/dimioyrgia-site
+
+στο υπάρχον XML sitemap mechanism.
+
+Εάν το sitemap είναι dynamic, χρησιμοποίησε τον υπάρχοντα μηχανισμό.
+
+Μην δημιουργήσεις δεύτερο sitemap.
+
+⸻
+
+17. PERFORMANCE
+
+Μην προσθέσεις unnecessary:
+
+* packages
+* JavaScript
+* libraries
+* dependencies
+* animations
+
+Η νέα σελίδα πρέπει να είναι lightweight και γρήγορη.
+
+⸻
+
+18. ΤΕΛΙΚΟΣ ΕΛΕΓΧΟΣ INDEXABILITY
+
+Επιβεβαίωσε:
+
+✓ HTTP 200
+✓ Indexable
+✓ Crawlable
+✓ No noindex
+✓ No robots blocking
+✓ Self canonical
+✓ Sitemap inclusion
+✓ SEO title
+✓ Meta description
+✓ Structured data
+✓ Open Graph
+
+⸻
+
+19. ΤΕΛΙΚΟΣ ΕΛΕΓΧΟΣ NAVIGATION
+
+Επιβεβαίωσε:
+
+✓ /dimioyrgia-site ΔΕΝ εμφανίζεται στο Header menu
+✓ /dimioyrgia-site ΔΕΝ εμφανίζεται στο Footer
+✓ /dimioyrgia-site ΔΕΝ εμφανίζεται στη Homepage
+✓ /dimioyrgia-site ΔΕΝ εμφανίζεται σε sitewide navigation
+
+ΑΛΛΑ:
+
+✓ Η σελίδα χρησιμοποιεί το κανονικό Header
+✓ Η σελίδα χρησιμοποιεί το κανονικό Navigation
+✓ Το Logo οδηγεί κανονικά στην Homepage
+✓ Το «Αρχική» λειτουργεί κανονικά
+✓ Ο χρήστης μπορεί να επιστρέψει στην Homepage
+✓ Όλα τα υπάρχοντα menu links λειτουργούν κανονικά
+
+⸻
+
+20. PROTECTION OF EXISTING WEBSITE
+
+Πριν το implementation δημιούργησε Git checkpoint/commit ή ασφαλές backup.
+
+Μετά την υλοποίηση επιβεβαίωσε:
+
+✓ Homepage unchanged
+✓ Existing URLs unchanged
+✓ Existing navigation unchanged
+✓ Existing header unchanged
+✓ Existing footer unchanged
+✓ Existing forms unchanged
+✓ Existing blogs unchanged
+✓ Existing SEO unchanged
+✓ No broken functionality
+
+⸻
+
+21. ΤΕΛΙΚΗ ΑΠΑΙΤΗΣΗ
+
+Το αποτέλεσμα πρέπει να είναι:
+
+Google Search
+
+↓
+
+codehouse.gr/dimioyrgia-site
+
+↓
+
+SEO landing page
+
+↓
+
+Ο χρήστης βλέπει το κανονικό Codehouse Header/Menu
+
+↓
+
+Μπορεί να πατήσει Logo / Αρχική
+
+↓
+
+codehouse.gr
+
+Η σελίδα /dimioyrgia-site πρέπει να είναι:
+
+INDEXABLE + CRAWLABLE + SEO OPTIMIZED + GEO OPTIMIZED
+
+αλλά:
+
+NOT VISIBLE AS A NAVIGATION ITEM
+
+ΜΗΝ κάνεις redirect.
+
+ΜΗΝ χρησιμοποιήσεις noindex.
+
+ΜΗΝ χρησιμοποιήσεις canonical προς την αρχική.
+
+ΜΗΝ αλλάξεις το υπάρχον homepage URL.
+
+ΜΗΝ δημιουργήσεις doorway/thin-content page.
+
+ΜΗΝ αλλάξεις καμία υπάρχουσα λειτουργία.
+
+Πρώτα κάνε read-only inspection → παρουσίασε σχέδιο → περίμενε ρητή έγκριση → μετά υλοποίησε.

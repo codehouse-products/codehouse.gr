@@ -1,0 +1,708 @@
+REPLIT PROMPT — HIDDEN / INDEXABLE SEO LANDING PAGE «ΔΩΡΕΑΝ ΙΣΤΟΣΕΛΙΔΑ»
+
+Θέλω να δημιουργήσεις στο υπάρχον website codehouse.gr μία νέα, αυτόνομη SEO landing page με URL:
+
+https://codehouse.gr/dorean-istoselida
+
+Η σελίδα θα λειτουργεί ως ξεχωριστό SEO entry point για Google Search και AI search engines.
+
+ΒΑΣΙΚΟΣ ΣΤΟΧΟΣ
+
+Η νέα σελίδα πρέπει να στοχεύει κυρίως searches όπως:
+
+* δωρεάν ιστοσελίδα
+* δωρεάν site
+* δωρεάν website
+* δωρεάν ιστοσελίδα για επιχείρηση
+* δωρεάν κατασκευή ιστοσελίδας
+* δωρεάν δημιουργία ιστοσελίδας
+* πώς να φτιάξω δωρεάν ιστοσελίδα
+* δωρεάν site για επιχείρηση
+
+Primary keyword:
+
+δωρεάν ιστοσελίδα
+
+⸻
+
+⚠️ ΠΡΙΝ ΚΑΝΕΙΣ ΟΤΙΔΗΠΟΤΕ
+
+Κάνε πρώτα πλήρες READ-ONLY INSPECTION του υπάρχοντος project.
+
+Έλεγξε:
+
+* framework
+* router
+* υπάρχοντα routes
+* homepage
+* Header
+* Navigation
+* Footer
+* SEO metadata system
+* sitemap
+* robots.txt
+* structured data
+* blog system
+* υπάρχον άρθρο /blog/dorean-istoselida/
+* υπάρχοντα σχετικά URLs
+* reusable components
+* CTA/contact components
+* design system
+
+ΜΗΝ αλλάξεις τίποτα κατά το inspection.
+
+Μετά παρουσίασε σχέδιο αλλαγών και περίμενε έγκριση.
+
+⸻
+
+1. ΝΕΟ URL
+
+Δημιούργησε νέο route:
+
+/dorean-istoselida
+
+Το υπάρχον άρθρο:
+
+/blog/dorean-istoselida/
+
+ΠΡΕΠΕΙ ΝΑ ΠΑΡΑΜΕΙΝΕΙ ΑΚΡΙΒΩΣ ΟΠΩΣ ΕΙΝΑΙ ΩΣ ΠΡΟΣ ΤΟ URL.
+
+Μην το διαγράψεις.
+
+Μην αλλάξεις το slug του.
+
+Μην κάνεις redirect του blog προς τη νέα landing page.
+
+Η νέα landing page είναι ξεχωριστό asset.
+
+⸻
+
+2. ΚΡΙΣΙΜΟ — HIDDEN ΑΠΟ ΤΟ WEBSITE NAVIGATION
+
+Η νέα σελίδα:
+
+/dorean-istoselida
+
+δεν πρέπει να εμφανίζεται ως επιλογή στην κανονική πλοήγηση του website.
+
+ΜΗΝ προσθέσεις link προς αυτήν:
+
+* στο Header menu
+* στο Main Navigation
+* στο Footer
+* σε dropdown menus
+* στη Homepage
+* στις Services
+* στο Blog listing
+* σε sitewide navigation
+
+Ο επισκέπτης που περιηγείται κανονικά στο codehouse.gr δεν πρέπει να βλέπει:
+
+«Δωρεάν Ιστοσελίδα»
+
+ως navigation option.
+
+⸻
+
+3. ΠΡΟΣΟΧΗ — ΔΕΝ ΘΕΛΩ ΝΑ ΕΙΝΑΙ HIDDEN ΑΠΟ GOOGLE
+
+Το «hidden» σημαίνει:
+
+hidden από το κανονικό website navigation
+
+και ΟΧΙ:
+
+* noindex
+* robots blocking
+* CSS hiding
+* JavaScript hiding
+* authentication
+* inaccessible route
+
+Η σελίδα πρέπει να είναι πλήρως δημόσια και crawlable.
+
+⸻
+
+4. INDEXABILITY
+
+Η νέα σελίδα πρέπει να είναι:
+
+INDEXABLE + CRAWLABLE + PUBLIC
+
+Βεβαιώσου ότι:
+
+✓ HTTP 200
+✓ indexable
+✓ crawlable
+✓ no noindex
+✓ no nofollow
+✓ no robots blocking
+✓ no authentication
+✓ self-referencing canonical
+
+Canonical:
+
+https://codehouse.gr/dorean-istoselida
+
+⸻
+
+5. ΠΟΛΥ ΣΗΜΑΝΤΙΚΟ — ΟΧΙ ΑΥΤΟΜΑΤΟ REDIRECT
+
+ΜΗΝ κάνεις αυτό:
+
+Google → /dorean-istoselida → automatic redirect → homepage
+
+Δεν το θέλω.
+
+Η landing page πρέπει να φορτώνει κανονικά.
+
+Ο χρήστης πρέπει να μπορεί να διαβάσει το περιεχόμενο.
+
+⸻
+
+6. ΚΑΝΟΝΙΚΟ HEADER / MENU
+
+Όταν κάποιος μπαίνει:
+
+https://codehouse.gr/dorean-istoselida
+
+θέλω να βλέπει το κανονικό υπάρχον Header και Navigation του Codehouse.
+
+Άρα:
+
+✓ Logo
+✓ Αρχική
+✓ Υπηρεσίες
+✓ Blog
+✓ Επικοινωνία
+✓ Ό,τι άλλο υπάρχει ήδη στο menu
+
+πρέπει να λειτουργούν κανονικά.
+
+Ο χρήστης μπορεί:
+
+Google → /dorean-istoselida → Header → Αρχική → codehouse.gr
+
+ή να πάει απευθείας σε οποιοδήποτε άλλο υπάρχον section/page μέσω του κανονικού menu.
+
+ΜΗΝ δημιουργήσεις διαφορετικό header.
+
+ΜΗΝ δημιουργήσεις διαφορετικό navigation.
+
+⸻
+
+7. CONTENT STRATEGY
+
+Δημιούργησε ένα πλήρες, original SEO/GEO optimized landing page.
+
+Target intent:
+
+«Θέλω να βρω αν μπορώ να αποκτήσω δωρεάν ιστοσελίδα και τι πραγματικά σημαίνει αυτό.»
+
+Το περιεχόμενο πρέπει να είναι informative και όχι απλώς διαφημιστικό.
+
+⸻
+
+8. H1
+
+Χρησιμοποίησε ένα μόνο H1:
+
+Δωρεάν Ιστοσελίδα για την Επιχείρησή σας: Τι Ισχύει Πραγματικά
+
+⸻
+
+9. CONTENT STRUCTURE
+
+Δημιούργησε περίπου 1.500–2.000 λέξεις ουσιαστικού περιεχομένου, εφόσον αυτό εξυπηρετεί το search intent.
+
+H2 — Μπορώ να έχω πραγματικά δωρεάν ιστοσελίδα;
+
+Δώσε άμεση απάντηση.
+
+⸻
+
+H2 — Τι σημαίνει «δωρεάν ιστοσελίδα»;
+
+Εξήγησε:
+
+* free plans
+* subdomain
+* platform limitations
+* branding
+* advertising
+* storage
+* customization
+* ownership
+
+⸻
+
+H2 — Ποια είναι τα πραγματικά κόστη ενός δωρεάν site;
+
+Ανάπτυξε:
+
+* domain
+* hosting
+* premium features
+* email
+* maintenance
+* support
+* migration
+* SEO
+* time
+
+⸻
+
+H2 — Δωρεάν ιστοσελίδα για επιχείρηση: Αξίζει;
+
+Κάνε αντικειμενική ανάλυση.
+
+⸻
+
+H2 — Δωρεάν website vs επαγγελματική ιστοσελίδα
+
+Δημιούργησε comparison table.
+
+Σύγκρινε:
+
+* Domain
+* Branding
+* Design
+* SEO
+* Performance
+* Support
+* Customization
+* Ownership
+* Scalability
+* Maintenance
+
+⸻
+
+H2 — Μπορεί μια δωρεάν ιστοσελίδα να εμφανιστεί στη Google;
+
+Δώσε ακριβή απάντηση.
+
+ΜΗΝ γράψεις ότι όλα τα δωρεάν websites αποκλείονται από Google.
+
+Εξήγησε ότι indexability εξαρτάται από την πλατφόρμα, το URL, το περιεχόμενο και το technical SEO.
+
+⸻
+
+H2 — Τι χρειάζεται μια επαγγελματική ιστοσελίδα;
+
+Checklist:
+
+✓ Custom domain
+✓ HTTPS
+✓ Responsive design
+✓ Mobile optimization
+✓ Fast performance
+✓ SEO-ready architecture
+✓ Analytics
+✓ Search Console
+✓ Structured data
+✓ Security
+✓ Maintenance
+
+⸻
+
+H2 — Πώς μπορεί μια επιχείρηση να αποκτήσει website χωρίς μεγάλο αρχικό κόστος;
+
+Εδώ παρουσίασε φυσικά την προσέγγιση της Codehouse.
+
+Χρησιμοποίησε ΜΟΝΟ πραγματικές πληροφορίες που υπάρχουν ήδη στο Codehouse.
+
+Μην επινοήσεις τιμές ή προσφορές.
+
+⸻
+
+10. GEO / AI SEARCH
+
+Βελτιστοποίησε τη σελίδα για AI search / answer engines.
+
+Χρησιμοποίησε:
+
+* direct answers
+* question-based headings
+* semantic keywords
+* clear definitions
+* lists
+* tables
+* concise paragraphs
+* entity relationships
+
+Κάλυψε queries:
+
+Μπορώ να φτιάξω δωρεάν ιστοσελίδα;
+
+Πώς μπορώ να δημιουργήσω δωρεάν site;
+
+Είναι καλή ιδέα δωρεάν website για επιχείρηση;
+
+Μπορεί δωρεάν site να εμφανιστεί στη Google;
+
+Ποια είναι η διαφορά δωρεάν και επαγγελματικής ιστοσελίδας;
+
+Πόσο κοστίζει πραγματικά μια ιστοσελίδα;
+
+⸻
+
+11. SEO TITLE
+
+Χρησιμοποίησε:
+
+Δωρεάν Ιστοσελίδα για Επιχείρηση | Τι Ισχύει Πραγματικά
+
+Αν μετά το content audit προκύψει καλύτερη παραλλαγή, μπορείς να τη βελτιώσεις χωρίς keyword stuffing.
+
+⸻
+
+12. META DESCRIPTION
+
+Δημιούργησε compelling meta description που περιλαμβάνει φυσικά:
+
+δωρεάν ιστοσελίδα
+
+και εξηγεί στον χρήστη τι θα μάθει.
+
+⸻
+
+13. STRUCTURED DATA
+
+Χρησιμοποίησε το υπάρχον schema implementation του Codehouse.
+
+Όπου είναι κατάλληλο:
+
+* WebPage
+* BreadcrumbList
+* Organization
+* FAQPage
+
+Μην δημιουργήσεις fake:
+
+* reviews
+* ratings
+* testimonials
+* statistics
+* prices
+* certifications
+
+⸻
+
+14. FAQ
+
+Πρόσθεσε 8–10 πραγματικές ερωτήσεις.
+
+Ενδεικτικά:
+
+Μπορώ να φτιάξω δωρεάν ιστοσελίδα;
+
+Είναι πραγματικά δωρεάν ένα free website;
+
+Μπορώ να έχω δικό μου domain;
+
+Μπορεί δωρεάν site να εμφανιστεί στη Google;
+
+Είναι κατάλληλο δωρεάν website για επιχείρηση;
+
+Πόσο κοστίζει μια επαγγελματική ιστοσελίδα;
+
+Τι είναι το hosting;
+
+Χρειάζεται SSL;
+
+Χρειάζεται SEO μια νέα ιστοσελίδα;
+
+Χρειάζεται συντήρηση ένα website;
+
+⸻
+
+15. INTERNAL LINKS
+
+Χρησιμοποίησε φυσικά internal links προς υπάρχουσες σχετικές σελίδες.
+
+Πρώτα κάνε scan των routes.
+
+Σύνδεσε, όπου υπάρχουν:
+
+* δημιουργία/κατασκευή ιστοσελίδων
+* SEO
+* website maintenance
+* σχετικά άρθρα
+* contact
+
+ΜΗΝ δημιουργήσεις sitewide link προς:
+
+/dorean-istoselida
+
+⸻
+
+16. LINK ΠΡΟΣ ΤΗΝ ΑΡΧΙΚΗ
+
+Η landing page πρέπει να μπορεί να οδηγεί φυσικά στην homepage.
+
+Το υπάρχον:
+
+Logo → Homepage
+
+πρέπει να λειτουργεί.
+
+Επίσης μπορεί να υπάρχει CTA:
+
+«Μάθε περισσότερα για τις λύσεις της Codehouse»
+
+που οδηγεί σε υπάρχουσα σχετική σελίδα.
+
+ΜΗΝ κάνεις automatic redirect.
+
+⸻
+
+17. SITEMAP
+
+Πρόσθεσε:
+
+/dorean-istoselida
+
+στο υπάρχον XML sitemap.
+
+Μην δημιουργήσεις δεύτερο sitemap.
+
+Μην αφαιρέσεις υπάρχουσες entries.
+
+⸻
+
+18. IMAGE SEO
+
+Πρόσθεσε μοναδική hero image σχετική με:
+
+δωρεάν ιστοσελίδα / website creation / business website
+
+Χωρίς ανθρώπινα πρόσωπα.
+
+Βελτιστοποίησε:
+
+* WebP/AVIF όπου υποστηρίζεται
+* dimensions
+* compression
+* filename
+* alt text
+* responsive loading
+
+⸻
+
+19. DESIGN
+
+Χρησιμοποίησε το υπάρχον design system του Codehouse.
+
+ΜΗΝ αλλάξεις:
+
+* global CSS
+* header
+* footer
+* navigation
+* typography
+* global components
+
+Η νέα σελίδα πρέπει να φαίνεται σαν φυσικό μέρος του υπάρχοντος website.
+
+⸻
+
+20. PERFORMANCE
+
+Μην προσθέσεις unnecessary:
+
+* packages
+* JavaScript
+* libraries
+* animations
+* dependencies
+
+Η νέα σελίδα πρέπει να είναι lightweight.
+
+⸻
+
+21. CANNIBALIZATION CHECK
+
+Επειδή υπάρχει ήδη:
+
+/blog/dorean-istoselida/
+
+πρέπει να διασφαλίσεις ότι δεν δημιουργούμε προβληματικό duplicate content.
+
+Η νέα σελίδα πρέπει να έχει διαφορετικό search intent:
+
+/dorean-istoselida
+
+Commercial / landing intent:
+
+«Θέλω λύση για να αποκτήσω δωρεάν website.»
+
+/blog/dorean-istoselida/
+
+Informational intent:
+
+«Θέλω να μάθω τι σημαίνει δωρεάν ιστοσελίδα και ποια είναι τα μειονεκτήματα/κόστη.»
+
+Χρησιμοποίησε διαφορετικό content, structure και CTA.
+
+Μην αντιγράψεις το υπάρχον blog.
+
+⸻
+
+22. ΤΕΛΙΚΟ SEO CHECK
+
+Επιβεβαίωσε:
+
+✓ URL /dorean-istoselida
+✓ HTTP 200
+✓ Indexable
+✓ Crawlable
+✓ No noindex
+✓ No robots blocking
+✓ Self canonical
+✓ Sitemap
+✓ SEO title
+✓ Meta description
+✓ H1
+✓ H2/H3
+✓ Structured data
+✓ FAQ
+✓ Internal links
+✓ Open Graph
+✓ Image SEO
+
+⸻
+
+23. ΤΕΛΙΚΟ NAVIGATION CHECK
+
+Επιβεβαίωσε:
+
+✓ Η νέα σελίδα ΔΕΝ εμφανίζεται στο menu ως επιλογή
+✓ ΔΕΝ εμφανίζεται στο footer
+✓ ΔΕΝ εμφανίζεται στη homepage
+✓ ΔΕΝ εμφανίζεται στο services menu
+
+ΑΛΛΑ:
+
+✓ Η σελίδα έχει κανονικό Header
+✓ Η σελίδα έχει κανονικό Navigation
+✓ Το Logo λειτουργεί
+✓ Το «Αρχική» λειτουργεί
+✓ Όλα τα υπάρχοντα menu links λειτουργούν
+✓ Ο χρήστης μπορεί να περιηγηθεί σε όλο το website
+
+⸻
+
+24. ΠΡΟΣΤΑΣΙΑ ΥΠΑΡΧΟΝΤΟΣ SITE
+
+Μην αλλάξεις:
+
+* homepage URL
+* blog URL
+* existing services
+* existing navigation
+* existing header
+* existing footer
+* existing forms
+* existing blogs
+
+Πριν την υλοποίηση δημιούργησε Git checkpoint/backup.
+
+⸻
+
+25. FINAL VALIDATION
+
+Μετά την ολοκλήρωση κάνε:
+
+* production build
+* lint
+* tests
+* route check
+* HTTP status check
+* metadata check
+* sitemap check
+* robots check
+* canonical check
+* structured data validation
+* broken-link check
+* responsive check
+
+Εάν οποιοσδήποτε έλεγχος αποτύχει, διόρθωσέ τον πριν ολοκληρώσεις.
+
+⸻
+
+ΤΕΛΙΚΗ ΑΡΧΙΤΕΚΤΟΝΙΚΗ
+
+Θέλω να λειτουργεί ακριβώς έτσι:
+
+Google Search
+
+↓
+
+https://codehouse.gr/dorean-istoselida
+
+↓
+
+SEO/GEO Landing Page
+
+↓
+
+Κανονικό Codehouse Header + Menu
+
+↓
+
+Ο χρήστης μπορεί να:
+
+Αρχική → codehouse.gr
+
+ή
+
+Υπηρεσίες → υπάρχουσες υπηρεσίες
+
+ή
+
+Blog → υπάρχον blog
+
+ή
+
+Επικοινωνία → υπάρχουσα contact page
+
+Η σελίδα όμως δεν εμφανίζεται πουθενά ως επιλογή στο κανονικό navigation.
+
+⸻
+
+ABSOLUTE RULES
+
+DO:
+
+✓ Create /dorean-istoselida
+✓ Make it indexable
+✓ Add to sitemap
+✓ Self canonical
+✓ SEO optimized
+✓ GEO optimized
+✓ Use existing Header
+✓ Use existing Navigation
+✓ Allow normal navigation
+✓ Allow user to return to Homepage
+✓ Create original content
+
+DO NOT:
+
+✗ Change homepage URL
+✗ Change /blog/dorean-istoselida/
+✗ Delete existing blog
+✗ Duplicate the blog
+✗ Add the new page to navigation
+✗ Add it to footer
+✗ Use noindex
+✗ Block robots
+✗ Automatic redirect
+✗ Fake reviews
+✗ Fake statistics
+✗ Keyword stuffing
+✗ Change global design
+✗ Break existing functionality
+
+Πρώτα:
+
+READ-ONLY AUDIT → PLAN → APPROVAL → IMPLEMENTATION → VALIDATION

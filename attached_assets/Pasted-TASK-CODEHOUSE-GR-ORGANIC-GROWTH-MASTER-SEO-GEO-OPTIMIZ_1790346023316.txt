@@ -1,0 +1,643 @@
+TASK: CODEHOUSE.GR — ORGANIC GROWTH MASTER SEO/GEO OPTIMIZATION
+
+PRIMARY GOAL:
+Increase NON-BRANDED organic traffic to codehouse.gr before starting paid advertising campaigns.
+
+The goal is NOT to create a large number of random blog posts.
+
+The goal is:
+1. identify existing pages already getting Google impressions or GA4 traffic,
+2. strengthen those first,
+3. create only missing high-value content,
+4. improve keyword targeting, topical authority, internal linking and GEO/AI Search visibility,
+5. avoid keyword cannibalization,
+6. preserve design and all existing functionality.
+
+IMPORTANT:
+Do NOT change the visual design, layout, branding, animations, forms, integrations or functionality unless required for SEO and approved by the existing architecture.
+
+Do NOT delete existing SEO value.
+
+Do NOT create duplicate pages targeting the same query.
+
+Do NOT keyword-stuff.
+
+Do NOT fabricate statistics, reviews, customers or results.
+
+==================================================
+PHASE 1 — FULL EXISTING CONTENT AUDIT
+==================================================
+
+Before editing or creating anything, crawl and inspect ALL indexable pages and blog posts.
+
+Build an internal SEO map containing:
+
+- URL
+- current title
+- meta description
+- H1
+- main search intent
+- primary keyword
+- secondary keywords
+- internal links
+- canonical
+- schema
+- sitemap inclusion
+- indexability
+- content overlap with other URLs
+
+Identify:
+- keyword cannibalization
+- thin pages
+- weak titles
+- weak meta descriptions
+- duplicate intent
+- missing internal links
+- content gaps
+- pages with strong SEO potential
+
+Do NOT create new content until this map is complete.
+
+==================================================
+PHASE 2 — PRIORITY EXISTING PAGES
+==================================================
+
+These existing pages must be reviewed FIRST because they already receive traffic and/or are strategically important:
+
+1. /
+2. /douleies/
+3. /blog/
+4. /dimioyrgia-site/
+5. /qr-menu/
+6. /blog/kataskeyi-eshop-ellada-kostos/
+7. /blog/syntirisi-istoselidas-palio-website/
+8. /prosfora/
+9. /blog/dorean-istoselida/
+10. /blog/checklist-dorean-istoselida-epixeirisi/
+
+Do NOT replace these URLs unless absolutely necessary.
+
+Prefer improving the existing URL.
+
+==================================================
+PHASE 3 — E-SHOP COST CLUSTER
+==================================================
+
+Google is already discovering Codehouse for queries such as:
+
+- κατασκευη eshop κοστοσ
+- κόστος eshop
+- δημιουργια eshop κοστος
+- κόστος κατασκευής eshop
+- πόσο κοστίζει ένα eshop
+- δημιουργία e shop τιμές
+- οικονομικό e-shop
+- έτοιμα πακέτα e shop
+- δημιουργια eshop τι χρειαζεται
+- αξίζει να ανοίξω e-shop
+
+PRIMARY EXISTING URL:
+ /blog/kataskeyi-eshop-ellada-kostos/
+
+DO NOT create another article with the same search intent.
+
+Upgrade this existing page into a comprehensive pillar article.
+
+Recommended H1:
+Κατασκευή E-shop στην Ελλάδα: Κόστος, Τιμές & Τι Χρειάζεται το 2026
+
+Cover naturally:
+- πόσο κοστίζει ένα e-shop
+- what affects price
+- ready-made vs custom e-shop
+- domain
+- hosting
+- payment gateways
+- product management
+- order management
+- ERP / integrations if relevant
+- SEO
+- maintenance
+- speed
+- mobile experience
+- analytics
+- tax/business requirements only if current content already supports this or reliable sources are available
+- how long development takes
+- when an e-shop is worth launching
+
+Use semantic keyword variants naturally.
+
+Add strong internal links to the appropriate commercial e-shop/service page.
+
+If a commercial e-shop landing page already exists, optimize it.
+
+If it does NOT exist and there is no equivalent URL, create ONE canonical commercial page such as:
+
+/kataskevi-eshop/
+
+Do not create multiple competing e-shop pages.
+
+==================================================
+PHASE 4 — WEBSITE CREATION / WEB DESIGN CLUSTER
+==================================================
+
+Strengthen:
+
+/dimioyrgia-site/
+
+Primary topic:
+professional website creation for businesses.
+
+Keyword family:
+- κατασκευή ιστοσελίδας
+- δημιουργία ιστοσελίδας
+- δημιουργία site
+- κατασκευή site
+- ιστοσελίδα για επιχειρήσεις
+- επαγγελματική ιστοσελίδα
+- web designers
+- ποιος μπορεί να μου φτιάξει ιστοσελίδα
+
+Suggested H1:
+Κατασκευή & Δημιουργία Ιστοσελίδας για Επιχειρήσεις
+
+The page should clearly explain:
+- corporate websites
+- business websites
+- landing pages
+- mobile-first development
+- SEO-ready architecture
+- analytics
+- Search Console
+- hosting
+- maintenance
+- integrations
+- booking systems
+- payments
+- support
+
+Add FAQ only where useful.
+
+Do NOT change URL.
+
+==================================================
+PHASE 5 — SANTORINI LOCAL COMMERCIAL SEO
+==================================================
+
+There is already search visibility for:
+
+- κατασκευή ιστοσελίδας σαντορίνη
+- σαντορίνη seo
+- seo προώθηση ιστοσελίδων σαντορίνη
+
+First identify which existing URL currently receives impressions for each query.
+
+Do NOT create a new page if an existing relevant page is already ranking and has the same intent.
+
+If an existing page is ranking:
+strengthen that page.
+
+Optimize:
+- title
+- meta description
+- H1
+- local context
+- internal links
+- case studies
+- relevant service information
+
+Use real Codehouse work in Santorini where relevant.
+
+KC Travel can be used as a real case study if it is already public and documented.
+
+Potential title format:
+Κατασκευή Ιστοσελίδων στη Σαντορίνη | SEO, Κρατήσεις & Digital Systems | Codehouse
+
+Potential areas/topics:
+- tourism businesses
+- transfers
+- restaurants
+- hotels
+- villas
+- local services
+- online bookings
+- payments
+- Google Business Profile
+- Local SEO
+- GEO / AI Search
+
+If there is NO suitable existing commercial page, create only ONE dedicated local landing page.
+
+Possible URL:
+ /kataskevi-istoselidas-santorini/
+
+Additionally assess whether a separate SEO Santorini landing page is justified.
+
+Only create:
+/seo-santorini/
+if the search intent is sufficiently different and there is no cannibalization risk.
+
+==================================================
+PHASE 6 — SEO SERVICES CLUSTER
+==================================================
+
+Audit the existing SEO-related content.
+
+Queries include:
+- seo εστίαση
+- local seo υπηρεσίες
+- seo προώθηση ιστοσελίδων
+- πρώτη θέση google
+- σαντορίνη seo
+- επαγγελματικό vs φθηνό seo
+
+If /seo/ already exists:
+strengthen it.
+
+If not:
+create ONE main SEO services page:
+/seo/
+
+Suggested H1:
+SEO & Organic Growth για Επιχειρήσεις
+
+Cover:
+- Technical SEO
+- On-page SEO
+- Local SEO
+- Google Business Profile
+- Search Console
+- GA4
+- keyword research
+- internal linking
+- content strategy
+- GEO / AI Search visibility
+- performance
+- reporting
+
+Do not make unrealistic claims such as guaranteed #1 Google rankings.
+
+==================================================
+PHASE 7 — WEBSITE MAINTENANCE CLUSTER
+==================================================
+
+Strengthen:
+
+/blog/syntirisi-istoselidas-palio-website/
+
+Do NOT create a duplicate article.
+
+Upgrade around search intent such as:
+- συντήρηση ιστοσελίδας
+- κόστος συντήρησης ιστοσελίδας
+- τι περιλαμβάνει η συντήρηση
+- παλιά ιστοσελίδα
+- ασφάλεια
+- backups
+- updates
+- speed
+- SEO impact
+
+Suggested article direction:
+Συντήρηση Ιστοσελίδας: Κόστος, Τι Περιλαμβάνει & Γιατί Είναι Απαραίτητη
+
+If a maintenance service page does not already exist and commercial intent justifies it, create:
+
+/syntirisi-istoselidas/
+
+Then link the informational article to the service page.
+
+==================================================
+PHASE 8 — FREE WEBSITE CLUSTER
+==================================================
+
+Existing URLs include:
+- /blog/dorean-istoselida/
+- /blog/checklist-dorean-istoselida-epixeirisi/
+
+Queries include:
+- δωρεάν ιστοσελίδα
+- δωρεάν ιστοσελίδες
+- δωρεάν κατασκευή ιστοσελίδας
+- δωρεάν δημιουργία site
+- πως φτιάχνω site δωρεάν
+- κατασκευή site δωρεάν
+
+Do NOT make the corporate homepage discount-oriented.
+
+Keep this traffic inside informational content.
+
+Audit both existing URLs carefully.
+
+Each must have a clearly different search intent.
+
+Example split:
+
+/blog/dorean-istoselida/
+→ informational guide: options for building a free website.
+
+/blog/checklist-dorean-istoselida-epixeirisi/
+→ business checklist / decision guide.
+
+If both pages overlap heavily:
+consolidate content carefully while preserving the strongest indexed URL.
+
+Do NOT create a third duplicate article.
+
+==================================================
+PHASE 9 — NEW CONTENT: ONLY TRUE CONTENT GAPS
+==================================================
+
+After the audit, create NEW content only if it does not compete with an existing URL.
+
+High-priority candidates:
+
+A.
+SEO για Εστιατόρια & Google Maps
+
+Possible URL:
+/blog/seo-estiatorio-google-maps/
+
+Possible H1:
+SEO για Εστιατόρια: Πώς να Εμφανίζεστε Ψηλότερα σε Google & Maps
+
+Cover:
+- Google Business Profile
+- reviews
+- local keywords
+- website SEO
+- menu indexing
+- LocalBusiness/Restaurant schema where appropriate
+- Maps
+- AI Search / GEO visibility
+- mobile experience
+- reservations
+
+B.
+Website for hospitality/tourism businesses
+
+Only if there is no existing competing page.
+
+Possible topic:
+Κατασκευή Ιστοσελίδας για Ξενοδοχεία & Τουριστικές Επιχειρήσεις
+
+Cover:
+- booking flow
+- multilingual content
+- payments
+- local SEO
+- maps
+- reviews
+- analytics
+- direct booking strategy
+
+C.
+Organic traffic educational article
+
+Possible topic:
+Πώς Αυξάνεται η Οργανική Επισκεψιμότητα μιας Επιχείρησης Χωρίς Διαφημίσεις
+
+This article must support the main SEO service page, not compete with it.
+
+==================================================
+PHASE 10 — GEO / AI SEARCH OPTIMIZATION
+==================================================
+
+Improve important pages for Google Search AND AI-assisted search visibility.
+
+Apply:
+- clear entity descriptions
+- clear service descriptions
+- location context where relevant
+- structured headings
+- concise factual answers
+- FAQs only where useful
+- Organization schema
+- Service schema
+- Article schema
+- BreadcrumbList
+- LocalBusiness only where factually appropriate
+- consistent Codehouse business identity
+
+Avoid fake or spam GEO techniques.
+
+Do not create AI-generated filler paragraphs.
+
+==================================================
+PHASE 11 — INTERNAL LINKING ARCHITECTURE
+==================================================
+
+Build topic clusters.
+
+E-SHOP:
+informational e-shop article
+→ commercial e-shop service page
+→ relevant portfolio/case study
+
+WEBSITE:
+free website informational articles
+→ /dimioyrgia-site/
+→ /douleies/
+
+SEO:
+SEO articles
+→ /seo/
+→ relevant case studies
+
+SANTORINI:
+Santorini content
+→ local commercial page
+→ KC Travel case study
+→ SEO page
+
+RESTAURANTS:
+SEO restaurant article
+→ restaurant website/service content
+→ QR menu
+→ relevant restaurant case studies
+
+Use natural anchors.
+
+Do not repeat identical exact-match anchor text excessively.
+
+==================================================
+PHASE 12 — CTR OPTIMIZATION
+==================================================
+
+Review all important titles and meta descriptions.
+
+Focus especially on pages with:
+high impressions + low clicks.
+
+Write titles that:
+- match search intent
+- include useful primary phrase
+- are compelling without clickbait
+- preserve Codehouse authority
+
+Meta descriptions should communicate:
+problem + solution + Codehouse differentiation.
+
+Do not stuff keywords.
+
+==================================================
+PHASE 13 — TECHNICAL SEO
+==================================================
+
+Audit and fix where necessary:
+
+- sitemap.xml
+- robots.txt
+- 404s
+- redirect chains
+- 301 redirects
+- canonicals
+- index/noindex
+- duplicate H1s
+- duplicate titles
+- duplicate descriptions
+- schema
+- image alt text
+- WebP/AVIF if appropriate
+- lazy loading
+- Core Web Vitals
+- mobile usability
+- internal broken links
+- trailing slash consistency
+- HTTP/HTTPS
+- www/non-www
+
+Do not change design.
+
+==================================================
+PHASE 14 — SITEMAP
+==================================================
+
+After changes:
+
+Ensure sitemap contains only:
+- canonical
+- indexable
+- HTTP 200 URLs
+
+Update lastmod only for URLs materially changed.
+
+Do not include redirects or 404 URLs.
+
+==================================================
+PHASE 15 — PRODUCTION VERIFICATION
+==================================================
+
+After deployment verify LIVE:
+
+- page returns 200
+- title is correct
+- meta description correct
+- canonical correct
+- H1 correct
+- schema valid
+- no accidental noindex
+- internal links work
+- sitemap updated
+- robots.txt correct
+- no design regression
+- no console errors
+
+Do not report success based only on local files.
+
+Verify the live production URLs.
+
+==================================================
+PHASE 16 — FINAL REPORT
+==================================================
+
+Return a clear report containing:
+
+A. EXISTING PAGES IMPROVED
+For each page:
+- URL
+- old target
+- new primary keyword
+- secondary keywords
+- title changed?
+- H1 changed?
+- content expanded?
+- internal links added?
+- schema changed?
+
+B. NEW PAGES CREATED
+For each:
+- URL
+- primary search intent
+- primary keyword
+- reason it does not cannibalize another page
+
+C. CANNIBALIZATION
+- issues detected
+- actions taken
+
+D. TECHNICAL SEO
+- fixes performed
+- sitemap status
+- robots status
+- redirects
+- canonicals
+- HTTP status
+
+E. INDEXING LIST
+
+At the very end create THREE explicit lists:
+
+1. NEW URLS — REQUEST INDEXING
+List every new URL.
+
+2. UPDATED URLS — REQUEST RE-INDEXING
+List every existing URL that received a major SEO/content update.
+
+3. NO INDEXING ACTION NEEDED
+List pages changed only minimally.
+
+IMPORTANT:
+If Google Search Console integration does not allow real Request Indexing,
+DO NOT CLAIM THAT INDEXING WAS COMPLETED.
+
+Instead tell me exactly:
+
+"Manual Search Console action required."
+
+For every URL in lists 1 and 2 I will manually do:
+
+Google Search Console
+→ URL Inspection
+→ paste full URL
+→ Test/inspect URL
+→ Request Indexing
+
+Also confirm that:
+https://codehouse.gr/sitemap.xml
+contains all new indexable URLs.
+
+==================================================
+FINAL GOAL
+==================================================
+
+The project is successful only if the site becomes stronger for NON-BRANDED organic searches.
+
+Do not optimize primarily for searches such as:
+Codehouse
+Code House
+
+The priority is discovery by users who do not yet know the brand.
+
+Examples:
+- κατασκευή ιστοσελίδας
+- δημιουργία site
+- κατασκευή ιστοσελίδας Σαντορίνη
+- κόστος e-shop
+- κατασκευή e-shop
+- SEO για επιχειρήσεις
+- local SEO
+- SEO για εστιατόρια
+- συντήρηση ιστοσελίδας
+
+Prioritize search intent, topical authority, quality and real usefulness over content volume.

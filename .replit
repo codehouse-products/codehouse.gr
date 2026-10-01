@@ -1,6 +1,7 @@
 modules = ["php-8.2", "nodejs-24", "python-base-3.13"]
 [nix]
 channel = "stable-25_05"
+packages = ["freetype", "gitFull", "lcms2", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "openjpeg", "playwright-driver", "tcl", "tk", "zlib"]
 
 [agent]
 expertMode = true
@@ -21,17 +22,21 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "php -S 0.0.0.0:5000"
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "php -S 0.0.0.0:5000 router.php"
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 23636
+externalPort = 3000
 
 [postMerge]
 path = "scripts/post-merge.sh"

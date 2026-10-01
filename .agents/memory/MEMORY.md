@@ -1,0 +1,10 @@
+- [Git API path normalization](git-api-path-normalization.md) — strip CR characters from shell-derived paths before Git Data API writes and verify the remote tree.
+- [SEO keyword ownership](seo-keyword-ownership.md) — preserve one primary URL per commercial cluster; require GSC page-query evidence before Santorini consolidation.
+- [GitHub workflow writes](github-workflow-writes.md) — repository scope alone is insufficient for `.github/workflows/*`; verify workflow permission before planning CI-side server config changes.
+- [Annotated logo transparency](annotated-logo-transparency.md) — remove paper backgrounds without dropping construction lines, notes, or the wordmark.
+- [Hero film direction](hero-film-direction.md) — prefer quiet graphite-like macro shots, monochrome with neon accents, and direct cuts behind the retained logo.
+- [Generated photo framing](generated-photo-framing.md) — inspect actual image dimensions and keep foreground neon visible in responsive crops.
+- [Bilingual typography](bilingual-typography.md) — require native Greek/Latin glyphs in the same typeface per role; preserve equal role sizes without language-specific corrections.
+- [Loading film continuity](loading-film-continuity.md) — reveal the site over the same live hero player and framing, never a restarted or separately synchronized video.
+- [Durable sandbox globals](durable-sandbox-globals.md) — do not assume browser globals such as URL exist in durable callback blocks.
+- [Portfolio photography](portfolio-photography.md) — ίδιο μοντέλο και περιβάλλον, άλλα ρούχα ανά έργο, πραγματικές mobile αρχικές σελίδες στην οθόνη.

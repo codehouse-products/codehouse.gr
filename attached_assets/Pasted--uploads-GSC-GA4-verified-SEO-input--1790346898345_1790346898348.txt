@@ -1,0 +1,100 @@
+Μην περιμένεις uploads από GSC / GA4.
+
+Χρησιμοποίησε τα παρακάτω δεδομένα σαν verified SEO input και προχώρα κανονικά σε audit + implementation.
+
+GA4 TOP PAGES:
+- / → 212 views
+- /douleies/ → 70 views
+- /blog/ → 23 views
+- /dimioyrgia-site/ → 16 views
+- /qr-menu/ → 14 views
+- /blog/kataskeyi-eshop-ellada-kostos/ → 11 views
+- /blog/syntirisi-istoselidas-palio-website/ → 10 views
+- /prosfora/ → 10 views
+- /blog/dorean-istoselida/ → 9 views
+- /blog/checklist-dorean-istoselida-epixeirisi/ → 8 views
+
+IMPORTANT SEARCH CONSOLE QUERY CLUSTERS:
+
+E-SHOP COST:
+- κατασκευη eshop κοστοσ
+- κοστοσ eshop
+- δημιουργια eshop κοστος
+- κοστοσ κατασκευησ eshop
+- κατασκευη eshop κοστος
+- κόστος κατασκευής eshop
+- ποσο κοστιζει ενα eshop
+- δημιουργια eshop τιμεσ
+- δημιουργια eshop τι χρειαζεται
+- οικονομικό e-shop
+- έτοιμα πακετα e shop
+
+WEBSITE CREATION:
+- πως φτιαχνω ιστοσελιδα
+- ιστοσελιδα για επιχειρησεις
+- κατασκευη ιστοσελιδας
+- δημιουργια site
+- δημιουργια σαιτ
+- ποιος μπορεί να μου φτιάξει μια ιστοσελίδα
+
+FREE WEBSITE:
+- δωρεάν ιστοσελίδες
+- δωρεαν ιστοσελιδα
+- δωρεάν κατασκευή ιστοσελίδας
+- δωρεάν δημιουργία site
+- πως φτιαχνω site δωρεαν
+- κατασκευή site δωρεάν
+
+SEO:
+- seo εστίαση
+- local seo υπηρεσίες
+- πρωτη θεση google
+- επαγγελματικό vs φθηνό seo
+
+SANTORINI:
+- κατασκευη ιστοσελιδας σαντορινη
+- σαντορίνη seo
+- seo προώθηση ιστοσελίδων σαντορίνη
+
+KNOWN STRATEGIC SIGNALS:
+- /dimioyrgia-site/ is already receiving traffic and must be strengthened, not replaced.
+- /blog/kataskeyi-eshop-ellada-kostos/ should be treated as the main e-shop cost pillar article.
+- /blog/syntirisi-istoselidas-palio-website/ should be strengthened for maintenance-related queries.
+- /blog/dorean-istoselida/ and /blog/checklist-dorean-istoselida-epixeirisi/ must stay clearly differentiated to avoid cannibalization.
+- Santorini-related queries are strategically important and should be strengthened using relevant local business context and real case studies where appropriate.
+
+Proceed now with the full SEO/GEO plan from the previous task.
+
+Do NOT ask for uploads again.
+
+FIRST:
+perform a full audit of all existing URLs and map:
+URL → primary keyword → secondary keywords → search intent.
+
+THEN:
+1. strengthen existing pages first,
+2. create new pages only where there is a real gap,
+3. avoid cannibalization,
+4. improve titles, meta descriptions, H1/H2,
+5. improve internal linking,
+6. improve schema,
+7. improve GEO / AI Search visibility,
+8. verify sitemap and canonicals,
+9. deploy,
+10. verify production live.
+
+Do not change the visual design or site functionality.
+
+At the end give me:
+- all URLs improved,
+- all new URLs,
+- primary keyword for each,
+- cannibalization issues found,
+- technical fixes,
+- live status,
+- NEW URLS — REQUEST INDEXING,
+- UPDATED URLS — REQUEST RE-INDEXING.
+
+If Search Console indexing cannot be done directly, do not claim it was completed.
+Just give me the exact URLs to paste manually into:
+Google Search Console → URL Inspection → Request Indexing.

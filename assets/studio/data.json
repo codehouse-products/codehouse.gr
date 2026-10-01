@@ -1,0 +1,631 @@
+{
+  "services": [
+    {
+      "slug": "web-design",
+      "name": {
+        "el": "WEB DESIGN & DEVELOPMENT",
+        "en": "WEB DESIGN & DEVELOPMENT"
+      },
+      "descriptor": {
+        "el": "Websites με ξεχωριστή ταυτότητα.",
+        "en": "Websites with a distinct identity."
+      },
+      "description": {
+        "el": "Σχεδιάζουμε και αναπτύσσουμε ιστοσελίδες που κάνουν την ταυτότητα μιας επιχείρησης κατανοητή, ξεχωριστή και εύχρηστη σε κάθε οθόνη.",
+        "en": "We design and build websites that make a business identity clear, distinctive and easy to use on every screen."
+      },
+      "includes": {
+        "el": "Στρατηγική περιεχομένου, UX και UI design, responsive υλοποίηση, CMS και τεχνικό SEO.",
+        "en": "Content structure, UX and UI design, responsive development, CMS and technical SEO."
+      },
+      "process": {
+        "el": "Κατανόηση → δομή → σχεδιασμός → ανάπτυξη → έλεγχος και παράδοση.",
+        "en": "Discovery → structure → design → development → testing and handover."
+      },
+      "projects": [
+        "high-hope",
+        "gerakos",
+        "kc-travel",
+        "akri"
+      ],
+      "image": "assets/studio/images/service-neon-web-design.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρο κοντινό σχεδιασμού ιστοσελίδας με κυανό neon φως",
+        "en": "Monochrome website design close-up with cyan neon light"
+      }
+    },
+    {
+      "slug": "e-commerce",
+      "name": {
+        "el": "E-COMMERCE",
+        "en": "E-COMMERCE"
+      },
+      "descriptor": {
+        "el": "Ηλεκτρονικά καταστήματα με ολοκληρωμένη λειτουργικότητα.",
+        "en": "Online stores with considered functionality."
+      },
+      "description": {
+        "el": "Δημιουργούμε ηλεκτρονικά καταστήματα με σαφή πλοήγηση, προσεγμένη παρουσίαση προϊόντων και τις λειτουργίες που χρειάζεται η επιχείρησή σου.",
+        "en": "We create online stores with clear navigation, considered product presentation and the functionality your business needs."
+      },
+      "includes": {
+        "el": "Δομή καταλόγου, σχεδιασμός σελίδων, καλάθι και checkout όπου απαιτούνται, mobile έλεγχος και εκπαίδευση.",
+        "en": "Catalog structure, page design, cart and checkout where required, mobile testing and handover."
+      },
+      "process": {
+        "el": "Χαρτογράφηση προϊόντων → ροές αγοράς → σχεδιασμός → υλοποίηση → έλεγχος.",
+        "en": "Product mapping → shopping flows → design → development → testing."
+      },
+      "projects": [],
+      "image": "assets/studio/images/service-neon-e-commerce.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρη συσκευασία προϊόντος με φούξια neon φως",
+        "en": "Monochrome product packaging with magenta neon light"
+      }
+    },
+    {
+      "slug": "custom-apps",
+      "name": {
+        "el": "CUSTOM APPS & SOFTWARE",
+        "en": "CUSTOM APPS & SOFTWARE"
+      },
+      "descriptor": {
+        "el": "Εφαρμογές γύρω από τις ανάγκες της επιχείρησης.",
+        "en": "Software shaped around business needs."
+      },
+      "description": {
+        "el": "Αναπτύσσουμε προσαρμοσμένες εφαρμογές και εργαλεία που οργανώνουν συγκεκριμένες εργασίες και κάνουν την καθημερινή λειτουργία πιο ξεκάθαρη.",
+        "en": "We develop tailored applications and tools that organise specific tasks and bring clarity to day-to-day operations."
+      },
+      "includes": {
+        "el": "Ανάλυση απαιτήσεων, ροές χρηστών, interfaces, integrations που ορίζονται στο scope και τεκμηρίωση.",
+        "en": "Requirements mapping, user flows, interfaces, integrations defined in scope and documentation."
+      },
+      "process": {
+        "el": "Ανακάλυψη → προδιαγραφές → πρωτότυπο → ανάπτυξη → δοκιμή και υποστήριξη.",
+        "en": "Discovery → specification → prototype → development → testing and support."
+      },
+      "projects": [],
+      "image": "assets/studio/images/service-neon-custom-apps.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρο κοντινό ανάπτυξης εφαρμογής με μωβ neon φως",
+        "en": "Monochrome application development close-up with violet neon light"
+      }
+    },
+    {
+      "slug": "ai-automations",
+      "name": {
+        "el": "AI & AUTOMATIONS",
+        "en": "AI & AUTOMATIONS"
+      },
+      "descriptor": {
+        "el": "Σύνδεση εργαλείων και αυτοματοποίηση διαδικασιών.",
+        "en": "Connected tools and automated workflows."
+      },
+      "description": {
+        "el": "Εντοπίζουμε επαναλαμβανόμενες διαδικασίες και σχεδιάζουμε αυτοματισμούς που συνδέουν τα εργαλεία που ήδη χρησιμοποιεί η ομάδα σου.",
+        "en": "We identify repetitive workflows and design automations that connect the tools your team already uses."
+      },
+      "includes": {
+        "el": "Χαρτογράφηση διαδικασιών, ορισμός triggers και κανόνων, integrations, έλεγχος και σαφής τεκμηρίωση.",
+        "en": "Workflow mapping, trigger and rule definition, integrations, testing and clear documentation."
+      },
+      "process": {
+        "el": "Καταγραφή διαδικασίας → επιλογή σημείων αυτοματοποίησης → σύνδεση → δοκιμή.",
+        "en": "Workflow audit → automation opportunities → connection → testing."
+      },
+      "projects": [],
+      "image": "assets/studio/images/service-neon-ai-automations.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρο ηλεκτρονικό κύκλωμα με lime neon φως",
+        "en": "Monochrome electronic circuit with lime neon light"
+      }
+    },
+    {
+      "slug": "booking-systems",
+      "name": {
+        "el": "BOOKING & DIGITAL SYSTEMS",
+        "en": "BOOKING & DIGITAL SYSTEMS"
+      },
+      "descriptor": {
+        "el": "Κρατήσεις, dashboards και εργαλεία διαχείρισης.",
+        "en": "Bookings, dashboards and management tools."
+      },
+      "description": {
+        "el": "Σχεδιάζουμε ψηφιακά συστήματα κρατήσεων και λειτουργικά interfaces, προσαρμοσμένα στον τρόπο που εξυπηρετείς πελάτες και οργανώνεις την ομάδα σου.",
+        "en": "We design booking systems and operational interfaces tailored to how you serve customers and organise your team."
+      },
+      "includes": {
+        "el": "Ροή κράτησης, φόρμες, παρουσίαση επιλογών, προσαρμοσμένα dashboards όπου περιλαμβάνονται στο scope.",
+        "en": "Booking flows, forms, option presentation and custom dashboards when included in scope."
+      },
+      "process": {
+        "el": "Χαρτογράφηση χρηστών → σχεδιασμός ροών → υλοποίηση → δοκιμές σε πραγματικά σενάρια.",
+        "en": "User mapping → flow design → development → real-scenario testing."
+      },
+      "projects": [
+        "kc-travel"
+      ],
+      "image": "assets/studio/images/service-neon-booking-systems.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρο κοντινό κράτησης σε κινητό με πορτοκαλί neon φως",
+        "en": "Monochrome mobile reservation close-up with amber neon light"
+      }
+    },
+    {
+      "slug": "branding",
+      "name": {
+        "el": "BRANDING & DIGITAL MARKETING",
+        "en": "BRANDING & DIGITAL MARKETING"
+      },
+      "descriptor": {
+        "el": "Οπτική ταυτότητα, περιεχόμενο και καμπάνιες.",
+        "en": "Visual identity, content and campaigns."
+      },
+      "description": {
+        "el": "Διαμορφώνουμε ψηφιακή ταυτότητα με συνέπεια από την πρώτη εντύπωση έως το περιεχόμενο και τα σημεία επαφής της επιχείρησης.",
+        "en": "We shape a coherent digital identity from first impression through content and business touchpoints."
+      },
+      "includes": {
+        "el": "Κατεύθυνση ταυτότητας, οπτικό σύστημα, εφαρμογές για ψηφιακά μέσα και σχεδιασμός περιεχομένου.",
+        "en": "Identity direction, visual system, digital applications and content design."
+      },
+      "process": {
+        "el": "Κατανόηση brand → κατεύθυνση → σύστημα → εφαρμογές και παραδοτέα.",
+        "en": "Brand discovery → direction → system → applications and deliverables."
+      },
+      "projects": [],
+      "image": "assets/studio/images/service-neon-branding.webp",
+      "imageWidth": 1200,
+      "imageHeight": 1600,
+      "imageAlt": {
+        "el": "Ασπρόμαυρο σχέδιο με μολύβι σε χαρτί με κόκκινο neon φως",
+        "en": "Monochrome pencil drawing on paper with red neon light"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "slug": "high-hope",
+      "name": "HIGH HOPE",
+      "domain": "highhopeathens.gr",
+      "category": {
+        "el": "Specialty coffee · Glyfada",
+        "en": "Specialty coffee · Glyfada"
+      },
+      "deliverable": {
+        "el": "Ιστότοπος και QR μενού",
+        "en": "Website & QR menu"
+      },
+      "description": {
+        "el": "Σχεδιάσαμε την ψηφιακή παρουσία του High Hope, specialty coffee spot στη Γλυφάδα, μαζί με το QR menu του. Η δουλειά συνδέει την εικόνα του brand με καθαρή πρόσβαση στο μενού.",
+        "en": "We designed the digital presence for High Hope, a specialty coffee spot in Glyfada, together with its QR menu. The work connects the brand’s visual character with clear access to the menu."
+      },
+      "url": "https://highhopeathens.gr",
+      "desktop": "assets/studio/images/highhope-desktop.webp",
+      "mobile": "assets/studio/images/highhope-mobile.webp",
+      "goal": {
+        "el": "Να γίνει η ταυτότητα του High Hope και η πρόσβαση στο μενού ευανάγνωστες σε ψηφιακή μορφή.",
+        "en": "Present High Hope’s identity and make its menu easy to access digitally."
+      },
+      "solution": {
+        "el": "Ιστότοπος και QR μενού που φέρνουν την παρουσίαση του specialty coffee spot και το μενού στην ίδια ψηφιακή εμπειρία.",
+        "en": "A website and QR menu bringing the specialty coffee spot’s presentation and menu into one digital experience."
+      },
+      "services": [
+        "web-design"
+      ],
+      "visible": true,
+      "caseStudyPath": "/projects/high-hope/",
+      "cover": "assets/studio/images/project-highhope-live.webp",
+      "coverWidth": 1122,
+      "coverHeight": 1402,
+      "gallery": [
+        {
+          "image": "assets/studio/images/highhope-gallery-shop.webp",
+          "width": 1122,
+          "height": 1402,
+          "alt": {
+            "el": "HIGH HOPE — σελίδα καταστήματος σε κινητό",
+            "en": "HIGH HOPE — shop page on a mobile phone"
+          }
+        },
+        {
+          "image": "assets/studio/images/highhope-gallery-coffee.webp",
+          "width": 1122,
+          "height": 1402,
+          "alt": {
+            "el": "HIGH HOPE — παρουσίαση καφέδων σε κινητό",
+            "en": "HIGH HOPE — coffee presentation on a mobile phone"
+          }
+        },
+        {
+          "image": "assets/studio/images/highhope-gallery-laptop.webp",
+          "width": 1122,
+          "height": 1402,
+          "alt": {
+            "el": "HIGH HOPE — αρχική σελίδα σε laptop",
+            "en": "HIGH HOPE — homepage on a laptop"
+          }
+        }
+      ],
+      "desktopWidth": 1440,
+      "desktopHeight": 1000,
+      "mobileWidth": 390,
+      "mobileHeight": 844,
+      "coverAlt": {
+        "el": "HIGH HOPE — παρουσίαση του website σε κινητό",
+        "en": "HIGH HOPE — website presented on a mobile phone"
+      }
+    },
+    {
+      "slug": "gerakos",
+      "name": "GERAKOS",
+      "domain": "gerakos.gr",
+      "category": {
+        "el": "Παραδοσιακό σουβλάκι · Σαντορίνη",
+        "en": "Traditional souvlaki · Santorini"
+      },
+      "deliverable": {
+        "el": "Ιστότοπος, μενού και επικοινωνία",
+        "en": "Website, menu & contact"
+      },
+      "description": {
+        "el": "Σχεδιάσαμε την ιστοσελίδα του Gerakos, παραδοσιακού ψητοπωλείου στη Σαντορίνη, με παρουσίαση του εστιατορίου, του μενού και των στοιχείων επικοινωνίας.",
+        "en": "We designed the website for Gerakos, a traditional souvlaki restaurant in Santorini, presenting the restaurant, its menu and contact information."
+      },
+      "url": "https://gerakos.gr",
+      "desktop": "assets/studio/images/gerakos-desktop.webp",
+      "mobile": "assets/studio/images/gerakos-mobile.webp",
+      "goal": {
+        "el": "Να παρουσιάζονται το παραδοσιακό ψητοπωλείο, το μενού και τα στοιχεία επικοινωνίας.",
+        "en": "Present the traditional souvlaki restaurant, its menu and contact information."
+      },
+      "solution": {
+        "el": "Ιστότοπος με σαφή παρουσίαση του εστιατορίου, του μενού και της επικοινωνίας.",
+        "en": "A website clearly presenting the restaurant, its menu and contact information."
+      },
+      "services": [
+        "web-design"
+      ],
+      "visible": true,
+      "caseStudyPath": "/projects/gerakos/",
+      "cover": "assets/studio/images/project-gerakos.webp",
+      "coverWidth": 819,
+      "coverHeight": 1024,
+      "gallery": [],
+      "desktopWidth": 1440,
+      "desktopHeight": 1000,
+      "mobileWidth": 390,
+      "mobileHeight": 740
+    },
+    {
+      "slug": "kc-travel",
+      "name": "KC TRAVEL",
+      "domain": "kctravel.gr",
+      "category": {
+        "el": "Private transfers · Santorini",
+        "en": "Private transfers · Santorini"
+      },
+      "deliverable": {
+        "el": "Ιστότοπος και interface κράτησης",
+        "en": "Website & booking interface"
+      },
+      "description": {
+        "el": "Για την KC Travel σχεδιάσαμε ιστότοπο ιδιωτικών μεταφορών στη Σαντορίνη και interface κράτησης που παρουσιάζει τη διαδρομή της υπηρεσίας με σαφή βήματα.",
+        "en": "For KC Travel, we designed a website for private transfers in Santorini and a booking interface that presents the service flow in clear steps."
+      },
+      "url": "https://kctravel.gr",
+      "desktop": "assets/studio/images/kc-travel-desktop.webp",
+      "mobile": "assets/studio/images/kc-travel-mobile.webp",
+      "goal": {
+        "el": "Να παρουσιάζονται καθαρά οι ιδιωτικές μεταφορές στη Σαντορίνη και τα βήματα κράτησης.",
+        "en": "Clearly present private Santorini transfers and the steps to book."
+      },
+      "solution": {
+        "el": "Ιστότοπος και interface κράτησης που οργανώνουν τις πληροφορίες της υπηρεσίας σε σαφή βήματα.",
+        "en": "A website and booking interface that organise the service information into clear steps."
+      },
+      "services": [
+        "web-design",
+        "booking-systems"
+      ],
+      "visible": true,
+      "caseStudyPath": "/projects/kc-travel/",
+      "cover": "assets/studio/images/project-kc-travel.webp",
+      "coverWidth": 819,
+      "coverHeight": 1024,
+      "gallery": [],
+      "desktopWidth": 1440,
+      "desktopHeight": 1000,
+      "mobileWidth": 390,
+      "mobileHeight": 844
+    },
+    {
+      "slug": "akri",
+      "name": "AKRI",
+      "domain": "akriprojects.gr",
+      "category": {
+        "el": "Matcha café, boulangerie, workshops & concept store · Akrotiri, Santorini",
+        "en": "Matcha café, boulangerie, workshops & concept store · Akrotiri, Santorini"
+      },
+      "deliverable": {
+        "el": "Παρουσίαση website",
+        "en": "Website presentation"
+      },
+      "description": {
+        "el": "Σχεδιάσαμε την ιστοσελίδα του Akri, ενός matcha café, boulangerie, χώρου workshops και concept store στο Ακρωτήρι της Σαντορίνης, παρουσιάζοντας τον χώρο και τις δραστηριότητές του.",
+        "en": "We designed the website for Akri, a matcha café, boulangerie, workshop space and concept store in Akrotiri, Santorini, presenting the venue and its activities."
+      },
+      "url": "https://akriprojects.gr",
+      "desktop": "assets/studio/images/akri-desktop.webp",
+      "mobile": "assets/studio/images/akri-mobile.webp",
+      "goal": {
+        "el": "Να παρουσιάζεται ψηφιακά ο χώρος και οι διαφορετικές δραστηριότητες του Akri.",
+        "en": "Present Akri’s venue and its different activities online."
+      },
+      "solution": {
+        "el": "Ιστότοπος που παρουσιάζει το matcha café, τη boulangerie, τα workshops και το concept store στο Ακρωτήρι.",
+        "en": "A website presenting the matcha café, boulangerie, workshops and concept store in Akrotiri."
+      },
+      "services": [
+        "web-design"
+      ],
+      "visible": true,
+      "caseStudyPath": "/projects/akri/",
+      "cover": "assets/studio/images/project-akri.webp",
+      "coverWidth": 819,
+      "coverHeight": 1024,
+      "gallery": [],
+      "desktopWidth": 1440,
+      "desktopHeight": 1000,
+      "mobileWidth": 390,
+      "mobileHeight": 740
+    },
+    {
+      "slug": "codehouse",
+      "name": "CODEHOUSE",
+      "domain": "codehouse.gr",
+      "category": {
+        "el": "Software & Digital Systems Studio",
+        "en": "Software & Digital Systems Studio"
+      },
+      "deliverable": {
+        "el": "Ιστότοπος studio",
+        "en": "Studio website"
+      },
+      "description": {
+        "el": "Ο ιστότοπος του Codehouse παρουσιάζει το studio, τις υπηρεσίες και επιλεγμένα έργα μέσα από μια ενιαία ψηφιακή εμπειρία.",
+        "en": "The Codehouse website introduces the studio, its services and selected work through one considered digital experience."
+      },
+      "url": "https://codehouse.gr",
+      "desktop": "assets/studio/images/codehouse-desktop.webp",
+      "mobile": "assets/studio/images/codehouse-mobile.webp",
+      "goal": {
+        "el": "Να παρουσιάζονται το studio, οι υπηρεσίες του και επιλεγμένα έργα με σαφήνεια.",
+        "en": "Clearly introduce the studio, its services and selected work."
+      },
+      "solution": {
+        "el": "Ιστότοπος studio με ενιαία παρουσίαση υπηρεσιών και επιλεγμένων έργων.",
+        "en": "A studio website presenting services and selected projects in one place."
+      },
+      "services": [
+        "web-design"
+      ],
+      "cover": "",
+      "visible": false
+    }
+  ],
+  "images": {
+    "hero": "",
+    "logoBlack": "assets/studio/logo-user-black.png",
+    "logoWhite": "assets/studio/logo-user-white.png",
+    "favicon": "assets/studio/favicon.svg",
+    "heroMode": "screen",
+    "heroLogo": "assets/studio/images/hero-logo-sketch-transparent.png",
+    "heroVideos": [
+      {
+        "src": "assets/studio/videos/graphite-art.mp4",
+        "webm": "assets/studio/videos/graphite-art.webm",
+        "poster": "assets/studio/videos/graphite-art.webp",
+        "label": {
+          "el": "GRAPHITE",
+          "en": "GRAPHITE"
+        }
+      },
+      {
+        "src": "assets/studio/videos/typing-hands.mp4",
+        "webm": "assets/studio/videos/typing-hands.webm",
+        "poster": "assets/studio/videos/typing-hands.webp",
+        "label": {
+          "el": "TYPING",
+          "en": "TYPING"
+        }
+      },
+      {
+        "src": "assets/studio/videos/eye-code.mp4",
+        "webm": "assets/studio/videos/eye-code.webm",
+        "poster": "assets/studio/videos/eye-code.webp",
+        "label": {
+          "el": "REFLECTION",
+          "en": "REFLECTION"
+        }
+      },
+      {
+        "src": "assets/studio/videos/graphite-shading.mp4",
+        "webm": "assets/studio/videos/graphite-shading.webm",
+        "poster": "assets/studio/videos/graphite-shading.webp",
+        "label": {
+          "el": "SHADE",
+          "en": "SHADE"
+        }
+      },
+      {
+        "src": "assets/studio/videos/visual-studio.mp4",
+        "webm": "assets/studio/videos/visual-studio.webm",
+        "poster": "assets/studio/videos/visual-studio.webp",
+        "label": {
+          "el": "VISUAL STUDIO",
+          "en": "VISUAL STUDIO"
+        }
+      },
+      {
+        "src": "assets/studio/videos/pencil-grip.mp4",
+        "webm": "assets/studio/videos/pencil-grip.webm",
+        "poster": "assets/studio/videos/pencil-grip.webp",
+        "label": {
+          "el": "TOUCH",
+          "en": "TOUCH"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "email": "hello@codehouse.gr",
+    "phone": "+30 698 680 4138",
+    "services": [
+      "web",
+      "ecommerce",
+      "apps",
+      "ai",
+      "booking",
+      "branding"
+    ]
+  },
+  "homeProjects": [
+    {
+      "slug": "high-hope"
+    },
+    {
+      "slug": "gerakos"
+    },
+    {
+      "slug": "kc-travel"
+    },
+    {
+      "slug": "akri"
+    }
+  ],
+  "translations": {
+    "el": {
+      "services": "Υπηρεσίες",
+      "projects": "Έργα",
+      "studio": "Studio",
+      "contact": "Επικοινωνία",
+      "start": "Ξεκίνα ένα project",
+      "heroLabel": "THINK BEYOND THE ORDINARY.",
+      "heroDesc": "Σχεδιάζουμε websites, custom εφαρμογές και ψηφιακά συστήματα που συνδυάζουν αισθητική, τεχνολογία και πραγματική λειτουργικότητα.",
+      "selected": "Επιλεγμένα έργα",
+      "aboutLabel": "ABOUT CODEHOUSE",
+      "aboutTitle": "ΕΚΕΙ ΠΟΥ Η ΔΗΜΙΟΥΡΓΙΚΟΤΗΤΑ ΣΥΝΑΝΤΑ ΤΗΝ ΤΕΧΝΟΛΟΓΙΑ.",
+      "about": "Η Codehouse είναι ένα Software & Digital Systems Studio. Δημιουργούμε websites, e-shops, custom εφαρμογές και αυτοματισμούς γύρω από τις ανάγκες κάθε επιχείρησης. Συνδέουμε τον σχεδιασμό με την ανάπτυξη και το marketing, δημιουργώντας μια ολοκληρωμένη ψηφιακή παρουσία και εργαλεία που υποστηρίζουν την καθημερινή λειτουργία της επιχείρησής σου.",
+      "meet": "ΓΝΩΡΙΣΕ ΤΟ STUDIO",
+      "digitalLabel": "DIGITAL WITHOUT LIMITS",
+      "digitalTitle": "ΙΔΕΕΣ ΧΩΡΙΣ ΣΥΝΟΡΑ. ΨΗΦΙΑΚΕΣ ΕΜΠΕΙΡΙΕΣ ΜΕ ΤΑΥΤΟΤΗΤΑ.",
+      "digital": "Συνεργαζόμαστε με επιχειρήσεις στην Ελλάδα και το εξωτερικό, σχεδιάζοντας λύσεις γύρω από το brand, το κοινό και τις πραγματικές τους ανάγκες.",
+      "all": "ΟΛΑ ΤΑ ΕΡΓΑ",
+      "view": "ΔΕΣ ΤΟ PROJECT",
+      "website": "ΔΕΣ ΤΟ WEBSITE",
+      "cta": "LET’S BUILD SOMETHING THAT MATTERS.",
+      "ctaSub": "Έχεις μια ιδέα; Ας της δώσουμε μορφή.",
+      "ctaButton": "ΞΕΚΙΝΑ ΕΝΑ PROJECT",
+      "process": "ΠΩΣ ΔΟΥΛΕΥΟΥΜΕ",
+      "includes": "ΤΙ ΠΕΡΙΛΑΜΒΑΝΕΙ",
+      "related": "ΣΧΕΤΙΚΑ ΕΡΓΑ",
+      "goal": "ΣΤΟΧΟΣ",
+      "solution": "Η ΛΥΣΗ",
+      "next": "ΕΠΟΜΕΝΟ PROJECT",
+      "name": "Όνομα",
+      "company": "Εταιρεία",
+      "email": "Email",
+      "kind": "Είδος υπηρεσίας",
+      "description": "Περιγραφή project",
+      "budget": "Εύρος budget (προαιρετικό)",
+      "send": "ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ",
+      "select": "Επίλεξε υπηρεσία",
+      "budgetOptions": [
+        "Δεν έχω ορίσει ακόμη",
+        "Έως €2.500",
+        "€2.500–€5.000",
+        "€5.000–€10.000",
+        "€10.000+"
+      ],
+      "follow": "Δεν υπάρχουν δημοσιευμένα κανάλια",
+      "legal": "Νομικά",
+      "serviceTitle": "Οι υπηρεσίες μας",
+      "projectsTitle": "Επιλεγμένα έργα",
+      "studioTitle": "Ένα studio ανάμεσα στη δημιουργικότητα και την τεχνολογία.",
+      "contactTitle": "Ας δώσουμε μορφή στην ιδέα σου.",
+      "websiteTitle": "Ιστότοπος",
+      "mobileTitle": "Κινητή εμπειρία",
+      "serviceCTA": "ΣΥΖΗΤΗΣΕ ΤΟ PROJECT ΣΟΥ",
+      "detailIncludes": "Τι περιλαμβάνει",
+      "emptyRelated": "Περισσότερα έργα σύντομα."
+    },
+    "en": {
+      "services": "Services",
+      "projects": "Projects",
+      "studio": "Studio",
+      "contact": "Contact",
+      "start": "Start a project",
+      "heroLabel": "THINK BEYOND THE ORDINARY.",
+      "heroDesc": "We design websites, custom applications and digital systems that bring together aesthetics, technology and real utility.",
+      "selected": "Selected projects",
+      "aboutLabel": "ABOUT CODEHOUSE",
+      "aboutTitle": "WHERE CREATIVITY MEETS TECHNOLOGY.",
+      "about": "Codehouse is a Software & Digital Systems Studio. We create websites, e-commerce, custom applications and automations around the needs of each business. We connect design with development and marketing, building a coherent digital presence and tools that support the everyday work of your business.",
+      "meet": "MEET THE STUDIO",
+      "digitalLabel": "DIGITAL WITHOUT LIMITS",
+      "digitalTitle": "IDEAS WITHOUT BORDERS. DIGITAL EXPERIENCES WITH IDENTITY.",
+      "digital": "We work with businesses in Greece and abroad, shaping solutions around their brand, audience and real needs.",
+      "all": "ALL PROJECTS",
+      "view": "VIEW PROJECT",
+      "website": "VIEW WEBSITE",
+      "cta": "LET’S BUILD SOMETHING THAT MATTERS.",
+      "ctaSub": "Have an idea? Let’s give it form.",
+      "ctaButton": "START A PROJECT",
+      "process": "HOW WE WORK",
+      "includes": "WHAT’S INCLUDED",
+      "related": "RELATED PROJECTS",
+      "goal": "THE GOAL",
+      "solution": "THE WORK",
+      "next": "NEXT PROJECT",
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "kind": "Service type",
+      "description": "Project description",
+      "budget": "Budget range (optional)",
+      "send": "SEND MESSAGE",
+      "select": "Select a service",
+      "budgetOptions": [
+        "Not decided yet",
+        "Up to €2,500",
+        "€2,500–€5,000",
+        "€5,000–€10,000",
+        "€10,000+"
+      ],
+      "follow": "No published channels",
+      "legal": "Legal",
+      "serviceTitle": "Our services",
+      "projectsTitle": "Selected projects",
+      "studioTitle": "A studio where creativity meets technology.",
+      "contactTitle": "Let’s give your idea form.",
+      "websiteTitle": "Website",
+      "mobileTitle": "Mobile experience",
+      "serviceCTA": "LET’S DISCUSS YOUR PROJECT",
+      "detailIncludes": "What’s included",
+      "emptyRelated": "More projects soon."
+    }
+  }
+}

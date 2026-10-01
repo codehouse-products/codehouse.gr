@@ -28,13 +28,8 @@
 <link rel="stylesheet" href="/assets/style.min.css?v=9">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=9">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=9">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9JE7KSR99"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G9JE7KSR99', { 'anonymize_ip': true });
-</script>
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -161,8 +156,13 @@
   @media (max-width: 900px) { .df-hero-inner, .df-copy-grid { grid-template-columns: 1fr; } .df-hero-inner { gap: 44px; } .df-visual { max-width: 720px; } .df-checklist { position: static; } }
   @media (max-width: 620px) { .df-hero { padding-top: 116px; } .df-hero h1 { font-size: clamp(38px, 10.5vw, 52px); } .df-actions { flex-direction: column; } .df-actions .btn { width: 100%; justify-content: center; } .df-grid { grid-template-columns: 1fr; } .df-visual-frame { border-radius: 17px; } .df-answer { border-radius: 17px; } }
 </style>
+  <link rel="stylesheet" href="/assets/studio/legacy.css">
+<link rel="stylesheet" href="/assets/studio/privacy.css">
+<link rel="alternate" hreflang="el" href="https://codehouse.gr/dorean-istoselida/">
+<link rel="alternate" hreflang="en" href="https://codehouse.gr/en/dorean-istoselida/">
+<link rel="alternate" hreflang="x-default" href="https://codehouse.gr/dorean-istoselida/">
 </head>
-<body>
+<body class="legacy-page">
 
 <div class="promo-banner" id="promoBanner" role="region" aria-label="Προσφορά">
   <a href="/prosfora/" class="promo-banner-link">
@@ -177,36 +177,51 @@
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"></div>
 
+<!-- Legacy editorial navigation -->
+<a class="legacy-skip-link" href="#legacy-main-content">Μετάβαση στο περιεχόμενο</a>
+<header class="legacy-editorial-nav">
+  <a class="legacy-editorial-brand" href="/" aria-label="Codehouse — Αρχική">
+    <img src="/assets/studio/logo-user-black.png" alt="Codehouse" width="58" height="58">
+  </a>
+  <nav class="legacy-editorial-links" aria-label="Κύρια πλοήγηση"><a href="/services/" aria-current="page">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a></nav>
+  <!-- locale-pair --><nav class="legacy-language" aria-label="Γλώσσα"><a href="/dorean-istoselida/" lang="el" aria-current="page">GR</a><span aria-hidden="true"> / </span><a href="/en/dorean-istoselida/" lang="en">EN</a></nav><!-- /locale-pair -->
+  <details class="legacy-mobile-nav" data-legacy-mobile-menu>
+    <summary aria-label="Άνοιγμα πλοήγησης">Μενού</summary>
+    <nav aria-label="Πλοήγηση για κινητά"><a href="/services/" aria-current="page">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a></nav>
+  </details>
+</header>
+<div class="legacy-compat-chrome" aria-hidden="true" inert hidden>
 <header class="nav" id="nav">
   <a href="/" class="nav-brand" aria-label="Codehouse — Αρχική">
     <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="nav-logo-mark" width="168" height="158">
     <img src="/assets/img/logo-ch-text.webp?v=5" alt="Codehouse" class="nav-logo" width="300" height="52">
   </a>
   <nav class="nav-links" aria-label="Κύρια πλοήγηση">
-    <a href="/#services">Υπηρεσίες</a>
+    <a href="/services/">Υπηρεσίες</a>
     <a href="/qr-menu/">QR Μενού</a>
-    <a href="/douleies/">Δουλειές</a>
-    <a href="/#process">Διαδικασία</a>
+    <a href="/projects/">Δουλειές</a>
+    <a href="/services/#services">Διαδικασία</a>
     <a href="/blog/">Blog</a>
-    <a href="/#quiz" class="nav-cta">Ξεκίνα το project σου</a>
+    <a href="/contact/" class="nav-cta">Ξεκίνα το project σου</a>
   </nav>
   <button class="nav-burger" id="navBurger" aria-label="Μενού" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
+</div>
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="mobile-menu-logo" width="168" height="158">
   <nav aria-label="Mobile πλοήγηση">
-    <a href="/#services" style="--i:0">Υπηρεσίες</a>
+    <a href="/services/" style="--i:0">Υπηρεσίες</a>
     <a href="/qr-menu/" style="--i:1">QR Μενού</a>
-    <a href="/douleies/" style="--i:2">Δουλειές</a>
-    <a href="/#process" style="--i:3">Διαδικασία</a>
-    <a href="/#faq" style="--i:4">FAQ</a>
+    <a href="/projects/" style="--i:2">Δουλειές</a>
+    <a href="/services/#services" style="--i:3">Διαδικασία</a>
+    <a href="/qr-menu/#faq" style="--i:4">FAQ</a>
     <a href="/blog/" style="--i:5">Blog</a>
-    <a href="/#quiz" class="mobile-cta" style="--i:6">Ξεκίνα το project σου →</a>
+    <a href="/contact/" class="mobile-cta" style="--i:6">Ξεκίνα το project σου →</a>
   </nav>
 </div>
 
-<main class="df-main">
+<main class="df-main" id="legacy-main-content" tabindex="-1">
   <section class="df-hero">
     <div class="df-hero-inner">
       <div>
@@ -278,7 +293,7 @@
   <section class="df-section" aria-labelledby="comparison">
     <div class="df-container">
       <header class="df-head"><p class="df-kicker">Οι επιλογές δίπλα-δίπλα</p><h2 id="comparison">Δωρεάν website vs επαγγελματική ιστοσελίδα</h2><p>Δεν είναι κάθε free plan ίδιο και δεν είναι κάθε επαγγελματικό site ίδιο. Ο παρακάτω πίνακας δείχνει τα σημεία που αξίζει να συγκρίνεις.</p></header>
-      <div class="df-table-wrap"><table class="df-table"><thead><tr><th>Κριτήριο</th><th>Δωρεάν site / free plan</th><th>Επαγγελματική ιστοσελίδα</th></tr></thead><tbody>
+      <div class="df-table-wrap"><div class="legacy-table-scroll" role="region" tabindex="0" aria-label="Πίνακας με οριζόντια κύλιση"><table class="df-table"><thead><tr><th>Κριτήριο</th><th>Δωρεάν site / free plan</th><th>Επαγγελματική ιστοσελίδα</th></tr></thead><tbody>
         <tr><td>Domain</td><td>Συχνά subdomain ή ξεχωριστή χρέωση για custom domain.</td><td>Σχεδιάζεται γύρω από το domain της επιχείρησης και τη σωστή τεχνική ρύθμιση.</td></tr>
         <tr><td>Branding</td><td>Μπορεί να εμφανίζεται το branding της πλατφόρμας ή διαφημίσεις.</td><td>Η οπτική ταυτότητα ανήκει στην επιχείρηση, χωρίς άσχετα μηνύματα.</td></tr>
         <tr><td>Design</td><td>Έτοιμα templates με περιορισμένο έλεγχο στη δομή.</td><td>Custom κατεύθυνση με βάση κοινό, υπηρεσία και στόχο conversion.</td></tr>
@@ -289,7 +304,7 @@
         <tr><td>Ownership</td><td>Χρειάζεται προσεκτικός έλεγχος των όρων export και μεταφοράς.</td><td>Οι όροι για domain, περιεχόμενο και πρόσβαση συμφωνούνται εξαρχής.</td></tr>
         <tr><td>Scalability</td><td>Μπορεί να χρειαστεί αλλαγή plan ή πλατφόρμας όταν μεγαλώσει το project.</td><td>Η βάση μπορεί να σχεδιαστεί με τα επόμενα βήματα της επιχείρησης στο μυαλό.</td></tr>
         <tr><td>Maintenance</td><td>Συχνά την αναλαμβάνει ο ιδιοκτήτης ή χρεώνεται ξεχωριστά.</td><td>Υπάρχει ξεκάθαρη συμφωνία για ενημερώσεις, ασφάλεια, backups και αλλαγές.</td></tr>
-      </tbody></table></div>
+      </tbody></table></div></div>
     </div>
   </section>
 
@@ -345,17 +360,19 @@
   </section>
 </main>
 
-<footer class="footer">
+<footer class="footer legacy-editorial-footer" data-legacy-editorial-footer="true">
   <div class="footer-inner">
-    <div class="footer-brand"><img src="/assets/img/logo-ch-wordmark.webp?v=5" alt="Codehouse" class="footer-logo"><p>Χτίζουμε ψηφιακά σπίτια για επιχειρήσεις.</p></div>
-    <div class="footer-col"><h4>Πλοήγηση</h4><a href="/#services">Υπηρεσίες</a><a href="/qr-menu/">Ψηφιακό Μενού QR</a><a href="/douleies/">Δουλειές</a><a href="/#process">Διαδικασία</a><a href="/blog/">Blog</a><a href="/#quiz">Ερωτηματολόγιο</a><a href="/aporrito/">Πολιτική Απορρήτου</a></div>
+    <div class="footer-brand"><img src="/assets/studio/logo-user-white.png" alt="Codehouse" class="footer-logo" width="160" height="160"><p>Χτίζουμε ψηφιακά σπίτια για επιχειρήσεις.</p></div>
+    <div class="footer-col"><h4>Πλοήγηση</h4><a href="/services/">Υπηρεσίες</a><a href="/qr-menu/">Ψηφιακό Μενού QR</a><a href="/projects/">Δουλειές</a><a href="/services/#services">Διαδικασία</a><a href="/blog/">Blog</a><a href="/contact/">Ερωτηματολόγιο</a><a href="/aporrito/">Πολιτική Απορρήτου</a></div>
     <div class="footer-col"><h4>Επικοινωνία</h4><a href="tel:+306986804138">698 680 4138</a><a href="mailto:hello@codehouse.gr">hello@codehouse.gr</a><a href="https://artivoai.com" target="_blank" rel="noopener">artivoai.com</a></div>
     <div class="footer-col"><h4>Οικοσύστημα</h4><a href="#" class="house-switch" title="Έρχεται σύντομα">marketinghouse.gr <span class="soon-tag">σύντομα</span></a></div>
   </div>
   <p class="footer-bottom">© 2026 Codehouse — codehouse.gr · Με ❤ από την Αθήνα</p>
-</footer>
 
-<script src="/assets/cookie_banner.min.js" defer></script>
+  <nav class="legacy-footer-nav" aria-label="Πλοήγηση υποσέλιδου"><a href="/services/">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a><a href="/aporrito/">Πολιτική απορρήτου</a></nav>
+<button class="privacy-settings" data-privacy-settings type="button">Ρυθμίσεις απορρήτου</button></footer>
+
+
 <script>
 (function () {
   'use strict';
@@ -378,5 +395,7 @@
   }
 })();
 </script>
+  <script src="/assets/studio/legacy.js" defer></script>
+<script src="/assets/studio/privacy.js" defer></script>
 </body>
 </html>

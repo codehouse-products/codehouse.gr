@@ -28,13 +28,8 @@
 <link rel="stylesheet" href="/assets/style.min.css?v=9">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=9">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=9">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9JE7KSR99"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G9JE7KSR99', { 'anonymize_ip': true });
-</script>
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -225,8 +220,13 @@
     .lp-answer { border-radius: 17px; }
   }
 </style>
+  <link rel="stylesheet" href="/assets/studio/legacy.css">
+<link rel="stylesheet" href="/assets/studio/privacy.css">
+<link rel="alternate" hreflang="el" href="https://codehouse.gr/seo/">
+<link rel="alternate" hreflang="en" href="https://codehouse.gr/en/seo/">
+<link rel="alternate" hreflang="x-default" href="https://codehouse.gr/seo/">
 </head>
-<body>
+<body class="legacy-page">
 
 <div class="promo-banner" id="promoBanner" role="region" aria-label="Προσφορά">
   <a href="/prosfora/" class="promo-banner-link">
@@ -241,38 +241,53 @@
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"></div>
 
+<!-- Legacy editorial navigation -->
+<a class="legacy-skip-link" href="#legacy-main-content">Μετάβαση στο περιεχόμενο</a>
+<header class="legacy-editorial-nav">
+  <a class="legacy-editorial-brand" href="/" aria-label="Codehouse — Αρχική">
+    <img src="/assets/studio/logo-user-black.png" alt="Codehouse" width="58" height="58">
+  </a>
+  <nav class="legacy-editorial-links" aria-label="Κύρια πλοήγηση"><a href="/services/" aria-current="page">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a></nav>
+  <!-- locale-pair --><nav class="legacy-language" aria-label="Γλώσσα"><a href="/seo/" lang="el" aria-current="page">GR</a><span aria-hidden="true"> / </span><a href="/en/seo/" lang="en">EN</a></nav><!-- /locale-pair -->
+  <details class="legacy-mobile-nav" data-legacy-mobile-menu>
+    <summary aria-label="Άνοιγμα πλοήγησης">Μενού</summary>
+    <nav aria-label="Πλοήγηση για κινητά"><a href="/services/" aria-current="page">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a></nav>
+  </details>
+</header>
+<div class="legacy-compat-chrome" aria-hidden="true" inert hidden>
 <header class="nav" id="nav">
   <a href="/" class="nav-brand" aria-label="Codehouse — Αρχική">
     <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="nav-logo-mark" width="168" height="158">
     <img src="/assets/img/logo-ch-text.webp?v=5" alt="Codehouse" class="nav-logo" width="300" height="52">
   </a>
   <nav class="nav-links" aria-label="Κύρια πλοήγηση">
-    <a href="/#services">Υπηρεσίες</a>
+    <a href="/services/">Υπηρεσίες</a>
     <a href="/qr-menu/">QR Μενού</a>
-    <a href="/douleies/">Δουλειές</a>
-    <a href="/#process">Διαδικασία</a>
+    <a href="/projects/">Δουλειές</a>
+    <a href="/services/#services">Διαδικασία</a>
     <a href="/blog/">Blog</a>
-    <a href="/#quiz" class="nav-cta">Ξεκίνα το project σου</a>
+    <a href="/contact/" class="nav-cta">Ξεκίνα το project σου</a>
   </nav>
   <button class="nav-burger" id="navBurger" aria-label="Μενού" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
+</div>
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="mobile-menu-logo" width="168" height="158">
   <nav aria-label="Mobile πλοήγηση">
-    <a href="/#services" style="--i:0">Υπηρεσίες</a>
+    <a href="/services/" style="--i:0">Υπηρεσίες</a>
     <a href="/qr-menu/" style="--i:1">QR Μενού</a>
-    <a href="/douleies/" style="--i:2">Δουλειές</a>
-    <a href="/#process" style="--i:3">Διαδικασία</a>
-    <a href="/#faq" style="--i:4">FAQ</a>
+    <a href="/projects/" style="--i:2">Δουλειές</a>
+    <a href="/services/#services" style="--i:3">Διαδικασία</a>
+    <a href="/qr-menu/#faq" style="--i:4">FAQ</a>
     <a href="/blog/" style="--i:5">Blog</a>
-    <a href="/#quiz" class="mobile-cta" style="--i:6">Ξεκίνα το project σου →</a>
+    <a href="/contact/" class="mobile-cta" style="--i:6">Ξεκίνα το project σου →</a>
   </nav>
 </div>
 
-<main class="lp-main">
+<main class="lp-main" id="legacy-main-content" tabindex="-1">
   <section class="lp-hero"><div class="lp-hero-inner"><div class="lp-hero-copy">
     <nav class="lp-breadcrumb" aria-label="Breadcrumb"><a href="/">Αρχική</a><span aria-hidden="true">/</span><span>SEO Υπηρεσίες</span></nav>
     <p class="lp-kicker">SEO υπηρεσίες για επιχειρήσεις</p>
@@ -315,20 +330,20 @@
   <section class="lp-section lp-cta"><div class="lp-cta-box"><h2>Θέλετε SEO με <span class="accent">καθαρό πλάνο;</span></h2><p>Πείτε μας την επιχείρηση, την περιοχή και τον στόχο σας. Θα ξεκινήσουμε από το τι μπορεί να τεκμηριωθεί και ποια βήματα έχουν πραγματική προτεραιότητα.</p><div class="lp-actions"><a href="/#quiz" class="btn btn-primary btn-lg">Στείλτε το brief <span class="btn-arrow">→</span></a><a href="/#quiz" class="btn btn-ghost btn-lg">Ξεκινήστε SEO brief</a></div></div></section>
 </main>
 
-<footer class="footer">
+<footer class="footer legacy-editorial-footer" data-legacy-editorial-footer="true">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="/assets/img/logo-ch-wordmark.webp?v=5" alt="Codehouse" class="footer-logo">
+      <img src="/assets/studio/logo-user-white.png" alt="Codehouse" class="footer-logo" width="160" height="160">
       <p>Χτίζουμε ψηφιακά σπίτια για επιχειρήσεις.</p>
     </div>
     <div class="footer-col">
       <h4>Πλοήγηση</h4>
-      <a href="/#services">Υπηρεσίες</a>
+      <a href="/services/">Υπηρεσίες</a>
       <a href="/qr-menu/">Ψηφιακό Μενού QR</a>
-      <a href="/douleies/">Δουλειές</a>
-      <a href="/#process">Διαδικασία</a>
+      <a href="/projects/">Δουλειές</a>
+      <a href="/services/#services">Διαδικασία</a>
       <a href="/blog/">Blog</a>
-      <a href="/#quiz">Ερωτηματολόγιο</a>
+      <a href="/contact/">Ερωτηματολόγιο</a>
       <a href="/aporrito/">Πολιτική Απορρήτου</a>
     </div>
     <div class="footer-col">
@@ -343,9 +358,11 @@
     </div>
   </div>
   <p class="footer-bottom">© 2026 Codehouse — codehouse.gr · Με ❤ από την Αθήνα</p>
-</footer>
 
-<script src="/assets/cookie_banner.min.js" defer></script>
+  <nav class="legacy-footer-nav" aria-label="Πλοήγηση υποσέλιδου"><a href="/services/">Υπηρεσίες</a><a href="/projects/">Έργα</a><a href="/studio/">Studio</a><a href="/contact/">Επικοινωνία</a><a href="/blog/">Blog</a><a href="/prosfora/">Προσφορά</a><a href="/aporrito/">Πολιτική απορρήτου</a></nav>
+<button class="privacy-settings" data-privacy-settings type="button">Ρυθμίσεις απορρήτου</button></footer>
+
+
 <script>
 (function () {
   'use strict';
@@ -398,5 +415,7 @@
   }
 })();
 </script>
+  <script src="/assets/studio/legacy.js" defer></script>
+<script src="/assets/studio/privacy.js" defer></script>
 </body>
 </html>

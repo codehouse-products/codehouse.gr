@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 100" role="img" aria-label="Codehouse"><g fill="none" stroke="#f5f4f0" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M56 12H16V88H56"/>
+<path d="M84 12H132V88H84Z"/>
+<path d="M152 12H174C192 12 202 24 202 42V58C202 76 192 88 174 88H152Z"/>
+<path d="M220 12H270M220 12V88H270M220 50H260"/>
+<path d="M288 12V88M338 12V88M288 50H338"/>
+<path d="M356 12H404V88H356Z"/>
+<path d="M424 12V58C424 78 434 88 454 88C474 88 484 78 484 58V12"/>
+<path d="M552 12H510C500 12 496 18 496 28V34C496 44 502 50 512 50H538C548 50 554 56 554 66V72C554 82 548 88 538 88H496"/>
+<path d="M572 12H608M572 12V88H608M572 50H602"/>
+</g><path d="M84 12v76M356 12v76" stroke="#f5f4f0" stroke-width="1" opacity=".35"/></svg>

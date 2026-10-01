@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<!-- Google tag (gtag.js) -->
+
+
+<!-- Microsoft Clarity -->
+
+<title>Projects & Portfolio — Websites We Have Built | Codehouse</title>
+<meta name="description" content="Explore real websites and digital QR menus built for cafés, restaurants and businesses in Athens and Santorini, with live links, project details and outcomes.">
+<meta name="keywords" content="website portfolio, website examples, restaurant websites, digital QR menu examples, web design projects Athens, website development Santorini">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Projects & Portfolio — Websites We Have Built | Codehouse">
+<meta property="og:description" content="Real projects for hospitality and businesses, with live links and measurable details.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Codehouse">
+<meta property="og:url" content="https://codehouse.gr/en/douleies/">
+<meta property="og:image" content="https://codehouse.gr/assets/studio/images/project-highhope-live.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects & Portfolio — Websites We Have Built | Codehouse">
+<meta name="twitter:description" content="Real websites and QR menus for hospitality and businesses, with live project links.">
+<meta name="twitter:image" content="https://codehouse.gr/assets/studio/images/project-highhope-live.webp">
+<link rel="canonical" href="https://codehouse.gr/en/douleies/">
+<link rel="icon" href="/favicon.ico?v=9" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=9">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=9">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=9">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/assets/studio/images/project-highhope-live.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.min.css?v=9">
+<style>
+/* ===== PROJECTS / PORTFOLIO PAGE — page-specific ===== */
+.wk-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(112px, 14vw, 150px) clamp(20px, 5vw, 56px) clamp(34px, 5vw, 56px);
+}
+.wk-hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none; }
+.wk-hero-orb-1 { width: 460px; height: 460px; background: rgba(198,255,74,.13); top: -160px; right: -110px; }
+.wk-hero-orb-2 { width: 340px; height: 340px; background: rgba(80,120,255,.10); bottom: -140px; left: -100px; }
+.wk-hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; text-align: center; }
+.wk-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--lime-dim); border: 1px solid rgba(198,255,74,.35); color: var(--lime);
+  padding: 8px 18px; border-radius: 999px; font-size: 13.5px; font-weight: 700; margin-bottom: 22px;
+}
+.wk-hero h1 {
+  font-family: var(--font-head); font-size: clamp(32px, 5.4vw, 58px); font-weight: 700;
+  line-height: 1.1; letter-spacing: -.018em;
+}
+.wk-lead { color: var(--text-dim); font-size: clamp(16px, 1.9vw, 18.5px); line-height: 1.72; margin: 22px auto 0; max-width: 680px; }
+.wk-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; justify-content: center; }
+/* Stats strip */
+.wk-stats {
+  max-width: 1000px; margin: clamp(30px, 5vw, 48px) auto 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px;
+}
+.wk-stat { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px 18px; text-align: center; }
+.wk-stat strong { display: block; font-family: var(--font-head); font-size: clamp(26px, 3.2vw, 34px); font-weight: 700; color: var(--lime); line-height: 1.1; }
+.wk-stat span { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+/* Inline link */
+.wk-inline { color: var(--lime); font-weight: 700; }
+/* Breadcrumbs */
+.wk-crumbs { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.wk-crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--text-dim); }
+.wk-crumbs a { color: var(--text-dim); }
+.wk-crumbs a:hover { color: var(--lime); }
+.wk-crumbs li + li::before { content: '/'; margin-right: 8px; opacity: .5; }
+/* Case study rows */
+.wk-cases { padding: clamp(50px, 7vw, 86px) clamp(20px, 5vw, 56px); }
+.wk-case {
+  max-width: 1160px; margin: 0 auto clamp(28px, 4.5vw, 46px);
+  background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line); border-radius: 26px; overflow: hidden;
+  display: grid; grid-template-columns: 1.02fr .98fr; align-items: stretch;
+  transition: border-color .35s, transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.wk-case:hover { border-color: rgba(198,255,74,.3); transform: translateY(-4px); box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+.wk-case.rev .wk-case-media { order: 2; }
+.wk-case-media { position: relative; min-height: 300px; overflow: hidden; }
+.wk-case-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .6s var(--ease); }
+.wk-case:hover .wk-case-media img { transform: scale(1.035); }
+.wk-case-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(200deg, transparent 60%, rgba(11,11,15,.42)); pointer-events: none; }
+.wk-flag {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  font-family: var(--font-head); font-size: 11.5px; font-weight: 700; letter-spacing: .1em;
+  padding: 7px 14px; border-radius: 999px; backdrop-filter: blur(8px);
+  background: rgba(198,255,74,.92); color: #0b0b0f;
+}
+.wk-flag.demo { background: rgba(244,244,240,.9); }
+.wk-case-body { padding: clamp(26px, 3.4vw, 44px); display: flex; flex-direction: column; }
+.wk-kicker { font-family: var(--font-head); font-size: 12.5px; font-weight: 700; letter-spacing: .12em; color: var(--lime); margin-bottom: 12px; }
+.wk-case-body h2 { font-family: var(--font-head); font-size: clamp(23px, 3vw, 33px); font-weight: 700; line-height: 1.18; letter-spacing: -.012em; margin-bottom: 14px; }
+.wk-case-body > p { color: var(--text-dim); font-size: 15.5px; line-height: 1.75; margin-bottom: 14px; }
+.wk-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 20px; }
+.wk-tags span {
+  font-size: 12px; font-weight: 600; color: var(--text-dim);
+  border: 1px solid var(--line); background: var(--panel-2);
+  padding: 6px 12px; border-radius: 999px;
+}
+.wk-mini { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.wk-mini div { background: var(--panel-2); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px; }
+.wk-mini strong { display: block; font-family: var(--font-head); font-size: 19px; font-weight: 700; color: var(--lime); line-height: 1.15; }
+.wk-mini em { font-style: normal; font-size: 12px; color: var(--text-dim); font-weight: 600; }
+.wk-case-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; }
+.wk-soon-note { font-size: 13.5px; color: var(--text-dim); font-weight: 600; margin-top: auto; }
+/* What we build strip */
+.wk-what { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(50px, 7vw, 84px) clamp(20px, 5vw, 56px); }
+.wk-what-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.wk-what-card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 28px 26px; transition: border-color .35s, transform .35s var(--ease); }
+.wk-what-card:hover { border-color: rgba(198,255,74,.3); transform: translateY(-4px); }
+.wk-what-card h3 { font-family: var(--font-head); font-size: 18px; margin-bottom: 10px; }
+.wk-what-card p { color: var(--text-dim); font-size: 14.5px; line-height: 1.7; }
+.wk-what-ico { font-size: 24px; display: block; margin-bottom: 14px; }
+/* Process mini */
+.wk-proc { padding: clamp(50px, 7vw, 84px) clamp(20px, 5vw, 56px); }
+.wk-proc-list { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.wk-proc-item { display: grid; grid-template-columns: 54px 1fr; gap: 20px; align-items: start; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px 26px; }
+.wk-proc-num { font-family: var(--font-head); font-size: 26px; font-weight: 700; color: var(--lime); line-height: 1; }
+.wk-proc-item h3 { font-family: var(--font-head); font-size: 17.5px; margin-bottom: 7px; }
+.wk-proc-item p { color: var(--text-dim); font-size: 14.5px; line-height: 1.7; }
+/* ── Category filter tabs ── */
+.wk-filter {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  max-width: 1160px; margin: 0 auto 36px;
+  padding: 0 clamp(20px, 5vw, 56px);
+}
+.wk-filter-btn {
+  font-family: var(--font-head); font-size: 13.5px; font-weight: 700;
+  padding: 10px 22px; border-radius: 999px; border: 1.5px solid var(--line);
+  background: transparent; color: var(--text-dim); cursor: pointer;
+  transition: border-color .22s, background .22s, color .22s, transform .18s;
+  letter-spacing: .03em;
+}
+.wk-filter-btn:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+.wk-filter-btn.active {
+  background: var(--lime); border-color: var(--lime);
+  color: var(--bg); transform: none;
+}
+/* hidden category card */
+.wk-case[hidden] { display: none !important; }
+.wk-case { transition: opacity .3s, transform .3s var(--ease); }
+.wk-case.fade-out { opacity: 0; transform: translateY(10px); }
+
+@media (max-width: 900px) {
+  .wk-case { grid-template-columns: 1fr; }
+  .wk-case.rev .wk-case-media { order: 0; }
+  .wk-case-media { min-height: 210px; max-height: 260px; }
+}
+@media (max-width: 560px) {
+  .wk-hero-actions .btn { width: 100%; justify-content: center; }
+  .wk-case-actions .btn { width: 100%; justify-content: center; }
+  .wk-proc-item { grid-template-columns: 1fr; gap: 8px; }
+  .wk-filter { gap: 6px; }
+  .wk-filter-btn { font-size: 12.5px; padding: 9px 16px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://codehouse.gr/en/douleies/#page",
+      "name": "Projects & Portfolio — Codehouse",
+      "description": "Real websites and digital QR menus we built for cafés, restaurants and businesses in Athens and Santorini.",
+      "url": "https://codehouse.gr/en/douleies/",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://codehouse.gr/#business"
+      },
+      "about": {
+        "@id": "https://codehouse.gr/#business"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://codehouse.gr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projects",
+          "item": "https://codehouse.gr/en/douleies/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Projects Codehouse",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "HIGH HOPE — highhopeathens.gr",
+            "url": "https://highhopeathens.gr",
+            "image": "https://codehouse.gr/assets/studio/images/project-highhope-live.webp",
+            "description": "We designed the digital presence for High Hope, a specialty coffee spot in Glyfada, together with its QR menu. The work connects the brand’s visual character with clear access to the menu.",
+            "creator": {
+              "@id": "https://codehouse.gr/#business"
+            },
+            "genre": "Website & QR menu"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "GERAKOS — gerakos.gr",
+            "url": "https://gerakos.gr",
+            "image": "https://codehouse.gr/assets/studio/images/project-gerakos.webp",
+            "description": "We designed the website for Gerakos, a traditional souvlaki restaurant in Santorini, presenting the restaurant, its menu and contact information.",
+            "creator": {
+              "@id": "https://codehouse.gr/#business"
+            },
+            "genre": "Website, menu & contact"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "KC TRAVEL — kctravel.gr",
+            "url": "https://kctravel.gr",
+            "image": "https://codehouse.gr/assets/studio/images/project-kc-travel.webp",
+            "description": "For KC Travel, we designed a website for private transfers in Santorini and a booking interface that presents the service flow in clear steps.",
+            "creator": {
+              "@id": "https://codehouse.gr/#business"
+            },
+            "genre": "Website & booking interface"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "AKRI — akriprojects.gr",
+            "url": "https://akriprojects.gr",
+            "image": "https://codehouse.gr/assets/studio/images/project-akri.webp",
+            "description": "We designed the website for Akri, a matcha café, boulangerie, workshop space and concept store in Akrotiri, Santorini, presenting the venue and its activities.",
+            "creator": {
+              "@id": "https://codehouse.gr/#business"
+            },
+            "genre": "Website presentation"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="stylesheet" href="/assets/studio/legacy.css">
+<link rel="stylesheet" href="/assets/studio/privacy.css">
+<link rel="alternate" hreflang="el" href="https://codehouse.gr/douleies/">
+<link rel="alternate" hreflang="en" href="https://codehouse.gr/en/douleies/">
+<link rel="alternate" hreflang="x-default" href="https://codehouse.gr/douleies/">
+</head>
+<body class="legacy-page">
+
+<!-- PROMO BANNER -->
+<div class="promo-banner" id="promoBanner" role="region" aria-label="Offer">
+  <a href="/en/prosfora/" class="promo-banner-link">
+    <span class="promo-gift" aria-hidden="true">🎁</span>
+    <span class="promo-text"><strong>Website Design at No Upfront Cost</strong><span class="promo-sub"> — with a small monthly subscription</span></span>
+    <span class="promo-cta">View the offer →</span>
+  </a>
+  <button class="promo-close" id="promoClose" aria-label="Close offer">×</button>
+</div>
+
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Nav -->
+<!-- Legacy editorial navigation -->
+<a class="legacy-skip-link" href="#top">Skip to content</a>
+<header class="legacy-editorial-nav">
+  <a class="legacy-editorial-brand" href="/en/" aria-label="Codehouse — Home">
+    <img src="/assets/studio/logo-user-black.png" alt="Codehouse" width="58" height="58">
+  </a>
+  <nav class="legacy-editorial-links" aria-label="Main navigation"><a href="/en/services/">Services</a><a href="/en/projects/" aria-current="page">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a></nav>
+  <!-- locale-pair --><nav class="legacy-language" aria-label="Language"><a href="/douleies/" lang="el">GR</a><span aria-hidden="true"> / </span><a href="/en/douleies/" lang="en" aria-current="page">EN</a></nav><!-- /locale-pair -->
+  <details class="legacy-mobile-nav" data-legacy-mobile-menu>
+    <summary aria-label="Open navigation">Menu</summary>
+    <nav aria-label="Mobile navigation"><a href="/en/services/">Services</a><a href="/en/projects/" aria-current="page">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a></nav>
+  </details>
+</header>
+<div class="legacy-compat-chrome" aria-hidden="true" inert hidden>
+<header class="nav" id="nav">
+  <a href="/en/" class="nav-brand" aria-label="Codehouse — Home">
+    <img src="/assets/img/logo-ch-mark.webp?v=5" alt="Codehouse Logo Mark" class="nav-logo-mark" width="168" height="158">
+    <img src="/assets/img/logo-ch-text.webp?v=5" alt="Codehouse" class="nav-logo" width="300" height="52">
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="/en/services/">Services</a>
+    <a href="/en/qr-menu/">QR Menu</a>
+    <a href="/en/projects/" aria-current="page">Projects</a>
+    <a href="/en/services/#services">Process</a>
+    <a href="/en/blog/">Blog</a>
+    <a href="/en/contact/" class="nav-cta">Start your project</a>
+  </nav>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+</div>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <img src="/assets/img/logo-ch-mark.webp?v=5" alt="Codehouse Logo Mark" class="mobile-menu-logo" aria-hidden="true" width="168" height="158">
+  <nav>
+    <a href="/en/services/" style="--i:0">Services</a>
+    <a href="/en/qr-menu/" style="--i:1">QR Menu</a>
+    <a href="/en/projects/" style="--i:2">Projects</a>
+    <a href="/en/services/#services" style="--i:3">Process</a>
+    <a href="/en/qr-menu/#faq" style="--i:4">FAQ</a>
+    <a href="/en/blog/" style="--i:5">Blog</a>
+    <a href="/en/contact/" class="mobile-cta" style="--i:6">Start your project →</a>
+  </nav>
+</div>
+
+<main id="top" tabindex="-1">
+
+  <!-- HERO -->
+  <section class="wk-hero">
+    <div class="wk-hero-orb wk-hero-orb-1" aria-hidden="true"></div>
+    <div class="wk-hero-orb wk-hero-orb-2" aria-hidden="true"></div>
+    <div class="wk-hero-inner">
+      <span class="wk-badge">◈ Projects &amp; Portfolio</span>
+      <h1>Websites that are <span class="accent">alive and working</span></h1>
+      <p class="wk-lead">No mockups. Every project here is real, opens in a new tab and is live now — for cafés, grill restaurants and businesses in Athens and Santorini. See what we built, what it does and how quickly it was delivered.</p>
+      <div class="wk-hero-actions">
+        <a href="/en/#quiz" class="btn btn-primary btn-lg">Start your project <span class="btn-arrow">→</span></a>
+        <a href="#projects" class="btn btn-ghost btn-lg">View projects</a>
+      </div>
+      <div class="wk-stats">
+        <div class="wk-stat reveal"><strong>6</strong><span>live projects</span></div>
+        <div class="wk-stat reveal"><strong>3-7</strong><span>days to delivery</span></div>
+        <div class="wk-stat reveal"><strong>119</strong><span>items in one menu</span></div>
+        <div class="wk-stat reveal"><strong>100%</strong><span>your own domain</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <nav class="wk-crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li aria-current="page">Projects</li>
+    </ol>
+  </nav>
+
+  <!-- CASE STUDIES -->
+  <section class="wk-cases" id="projects">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Our projects</p>
+      <h2>Four projects, <span class="accent">four distinct identities</span></h2>
+      <p class="section-sub">Selected digital presences for businesses in Athens and Santorini.</p>
+    </header>
+    <div class="wk-filter" role="group" aria-label="Filter by category">
+      <button class="wk-filter-btn active" data-filter="all">All</button>
+      <button class="wk-filter-btn" data-filter="estiasi">🍽 Hospitality</button>
+      <button class="wk-filter-btn" data-filter="tourismos">✈️ Tourism</button>
+    </div>
+    <article class="wk-case reveal" data-cat="estiasi">
+      <div class="wk-case-media">
+        <span class="wk-flag">LIVE</span>
+        <img src="/assets/studio/images/project-highhope-live.webp" width="1122" height="1402" alt="HIGH HOPE — website presented on a mobile phone" fetchpriority="high" decoding="async">
+      </div>
+      <div class="wk-case-body">
+        <p class="wk-kicker">SPECIALTY COFFEE · GLYFADA</p>
+        <h2>HIGH HOPE</h2>
+        <p>We designed the digital presence for High Hope, a specialty coffee spot in Glyfada, together with its QR menu. The work connects the brand’s visual character with clear access to the menu.</p>
+        <div class="wk-tags"><span>Website &amp; QR menu</span><span>highhopeathens.gr</span></div>
+        <div class="wk-case-actions">
+          <a href="https://highhopeathens.gr" class="btn btn-primary" target="_blank" rel="noopener">View website <span class="btn-arrow">↗</span></a>
+          <a href="/en/projects/high-hope/" class="btn btn-ghost">View project ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="wk-case rev reveal" data-cat="estiasi">
+      <div class="wk-case-media">
+        <span class="wk-flag">LIVE</span>
+        <img src="/assets/studio/images/project-gerakos.webp" width="819" height="1024" alt="GERAKOS — project cover" loading="lazy" decoding="async">
+      </div>
+      <div class="wk-case-body">
+        <p class="wk-kicker">TRADITIONAL SOUVLAKI · SANTORINI</p>
+        <h2>GERAKOS</h2>
+        <p>We designed the website for Gerakos, a traditional souvlaki restaurant in Santorini, presenting the restaurant, its menu and contact information.</p>
+        <div class="wk-tags"><span>Website, menu &amp; contact</span><span>gerakos.gr</span></div>
+        <div class="wk-case-actions">
+          <a href="https://gerakos.gr" class="btn btn-primary" target="_blank" rel="noopener">View website <span class="btn-arrow">↗</span></a>
+          <a href="/en/projects/gerakos/" class="btn btn-ghost">View project ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="wk-case reveal" data-cat="tourismos">
+      <div class="wk-case-media">
+        <span class="wk-flag">LIVE</span>
+        <img src="/assets/studio/images/project-kc-travel.webp" width="819" height="1024" alt="KC TRAVEL — project cover" loading="lazy" decoding="async">
+      </div>
+      <div class="wk-case-body">
+        <p class="wk-kicker">PRIVATE TRANSFERS · SANTORINI</p>
+        <h2>KC TRAVEL</h2>
+        <p>For KC Travel, we designed a website for private transfers in Santorini and a booking interface that presents the service flow in clear steps.</p>
+        <div class="wk-tags"><span>Website &amp; booking interface</span><span>kctravel.gr</span></div>
+        <div class="wk-case-actions">
+          <a href="https://kctravel.gr" class="btn btn-primary" target="_blank" rel="noopener">View website <span class="btn-arrow">↗</span></a>
+          <a href="/en/projects/kc-travel/" class="btn btn-ghost">View project ↗</a>
+        </div>
+      </div>
+    </article>
+    <article class="wk-case rev reveal" data-cat="estiasi">
+      <div class="wk-case-media">
+        <span class="wk-flag">LIVE</span>
+        <img src="/assets/studio/images/project-akri.webp" width="819" height="1024" alt="AKRI — project cover" loading="lazy" decoding="async">
+      </div>
+      <div class="wk-case-body">
+        <p class="wk-kicker">MATCHA CAFÉ, BOULANGERIE, WORKSHOPS &amp; CONCEPT STORE · AKROTIRI, SANTORINI</p>
+        <h2>AKRI</h2>
+        <p>We designed the website for Akri, a matcha café, boulangerie, workshop space and concept store in Akrotiri, Santorini, presenting the venue and its activities.</p>
+        <div class="wk-tags"><span>Website presentation</span><span>akriprojects.gr</span></div>
+        <div class="wk-case-actions">
+          <a href="https://akriprojects.gr" class="btn btn-primary" target="_blank" rel="noopener">View website <span class="btn-arrow">↗</span></a>
+          <a href="/en/projects/akri/" class="btn btn-ghost">View project ↗</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="wk-what" id="ti-ftiaxnoume">
+    <header class="section-head reveal">
+      <p class="section-kicker">// What we build</p>
+      <h2>The next project <span class="accent">could be yours</span></h2>
+      <p class="section-sub">We do more than hospitality. These are the project types we take on, and one principle applies to all: the website is yours, on your own domain, without platform lock-in.</p>
+    </header>
+    <div class="wk-what-grid">
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">▦</span>
+        <h3>Digital QR menus</h3>
+        <p>For restaurants, cafés and bars. Includes photos, multiple languages, printed table cards and price updates in minutes. <a href="/en/qr-menu/" class="wk-inline">View the service →</a></p>
+      </div>
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">◈</span>
+        <h3>Hospitality websites</h3>
+        <p>Venues that rely on first impressions: menus, galleries, opening hours, location and reservations — all designed mobile-first, where customers find you.</p>
+      </div>
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">◇</span>
+        <h3>Tourism businesses</h3>
+        <p>Transfers, tours, accommodation and island services. Bilingual content, booking enquiries with dates and times, and a prominent WhatsApp link. <a href="/en/blog/website-transfer-santorini/" class="wk-inline">See a real Santorini example →</a></p>
+      </div>
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">◉</span>
+        <h3>Business websites</h3>
+        <p>For freelancers and small businesses that want a credible presence: services, prices, reviews and a contact form that generates real enquiries. <a href="/en/dimioyrgia-site/" class="wk-inline">View the service →</a></p>
+      </div>
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">▤</span>
+        <h3>E-shop</h3>
+        <p>For selling online: a cart, card payments, shipping and product management you can handle yourself. <a href="/en/blog/kataskeyi-eshop-ellada-kostos/" class="wk-inline">See what affects the cost →</a></p>
+      </div>
+      <div class="wk-what-card reveal">
+        <span class="wk-what-ico" aria-hidden="true">✎</span>
+        <h3>Management dashboard</h3>
+        <p>Every project gives you a way to update prices, copy and photos yourself — without paying each time for a two-word change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="wk-proc">
+    <header class="section-head reveal">
+      <p class="section-kicker">// How we work</p>
+      <h2>From the first call <span class="accent">to a live website</span></h2>
+    </header>
+    <div class="wk-proc-list">
+      <div class="wk-proc-item reveal">
+        <span class="wk-proc-num">01</span>
+        <div>
+          <h3>We talk and understand</h3>
+          <p>We do not send a price list. We ask what you sell, who your customers are and what is not working, then recommend the right scope — often smaller than you expected.</p>
+        </div>
+      </div>
+      <div class="wk-proc-item reveal">
+        <span class="wk-proc-num">02</span>
+        <div>
+          <h3>We design for your brand</h3>
+          <p>Colours, typography and photos that suit your business. If you have a logo, we use it; if not, we create one.</p>
+        </div>
+      </div>
+      <div class="wk-proc-item reveal">
+        <span class="wk-proc-num">03</span>
+        <div>
+          <h3>We build quickly</h3>
+          <p>With AI in our workflow, a typical website is delivered in 3–7 days, not months. You review a preview before launch and tell us what you would like changed.</p>
+        </div>
+      </div>
+      <div class="wk-proc-item reveal">
+        <span class="wk-proc-num">04</span>
+        <div>
+          <h3>We launch and support you</h3>
+          <p>We set up your domain, security certificate and Google presence. We remain available for updates, because a website that is not maintained can become outdated within a season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-inner reveal">
+      <h2>Want your business <span class="accent">to be our next project?</span></h2>
+      <a href="/en/#quiz" class="btn btn-primary btn-lg">Start your project <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer legacy-editorial-footer" data-legacy-editorial-footer="true">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/studio/logo-user-white.png" alt="Codehouse" class="footer-logo" width="160" height="160">
+      <p>We build digital homes for businesses.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="/en/services/">Services</a>
+      <a href="/en/qr-menu/">Digital QR Menu</a>
+      <a href="/en/projects/">Projects</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/prosfora/">Offer</a>
+      <a href="/en/aporrito/">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+306986804138">698 680 4138</a>
+      <a href="mailto:hello@codehouse.gr">hello@codehouse.gr</a>
+      <a href="https://artivoai.com" target="_blank" rel="noopener">artivoai.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Guides</h4>
+      <a href="/en/blog/qr-menou-estiatorio-kafe/">QR menus for restaurants</a>
+      <a href="/en/blog/poso-kostizei-mia-istoselida/">How much does a website cost</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Codehouse — codehouse.gr · Made with ❤ and AI in Athens</p>
+
+  <nav class="legacy-footer-nav" aria-label="Footer navigation"><a href="/en/services/">Services</a><a href="/en/projects/">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a><a href="/en/aporrito/">Privacy policy</a></nav>
+<button class="privacy-settings" data-privacy-settings type="button">Privacy settings</button></footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Promo banner ---------- */
+  var promo = document.getElementById('promoBanner');
+  var promoClose = document.getElementById('promoClose');
+  if (promo) {
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('promoClosed') === '1'; } catch (e) {}
+    if (dismissed) { promo.classList.add('hidden'); promo.style.display = 'none'; }
+    else { document.body.classList.add('has-promo'); }
+    if (promoClose) {
+      promoClose.addEventListener('click', function () {
+        promo.classList.add('hidden');
+        document.body.classList.remove('has-promo');
+        try { sessionStorage.setItem('promoClosed', '1'); } catch (e) {}
+        setTimeout(function () { promo.style.display = 'none'; }, 500);
+      });
+    }
+  }
+
+  /* ---------- Nav ---------- */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 30); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (burger && mobileMenu) {
+    var toggleMenu = function (open) {
+      var isOpen = typeof open === 'boolean' ? open : !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function () { toggleMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggleMenu(false); });
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Smooth anchor offset ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.wk-filter-btn');
+  var cards = document.querySelectorAll('.wk-case[data-cat]');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var f = btn.dataset.filter;
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      cards.forEach(function(c){
+        if(f === 'all' || c.dataset.cat === f){
+          c.removeAttribute('hidden');
+        } else {
+          c.setAttribute('hidden','');
+        }
+      });
+    });
+  });
+})();
+</script>
+  <script src="/assets/studio/legacy.js" defer></script>
+<script src="/assets/studio/privacy.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+export function mountHeroVideo(hero: Element | null | undefined): () => void;

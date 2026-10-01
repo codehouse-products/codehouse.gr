@@ -1,0 +1,488 @@
+TASK: CODEHOUSE.GR — ORGANIC SEO GROWTH, KEYWORD REMAPPING, LANDING PAGE OPTIMIZATION & INDEXING
+
+Στόχος:
+Να βελτιώσεις το οργανικό SEO του codehouse.gr με βάση πραγματικά queries που ήδη εμφανίζει η Google, αυξάνοντας impressions, average position, CTR και organic traffic.
+
+ΠΟΛΥ ΣΗΜΑΝΤΙΚΟ:
+- ΜΗΝ αλλάξεις το υπάρχον design, layout, branding, animations ή λειτουργίες της σελίδας χωρίς να είναι απολύτως απαραίτητο.
+- ΜΗΝ δημιουργήσεις duplicate ή cannibalizing pages.
+- ΜΗΝ αλλάξεις URLs που ήδη έχουν impressions/rankings χωρίς redirect strategy.
+- ΜΗΝ κάνεις keyword stuffing.
+- ΜΗΝ χρησιμοποιήσεις hidden text ή άλλες spam τεχνικές.
+- ΜΗΝ πειράξεις λειτουργίες επικοινωνίας, φόρμες, integrations ή analytics.
+- Πριν δημιουργήσεις οτιδήποτε καινούργιο, κάνε audit σε ΟΛΕΣ τις υπάρχουσες pages και blogs ώστε να βεβαιωθείς ότι δεν υπάρχει ήδη σελίδα που καλύπτει το ίδιο search intent.
+
+==================================================
+1. ΠΡΩΤΑ ΚΑΝΕ SEO AUDIT ΤΟΥ ΥΠΑΡΧΟΝΤΟΣ SITE
+==================================================
+
+Επιθεώρησε:
+- homepage
+- όλες τις service pages
+- όλες τις SEO landing pages
+- όλες τις location pages
+- όλα τα blog posts
+- sitemap.xml
+- robots.txt
+- canonical tags
+- title tags
+- meta descriptions
+- H1/H2 hierarchy
+- internal links
+- structured data / schema
+- breadcrumbs
+- index/noindex rules
+
+Φτιάξε πρώτα εσωτερικό keyword map:
+
+Κάθε βασικό query πρέπει να αντιστοιχεί σε ΜΙΑ primary URL.
+
+Αν υπάρχει ήδη σχετική URL:
+→ βελτίωσέ την.
+
+Αν δεν υπάρχει:
+→ μόνο τότε δημιούργησε νέα σελίδα.
+
+==================================================
+2. PRIMARY KEYWORD CLUSTERS
+==================================================
+
+CLUSTER A — E-SHOP / COST
+
+Primary commercial queries:
+- κατασκευη eshop κοστοσ
+- κατασκευή eshop κόστος
+- κοστοσ eshop
+- κόστος eshop
+- δημιουργια eshop κοστος
+- κόστος κατασκευής eshop
+- ποσο κοστιζει ενα eshop
+- δημιουργία e shop τιμές
+- έτοιμα πακετα e shop
+- οικονομικό e-shop
+- δημιουργια eshop τι χρειαζεται
+- αξίζει να ανοίξω e-shop
+
+Στόχος:
+Να υπάρχει ΜΙΑ ισχυρή canonical landing page για το commercial intent.
+
+Προτεινόμενο URL μόνο αν δεν υπάρχει ήδη αντίστοιχη σωστή σελίδα:
+https://codehouse.gr/kataskevi-eshop/
+
+Προτεινόμενο SEO title:
+Κατασκευή E-shop: Κόστος & Τιμές στην Ελλάδα | Codehouse
+
+Προτεινόμενο H1:
+Κατασκευή E-shop για επιχειρήσεις που θέλουν να αναπτυχθούν
+
+Πρόσθεσε sections όπως:
+- Πόσο κοστίζει ένα e-shop;
+- Τι επηρεάζει το κόστος κατασκευής;
+- Έτοιμο πακέτο ή custom e-shop;
+- Τι χρειάζεται για να ανοίξεις e-shop;
+- Hosting, payments, SEO και integrations
+- E-shop για μικρές και αναπτυσσόμενες επιχειρήσεις
+- FAQ
+
+ΜΗ δημιουργήσεις ξεχωριστές σελίδες για κάθε παραλλαγή “κόστος eshop”.
+Όλες πρέπει να υποστηρίζουν την ίδια authoritative landing page.
+
+==================================================
+3. WEBSITE CONSTRUCTION CLUSTER
+==================================================
+
+Keywords:
+- κατασκευή ιστοσελίδας
+- κατασκευη ιστοσελιδας
+- δημιουργία ιστοσελίδας
+- ιστοσελιδα για επιχειρησεις
+- ποιός μπορεί να μου φτιάξει μια ιστοσελίδα
+- πως φτιαχνω ιστοσελιδα
+- πως φτιαχνω ιστοτοπο
+- web designers
+
+Έλεγξε εάν υπάρχει ήδη strong landing page.
+
+Αν όχι, δημιούργησε:
+https://codehouse.gr/kataskevi-istoselidas/
+
+SEO title:
+Κατασκευή Ιστοσελίδων για Επιχειρήσεις | Codehouse
+
+H1:
+Κατασκευή ιστοσελίδων και ψηφιακών συστημάτων για επιχειρήσεις
+
+Η σελίδα να καλύπτει:
+- επαγγελματικές ιστοσελίδες
+- corporate sites
+- landing pages
+- mobile-first development
+- SEO-ready architecture
+- performance
+- analytics
+- integrations
+- maintenance
+- support
+
+Πρόσθεσε FAQ για:
+- πόσο κοστίζει μία ιστοσελίδα
+- πόσο χρόνο χρειάζεται
+- τι χρειάζεται για να ξεκινήσει
+- αν περιλαμβάνεται SEO
+- αν υπάρχει hosting/support
+
+==================================================
+4. SANTORINI / LOCAL SEO CLUSTER
+==================================================
+
+Υπάρχουν ήδη queries με σχετικά υψηλές θέσεις:
+- κατασκευη ιστοσελιδας σαντορινη
+- σαντορίνη seo
+- seo προώθηση ιστοσελίδων σαντορίνη
+
+ΠΡΟΣΟΧΗ:
+Αυτά είναι high-priority επειδή ήδη εμφανίζονται κοντά στην πρώτη σελίδα.
+
+Έλεγξε ποια υπάρχουσα URL rankάρει για αυτά.
+
+ΜΗ δημιουργήσεις δεύτερη ανταγωνιστική URL αν υπάρχει ήδη σχετική σελίδα.
+
+Ενίσχυσε την υπάρχουσα page με:
+- καλύτερο title
+- καλύτερο meta description
+- σωστό H1
+- local context
+- Santorini business use cases
+- travel / hospitality / restaurants / local services examples
+- FAQ
+- LocalBusiness / Service schema όπου είναι κατάλληλο
+- internal links
+- relevant real project / case study
+
+Αν πραγματικά δεν υπάρχει σχετική page, δημιούργησε:
+https://codehouse.gr/kataskevi-istoselidas-santorini/
+
+Προτεινόμενο title:
+Κατασκευή Ιστοσελίδας στη Σαντορίνη & SEO | Codehouse
+
+Απέφυγε thin location content.
+Η σελίδα πρέπει να είναι πραγματικά χρήσιμη και διαφορετική.
+
+==================================================
+5. SEO SERVICES CLUSTER
+==================================================
+
+Queries:
+- seo εστίαση
+- σαντορίνη seo
+- seo προώθηση ιστοσελίδων σαντορίνη
+- επαγγελματικό vs φθηνό seo
+- πρωτη θεση google
+- local seo υπηρεσίες
+
+Έλεγξε αν υπάρχει ήδη SEO service page.
+
+Αν όχι, δημιούργησε:
+https://codehouse.gr/seo/
+
+SEO title:
+SEO Υπηρεσίες & Organic Growth για Επιχειρήσεις | Codehouse
+
+H1:
+SEO που χτίζει οργανική ανάπτυξη
+
+Περιεχόμενο:
+- technical SEO
+- on-page SEO
+- content strategy
+- local SEO
+- Google Business Profile
+- Search Console
+- analytics
+- internal linking
+- SEO audits
+- GEO / AI search visibility
+- performance optimization
+
+==================================================
+6. “FREE WEBSITE” CLUSTER — HANDLE CAREFULLY
+==================================================
+
+Queries:
+- δωρεάν ιστοσελίδες
+- δωρεαν ιστοσελιδα
+- δωρεάν κατασκευή ιστοσελίδας
+- δωρεάν δημιουργία site
+- ιστοσελιδα δωρεαν
+- πως φτιαχνω site δωρεαν
+- πως να φτιαξω μια ιστοσελιδα δωρεαν
+- κατασκευή site δωρεάν
+
+ΜΗΝ μετατρέψεις την homepage σε discount page.
+
+Το corporate positioning της Codehouse πρέπει να παραμείνει premium.
+
+Εάν υπάρχει ήδη blog / page για δωρεάν ιστοσελίδα:
+→ ενίσχυσέ την.
+
+Αν όχι, δημιούργησε informational article:
+https://codehouse.gr/blog/pos-na-ftiaxo-istoselida-dorean/
+
+Title:
+Πώς να Φτιάξεις Ιστοσελίδα Δωρεάν: Οδηγός & Επιλογές
+
+Στόχος:
+Να πάρουμε informational traffic και να το οδηγήσουμε σε commercial conversion.
+
+CTA:
+“Θέλεις επαγγελματικό αποτέλεσμα χωρίς να το φτιάξεις μόνος σου; Μίλησε με την Codehouse.”
+
+ΜΗΝ χρησιμοποιήσεις misleading claims.
+
+==================================================
+7. INTERNAL LINKING
+==================================================
+
+Δημιούργησε στρατηγικό internal linking.
+
+Από σχετικά blogs → commercial pages.
+
+Παραδείγματα:
+
+Blog για κόστος e-shop
+→ /kataskevi-eshop/
+
+Blog για δωρεάν ιστοσελίδα
+→ /kataskevi-istoselidas/
+
+Blog για SEO
+→ /seo/
+
+Local/Santorini content
+→ Santorini landing page
+→ /seo/
+→ relevant case studies
+
+Anchor texts να είναι φυσικά.
+
+Απέφυγε:
+- 10 links με ακριβώς ίδιο anchor
+- keyword stuffing
+- sitewide spam links
+
+==================================================
+8. CONTENT OPTIMIZATION
+==================================================
+
+Για κάθε κύρια landing page:
+
+- 1 μοναδικό H1
+- semantic H2/H3 structure
+- strong intro paragraph
+- keyword variations φυσικά μέσα στο κείμενο
+- FAQ section
+- CTA
+- trust signals
+- real examples
+- internal links
+- relevant external authority links μόνο αν βοηθούν
+- no filler content
+
+Το content πρέπει να απαντά πραγματικά στο search intent.
+
+==================================================
+9. META TITLES & META DESCRIPTIONS
+==================================================
+
+Έλεγξε ολόκληρο το site.
+
+Κάθε indexable page πρέπει να έχει:
+- unique title
+- unique description
+- σωστό canonical
+
+Targets:
+Titles περίπου 45–60 characters όπου γίνεται.
+Descriptions περίπου 140–160 characters όπου γίνεται.
+
+Το primary keyword να εμφανίζεται φυσικά.
+
+==================================================
+10. STRUCTURED DATA
+==================================================
+
+Έλεγξε και διόρθωσε structured data χωρίς duplicate/conflicting schemas.
+
+Χρησιμοποίησε όπου κατάλληλο:
+- Organization
+- WebSite
+- Service
+- BreadcrumbList
+- Article
+- FAQPage
+- LocalBusiness μόνο όπου είναι πραγματικά σωστό
+
+ΜΗ δημιουργήσεις fabricated reviews, ratings ή στοιχεία.
+
+==================================================
+11. TECHNICAL SEO
+==================================================
+
+Έλεγξε:
+
+- sitemap.xml
+- robots.txt
+- canonicals
+- 404s
+- redirect chains
+- duplicate URLs
+- trailing slash consistency
+- http/https
+- www/non-www
+- Open Graph
+- mobile
+- Core Web Vitals
+- image alt text
+- lazy loading
+- structured data validation
+- indexability
+
+ΜΗΝ αλλάξεις design.
+
+==================================================
+12. SITEMAP
+==================================================
+
+Μετά τις αλλαγές:
+
+- πρόσθεσε κάθε νέα indexable URL στο sitemap.xml
+- αφαίρεσε broken / deprecated URLs
+- βάλε σωστό canonical
+- βάλε updated lastmod μόνο στις σελίδες που πραγματικά άλλαξαν
+
+==================================================
+13. KEYWORD CANNIBALIZATION AUDIT
+==================================================
+
+Πριν ολοκληρώσεις:
+
+Για κάθε primary keyword:
+δώσε ΜΙΑ canonical target page.
+
+Παράδειγμα:
+“κατασκευή eshop κόστος”
+→ /kataskevi-eshop/
+
+Όχι 3 διαφορετικά blogs που συναγωνίζονται μεταξύ τους.
+
+Αν εντοπίσεις cannibalization:
+- consolidation
+- internal linking correction
+- canonical correction
+- redirect ΜΟΝΟ αν είναι ασφαλές και απαραίτητο
+
+==================================================
+14. DO NOT DAMAGE EXISTING RANKINGS
+==================================================
+
+Πριν αλλάξεις URL/title/content σε page που ήδη rankάρει:
+
+- έλεγξε existing target keywords
+- κράτα το intent
+- κράτα valuable copy
+- βελτίωσε αντί να διαγράψεις
+- μην αλλάξεις URL αν δεν υπάρχει σοβαρός λόγος
+
+==================================================
+15. FINAL QUALITY CONTROL
+==================================================
+
+Μετά τις αλλαγές κάνε audit:
+
+- npm/build succeeds
+- no broken pages
+- no console errors
+- sitemap loads
+- robots.txt loads
+- canonical tags correct
+- metadata correct
+- mobile okay
+- structured data valid
+- internal links valid
+- no duplicate H1
+- no accidental noindex
+- no layout regression
+
+==================================================
+16. FINAL REPORT
+==================================================
+
+Στο τέλος δώσε report με:
+
+1. Pages modified
+2. Pages created
+3. URLs created
+4. Old URLs redirected
+5. Titles changed
+6. Meta descriptions changed
+7. H1 changed
+8. Internal links added
+9. Schema added/changed
+10. Sitemap changes
+11. Cannibalization issues found/fixed
+12. Technical SEO issues fixed
+13. Primary keyword assigned to each URL
+14. Build/test status
+
+==================================================
+17. GOOGLE SEARCH CONSOLE / INDEXING — IMPORTANT
+==================================================
+
+Αφού ολοκληρωθούν ΟΛΕΣ οι αλλαγές και γίνει production deployment:
+
+ΠΡΟΣΠΑΘΗΣΕ να κάνεις indexing submission στο Google Search Console για:
+
+- όλες τις νέες landing pages
+- όλα τα νέα blog URLs
+- τις σημαντικές υπάρχουσες URLs που άλλαξαν ουσιαστικά
+
+Επίσης:
+- επιβεβαίωσε ότι το sitemap είναι ενημερωμένο
+- αν υπάρχει ήδη Search Console integration/API που είναι εξουσιοδοτημένο, χρησιμοποίησέ το μόνο με ασφαλή τρόπο
+- μην επιχειρήσεις bypass authentication
+- μην αποθηκεύσεις credentials στον κώδικα
+- μην πειράξεις permissions
+
+ΑΝ ΔΕΝ ΕΧΕΙΣ ΠΡΑΓΜΑΤΙΚΗ ΠΡΟΣΒΑΣΗ ΣΤΟ GOOGLE SEARCH CONSOLE Ή ΔΕΝ ΜΠΟΡΕΙΣ ΝΑ ΚΑΝΕΙΣ URL INSPECTION / REQUEST INDEXING:
+
+ΜΗΝ πεις ότι έγινε.
+
+Στο τελικό report γράψε ξεκάθαρα:
+
+“Google Search Console indexing requires manual action.”
+
+Και αμέσως από κάτω δώσε πλήρη λίστα:
+
+INDEX THESE URLS:
+1. https://codehouse.gr/...
+2. https://codehouse.gr/...
+3. https://codehouse.gr/...
+
+Χώρισέ τα σε:
+A. NEW URLS — request indexing
+B. UPDATED URLS — request re-indexing
+C. SITEMAP — resubmit/check sitemap
+
+Θέλω να μπορώ απλά να αντιγράψω μία-μία τις URLs στο Google Search Console → URL Inspection → Request Indexing.
+
+==================================================
+18. IMPORTANT FINAL RULE
+==================================================
+
+Do not claim success unless verified.
+
+If something cannot be completed:
+state exactly what is blocked and what manual action is required.
+
+Goal:
+Increase non-branded organic traffic while preserving the premium/corporate positioning of Codehouse.

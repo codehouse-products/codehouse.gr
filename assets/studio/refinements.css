@@ -1,0 +1,98 @@
+:root{--paper:#fff;--white:#fff;--ink:#171715;--muted:#777671;--sans:"Inter","Arial",sans-serif}
+.text-\[15px\]{font-size:15px}
+.text-\[color\:var\(--ink\)\]{color:var(--ink)}
+.border-t-\[0px\]{border-top-width:0}
+.border-r-\[0px\]{border-right-width:0}
+.border-b-\[0px\]{border-bottom-width:0}
+.border-l-\[0px\]{border-left-width:0}
+.about-grid>div:has(>h1.font-extrabold){container-type:inline-size}
+.about-grid h1.font-extrabold{font-weight:800;font-size:clamp(26px,11cqw,76px);overflow-wrap:anywhere}
+.photo-empty{background:#f3f3f1}
+.hero-art.photo-empty{background:#fff}
+.hero-art.photo-empty:after{display:none}
+.hero-image{filter:grayscale(1) contrast(.72) blur(9px);opacity:.13;transform:scale(1.045)}
+.hero-art{background:#fff}
+.hero-logo{animation:none}
+.brand{width:58px;height:58px;align-items:center}
+.brand img{width:100%;height:100%;object-fit:contain}
+.hero-mark{position:relative;z-index:1;width:min(52vw,520px);height:min(48vw,480px);display:grid;place-items:center;padding:12%}
+.hero-mark .hero-logo{width:78%;max-width:360px;max-height:100%;object-fit:contain;position:relative;z-index:2}
+.hero-artwork .hero-mark{width:min(78vw,58svh,620px);height:auto;min-height:0;aspect-ratio:1;padding:0}
+.hero-artwork .hero-mark .hero-logo{width:100%;max-width:none;max-height:none;height:auto}
+.hero-artwork .hero-brackets{display:none}
+.footer-logo{width:min(18vw,190px);height:auto}
+.hero-brackets{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#171715;stroke-width:1;vector-effect:non-scaling-stroke}
+.service-image{height:auto;aspect-ratio:1/1}
+.service-rail.is-hovering .service-card:not(.is-active) .service-image img{opacity:.42;filter:blur(2px)}
+.service-rail.is-hovering .service-card:not(.is-active){opacity:1;filter:none}
+.service-card:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.arrow-icon{width:17px;height:17px;display:inline-block;vertical-align:middle;overflow:visible;transition:transform .28s ease}
+.arrow-icon path{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:square;stroke-linejoin:miter}
+.text-link:hover .arrow-icon,.service-card:hover .arrow-icon,.project-link:hover .arrow-icon{transform:translate(3px,-3px)}
+.project-carousel-controls{display:flex;align-items:center;gap:12px}
+.rail-position{font:10px var(--mono);color:var(--muted);min-width:54px;text-align:center}
+.slider-button:disabled{opacity:.28;cursor:default}
+.faq-list{max-width:900px;border-top:1px solid var(--line);margin-top:30px}
+.faq-list details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq-list summary{cursor:pointer;list-style:none;font-size:19px;display:flex;justify-content:space-between}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary:after{content:"+";font:14px var(--mono)}
+.faq-list details[open] summary:after{content:"−"}
+.faq-list p{max-width:620px;color:#555;line-height:1.7}
+.legacy-links{line-height:2.3}
+.legacy-links a{border-bottom:1px solid var(--line);margin-right:13px;white-space:nowrap}
+.skip-link{position:fixed;z-index:120;top:12px;left:12px;padding:12px 16px;background:#fff;color:#171715;border:1px solid #171715;transform:translateY(-160%);transition:transform .2s;font:11px var(--mono)}
+.skip-link:focus{transform:translateY(0)}
+.privacy-reopen{margin:24px 0 0;padding:9px 12px;color:inherit;background:transparent;border:1px solid #777;font:10px var(--mono);cursor:pointer}
+@media(max-width:760px){.brand{width:48px;height:48px}.hero-mark{width:72vw;height:68vw;min-height:230px}.hero-mark .hero-logo{width:76%}.service-image{height:auto;aspect-ratio:1/1}.project-carousel-controls{gap:7px}.faq-list summary{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.arrow-icon{transition:none!important}}
+/* Six footer groups must fit tablet widths without widening the document. */
+.footer-cols{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;min-width:0}
+.footer-cols>div{min-width:0}
+.about-grid>*,.statement>*,.detail-grid>*{min-width:0}
+.footer-cols a,.footer-cols p{overflow-wrap:anywhere}
+@media(max-width:1100px){
+  .footer-top{display:block}
+  .footer-logo{width:min(32vw,180px);margin-bottom:45px}
+  .footer-cols{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+}
+@media(max-width:760px){
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-bottom{flex-wrap:wrap}
+  /* Visibility must switch immediately so focus can enter on the opening
+     click; animating visibility briefly leaves focus on the inert body. */
+  .menu-panel{transition:opacity .25s,transform .25s}
+}
+@media(max-width:400px){
+  .about-grid h1,.about-grid h2,.statement h2{font-size:clamp(28px,9vw,36px)}
+  .page-intro h1{overflow-wrap:anywhere}
+}
+/* Photo mode is opt-in after the editorial file is delivered. */
+.photo-hero .hero-image{filter:none;opacity:.96;transform:none}
+.photo-hero .hero-art{background:linear-gradient(180deg,rgba(12,12,12,.14),transparent 36%,rgba(12,12,12,.48))}
+.photo-hero .hero-art:after{display:none}
+.photo-hero .hero-brackets{stroke:#fff}
+.photo-hero .hero-bottom{color:#fff}
+.project-cover{height:min(135vw,900px);min-height:0;display:grid;place-items:center;background:transparent}
+.project-cover img{width:auto;height:100%;max-width:100%;object-fit:contain}
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:studio-page-out .12s ease both}
+::view-transition-new(root){animation:studio-page-in .18s ease both}
+@keyframes studio-page-out{to{opacity:0}}
+@keyframes studio-page-in{from{opacity:.82}to{opacity:1}}
+@keyframes studio-hero-in{from{opacity:.72;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes studio-reveal{from{opacity:.92;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hero-logo{animation:studio-hero-in .65s cubic-bezier(.2,.65,.25,1) both}
+.reveal{animation:none;opacity:1;transform:none}
+.reveal.revealed{animation:studio-reveal .42s ease both}
+@media(max-width:760px){.project-cover{height:min(135vw,700px)}}
+@media(prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
+  .hero-logo,.reveal.revealed{animation:none!important;opacity:1;transform:none}
+}
+
+/* Full-bleed campaign photographs: never letterbox project cards. */
+.project-card .project-image { background: #030303; }
+.project-card .project-image img { object-fit: cover; object-position: 50% 15%; }
+.project-card:nth-child(2) .project-image img { object-position: 50% 15%; }

@@ -1,0 +1,249 @@
+Θέλω να μετατρέψεις το υπάρχον codehouse.gr σε πλήρως δίγλωσσο website, Ελληνικά και Αγγλικά, χωρίς να αλλάξεις την υπάρχουσα εμφάνιση, αρχιτεκτονική, λειτουργικότητα ή τις ήδη ευρετηριασμένες ελληνικές URLs.
+
+Πριν από οποιαδήποτε αλλαγή, κάνε fetch το τελευταίο origin/main, επιβεβαίωσε ότι το working tree είναι καθαρό και δημιούργησε νέο branch:
+
+feature/full-english-version
+
+Μην συμπεριλάβεις attachments, webarchives, audits ή άσχετα αρχεία.
+
+Βασικές απαιτήσεις
+
+* Τα Ελληνικά παραμένουν η προεπιλεγμένη γλώσσα.
+* Όλες οι υπάρχουσες ελληνικές URLs παραμένουν ακριβώς ίδιες.
+* Δεν επιτρέπεται redirect, μετονομασία ή διαγραφή υπάρχουσας ελληνικής σελίδας.
+* Δημιούργησε πλήρη αγγλική έκδοση κάτω από /en/.
+* Μετάφρασε όλες τις δημόσιες σελίδες που βρίσκονται στο sitemap, όχι μόνο την αρχική.
+* Μετάφρασε χειροκίνητα και επαγγελματικά το περιεχόμενο. Μη χρησιμοποιήσεις Google Translate widget, iframe, browser auto-translation ή client-side αντικατάσταση ελληνικών λέξεων.
+* Τα Αγγλικά πρέπει να διαβάζονται σαν φυσικό επαγγελματικό business English και όχι σαν κυριολεκτική μηχανική μετάφραση.
+* Μην αλλάξεις κανένα design element, layout, χρώμα, γραμματοσειρά, animation, spacing, φωτογραφία ή υπάρχον component.
+* Μην αλλάξεις τιμές, προσφορές, τηλέφωνα, email, πακέτα, εμπορικούς όρους ή πραγματικά στοιχεία της Codehouse.
+* Μην προσθέσεις νέους ισχυρισμούς, πελάτες, στατιστικά, βραβεία ή υπηρεσίες.
+* Μην αλλάξεις τη λειτουργία των φορμών, του quiz, των CTA, του QR Menu ή της σελίδας προσφοράς.
+
+1. Αρχιτεκτονική γλωσσών
+
+Χρησιμοποίησε:
+
+* Ελληνική αρχική: https://codehouse.gr/
+* Αγγλική αρχική: https://codehouse.gr/en/
+
+Οι αγγλικές σελίδες πρέπει να έχουν καθαρές αγγλικές URLs κάτω από /en/.
+
+Παραδείγματα:
+
+* /dimioyrgia-site/ → /en/website-development/
+* /dorean-istoselida/ → /en/free-business-website/
+* /prosfora/ → /en/get-a-quote/
+* /douleies/ → /en/our-work/
+* /qr-menu/ → /en/qr-menu/
+* /blog/ → /en/blog/
+
+Για κάθε άρθρο δημιούργησε αντίστοιχο επαγγελματικό αγγλικό slug που περιγράφει σωστά το θέμα.
+
+Δημιούργησε κεντρικό, ξεκάθαρο mapping μεταξύ κάθε ελληνικής και αγγλικής σελίδας. Το language switcher πρέπει να μεταφέρει τον χρήστη στην ακριβή αντίστοιχη σελίδα και όχι πάντα στην αρχική.
+
+Μην κάνεις αυτόματο redirect βάσει IP, χώρας ή browser language.
+
+2. Κουμπί αλλαγής γλώσσας
+
+Πρόσθεσε ένα διακριτικό language switcher:
+
+EL / EN
+
+Απαιτήσεις:
+
+* Να ενσωματωθεί στο υπάρχον desktop navigation.
+* Να προστεθεί και στο mobile menu.
+* Να χρησιμοποιεί την υπάρχουσα γραμματοσειρά, χρώματα, hover behavior και responsive λογική.
+* Να μην αλλάξει το ύψος του header.
+* Να μην μετακινήσει το logo, τα menu items ή τα CTA.
+* Να μην προκαλεί layout shift ή οριζόντιο overflow.
+* Να μην χρησιμοποιηθούν σημαίες.
+* Να εμφανίζεται καθαρά ποια γλώσσα είναι ενεργή.
+* Να είναι κανονικό crawlable <a href> link και όχι JavaScript-only button.
+* Να έχει κατάλληλα aria-label, όπως:
+    * View website in English
+    * Προβολή ιστοσελίδας στα Ελληνικά
+
+Αν δεν χωράει σωστά στο desktop navigation, προσαρμόσε μόνο τις εσωτερικές αποστάσεις του language switcher. Μην αλλάξεις τη γενική εμφάνιση ή το μέγεθος του navigation.
+
+3. Πλήρης μετάφραση περιεχομένου
+
+Μετάφρασε σε όλες τις αγγλικές σελίδες:
+
+* navigation,
+* mobile menu,
+* headings και subheadings,
+* body content,
+* υπηρεσίες,
+* πακέτα και περιγραφές,
+* CTA,
+* κουμπιά,
+* φόρμες,
+* labels,
+* placeholders,
+* validation και success/error messages,
+* quiz ερωτήσεις και αποτελέσματα,
+* FAQ,
+* footer,
+* privacy content,
+* blog articles,
+* portfolio descriptions,
+* image alt text,
+* accessibility labels,
+* cookie ή ενημερωτικά μηνύματα,
+* JavaScript-generated visible strings.
+
+Διατήρησε αμετάφραστα:
+
+* Codehouse,
+* domain names,
+* email addresses,
+* τηλέφωνα,
+* εμπορικά ονόματα πελατών,
+* τεχνικούς όρους που χρησιμοποιούνται διεθνώς, όπως SEO, GEO, UI/UX, Core Web Vitals και QR Menu, όπου είναι σωστό.
+
+Οι τιμές σε ευρώ παραμένουν ίδιες. Μην κάνεις μετατροπή νομίσματος.
+
+4. Φόρμες και λειτουργίες
+
+Οι αγγλικές φόρμες πρέπει να χρησιμοποιούν το ίδιο υπάρχον backend και να λειτουργούν ακριβώς όπως οι ελληνικές.
+
+Διατήρησε αμετάβλητα:
+
+* form action,
+* method,
+* input name,
+* hidden fields,
+* API endpoints,
+* anti-spam μηχανισμούς,
+* analytics events,
+* lead processing,
+* email delivery,
+* redirects μετά την υποβολή.
+
+Μετάφρασε μόνο όσα βλέπει ο χρήστης.
+
+Πρόσθεσε ασφαλή ένδειξη γλώσσας μόνο εάν μπορεί να γίνει χωρίς αλλαγή στο backend contract, ώστε ένα lead να αναγνωρίζεται ως Greek ή English.
+
+Μην πραγματοποιήσεις πραγματική υποβολή φόρμας και μην δημιουργήσεις ψεύτικο lead.
+
+5. International SEO
+
+Σε κάθε ελληνική και αγγλική σελίδα πρόσθεσε σωστά:
+
+* self-referencing canonical,
+* hreflang="el-GR" προς την ελληνική έκδοση,
+* hreflang="en" προς την αγγλική έκδοση,
+* hreflang="x-default" προς την ελληνική έκδοση.
+
+Παράδειγμα:
+
+<link rel="alternate" hreflang="el-GR" href="https://codehouse.gr/dimioyrgia-site/">
+<link rel="alternate" hreflang="en" href="https://codehouse.gr/en/website-development/">
+<link rel="alternate" hreflang="x-default" href="https://codehouse.gr/dimioyrgia-site/">
+
+Επιβεβαίωσε ότι:
+
+* κάθε ελληνική σελίδα δείχνει στη σωστή αγγλική,
+* κάθε αγγλική δείχνει πίσω στη σωστή ελληνική,
+* δεν υπάρχουν broken ή μονόδρομα hreflang pairs,
+* το <html lang="el"> παραμένει στις ελληνικές σελίδες,
+* οι αγγλικές χρησιμοποιούν <html lang="en">.
+
+Οι αγγλικές σελίδες πρέπει να έχουν μεταφρασμένα και μοναδικά:
+
+* title,
+* meta description,
+* Open Graph title και description,
+* Twitter metadata,
+* headings,
+* Article schema,
+* WebPage schema,
+* BreadcrumbList,
+* FAQPage,
+* Service schema όπου υπάρχει.
+
+Τα structured data πρέπει να συμφωνούν ακριβώς με το ορατό αγγλικό περιεχόμενο.
+
+Μην βάλεις canonical των αγγλικών σελίδων προς τις ελληνικές. Κάθε αγγλική σελίδα πρέπει να είναι indexable και self-canonical.
+
+6. Sitemap και internal linking
+
+Ενημέρωσε το sitemap.xml ώστε να περιέχει:
+
+* όλες τις υπάρχουσες ελληνικές canonical URLs,
+* όλες τις νέες αγγλικές canonical URLs,
+* σωστά και πραγματικά lastmod,
+* κανένα duplicate ή redirecting URL.
+
+Τα αγγλικά internal links πρέπει να οδηγούν μόνο σε αγγλικές σελίδες, εκτός από το language switcher.
+
+Τα ελληνικά internal links παραμένουν στις ελληνικές σελίδες.
+
+Διατήρησε τα υπάρχοντα SEO internal links και δημιούργησε τα αντίστοιχα στην αγγλική έκδοση.
+
+Μην αλλάξεις το robots.txt, εκτός αν απαιτείται μόνο για να παραμείνει σωστή η αναφορά στο sitemap.
+
+7. Assets και απόδοση
+
+* Επαναχρησιμοποίησε τις υπάρχουσες εικόνες, CSS, JavaScript και fonts.
+* Μην αντιγράψεις βαριά assets χωρίς λόγο.
+* Μην προσθέσεις translation library αν το static architecture δεν τη χρειάζεται.
+* Μην προσθέσεις εξωτερικό translation service ή API.
+* Μην προκαλέσεις αύξηση JavaScript στο ελληνικό site.
+* Διατήρησε lazy loading, image dimensions και performance optimizations.
+* Μην αλλάξεις filenames εικόνων ή υπάρχοντα asset URLs.
+
+8. Έλεγχοι πριν από παράδοση
+
+Έλεγξε όλες τις ελληνικές και αγγλικές σελίδες για:
+
+* HTTP 200,
+* ακριβώς ένα H1,
+* μοναδικό title και description,
+* σωστό canonical,
+* αμφίδρομο hreflang,
+* σωστό <html lang>,
+* έγκυρα JSON-LD blocks,
+* FAQ schema ίδιο με το ορατό FAQ,
+* σωστά breadcrumbs,
+* κανένα broken internal link,
+* κανένα untranslated Greek text στις αγγλικές σελίδες, εκτός από εμπορικά ονόματα,
+* κανένα αγγλικό κείμενο στις ελληνικές σελίδες που προέκυψε κατά λάθος,
+* λειτουργικό language switching σε κάθε URL,
+* σωστό desktop και mobile navigation,
+* κανένα horizontal overflow,
+* κανένα layout shift λόγω του language switcher,
+* λειτουργικά CTA, quiz και φόρμες,
+* έγκυρο sitemap,
+* κανένα redirect loop,
+* κανένα console error που προέκυψε από τις αλλαγές.
+
+Κάνε visual comparison της ελληνικής και αγγλικής homepage σε desktop και mobile. Πρέπει να έχουν την ίδια δομή και εμφάνιση, με μόνη διαφορά τη γλώσσα και το language switcher.
+
+9. Git και ασφάλεια
+
+* Μην εργαστείς απευθείας στο main.
+* Μην χρησιμοποιήσεις force push, reset, rebase ή history rewriting.
+* Μην συμπεριλάβεις attachments, audit files ή webarchives.
+* Μην πειράξεις άσχετα αρχεία.
+* Δημιούργησε καθαρό implementation commit στο branch feature/full-english-version.
+* Μην κάνεις ακόμη merge ή production deployment.
+
+10. Τελική αναφορά
+
+Στο τέλος παρουσίασε συνοπτικά:
+
+1. Πλήρη λίστα ελληνικών και αντίστοιχων αγγλικών URLs.
+2. Ακριβή αρχεία που δημιουργήθηκαν ή άλλαξαν.
+3. Σε ποια σημεία προστέθηκε το language switcher.
+4. Αριθμό ελληνικών και αγγλικών σελίδων.
+5. Αποτελέσματα translation completeness check.
+6. Αποτελέσματα SEO, hreflang, canonical και sitemap validation.
+7. Αποτελέσματα mobile και desktop visual checks.
+8. Επιβεβαίωση ότι forms, quiz, CTA και analytics δεν άλλαξαν.
+9. Το πλήρες local commit hash.
+10. Οποιοδήποτε πραγματικό blocker.
+
+Μην κάνεις push, merge ή deployment μέχρι να ελεγχθεί η τελική αναφορά.

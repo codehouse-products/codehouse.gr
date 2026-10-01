@@ -1,0 +1,92 @@
+Μην επαναλάβεις προηγούμενα audits. Δημιούργησε καθαρή έκδοση των SEO αλλαγών μέσα σε προσωρινό Git worktree, ώστε να αποκλειστεί πλήρως το commit e98a0ac και κάθε attachment.
+
+1. Κάνε fetch και επιβεβαίωσε ότι:
+
+origin/main = b74e001c75d36ca54badc8cb0a1954fe8d620b09
+
+Αν έχει αλλάξει, σταμάτησε χωρίς push.
+
+2. Δημιούργησε προσωρινό κατάλογο με mktemp -d και πρόσθεσε εκεί detached Git worktree απευθείας από το origin/main.
+
+Μην χρησιμοποιήσεις το υπάρχον working directory, local main ή release branch.
+
+3. Μέσα στο καθαρό worktree κάνε cherry-pick, με αυτή τη σειρά, μόνο:
+
+4e6e275
+5f43a5d
+
+Το cherry-pick πρέπει να μεταφέρει μόνο τις αλλαγές αυτών των commits και όχι τους ancestors τους.
+
+Αν υπάρξει conflict, σταμάτησε χωρίς αυτόματη επίλυση.
+
+4. Μετά το cherry-pick κατέγραψε το νέο καθαρό HEAD hash και επιβεβαίωσε ότι:
+
+* το origin/main είναι ancestor του νέου HEAD,
+* το e98a0ac δεν είναι ancestor του νέου HEAD,
+* τα e775125 και d0c75b3 δεν είναι ancestors του νέου HEAD,
+* το ιστορικό μετά το origin/main περιέχει μόνο τα δύο νέα cherry-picked commits,
+* το diff δεν περιέχει .webarchive, audit, pasted deployment αρχείο ή οτιδήποτε μέσα στο attached_assets,
+* το αρχείο attached_assets/Pasted--deployment-SEO--1788944427978_1788944427979.txt δεν υπάρχει στο diff,
+* το attached_assets/image_1788879416730.jpg δεν υπάρχει στο diff,
+* δεν άλλαξαν workflows, secrets ή deployment configuration.
+
+5. Εκτέλεσε στο καθαρό worktree έναν τελικό έλεγχο:
+
+* κανένα href="#qr-form",
+* ακριβώς έξι non-footer QR Menu CTA προς /prosfora/,
+* το footer link προς /prosfora/ παραμένει,
+* σωστό anchor text «δωρεάν κατασκευή ιστοσελίδας για επιχείρηση»,
+* canonical, og:url, structured data και sitemap με trailing slash για:
+    * /dimioyrgia-site/
+    * /dorean-istoselida/
+* έγκυρο sitemap και JSON-LD,
+* ένα H1 ανά δημόσια σελίδα,
+* κανένα duplicate title ή description,
+* git diff --check PASS.
+
+6. Αν όλα περάσουν, κάνε push από το καθαρό worktree:
+
+git push origin HEAD:refs/heads/release/seo-gsc-clean-v2-2026-09-09
+
+Μην κάνεις push οποιοδήποτε branch από το αρχικό working directory.
+
+7. Επιβεβαίωσε ότι το remote release branch:
+
+* τελειώνει στο νέο καθαρό HEAD,
+* περιλαμβάνει μόνο δύο commits μετά το origin/main,
+* δεν περιλαμβάνει το e98a0ac, attachments ή άσχετα αρχεία.
+
+8. Αν το main επιτρέπει fast-forward και το origin/main παραμένει στο b74e001c75d36ca54badc8cb0a1954fe8d620b09, ενημέρωσέ το απευθείας από το καθαρό worktree:
+
+git push origin HEAD:refs/heads/main
+
+Αν το main είναι protected, δημιούργησε και συγχώνευσε PR από:
+
+release/seo-gsc-clean-v2-2026-09-09
+
+Πριν το merge επιβεβαίωσε ξανά ότι το PR περιέχει μόνο τα δύο καθαρά commits.
+
+Μην χρησιμοποιήσεις force push, reset, rebase ή history rewriting. Μην διαγράψεις preservation branches ή υπάρχοντα commits.
+
+9. Μετά την ενημέρωση του main, περίμενε το υπάρχον deployment και έλεγξε στο production:
+
+* homepage, /prosfora/ και /qr-menu/: HTTP 200,
+* έξι QR CTA προς /prosfora/,
+* κανένα #qr-form,
+* σωστό anchor text,
+* canonical και structured data με trailing slash,
+* sitemap με τις σωστές slash εκδόσεις,
+* slashless landing URLs: ένα 301 και μετά 200,
+* κανένα 404, 500 ή redirect loop.
+
+10. Στην τελική απάντηση γράψε μόνο:
+
+* νέο καθαρό commit hash,
+* remote release hash,
+* τελικό remote main hash,
+* fast-forward ή PR,
+* deployment PASS/FAIL,
+* production checks,
+* επιβεβαίωση ότι αποκλείστηκαν e98a0ac, e775125, d0c75b3 και όλα τα attachments.
+
+Μην δημιουργήσεις νέο audit αρχείο και μην επαναλάβεις την προηγούμενη αναφορά.

@@ -1,0 +1,163 @@
+Προχώρησε σε ασφαλή καθαρή μεταφορά και deployment μόνο των εγκεκριμένων SEO αλλαγών, χωρίς να διαγράψεις, τροποποιήσεις ή συμπεριλάβεις τα δύο άσχετα commits.
+
+ΥΠΑΡΧΟΥΣΑ ΚΑΤΑΣΤΑΣΗ
+
+Εγκεκριμένο βασικό SEO commit:
+b8f7e366ae5c44456fb7ec952967b321bddd8088
+
+Εγκεκριμένο corrective commit:
+c7c7f58783000dde8e1e3ab381018576d46ecea9
+
+Άσχετα commits που ΔΕΝ πρέπει να περάσουν στο production:
+
+* d0c75b3, το οποίο προσθέτει:
+    attached_assets/image_1788879416730.jpg
+* e775125, το οποίο προσθέτει προηγούμενο production audit στο repository.
+
+ΣΤΟΧΟΣ
+
+Δημιούργησε καθαρό release branch απευθείας από το τρέχον origin/main, μετέφερε μόνο τα δύο εγκεκριμένα commits και, εφόσον περάσουν όλοι οι έλεγχοι, ενημέρωσε το remote main και κάνε production deployment.
+
+Μην διαγράψεις τα commits d0c75b3 και e775125 και μην αφαιρέσεις τα αρχεία τους από τα υπάρχοντα τοπικά branches.
+
+1. ΔΙΑΤΗΡΗΣΗ ΤΩΝ ΑΣΧΕΤΩΝ COMMITS
+
+Πριν από οτιδήποτε άλλο:
+
+* Επιβεβαίωσε ότι τα commits d0c75b3 και e775125 υπάρχουν.
+* Δημιούργησε ξεχωριστά τοπικά preservation branches που να δείχνουν σε αυτά, εφόσον δεν υπάρχουν ήδη.
+* Χρησιμοποίησε σαφή ονόματα, όπως:
+    preserve/local-main-image-d0c75b3
+    preserve/audit-file-e775125
+* Μην κάνεις push αυτών των preservation branches εκτός αν απαιτείται για να προστατευτεί περιεχόμενο που δεν υπάρχει πουθενά αλλού.
+* Μην χρησιμοποιήσεις reset, rebase, force push, commit deletion ή history rewriting.
+* Άφησε το νέο συνημμένο audit untracked και μην το προσθέσεις σε κανένα commit.
+
+2. ΔΗΜΙΟΥΡΓΙΑ ΚΑΘΑΡΟΥ RELEASE BRANCH
+
+* Κάνε fetch το origin.
+* Κατέγραψε το ακριβές hash του origin/main.
+* Δημιούργησε νέο branch με όνομα:
+
+release/seo-gsc-clean-2026-09-09
+
+απευθείας από το origin/main.
+
+Αν το συγκεκριμένο branch υπάρχει ήδη, μην το διαγράψεις ή αντικαταστήσεις. Έλεγξε πρώτα την κατάστασή του και χρησιμοποίησέ το μόνο εάν είναι καθαρό και βασίζεται στο σωστό origin/main. Διαφορετικά σταμάτησε και ενημέρωσέ με.
+
+3. ΜΕΤΑΦΟΡΑ ΜΟΝΟ ΤΩΝ ΕΓΚΕΚΡΙΜΕΝΩΝ ΑΛΛΑΓΩΝ
+
+Κάνε cherry-pick με την παρακάτω ακριβή σειρά:
+
+1. b8f7e366ae5c44456fb7ec952967b321bddd8088
+2. c7c7f58783000dde8e1e3ab381018576d46ecea9
+
+Μην κάνεις cherry-pick τα commits:
+
+* d0c75b3
+* e775125
+
+Αν υπάρξει conflict, μην επιλέξεις αυτόματα έκδοση και μην συνεχίσεις αυθαίρετα. Σταμάτησε και παρουσίασε το conflict.
+
+4. ΕΛΕΓΧΟΣ ΤΟΥ ΚΑΘΑΡΟΥ DIFF
+
+Σύγκρινε το νέο release branch με το origin/main και επιβεβαίωσε ότι:
+
+* Περιλαμβάνονται μόνο οι εγκεκριμένες SEO, canonical, schema, internal-link και QR CTA αλλαγές.
+* Δεν περιλαμβάνεται το:
+    attached_assets/image_1788879416730.jpg
+* Δεν περιλαμβάνεται κανένα webarchive, audit attachment ή άλλο συνημμένο αρχείο.
+* Δεν περιλαμβάνονται άσχετες αλλαγές.
+* Δεν έχουν αλλάξει deployment configuration, secrets, workflows, design, layout, τιμές ή προσφορές.
+* Το git diff –check περνά.
+
+Παρουσίασε εσωτερικά τη λίστα git diff --name-status origin/main...HEAD και χρησιμοποίησέ την για validation, χωρίς να δημιουργήσεις νέο report αρχείο.
+
+5. PRE-DEPLOY VALIDATION
+
+Εκτέλεσε έναν συγκεντρωτικό έλεγχο:
+
+* Δεν υπάρχει κανένα href=”#qr-form”.
+* Υπάρχουν ακριβώς έξι non-footer CTA στη σελίδα QR Menu προς /prosfora/.
+* Το footer link προς /prosfora/ παραμένει κανονικά.
+* Το διορθωμένο anchor text:
+    «δωρεάν κατασκευή ιστοσελίδας για επιχείρηση»
+    υπάρχει ακριβώς μία φορά.
+* Το παλιό λανθασμένο anchor text δεν υπάρχει.
+* Το /dimioyrgia-site/ έχει canonical, og:url και structured data με slash.
+* Το /dorean-istoselida/ έχει canonical, og:url και structured data με slash.
+* Το sitemap περιλαμβάνει τις τελικές slash εκδόσεις.
+* Τα internal links οδηγούν απευθείας στα canonical URLs.
+* Το sitemap.xml είναι έγκυρο και έχει 25 μοναδικά URLs.
+* Όλα τα JSON-LD blocks κάνουν parse.
+* Υπάρχει ένα H1 ανά δημόσια σελίδα.
+* Δεν υπάρχουν duplicate titles ή meta descriptions.
+* Τα διορθωμένα FAQ schemas συμφωνούν με τα ορατά FAQ.
+* Οι landing pages παραμένουν εκτός navigation και footer.
+* Το homepage quiz, η φόρμα προσφοράς, τα τηλέφωνα, τα email links, το portfolio και τα κύρια CTA παραμένουν λειτουργικά.
+
+Αν αποτύχει κρίσιμος έλεγχος, μην κάνεις push στο main ή deployment.
+
+6. PUSH ΚΑΙ ΕΝΗΜΕΡΩΣΗ MAIN
+
+Μόνο εφόσον το release branch είναι καθαρό και περάσουν όλοι οι έλεγχοι:
+
+1. Κάνε push το release/seo-gsc-clean-2026-09-09 στο origin.
+2. Κάνε νέο fetch και επιβεβαίωσε ότι το origin/main δεν άλλαξε μετά τη δημιουργία του release branch.
+3. Αν το origin/main έχει αλλάξει, σταμάτησε χωρίς merge ή push.
+4. Αν το repository χρησιμοποιεί pull requests ή προστατευμένο main, δημιούργησε και συγχώνευσε PR μέσω της υπάρχουσας διαδικασίας.
+5. Αν επιτρέπεται ασφαλές fast-forward update, ενημέρωσε το remote main από το καθαρό release branch.
+6. Μην χρησιμοποιήσεις force push.
+7. Μην συγχωνεύσεις το υπάρχον local main που περιέχει το d0c75b3.
+8. Μην συγχωνεύσεις το παλιό SEO branch που περιέχει το e775125.
+9. Μην διαγράψεις κανένα local branch ή commit μετά την ολοκλήρωση.
+10. PRODUCTION DEPLOYMENT
+
+Μετά την επιτυχημένη ενημέρωση του remote main:
+
+* Χρησιμοποίησε αποκλειστικά την ήδη καθιερωμένη διαδικασία deployment.
+* Μην αλλάξεις GitHub Actions, hosting configuration ή secrets.
+* Περίμενε να ολοκληρωθεί το deployment.
+* Αν αποτύχει, μην επαναλάβεις τυφλά το deployment. Κατέγραψε το συγκεκριμένο σφάλμα.
+
+8. LIVE PRODUCTION VERIFICATION
+
+Έλεγξε στο https://codehouse.gr:
+
+* Η homepage επιστρέφει HTTP 200.
+* Το /prosfora/ επιστρέφει HTTP 200.
+* Το /qr-menu/ επιστρέφει HTTP 200.
+* Τα έξι QR Menu CTA οδηγούν στο /prosfora/.
+* Δεν υπάρχει κανένα live href=”#qr-form”.
+* Το /dimioyrgia-site κάνει ένα 301 προς /dimioyrgia-site/ και μετά 200.
+* Το /dorean-istoselida κάνει ένα 301 προς /dorean-istoselida/ και μετά 200.
+* Οι δύο landing pages έχουν self-referencing canonical με slash.
+* Τα live og:url και structured data χρησιμοποιούν τα ίδια slash URLs.
+* Το live sitemap περιέχει τις τελικές slash εκδόσεις.
+* Το robots.txt αναφέρει το σωστό sitemap.
+* Δεν υπάρχουν redirect loops, 404 ή 500 στα αλλαγμένα URLs.
+* Homepage, landing pages, QR Menu και σελίδα προσφοράς φορτώνουν σωστά.
+* Η φόρμα προσφοράς παραμένει λειτουργική χωρίς να δημιουργήσεις ψεύτικο lead.
+
+9. ΤΕΛΙΚΗ ΑΝΑΦΟΡΑ
+
+Δώσε σύντομη τελική απάντηση με:
+
+1. Το αρχικό origin/main hash.
+2. Τα δύο preservation branches που δημιουργήθηκαν.
+3. Τα νέα cherry-picked commit hashes.
+4. Την ακριβή λίστα αρχείων του release diff.
+5. Επιβεβαίωση ότι αποκλείστηκαν τα d0c75b3 και e775125.
+6. Το τελικό remote main hash.
+7. Το αποτέλεσμα του deployment.
+8. Πίνακα production checks με PASS ή FAIL.
+9. Επιβεβαίωση ότι δεν διαγράφηκαν τα άσχετα commits ή αρχεία.
+10. Τυχόν blocker.
+11. Υπενθύμιση ότι μετά το επιτυχημένο deployment απομένουν στο Google Search Console:
+
+* νέα υποβολή του sitemap,
+* αίτημα ευρετηρίασης για:
+    https://codehouse.gr/dimioyrgia-site/
+    https://codehouse.gr/dorean-istoselida/
+
+Μην προσθέσεις μεγάλα logs και μην επαναλάβεις προηγούμενες αναφορές.

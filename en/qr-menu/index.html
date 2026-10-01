@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<!-- Google tag (gtag.js) -->
+
+
+<!-- Microsoft Clarity -->
+
+<title>Digital QR Menus for Restaurants & Cafés | Codehouse</title>
+<meta name="description" content="Digital QR menus for restaurants, cafés and bars. Customers scan and view the menu on their phone, with photos, multiple languages and price updates in minutes. Delivered in a few days across Greece.">
+<meta name="keywords" content="digital QR menu, restaurant QR menu, QR menu for cafés, digital menu, electronic menu">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Digital QR Menus for Restaurants & Cafés | Codehouse">
+<meta property="og:description" content="Scan, browse, order. Digital QR menus with custom design, dish photography and ready-to-use table cards.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Codehouse">
+<meta property="og:url" content="https://codehouse.gr/en/qr-menu/">
+<meta property="og:image" content="https://codehouse.gr/en/qr-menu/img/hero-qr-table.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Digital QR Menus for Restaurants & Cafés | Codehouse">
+<meta name="twitter:description" content="Digital QR menus with custom design, dish photos and printed table cards for restaurants, cafés and bars.">
+<meta name="twitter:image" content="https://codehouse.gr/en/qr-menu/img/hero-qr-table.jpg">
+<link rel="canonical" href="https://codehouse.gr/en/qr-menu/">
+<link rel="icon" href="/favicon.ico?v=9" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=9">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=9">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=9">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/en/qr-menu/img/hero-qr-table.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/assets/style.min.css?v=9">
+<style>
+/* ===== QR MENU PAGE — page-specific ===== */
+.qr-hero {
+  position: relative; overflow: hidden;
+  padding: clamp(112px, 14vw, 150px) clamp(20px, 5vw, 56px) clamp(50px, 7vw, 90px);
+}
+.qr-hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); z-index: 0; pointer-events: none; }
+.qr-hero-orb-1 { width: 460px; height: 460px; background: rgba(0,0,0,.13); top: -150px; right: -110px; }
+.qr-hero-orb-2 { width: 340px; height: 340px; background: rgba(80,120,255,.10); bottom: -120px; left: -100px; }
+.qr-hero-inner {
+  position: relative; z-index: 1; max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 64px); align-items: center;
+}
+.qr-badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--lime-dim); border: 1px solid rgba(0,0,0,.35); color: var(--lime);
+  padding: 8px 18px; border-radius: 999px; font-size: 13.5px; font-weight: 700; margin-bottom: 22px;
+}
+.qr-hero h1 {
+  font-family: var(--font-head); font-size: clamp(32px, 5vw, 56px); font-weight: 700;
+  line-height: 1.11; letter-spacing: -.018em;
+}
+.qr-lead { color: var(--text-dim); font-size: clamp(16px, 1.9vw, 18.5px); line-height: 1.72; margin: 22px 0 0; max-width: 560px; }
+.qr-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.qr-hero-meta { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 30px; }
+.qr-hero-meta span { font-size: 13.5px; color: var(--text-dim); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+.qr-hero-meta span::before { content: '✓'; color: var(--lime); font-weight: 800; }
+.qr-hero-visual { position: relative; }
+.qr-hero-visual img {
+  display: block; width: 100%; height: auto; border-radius: 26px;
+  border: 1px solid var(--line); box-shadow: 0 40px 90px rgba(0,0,0,.55);
+}
+/* Split feature rows */
+.qr-split { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.qr-split.rev .qr-split-media { order: 2; }
+.qr-split-media img {
+  display: block; width: 100%; height: auto; border-radius: 22px;
+  border: 1px solid var(--line); box-shadow: 0 30px 70px rgba(0,0,0,.45);
+}
+.qr-split-text h2 { font-family: var(--font-head); font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; line-height: 1.18; letter-spacing: -.012em; margin-bottom: 18px; }
+.qr-split-text p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.qr-check { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 11px; }
+.qr-check li { position: relative; padding-left: 30px; font-size: 15px; color: var(--text-dim); line-height: 1.6; }
+.qr-check li::before {
+  content: '✓'; position: absolute; left: 0; top: -1px;
+  width: 20px; height: 20px; border-radius: 50%; background: var(--lime-dim); color: var(--lime);
+  display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800;
+}
+.qr-check strong { color: var(--text); }
+/* Case study */
+.qr-case { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.qr-case-card {
+  max-width: 1000px; margin: 0 auto; background: linear-gradient(160deg, var(--panel), var(--bg-2));
+  border: 1px solid var(--line); border-radius: 26px; padding: clamp(28px, 4.5vw, 52px);
+}
+.qr-case-tag { font-family: var(--font-head); font-size: 12.5px; font-weight: 700; letter-spacing: .12em; color: var(--lime); margin-bottom: 14px; }
+.qr-case-card h2 { font-family: var(--font-head); font-size: clamp(24px, 3.4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+.qr-case-card p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 16px; }
+.qr-case-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 30px 0 26px; }
+.qr-case-stat { background: var(--panel-2); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; }
+.qr-case-stat strong { display: block; font-family: var(--font-head); font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--lime); line-height: 1.1; }
+.qr-case-stat span { font-size: 13px; color: var(--text-dim); font-weight: 600; }
+/* Pricing */
+.qr-price-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.qr-price {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 22px;
+  padding: 34px 28px; display: flex; flex-direction: column;
+  transition: border-color .35s, transform .35s var(--ease);
+}
+.qr-price:hover { border-color: rgba(0,0,0,.35); transform: translateY(-5px); }
+.qr-price.featured { border-color: rgba(0,0,0,.45); box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.qr-price-flag { font-family: var(--font-head); font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--lime); margin-bottom: 12px; min-height: 14px; }
+.qr-price h3 { font-family: var(--font-head); font-size: 21px; margin-bottom: 8px; }
+.qr-price .qr-price-tag { font-family: var(--font-head); font-size: clamp(28px, 3.4vw, 38px); font-weight: 700; color: var(--text); line-height: 1.1; margin: 12px 0 4px; }
+.qr-price .qr-price-tag em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--text-dim); }
+.qr-price > p { color: var(--text-dim); font-size: 14.5px; line-height: 1.65; margin-bottom: 18px; }
+.qr-price ul { list-style: none; margin-bottom: 26px; }
+.qr-price li { font-size: 14px; color: var(--text-dim); padding: 6px 0 6px 24px; position: relative; }
+.qr-price li::before { content: '✓'; position: absolute; left: 0; color: var(--lime); font-weight: 700; }
+.qr-price .btn { margin-top: auto; justify-content: center; }
+.qr-price-note { max-width: 760px; margin: 30px auto 0; text-align: center; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.qr-price-note a { color: var(--lime); font-weight: 700; }
+/* Breadcrumbs */
+.qr-crumbs { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+.qr-crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--text-dim); }
+.qr-crumbs a { color: var(--text-dim); }
+.qr-crumbs a:hover { color: var(--lime); }
+.qr-crumbs li + li::before { content: '/'; margin-right: 8px; opacity: .5; }
+/* Inline text link */
+.qr-inline-link { color: var(--lime); font-weight: 700; }
+@media (max-width: 900px) {
+  .qr-hero-inner { grid-template-columns: 1fr; }
+  .qr-hero-visual { max-width: 400px; margin: 8px auto 0; }
+  .qr-split { grid-template-columns: 1fr; }
+  .qr-split.rev .qr-split-media { order: 0; }
+}
+@media (max-width: 560px) {
+  .qr-hero-actions .btn { width: 100%; justify-content: center; }
+}
+/* Billing toggle */
+.billing-toggle {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin: 0 auto 36px; flex-wrap: wrap;
+}
+.billing-label { font-size: 15px; font-weight: 600; color: var(--text-dim); display: flex; align-items: center; gap: 8px; }
+.billing-badge {
+  background: var(--lime-dim); border: 1px solid rgba(0,0,0,.4); color: var(--lime);
+  font-size: 11.5px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+}
+.toggle-track {
+  width: 52px; height: 28px; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 999px; cursor: pointer; position: relative; transition: background .25s, border-color .25s;
+  flex-shrink: 0;
+}
+.toggle-track[aria-checked="true"] { background: var(--lime); border-color: var(--lime); }
+.toggle-thumb {
+  position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  background: var(--text); border-radius: 50%; transition: transform .25s var(--ease);
+}
+.toggle-track[aria-checked="true"] .toggle-thumb { transform: translateX(24px); background: #111; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://codehouse.gr/en/qr-menu/#service",
+      "serviceType": "Digital QR Menu",
+      "name": "Digital QR Menu for restaurants, cafés and bars",
+      "description": "Custom-designed digital QR menus in your business colours, with dish photos, multiple languages and printed QR table cards.",
+      "url": "https://codehouse.gr/en/qr-menu/",
+      "image": "https://codehouse.gr/en/qr-menu/img/hero-phone.webp",
+      "provider": { "@id": "https://codehouse.gr/#business" },
+      "areaServed": [
+        { "@type": "Country", "name": "Greece" },
+        { "@type": "City", "name": "Athens" },
+        { "@type": "City", "name": "Glyfada" },
+        { "@type": "City", "name": "Santorini" },
+        { "@type": "City", "name": "Mykonos" }
+      ],
+      "audience": { "@type": "BusinessAudience", "name": "Restaurants, cafés, bars and hotels" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "200",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "EUR",
+          "minPrice": "200",
+          "maxPrice": "600"
+        },
+        "availability": "https://schema.org/InStock",
+        "url": "https://codehouse.gr/en/qr-menu/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://codehouse.gr/" },
+        { "@type": "ListItem", "position": 2, "name": "Digital QR Menu", "item": "https://codehouse.gr/en/qr-menu/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a digital QR menu?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is your business menu in digital form. Customers scan a QR code on the table with their phone camera and immediately see the menu, including photos, categories and current prices — without downloading an app." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a QR menu cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In the Greek market, a quality custom-designed digital menu typically costs around €200–€600 as a one-off, depending on the number of items, photos and languages. We also offer an option with no build fee and a small monthly subscription covering hosting, domain and updates." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do customers need to download an app?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The menu opens in the phone’s browser within seconds. No installation, account or registration is required — one reason QR menus work in practice." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I update prices and dishes myself?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide an easy way to update prices, new dishes and availability. Or send us the changes and we will make them the same day, at no extra subscription cost." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support multiple languages for tourists?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The menu can be shown in Greek, English and any other language you need, with one-tap switching. It is especially useful in destinations such as Santorini, Mykonos and the Athens Riviera." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I also get printed QR table cards?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design the cards in your business colours, with your logo, QR code and optional Wi-Fi details, ready to print as a stand, sticker or laminated card." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A typical digital menu is delivered in 2–5 business days after you send us your items and prices. Menus with many items or dish photography take a little longer." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it also support delivery or orders?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The standard menu is for browsing at the table. If needed, we can add buttons for phone orders, WhatsApp, reservations or a delivery platform." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the menu, or is it locked to a platform?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is yours. We build it on your domain, not on a third-party platform that charges you indefinitely. If you want to move it later, you can take it with you." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you serve areas outside Athens?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We are based in Glyfada and work with businesses throughout Greece, from Santorini and Mykonos to Thessaloniki. The entire process is remote, by phone and email." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <link rel="stylesheet" href="/assets/studio/legacy.css">
+<link rel="stylesheet" href="/assets/studio/privacy.css">
+<link rel="alternate" hreflang="el" href="https://codehouse.gr/qr-menu/">
+<link rel="alternate" hreflang="en" href="https://codehouse.gr/en/qr-menu/">
+<link rel="alternate" hreflang="x-default" href="https://codehouse.gr/qr-menu/">
+</head>
+<body class="legacy-page">
+<!-- PROMO BANNER -->
+<div class="promo-banner" id="promoBanner" role="region" aria-label="Offer">
+  <a href="#times" class="promo-banner-link">
+    <span class="promo-gift" aria-hidden="true">🎁</span>
+    <span class="promo-text"><strong>Pay annually and get 2 months free</strong><span class="promo-sub"> — Essential from €99/year · Pro from €149/year</span></span>
+    <span class="promo-cta">See pricing →</span>
+  </a>
+  <button class="promo-close" id="promoClose" aria-label="Close offer">×</button>
+</div>
+
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Nav -->
+<!-- Legacy editorial navigation -->
+<a class="legacy-skip-link" href="#top">Skip to content</a>
+<header class="legacy-editorial-nav">
+  <a class="legacy-editorial-brand" href="/en/" aria-label="Codehouse — Home">
+    <img src="/assets/studio/logo-user-black.png" alt="Codehouse" width="58" height="58">
+  </a>
+  <nav class="legacy-editorial-links" aria-label="Main navigation"><a href="/en/services/" aria-current="page">Services</a><a href="/en/projects/">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a></nav>
+  <!-- locale-pair --><nav class="legacy-language" aria-label="Language"><a href="/qr-menu/" lang="el">GR</a><span aria-hidden="true"> / </span><a href="/en/qr-menu/" lang="en" aria-current="page">EN</a></nav><!-- /locale-pair -->
+  <details class="legacy-mobile-nav" data-legacy-mobile-menu>
+    <summary aria-label="Open navigation">Menu</summary>
+    <nav aria-label="Mobile navigation"><a href="/en/services/" aria-current="page">Services</a><a href="/en/projects/">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a></nav>
+  </details>
+</header>
+<div class="legacy-compat-chrome" aria-hidden="true" inert hidden>
+<header class="nav" id="nav">
+  <a href="/en/" class="nav-brand" aria-label="Codehouse — Home">
+    <img src="/assets/img/logo-ch-mark.webp?v=5" alt="Codehouse Logo Mark" class="nav-logo-mark" width="168" height="158">
+    <img src="/assets/img/logo-ch-text.webp?v=5" alt="Codehouse" class="nav-logo" width="300" height="52">
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="/en/services/">Services</a>
+    <a href="/en/qr-menu/" aria-current="page">QR Menu</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/qr-menu/#faq">FAQ</a>
+    <a href="/en/blog/">Blog</a>
+    <a href="/en/prosfora/" class="nav-cta">Request a proposal</a>
+  </nav>
+  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+</div>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <img src="/assets/img/logo-ch-mark.webp?v=5" alt="" class="mobile-menu-logo" aria-hidden="true" width="168" height="158">
+  <nav>
+    <a href="/en/services/" style="--i:0">Services</a>
+    <a href="/en/qr-menu/" style="--i:1">QR Menu</a>
+    <a href="/en/projects/" style="--i:2">Projects</a>
+    <a href="/en/qr-menu/#faq" style="--i:3">FAQ</a>
+    <a href="/en/blog/" style="--i:4">Blog</a>
+    <a href="/en/prosfora/" class="mobile-cta" style="--i:5">Request a proposal →</a>
+  </nav>
+</div>
+
+<main id="top" tabindex="-1">
+
+  <!-- HERO -->
+  <section class="qr-hero">
+    <div class="qr-hero-orb qr-hero-orb-1" aria-hidden="true"></div>
+    <div class="qr-hero-orb qr-hero-orb-2" aria-hidden="true"></div>
+    <div class="qr-hero-inner">
+      <div class="qr-hero-text">
+        <span class="qr-badge">▦ Digital QR Menu</span>
+        <h1>Your menu on every customer’s phone <span class="accent">with one scan</span></h1>
+        <p class="qr-lead">We create digital QR menus for restaurants, cafés and bars, with custom designs in your brand colours, dish photos, multiple languages and printed table cards. Update a price in minutes without reprinting anything.</p>
+        <div class="qr-hero-actions">
+          <a href="/en/prosfora/" class="btn btn-primary btn-lg">Request a free proposal <span class="btn-arrow">→</span></a>
+          <a href="https://highhopeathens.gr/menu.html" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">View a live menu</a>
+        </div>
+        <div class="qr-hero-meta">
+          <span>Delivered in 2–5 days</span>
+          <span>No app required for customers</span>
+          <span>Your own domain</span>
+        </div>
+      </div>
+      <div class="qr-hero-visual">
+        <img src="/qr-menu/img/hero-qr-table.jpg" width="1400" height="933" alt="QR code on a restaurant table as a customer scans with a phone in a premium setting" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMBS -->
+  <nav class="qr-crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/en/">Home</a></li>
+      <li aria-current="page">Digital QR Menu</li>
+    </ol>
+  </nav>
+
+  <!-- FORM (immediately after the hero) -->
+  <section id="times">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Pricing</p>
+      <h2>How much does a <span class="accent">QR menu</span> cost?</h2>
+      <p class="section-sub">Choose monthly or annual billing — with annual billing, <strong style="color:var(--lime)">you get 2 months free</strong>.</p>
+    </header>
+
+    <!-- Billing toggle -->
+    <div class="billing-toggle" id="billingToggle">
+      <span class="billing-label" id="lblMonthly">Monthly</span>
+      <button class="toggle-track" id="toggleBtn" aria-checked="false" role="switch" aria-label="Toggle annual / monthly billing">
+        <span class="toggle-thumb"></span>
+      </button>
+      <span class="billing-label" id="lblAnnual">Annual <span class="billing-badge">2 months free</span></span>
+    </div>
+
+    <div class="qr-price-grid">
+      <div class="qr-price reveal">
+        <p class="qr-price-flag">ESSENTIAL</p>
+        <h3>Essential</h3>
+        <p class="qr-price-tag">
+          <span class="price-monthly">9,90 € <em>/month</em></span>
+          <span class="price-annual" hidden>99,00 € <em>/year</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Save €19.80 — 2 months free</p>
+        <p>For cafés and small venues with a straightforward menu.</p>
+        <ul>
+          <li>Up to 150 items</li>
+          <li>Custom design in your colours</li>
+          <li>Categories</li>
+          <li>Item photos</li>
+          <li>Print-ready QR code</li>
+          <li>Greek / English</li>
+        </ul>
+        <a href="/en/prosfora/" class="btn btn-ghost">Request a proposal</a>
+      </div>
+      <div class="qr-price featured reveal">
+        <p class="qr-price-flag">POPULAR</p>
+        <h3>Pro</h3>
+        <p class="qr-price-tag">
+          <span class="price-monthly">14,90 € <em>/month</em></span>
+          <span class="price-annual" hidden>149,00 € <em>/year</em></span>
+        </p>
+        <p class="price-saving" hidden style="color:var(--lime);font-size:13px;font-weight:700;margin-bottom:8px">Save €29.80 — 2 months free</p>
+        <p>For restaurants and bars that want their menu to sell.</p>
+        <ul>
+          <li>Unlimited items</li>
+          <li>Everything in Essential</li>
+          <li>Wi-Fi, phone and social links in one QR</li>
+          <li>Google Analytics integration</li>
+          <li>Table card design</li>
+        </ul>
+        <a href="/en/prosfora/" class="btn btn-primary">Request a proposal <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+    <p class="qr-price-note">Annual billing is paid upfront and equals 10 months — 2 months are free. Also read our <a href="/en/blog/qr-menou-estiatorio-kafe/">in-depth article about QR menus</a>.</p>
+  </section>
+
+  <!-- WHAT IT IS / BENEFITS -->
+  <section class="services" id="ofeli">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Why it matters</p>
+      <h2>Five things that change <span class="accent">from day one</span></h2>
+      <p class="section-sub">A digital menu is not a fad. It is an affordable tool to reduce costs, sell more and understand what your customers want.</p>
+    </header>
+    <div class="service-cards">
+      <article class="service-card reveal">
+        <div class="service-icon">🖨️</div>
+        <h3>End printing costs</h3>
+        <p>Every price change on a printed menu means reprinting. As prices continue to rise, that can add up to hundreds of euros a year.</p>
+        <ul><li>Free, instant updates</li><li>No reprints</li><li>Pays for itself in months</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📸</div>
+        <h3>Photos that sell</h3>
+        <p>Photos are expensive to print on paper menus. Digitally, every dish can have its own photo — and photographed dishes are ordered more often.</p>
+        <ul><li>A photo for every item</li><li>Feature promotions</li><li>Increase average order value</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">⚡</div>
+        <h3>Hygiene and speed</h3>
+        <p>No greasy menu passed from hand to hand. Customers browse before the server arrives, orders are placed sooner and tables can turn over more frequently.</p>
+        <ul><li>A cleaner experience</li><li>Less waiting</li><li>Faster service</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">🌍</div>
+        <h3>Multiple languages for tourists</h3>
+        <p>In tourist destinations, offering a menu in English or three languages with one tap is a major advantage — without printing multiple versions.</p>
+        <ul><li>Greek, English and more</li><li>Switch with one tap</li><li>Ideal for islands and coastal areas</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📊</div>
+        <h3>Insights you never had before</h3>
+        <p>See how many people scan, when they scan and which items they view most. A paper menu tells you nothing — a digital menu shows what customers are interested in.</p>
+        <ul><li>Google Analytics integration</li><li>Popular items</li><li>Peak times</li></ul>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon">📶</div>
+        <h3>Wi-Fi, phone and social in one place</h3>
+        <p>One scan gives customers everything: the menu, Wi-Fi password, reservation phone number and social accounts. No need to ask anyone.</p>
+        <ul><li>Wi-Fi password on the table card</li><li>Reservations in one tap</li><li>More followers</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (table card visual) -->
+  <section id="pos-leitourgei">
+    <div class="qr-split">
+      <div class="qr-split-media reveal">
+        <img src="/qr-menu/img/table-card.webp" width="1400" height="1050" alt="Printed QR card on a café table with its logo and Wi-Fi code" loading="lazy" decoding="async">
+      </div>
+      <div class="qr-split-text reveal">
+        <p class="section-kicker">// How it works</p>
+        <h2>Three steps, no app</h2>
+        <p>The customer sits down, opens their phone camera and scans the table card. The menu appears in seconds, with no app download, account or email required.</p>
+        <ul class="qr-check">
+          <li><strong>1. Scan.</strong> Use the phone camera to scan the stand or table sticker.</li>
+          <li><strong>2. Browse.</strong> Categories, photos, prices, allergens and offers in a menu that loads instantly.</li>
+          <li><strong>3. Order.</strong> They know what they want before the server arrives — and often order more.</li>
+        </ul>
+        <p style="margin-top:24px">We design the cards in your venue’s colours, with your logo, QR code and optional Wi-Fi password, ready to print.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTILINGUAL MENUS -->
+  <section id="glosses" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="qr-split rev">
+      <div class="qr-split-media reveal">
+        <img src="/qr-menu/img/multilang.webp" width="1400" height="787" alt="Digital QR menu in three languages — Greek, English and Russian on three phones" loading="lazy" decoding="async">
+      </div>
+      <div class="qr-split-text reveal">
+        <p class="section-kicker">// For tourist destinations</p>
+        <h2>One menu, as many languages as you need</h2>
+        <p>In Santorini, Mykonos, Glyfada and other tourist destinations, customers who cannot understand a menu order less and ask more questions. A digital menu addresses this: guests choose a language and see the same dishes in it.</p>
+        <ul class="qr-check">
+          <li><strong>Automatic language suggestion</strong> based on the visitor’s phone settings.</li>
+          <li><strong>One source of truth.</strong> Update a price once and it is updated across all languages.</li>
+          <li><strong>Accurate descriptions,</strong> written for visitors rather than translated word for word by machine.</li>
+          <li><strong>No multiple printed menus</strong> and less need for staff to explain every dish.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="qr-case" id="case-study">
+    <div class="qr-case-card reveal">
+      <p class="qr-case-tag">// CASE STUDY · GLYFADA</p>
+      <h2>High Hope: 119 items, one scan</h2>
+      <p>For <strong>High Hope</strong>, a specialty café in Glyfada, we built a complete digital menu with 119 items, a photo for every dish, custom 3D design elements and printed QR table cards that also include the venue’s Wi-Fi details.</p>
+      <p>Customers scan once to access everything: menu, Wi-Fi, phone and social media. Price changes take minutes, with no reprinting costs.</p>
+      <div class="qr-case-stats">
+        <div class="qr-case-stat"><strong>119</strong><span>menu items</span></div>
+        <div class="qr-case-stat"><strong>0 €</strong><span>cost per price update</span></div>
+        <div class="qr-case-stat"><strong>3</strong><span>days to delivery</span></div>
+        <div class="qr-case-stat"><strong>1</strong><span>scan for menu + Wi-Fi</span></div>
+      </div>
+      <a href="https://highhopeathens.gr/menu.html" class="btn btn-primary" target="_blank" rel="noopener">View the live menu <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <!-- WHAT TO LOOK FOR -->
+  <section id="prosoxi" style="background:var(--bg-2);border-top:1px solid var(--line)">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Before signing elsewhere</p>
+      <h2>Not all QR menus are <span class="accent">the same</span></h2>
+    </header>
+    <ol class="process-steps">
+      <li class="reveal"><span class="step-num">01</span><h3>Avoid endless subscriptions</h3><p>Platforms charging €20–40 per month indefinitely can cost several times more than your own custom menu over two years — and you own nothing at the end.</p></li>
+      <li class="reveal"><span class="step-num">02</span><h3>Demand speed</h3><p>A customer at the table will not wait. The menu should load in one or two seconds, even with a moderate signal.</p></li>
+      <li class="reveal"><span class="step-num">03</span><h3>Check it on mobile</h3><p>All customers will view it on a phone. If a menu was designed for desktop and then squeezed down, it shows.</p></li>
+      <li class="reveal"><span class="step-num">04</span><h3>Make sure it is yours</h3><p>The menu should live on your own domain, not be locked into a third-party account. That way you retain control and your venue’s SEO.</p></li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <header class="section-head reveal">
+      <p class="section-kicker">// Frequently asked questions</p>
+      <h2>What owners ask <span class="accent">before getting started</span></h2>
+    </header>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>What is a digital QR menu?</summary><p>It is your business menu in digital form. Customers scan a QR code on the table with their phone camera and immediately see the menu, including photos, categories and current prices — without downloading an app.</p></details>
+      <details class="faq-item reveal"><summary>How much does a QR menu cost?</summary><p>In the Greek market, a quality custom-designed digital menu typically costs around €200–€600 as a one-off, depending on the number of items, photos and languages. We also offer an option with no build fee and a small monthly subscription covering hosting, domain and updates.</p></details>
+      <details class="faq-item reveal"><summary>Do customers need to download an app?</summary><p>No. The menu opens in the phone’s browser within seconds. No installation, account or registration is required — one reason QR menus work in practice.</p></details>
+      <details class="faq-item reveal"><summary>Can I update prices and dishes myself?</summary><p>Yes. We provide an easy way to update prices, new dishes and availability. Or send us the changes and we will make them the same day, at no extra subscription cost.</p></details>
+      <details class="faq-item reveal"><summary>Does it support multiple languages for tourists?</summary><p>Yes. The menu can be shown in Greek, English and any other language you need, with one-tap switching. It is especially useful in destinations such as Santorini, Mykonos and the Athens Riviera.</p></details>
+      <details class="faq-item reveal"><summary>Do I also get printed QR table cards?</summary><p>Yes. We design the cards in your business colours, with your logo, QR code and optional Wi-Fi details, ready to print as a stand, sticker or laminated card.</p></details>
+      <details class="faq-item reveal"><summary>How long does it take?</summary><p>A typical digital menu is delivered in 2–5 business days after you send us your items and prices. Menus with many items or dish photography take a little longer.</p></details>
+      <details class="faq-item reveal"><summary>Can it also support delivery or orders?</summary><p>The standard menu is for browsing at the table. If needed, we can add buttons for phone orders, WhatsApp, reservations or a delivery platform.</p></details>
+      <details class="faq-item reveal"><summary>Do I own the menu, or is it locked to a platform?</summary><p>It is yours. We build it on your domain, not on a third-party platform that charges you indefinitely. If you want to move it later, you can take it with you.</p></details>
+      <details class="faq-item reveal"><summary>Do you serve areas outside Athens?</summary><p>Yes. We are based in Glyfada and work with businesses throughout Greece, from Santorini and Mykonos to Thessaloniki. The entire process is remote, by phone and email.</p></details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-inner reveal">
+      <h2>Ready for your customers to see <span class="accent">your menu on their phones?</span></h2>
+      <a href="/en/prosfora/" class="btn btn-primary btn-lg">Request a free proposal <span class="btn-arrow">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer legacy-editorial-footer" data-legacy-editorial-footer="true">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="/assets/studio/logo-user-white.png" alt="Codehouse" class="footer-logo" width="160" height="160">
+      <p>We build digital homes for businesses.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="/en/services/">Services</a>
+      <a href="/en/qr-menu/">QR Menu</a>
+      <a href="/en/projects/">Projects</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/prosfora/">Offer</a>
+      <a href="/en/aporrito/">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+306986804138">698 680 4138</a>
+      <a href="mailto:hello@codehouse.gr">hello@codehouse.gr</a>
+      <a href="https://artivoai.com" target="_blank" rel="noopener">artivoai.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Guides</h4>
+      <a href="/en/blog/qr-menou-estiatorio-kafe/">QR menus for restaurants</a>
+      <a href="/en/blog/poso-kostizei-mia-istoselida/">How much does a website cost</a>
+    </div>
+  </div>
+  <p class="footer-bottom">© 2026 Codehouse — codehouse.gr · Made with ❤ and AI in Athens</p>
+
+  <nav class="legacy-footer-nav" aria-label="Footer navigation"><a href="/en/services/">Services</a><a href="/en/projects/">Projects</a><a href="/en/studio/">Studio</a><a href="/en/contact/">Contact</a><a href="/en/blog/">Blog</a><a href="/en/prosfora/">Offer</a><a href="/en/aporrito/">Privacy policy</a></nav>
+<button class="privacy-settings" data-privacy-settings type="button">Privacy settings</button></footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Promo banner ---------- */
+  var promo = document.getElementById('promoBanner');
+  var promoClose = document.getElementById('promoClose');
+  if (promo) {
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('promoClosed') === '1'; } catch (e) {}
+    if (dismissed) { promo.classList.add('hidden'); promo.style.display = 'none'; }
+    else { document.body.classList.add('has-promo'); }
+    if (promoClose) {
+      promoClose.addEventListener('click', function () {
+        promo.classList.add('hidden');
+        document.body.classList.remove('has-promo');
+        try { sessionStorage.setItem('promoClosed', '1'); } catch (e) {}
+        setTimeout(function () { promo.style.display = 'none'; }, 500);
+      });
+    }
+  }
+
+  /* ---------- Nav ---------- */
+  var nav = document.getElementById('nav');
+  if (nav) {
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 30); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (burger && mobileMenu) {
+    var toggleMenu = function (open) {
+      var isOpen = typeof open === 'boolean' ? open : !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+    burger.addEventListener('click', function () { toggleMenu(); });
+    mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggleMenu(false); });
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Service card glow ---------- */
+  document.querySelectorAll('.service-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- FORM (3 steps) ---------- */
+  var TOTAL = 3;
+  var current = 1;
+  var form = document.getElementById('qrForm');
+  var bar = document.getElementById('qrBar');
+  var btnPrev = document.getElementById('qrPrev');
+  var btnNext = document.getElementById('qrNext');
+  var formNav = document.getElementById('qrNav');
+  var successBox = document.getElementById('qrSuccess');
+
+  if (form && bar && btnPrev && btnNext && formNav && successBox) {
+    var showStep = function (n) {
+      form.querySelectorAll('.quiz-step').forEach(function (s) {
+        s.classList.toggle('active', parseInt(s.getAttribute('data-step'), 10) === n);
+      });
+      bar.style.width = (n / TOTAL * 100) + '%';
+      btnPrev.disabled = n === 1;
+      btnNext.textContent = n === TOTAL ? 'Submit ✓' : 'Next →';
+      current = n;
+    };
+
+    var validateStep = function (n) {
+      if (n !== TOTAL) return true;
+      var name = form.querySelector('input[name="name"]');
+      var phone = form.querySelector('input[name="phone"]');
+      var ok = true;
+      [name, phone].forEach(function (f) {
+        var bad = !f.value.trim();
+        f.classList.toggle('error', bad);
+        if (bad) ok = false;
+      });
+      return ok;
+    };
+
+    var collectData = function () {
+      var data = {};
+      new FormData(form).forEach(function (v, k) {
+        if (data[k]) { data[k] += ' | ' + v; } else { data[k] = v; }
+      });
+      data._timestamp = new Date().toISOString();
+      data._page = location.href;
+      return data;
+    };
+
+    var setSubmitStatus = function (message, isError) {
+      var status = document.getElementById('qrSubmitStatus');
+      if (!status) {
+        status = document.createElement('p');
+        status.id = 'qrSubmitStatus';
+        status.style.textAlign = 'center';
+        status.style.margin = '12px 0';
+        formNav.parentNode.insertBefore(status, formNav);
+      }
+      status.setAttribute('role', isError ? 'alert' : 'status');
+      status.style.color = isError ? '#ff5874' : 'var(--text-dim)';
+      status.textContent = message;
+    };
+
+    var showAccepted = function (mailSent) {
+      var heading = successBox.querySelector('h1, h2, h3, h4');
+      var paragraph = successBox.querySelector('p');
+      var status = document.getElementById('qrSubmitStatus');
+      if (status) status.textContent = '';
+      if (!mailSent) {
+        if (heading) heading.textContent = 'Your request was saved';
+        if (paragraph) {
+          paragraph.textContent = 'Your details were saved, but an email notification was not sent. Please call us for immediate assistance.';
+        } else if (!heading) {
+          successBox.textContent = 'Your request was saved. Your details were saved, but an email notification was not sent. Please call us for immediate assistance.';
+        }
+      }
+      form.querySelectorAll('.quiz-step').forEach(function (s) { s.classList.remove('active'); });
+      formNav.style.display = 'none';
+      bar.style.width = '100%';
+      successBox.hidden = false;
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    var submitForm = function () {
+      var data = collectData();
+      btnNext.disabled = true;
+      fetch('/lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (response) {
+        return response.json().then(function (result) {
+          if (!response.ok || !result || result.ok !== true || result.saved !== true) {
+            throw new Error('submission_not_saved');
+          }
+          if (result.mail !== true && !(response.status === 202 && result.mail === false)) {
+            throw new Error('submission_status_unknown');
+          }
+          return result;
+        });
+      }).then(function (result) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'qr_menu_form_success' });
+        }
+        showAccepted(result.mail === true);
+      }).catch(function () {
+        btnNext.disabled = false;
+        setSubmitStatus('We could not save your submission. Check your connection and try again.', true);
+      });
+    };
+
+    btnNext.addEventListener('click', function () {
+      if (!validateStep(current)) return;
+      if (current === TOTAL) { submitForm(); return; }
+      showStep(current + 1);
+    });
+    btnPrev.addEventListener('click', function () {
+      if (current > 1) showStep(current - 1);
+    });
+
+    form.querySelectorAll('.quiz-step input[type="radio"]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        var stepEl = input.closest('.quiz-step');
+        var stepNum = parseInt(stepEl.getAttribute('data-step'), 10);
+        if (stepNum !== 1) return;
+        setTimeout(function () { if (current === stepNum) showStep(stepNum + 1); }, 420);
+      });
+    });
+
+    showStep(1);
+  }
+
+  /* ---------- Billing toggle ---------- */
+  var toggleBtn = document.getElementById('toggleBtn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      var isAnnual = toggleBtn.getAttribute('aria-checked') === 'true';
+      var nowAnnual = !isAnnual;
+      toggleBtn.setAttribute('aria-checked', String(nowAnnual));
+      document.querySelectorAll('.price-monthly').forEach(function (el) { el.hidden = nowAnnual; });
+      document.querySelectorAll('.price-annual').forEach(function (el) { el.hidden = !nowAnnual; });
+      document.querySelectorAll('.price-saving').forEach(function (el) { el.hidden = !nowAnnual; });
+    });
+  }
+
+  /* ---------- Smooth anchor offset ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+  <script src="/assets/studio/legacy.js" defer></script>
+<script src="/assets/studio/privacy.js" defer></script>
+</body>
+</html>

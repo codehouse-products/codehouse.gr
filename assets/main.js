@@ -186,32 +186,61 @@
     return data;
   }
 
-  function submitQuiz() {
-    var data = collectData();
-    // 1) Αποθήκευση τοπικά (backup)
-    try {
-      var all = JSON.parse(localStorage.getItem('ch_leads') || '[]');
-      all.push(data);
-      localStorage.setItem('ch_leads', JSON.stringify(all));
-    } catch (e) {}
+  function setSubmitStatus(message) {
+    var status = document.getElementById('quizSubmitStatus');
+    if (!status) {
+      status = document.createElement('p');
+      status.id = 'quizSubmitStatus';
+      status.setAttribute('role', 'status');
+      status.style.textAlign = 'center';
+      status.style.margin = '12px 0';
+      quizNav.parentNode.insertBefore(status, quizNav);
+    }
+    status.textContent = message;
+  }
 
-    // 2) Αποστολή στο backend endpoint (αν υπάρχει), αλλιώς mailto fallback
-    var payload = JSON.stringify(data);
-    fetch('lead.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: payload
-    }).then(function() {
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'homepage_quiz_success' });
-      }
-    }).catch(function () { /* silent — το localStorage κρατά backup */ });
-
-    // 3) Εμφάνιση επιτυχίας
+  function showQuizAccepted(mailSent) {
+    var heading = successBox.querySelector('h3');
+    var paragraphs = successBox.querySelectorAll('p');
+    var status = document.getElementById('quizSubmitStatus');
+    if (status) status.textContent = '';
+    if (mailSent) {
+      heading.textContent = 'Το λάβαμε!';
+      paragraphs[0].innerHTML = 'Θα επικοινωνήσουμε μαζί σου μέσα σε <strong>24 ώρες</strong> με πρόταση για το project σου.';
+    } else {
+      heading.textContent = 'Η υποβολή αποθηκεύτηκε';
+      paragraphs[0].textContent = 'Τα στοιχεία σου αποθηκεύτηκαν, αλλά δεν στάλθηκε email ειδοποίησης. Για άμεση επικοινωνία, κάλεσέ μας.';
+    }
     form.querySelectorAll('.quiz-step').forEach(function (s) { s.classList.remove('active'); });
     quizNav.style.display = 'none';
     bar.style.width = '100%';
     successBox.hidden = false;
+  }
+
+  function submitQuiz() {
+    var data = collectData();
+    btnNext.disabled = true;
+    setSubmitStatus('Αποστολή…');
+    fetch('/lead.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (response) {
+      return response.json().then(function (result) {
+        if (!response.ok || !result || result.ok !== true || result.saved !== true) {
+          throw new Error('submission_not_saved');
+        }
+        return result;
+      });
+    }).then(function (result) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'homepage_quiz_success' });
+      }
+      showQuizAccepted(result.mail === true);
+    }).catch(function () {
+      btnNext.disabled = false;
+      setSubmitStatus('Δεν ήταν δυνατή η αποθήκευση της υποβολής. Έλεγξε τη σύνδεσή σου και δοκίμασε ξανά.');
+    });
   }
 
   btnNext.addEventListener('click', function () {

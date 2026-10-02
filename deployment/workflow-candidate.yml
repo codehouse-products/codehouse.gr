@@ -1,0 +1,81 @@
+name: Codehouse controlled release
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Inspect the server first; apply publishes the reviewed release
+        type: choice
+        required: true
+        default: inspect
+        options:
+          - inspect
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codehouse-server-maintenance
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: c6e09c5311aac8b16427d60ef2e31455ac2142c5
+          path: ops
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: 2a45ab274e77ca9678926c761df33292a8da0a32
+          path: site
+          persist-credentials: false
+      - name: Verify the reviewed website
+        working-directory: site
+        run: |
+          python3 scripts/check_public_site.py
+          php -l lead.php
+          python3 scripts/test_lead.py
+      - name: Package public files only
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p upload
+          python3 ops/scripts/build_site_release.py \
+            --source site \
+            --commit 2a45ab274e77ca9678926c761df33292a8da0a32 \
+            --output upload/site-release.tar.gz
+          cp ops/scripts/server_release.py ops/scripts/server_release_prerequisites.py \
+            ops/scripts/server_privacy.py upload/
+          chmod 600 upload/*
+          echo "sha256=$(sha256sum upload/site-release.tar.gz | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - name: Stage outside the public website
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: upload/*
+          target: /var/lib/codehouse-release-incoming
+          strip_components: 1
+          overwrite: true
+          rm: false
+          command_timeout: 5m
+      - name: Inspect or apply the verified release
+        uses: appleboy/ssh-action@v1
+        env:
+          SITE_RELEASE_OPERATION: ${{ inputs.operation }}
+          SITE_RELEASE_SHA256: ${{ steps.package.outputs.sha256 }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          envs: SITE_RELEASE_OPERATION,SITE_RELEASE_SHA256
+          command_timeout: 5m
+          script: |
+            set -eu
+            python3 /var/lib/codehouse-release-incoming/server_release.py

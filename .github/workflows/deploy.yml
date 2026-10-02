@@ -1,21 +1,51 @@
-name: Deploy to Server
+name: Server configuration check
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH
+      - name: Check server via SSH without deploying
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          command_timeout: 2m
           script: |
-            cd /home/websites/artivoai.com
-            git fetch origin
-            git reset --hard origin/main
+            set -eu
+            echo 'READ_ONLY_CHECK: no deploy or configuration changes'
+            printf 'USER_ID='
+            id -u
+
+            echo 'MATCHING_SITE_CONFIG_FILES'
+            for directory in /etc/nginx /usr/local/nginx/conf /www/server/panel/vhost/nginx /usr/local/openresty/nginx/conf; do
+              if [ -d "$directory" ]; then
+                grep -RIlE --exclude='*.key' --exclude='*.pem' --exclude='*.crt' '^[[:space:]]*(server_name[[:space:]].*codehouse[.]gr|root[[:space:]]+/home/websites/artivoai[.]com([/;[:space:]]|$))' "$directory" 2>/dev/null || true
+              fi
+            done
+
+            nginx_binary="$(command -v nginx || true)"
+            if [ -z "$nginx_binary" ]; then
+              for candidate in /usr/sbin/nginx /usr/local/nginx/sbin/nginx /www/server/nginx/sbin/nginx /usr/local/openresty/nginx/sbin/nginx; do
+                if [ -x "$candidate" ]; then
+                  nginx_binary="$candidate"
+                  break
+                fi
+              done
+            fi
+            if [ -z "$nginx_binary" ]; then
+              echo 'NGINX_NOT_FOUND'
+              exit 1
+            fi
+            echo 'NGINX_CONFIGURATION_TEST'
+            if [ "$(id -u)" -eq 0 ]; then
+              "$nginx_binary" -t
+            else
+              sudo -n "$nginx_binary" -t
+            fi

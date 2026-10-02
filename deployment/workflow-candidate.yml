@@ -30,7 +30,7 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          ref: d4edb1eeb75c538610c92a29caab409b1f58a3f6
+          ref: 773421620b68630017ff9488b59590d537c39596
           path: site
           persist-credentials: false
       - name: Verify the reviewed website
@@ -48,7 +48,7 @@ jobs:
           mkdir -p upload
           python3 ops/scripts/build_site_release.py \
             --source site \
-            --commit d4edb1eeb75c538610c92a29caab409b1f58a3f6 \
+            --commit 773421620b68630017ff9488b59590d537c39596 \
             --output upload/site-release.tar.gz
           cp ops/scripts/server_release.py ops/scripts/server_release_prerequisites.py \
             ops/scripts/server_privacy.py upload/

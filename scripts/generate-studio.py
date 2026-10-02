@@ -166,6 +166,7 @@ def home(lang):
     work_title="Οι τελευταίες μας δουλειές" if lang=="el" else "Our latest work"
     body=body.replace(f'<h2>{t["selected"]}</h2>',f'<h2>{work_title}</h2>',1)
     body=body.replace("02 / SELECTED WORK","02 / LATEST WORK",1)
+    body=body.replace('<span class="eyebrow">SELECTED PROJECT</span>','<span class="eyebrow">LAST PROJECT</span>',1)
     body=body.replace(f'href="{route("/projects/",lang)}">{t["all"]}',f'href="{route("/douleies/",lang)}">{t["all"]}',1)
     body=body.replace(f'<a class="text-link" href="{route("/studio/",lang)}">',f'<a class="text-link text-[15px]" href="{route("/studio/",lang)}">',1)
     if DATA["images"].get("heroLogo"):
@@ -270,17 +271,13 @@ def write(path,content):
     if path in (Path("index.html"),Path("en/index.html")) and DATA["images"].get("heroVideos"):
         clips=[{"src":assetroot+clip["src"],"webm":assetroot+clip["webm"],"poster":assetroot+clip["poster"],"label":clip["label"][lang]} for clip in DATA["images"]["heroVideos"]]
         playlist=esc(json.dumps(clips,ensure_ascii=False))
-        pause="Παύση βίντεο" if lang=="el" else "Pause videos"
-        play="Αναπαραγωγή βίντεο" if lang=="el" else "Play videos"
         error="Δεν φορτώθηκε το βίντεο. Δοκίμασε ξανά." if lang=="el" else "The video could not load. Please try again."
         content=re.sub(r'<body(?: class="([^"]*)")?>',lambda m:f'<body class="{((m.group(1) or "")+" video-hero").strip()}">',content,count=1)
-        content=content.replace('<section class="hero">',f'<section class="hero" data-hero-videos data-hero-autoinit data-hero-intro data-intro-lang="{lang}" data-playlist="{playlist}" data-pause-label="{pause}" data-play-label="{play}" data-error-label="{error}">',1)
+        content=content.replace('<section class="hero">',f'<section class="hero" data-hero-videos data-hero-autoinit data-hero-intro data-intro-lang="{lang}" data-playlist="{playlist}" data-error-label="{error}">',1)
         layer=f'<div class="hero-video-layer" aria-hidden="true"><video class="hero-video is-active" muted playsinline preload="metadata" src="{clips[0]["src"]}" poster="{clips[0]["poster"]}"></video><video class="hero-video" muted playsinline preload="none"></video></div>'
         content=content.replace('<div class="hero-art photo-empty">','<div class="hero-art photo-empty">'+layer,1)
-        previous="Προηγούμενο βίντεο" if lang=="el" else "Previous video"
-        following="Επόμενο βίντεο" if lang=="el" else "Next video"
-        controls=f'<div class="hero-video-controls" hidden><span class="hero-video-position" data-video-position>01 / {len(clips):02} — {clips[0]["label"]}</span><button type="button" data-video-prev aria-label="{previous}"><span aria-hidden="true">←</span></button><button type="button" data-video-toggle aria-label="{pause}" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button><button type="button" data-video-next aria-label="{following}"><span aria-hidden="true">→</span></button></div><p class="hero-video-status" data-video-status role="status" hidden></p>'
-        content=content.replace('<div class="hero-bottom">',controls+'<div class="hero-bottom">',1)
+        film_info=f'<div class="hero-video-info" hidden><span class="hero-video-position" data-video-position>01 / {len(clips):02} — {clips[0]["label"]}</span></div><p class="hero-video-status" data-video-status role="status" hidden></p>'
+        content=content.replace('<div class="hero-bottom">',film_info+'<div class="hero-bottom">',1)
         intro_skip="ΕΙΣΟΔΟΣ ΣΤΟ SITE" if lang=="el" else "ENTER THE SITE"
         intro_label="Προετοιμασία του site" if lang=="el" else "Preparing the site"
         intro=f'<div class="hero-loading-screen" data-hero-intro-loader role="dialog" aria-modal="true" aria-labelledby="hero-intro-label"><div class="hero-intro-panel"><div class="hero-intro-caption"><span id="hero-intro-label">LOADING</span><span data-intro-percent aria-hidden="true">00%</span></div><div class="hero-intro-bar" role="progressbar" aria-label="{intro_label}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span data-intro-fill></span></div><button type="button" data-intro-skip onclick="document.documentElement.classList.remove(\'intro-pending\')">{intro_skip} ↗</button></div></div>'

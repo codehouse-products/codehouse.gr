@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check hero playback and controls without interacting with any contact form."""
+"""Check automatic hero playback without interacting with any contact form."""
 import json
 import os
 from pathlib import Path
@@ -33,6 +33,10 @@ def main():
             page.set_viewport_size({"width": width, "height": height})
             page.goto(BASE + route, wait_until="domcontentloaded")
             page.wait_for_function("document.querySelector('.hero-video.is-active').currentTime > .2")
+            page.wait_for_function("!document.documentElement.classList.contains('intro-pending')")
+            assert page.locator("[data-video-prev], [data-video-next], [data-video-toggle]").count() == 0
+            assert page.locator(".hero-feature .eyebrow").inner_text() == "LAST PROJECT"
+            assert page.locator(".hero-video-info button").count() == 0
             clip_count = page.locator("[data-hero-videos]").evaluate("(h)=>JSON.parse(h.dataset.playlist).length")
             assert clip_count == 6, f"Expected six films, got {clip_count}"
             playlist = page.locator("[data-hero-videos]").evaluate("(h)=>JSON.parse(h.dataset.playlist)")
@@ -42,9 +46,11 @@ def main():
             assert page.evaluate("document.documentElement.scrollWidth <= innerWidth+1")
             assert page.locator(".hero-logo").evaluate("(i)=>i.complete && i.naturalWidth>0")
             assert page.locator(".hero-video").first.evaluate("(v)=>getComputedStyle(v).transitionDuration") == "0s"
-            for index in range(clip_count):
-                if index:
-                    page.locator("[data-video-next]").click()
+            first_index = int(page.locator("[data-hero-videos]").get_attribute("data-video-index"))
+            for offset in range(clip_count):
+                index = (first_index + offset) % clip_count
+                if offset:
+                    page.locator(".hero-video.is-active").evaluate("(v)=>v.currentTime=v.duration-.15")
                     page.wait_for_function("(i)=>document.querySelector('[data-hero-videos]').dataset.videoIndex===String(i)", arg=index)
                     page.wait_for_function("document.querySelector('.hero-video.is-active').currentTime > .1")
                 assert page.locator(".hero-video.is-active").count() == 1
@@ -54,31 +60,49 @@ def main():
                 assert abs(video["duration"] - 6) < .1, video
                 assert page.locator(".hero-video-layer").evaluate("(h)=>getComputedStyle(h,'::after').backgroundImage") != "none"
                 page.screenshot(path=str(OUTPUT / f"{name}-{index}.png"))
-            page.locator("[data-video-toggle]").click()
-            assert state(page)["paused"]
-            assert page.locator(".hero-video-layer").evaluate("(h)=>getComputedStyle(h,'::after').animationPlayState") == "paused"
-            before = state(page)["time"]
-            page.wait_for_timeout(350)
-            assert abs(state(page)["time"] - before) < .1
-            page.locator("[data-video-toggle]").click()
-            page.wait_for_function("!document.querySelector('.hero-video.is-active').paused")
             page.locator(".hero-video.is-active").evaluate("(v)=>v.currentTime=v.duration-.15")
-            page.wait_for_function("document.querySelector('[data-hero-videos]').dataset.videoIndex==='0'")
+            page.wait_for_function("(i)=>document.querySelector('[data-hero-videos]').dataset.videoIndex===String(i)", arg=first_index)
             # Nearest-element scrolling may leave >15% of the hero visible.
             # Move the entire film outside the viewport before asserting pause.
             page.locator(".hero").evaluate("(hero)=>window.scrollTo(0,scrollY+hero.getBoundingClientRect().bottom+1)")
             page.wait_for_function("document.querySelector('.hero-video.is-active').paused")
-            print(f"PASS: {name}: all scenes, direct cuts, pause/resume, looping and offscreen pause")
+            page.evaluate("window.scrollTo(0,0)")
+            page.wait_for_function("!document.querySelector('.hero-video.is-active').paused")
+            print(f"PASS: {name}: no controls, LAST PROJECT, all scenes, automatic looping and offscreen resume")
         reduced = browser.new_context(ignore_https_errors=True, reduced_motion="reduce")
         reduced.add_init_script("localStorage.setItem('cookieConsent','rejected')")
         reduced_page = reduced.new_page()
         reduced_page.goto(BASE + "/", wait_until="domcontentloaded")
-        reduced_page.wait_for_selector(".hero-video-controls:not([hidden])")
+        reduced_page.wait_for_selector(".hero-video-info:not([hidden])")
         assert state(reduced_page)["paused"] and state(reduced_page)["time"] == 0
         assert reduced_page.locator(".hero-video-layer").evaluate("(h)=>getComputedStyle(h,'::after').animationName") == "none"
-        reduced_page.locator("[data-video-toggle]").click()
+        assert reduced_page.locator("[data-video-toggle]").count() == 0
+        reduced_page.emulate_media(reduced_motion="no-preference")
         reduced_page.wait_for_function("document.querySelector('.hero-video.is-active').currentTime > .2")
-        print("PASS: reduced motion starts still; explicit Play works")
+        print("PASS: reduced motion starts still; returning to normal motion resumes automatically")
+        blocked = browser.new_context(ignore_https_errors=True)
+        blocked.add_init_script("""
+            localStorage.setItem('cookieConsent','rejected');
+            const play = HTMLMediaElement.prototype.play;
+            let blockedOnce = true;
+            HTMLMediaElement.prototype.play = function() {
+                if (blockedOnce) {
+                    blockedOnce = false;
+                    return Promise.reject(new DOMException('Playback blocked', 'NotAllowedError'));
+                }
+                return play.call(this);
+            };
+        """)
+        blocked_page = blocked.new_page()
+        blocked_page.on("pageerror", lambda error: errors.append(str(error)))
+        blocked_page.goto(BASE + "/", wait_until="domcontentloaded")
+        blocked_page.wait_for_function("document.querySelector('[data-hero-videos]').dataset.videoAutoplayBlocked==='true'")
+        blocked_page.wait_for_function("!document.documentElement.classList.contains('intro-pending')")
+        assert state(blocked_page)["paused"]
+        blocked_page.mouse.click(100, 250)
+        blocked_page.wait_for_function("document.querySelector('.hero-video.is-active').currentTime > .2")
+        assert blocked_page.locator("[data-video-toggle]").count() == 0
+        print("PASS: browser-blocked autoplay retries on a page gesture without video controls")
         assert not errors, errors
         browser.close()
     print(json.dumps({"screenshots": str(OUTPUT), "pageErrors": errors}))

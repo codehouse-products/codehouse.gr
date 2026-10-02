@@ -14,24 +14,17 @@ export function mountHeroVideo(hero) {
     videos[0].src = clips[0].src;
     videos[0].load();
   }
-  const controls = hero.querySelector('.hero-video-controls');
-  const toggle = hero.querySelector('[data-video-toggle]');
-  const prev = hero.querySelector('[data-video-prev]');
-  const next = hero.querySelector('[data-video-next]');
+  const info = hero.querySelector('.hero-video-info');
   const position = hero.querySelector('[data-video-position]');
   const status = hero.querySelector('[data-video-status]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let index = 0, slot = 0, moving = false, disposed = false, inView = true;
-  let userPaused = reduced.matches;
+  let playbackBlocked = false;
+  hero.dataset.videoAutoplayBlocked = 'false';
   videos.forEach(video => { video.muted = true; });
-  controls.hidden = false;
+  info.hidden = false;
   const active = () => videos[slot];
-  const shouldPlay = () => !userPaused && inView && !document.hidden;
-  function syncButton() {
-    toggle.setAttribute('aria-label', userPaused ? hero.dataset.playLabel : hero.dataset.pauseLabel);
-    toggle.setAttribute('aria-pressed', String(userPaused));
-    toggle.firstElementChild.textContent = userPaused ? '▶' : 'Ⅱ';
-  }
+  const shouldPlay = () => !reduced.matches && !playbackBlocked && inView && !document.hidden;
   function fail() {
     status.textContent = hero.dataset.errorLabel;
     status.hidden = false;
@@ -40,12 +33,15 @@ export function mountHeroVideo(hero) {
     if (!shouldPlay() || disposed) return active().pause();
     try { await active().play(); }
     catch (error) {
-      if (error.name === 'NotAllowedError') { userPaused = true; syncButton(); }
+      if (error.name === 'NotAllowedError') {
+        playbackBlocked = true;
+        hero.dataset.videoAutoplayBlocked = 'true';
+      }
       else if (error.name !== 'AbortError') fail();
     }
   }
   function prepareNext() {
-    if (moving || disposed || userPaused) return;
+    if (moving || disposed || reduced.matches || playbackBlocked) return;
     const video = videos[1 - slot], clip = clips[(index + 1) % clips.length];
     if (video.getAttribute('src') !== clip.src) {
       video.pause();
@@ -76,7 +72,6 @@ export function mountHeroVideo(hero) {
     const selected = (target + clips.length) % clips.length;
     if (selected === index) return;
     moving = true;
-    prev.disabled = next.disabled = true;
     status.hidden = true;
     const incoming = videos[1 - slot], clip = clips[selected];
     try {
@@ -100,31 +95,27 @@ export function mountHeroVideo(hero) {
     } catch { if (!disposed) fail(); }
     finally {
       moving = false;
-      prev.disabled = next.disabled = false;
       if (!disposed) prepareNext();
     }
   }
-  const onPrev = () => select(index - 1);
-  const onNext = () => select(index + 1);
-  const onToggle = () => {
-    userPaused = !userPaused;
-    syncButton();
-    if (userPaused) active().pause();
-    else {
-      if (active().ended) active().currentTime = 0;
-      resume();
-    }
-  };
   const onEnded = event => {
     if (event.target === active() && shouldPlay()) select(index + 1);
   };
   const onVisibility = () => { shouldPlay() ? resume() : active().pause(); };
-  const onReduced = event => {
-    if (event.matches) { userPaused = true; active().pause(); syncButton(); }
+  const onReduced = () => {
+    onVisibility();
+    if (!reduced.matches) prepareNext();
   };
-  prev.addEventListener('click', onPrev);
-  next.addEventListener('click', onNext);
-  toggle.addEventListener('click', onToggle);
+  // Muted inline playback normally autostarts. If a browser blocks it,
+  // retry on a normal page interaction without adding video controls.
+  const onGesture = () => {
+    if (!playbackBlocked || reduced.matches) return;
+    playbackBlocked = false;
+    hero.dataset.videoAutoplayBlocked = 'false';
+    resume().then(() => { if (!disposed && shouldPlay()) prepareNext(); });
+  };
+  document.addEventListener('pointerdown', onGesture);
+  document.addEventListener('keydown', onGesture);
   videos.forEach(video => video.addEventListener('ended', onEnded));
   document.addEventListener('visibilitychange', onVisibility);
   reduced.addEventListener('change', onReduced);
@@ -135,9 +126,8 @@ export function mountHeroVideo(hero) {
   }, { threshold: .15 });
   observer.observe(hero);
   hero.dataset.videoIndex = '0';
-  syncButton();
   const cleanupIntro = mountHeroIntro(hero);
-  if (!userPaused) {
+  if (!reduced.matches) {
     resume().then(() => { if (!disposed && shouldPlay()) prepareNext(); });
   }
   const cleanup = () => {
@@ -146,12 +136,12 @@ export function mountHeroVideo(hero) {
     hero.classList.remove('hero-video-inview');
     observer.disconnect();
     videos.forEach(video => { video.pause(); video.removeEventListener('ended', onEnded); });
-    prev.removeEventListener('click', onPrev);
-    next.removeEventListener('click', onNext);
-    toggle.removeEventListener('click', onToggle);
+    document.removeEventListener('pointerdown', onGesture);
+    document.removeEventListener('keydown', onGesture);
     document.removeEventListener('visibilitychange', onVisibility);
     reduced.removeEventListener('change', onReduced);
     mounted.delete(hero);
+    delete hero.dataset.videoAutoplayBlocked;
   };
   mounted.set(hero, cleanup);
   return cleanup;

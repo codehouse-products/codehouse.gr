@@ -104,7 +104,7 @@ export function mountHeroIntro(hero) {
     const readiness = (Number(fontsReady) + Number(logoReady) + Number(playing)) / 3;
     progress(Math.min(99, readiness * 35 + Math.min(1, elapsed / 2600) * 65));
     if (video?.error) return finish('video-unavailable');
-    if (hero.querySelector('[data-video-toggle]')?.getAttribute('aria-pressed') === 'true') return finish('autoplay-blocked');
+    if (hero.dataset.videoAutoplayBlocked === 'true') return finish('autoplay-blocked');
     if (fontsReady && logoReady && playing && elapsed >= 2600) return finish();
     frame = requestAnimationFrame(tick);
   }

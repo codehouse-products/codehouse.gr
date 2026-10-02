@@ -96,3 +96,24 @@
 .project-card .project-image { background: #030303; }
 .project-card .project-image img { object-fit: cover; object-position: 50% 15%; }
 .project-card:nth-child(2) .project-image img { object-position: 50% 15%; }
+
+/* Keep the selected project sharp; grey only the other photographs. */
+.project-card .project-image{position:relative}
+.project-card .project-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:rgba(128,128,128,.55);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .horizontal-rail:has(.project-card:hover) .project-card:not(:hover) .project-image::after{
+    opacity:1;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .project-card .project-image::after{transition:none}
+}

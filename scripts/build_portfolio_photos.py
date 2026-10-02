@@ -7,7 +7,7 @@ The finished website uses static WebP files, not this Python script.
 import argparse
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 IMAGES = ROOT / "assets/studio/images"
@@ -21,6 +21,31 @@ PORTRAITS = (
     ("akri", "akriprojects.gr", "attached_assets/generated_images/pose-akri.png",
      ((285, 218), (400, 218), (400, 459), (285, 459)), (80, 0, 899, 1024), "project-akri.webp"),
 )
+
+# Only the handset is taken from the edited photo. The original portrait remains
+# pixel-identical outside this small region; actual website captures go on top.
+PHONE_EDITS = {
+    "highhope": (
+        "attached_assets/generated_images/iphone17pro-max-highhope.png",
+        ((253, 107), (507, 143), (451, 705), (197, 670)),
+        ((258, 144), (575, 184), (519, 831), (193, 794)),
+    ),
+    "gerakos": (
+        "attached_assets/generated_images/iphone17pro-max-gerakos.png",
+        ((242, 145), (460, 168), (410, 655), (196, 636)),
+        ((227, 130), (476, 155), (424, 673), (180, 650)),
+    ),
+    "kc-travel": (
+        "attached_assets/generated_images/iphone17pro-max-kc-travel.png",
+        ((468, 371), (598, 371), (597, 654), (468, 654)),
+        ((459, 363), (606, 363), (605, 662), (459, 662)),
+    ),
+    "akri": (
+        "attached_assets/generated_images/iphone17pro-max-akri.png",
+        ((285, 218), (400, 218), (400, 459), (285, 459)),
+        ((277, 210), (407, 210), (407, 467), (277, 467)),
+    ),
+}
 
 
 def solve(rows, values):
@@ -40,13 +65,28 @@ def solve(rows, values):
     return tuple(row[-1] for row in matrix)
 
 
-def perspective(quad, width, height):
+def perspective(quad, width, height, source_quad=None):
     rows, values = [], []
-    for (x, y), (u, v) in zip(quad, ((0, 0), (width, 0), (width, height), (0, height))):
+    source_quad = source_quad or ((0, 0), (width, 0), (width, height), (0, height))
+    for (x, y), (u, v) in zip(quad, source_quad):
         rows.extend(((x, y, 1, 0, 0, 0, -u*x, -u*y),
                      (0, 0, 0, x, y, 1, -v*x, -v*y)))
         values.extend((u, v))
     return solve(rows, values)
+
+
+def replace_handset(photo, slug, quad):
+    source, source_quad, outline = PHONE_EDITS[slug]
+    edited = Image.open(ROOT / source).convert("RGBA")
+    aligned = edited.transform(
+        photo.size, Image.Transform.PERSPECTIVE,
+        perspective(quad, *edited.size, source_quad=source_quad),
+        Image.Resampling.BICUBIC,
+    )
+    mask = Image.new("L", photo.size)
+    ImageDraw.Draw(mask).polygon(outline, fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(0.75))
+    return Image.composite(aligned, photo, mask)
 
 
 def phone_screen(capture, domain):
@@ -95,6 +135,7 @@ def main():
                 desktop.resize((1440, 1000), Image.Resampling.LANCZOS).save(IMAGES / f"{slug}-desktop.webp", quality=90, method=6)
         page = Image.open(mobile)
         photo = Image.open(ROOT / source).convert("RGBA")
+        photo = replace_handset(photo, slug, quad)
         screen = phone_screen(page, domain)
         layer = screen.transform(photo.size, Image.Transform.PERSPECTIVE,
                                  perspective(quad, *screen.size), Image.Resampling.BICUBIC)

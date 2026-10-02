@@ -11,6 +11,11 @@ on:
         options:
           - inspect
           - apply
+      site_commit:
+        description: Optional reviewed commit SHA; leave empty for the latest reviewed public release
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -23,6 +28,36 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Resolve and validate the reviewed release
+        id: review
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE_COMMIT: ${{ inputs.site_commit }}
+          SITE_OPERATION: ${{ inputs.operation }}
+        run: |
+          set -euo pipefail
+          if [[ "$SITE_OPERATION" != inspect && "$SITE_OPERATION" != apply ]]; then
+            echo "Invalid release operation." >&2
+            exit 1
+          fi
+          if [[ -n "$SITE_COMMIT" && ! "$SITE_COMMIT" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "The release must be a full lowercase Git commit SHA." >&2
+            exit 1
+          fi
+          REVIEWED_COMMIT="$(gh api --method GET \
+            "repos/${GITHUB_REPOSITORY}/git/ref/heads/releases/reviewed-public" \
+            --jq '.object.sha')"
+          if [[ ! "$REVIEWED_COMMIT" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "The reviewed public release reference is invalid." >&2
+            exit 1
+          fi
+          if [[ -n "$SITE_COMMIT" && "$SITE_COMMIT" != "$REVIEWED_COMMIT" ]]; then
+            echo "This commit is not the current reviewed public release." >&2
+            exit 1
+          fi
+          printf 'commit=%s\n' "$REVIEWED_COMMIT" >> "$GITHUB_OUTPUT"
+          printf 'Reviewed public version: %s\n' "$REVIEWED_COMMIT"
       - uses: actions/checkout@v4
         with:
           ref: decbc1d46f76f56463f6c101b919edc04177c72e
@@ -30,7 +65,7 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          ref: f1f5360b483ca9e76ef16b04495c5843c9206426
+          ref: ${{ steps.review.outputs.commit }}
           path: site
           persist-credentials: false
       - name: Verify the reviewed website
@@ -43,12 +78,14 @@ jobs:
       - name: Package public files only
         id: package
         shell: bash
+        env:
+          SITE_RELEASE_COMMIT: ${{ steps.review.outputs.commit }}
         run: |
           set -euo pipefail
           mkdir -p upload
           python3 ops/scripts/build_site_release.py \
             --source site \
-            --commit f1f5360b483ca9e76ef16b04495c5843c9206426 \
+            --commit "$SITE_RELEASE_COMMIT" \
             --output upload/site-release.tar.gz
           cp ops/scripts/server_release.py ops/scripts/server_release_prerequisites.py \
             ops/scripts/server_privacy.py upload/

@@ -104,15 +104,18 @@ class PublicHealthChecker:
         status, _, body = self._request("GET", f"/?{query}", read_body=True)
         marker = b"assets/studio/logo-user-white.png"
         if status != 200 or len(body) > self.MAX_HOMEPAGE_BYTES or marker not in body:
-            raise ReleaseError("public homepage health check failed")
+            raise ReleaseError(
+                f"public homepage health check failed (HTTP {status}, "
+                f"release marker present: {marker in body})")
         for path in ("/assets/studio/studio.css", "/contact/", "/blog/"):
             status, _, _ = self._request("HEAD", path)
             if status != 200:
-                raise ReleaseError("public page health check failed")
+                raise ReleaseError(f"public page health check failed: {path} (HTTP {status})")
         status, headers, _ = self._request("HEAD", "/lead.php")
         location = headers.get("Location", "") if headers else ""
-        if status not in (302, 303) or urllib.parse.urlsplit(location).path != "/prosfora/":
-            raise ReleaseError("public lead endpoint health check failed")
+        if (status not in (301, 302, 303)
+                or urllib.parse.urljoin(self.BASE_URL, location) != self.BASE_URL + "/prosfora/"):
+            raise ReleaseError(f"public lead endpoint health check failed (HTTP {status})")
         for path, destination in (
                 ("/dimiourgia-site/", "https://codehouse.gr/dimioyrgia-site/"),
                 ("/blog/checklist-dorean-istoselida/",
@@ -120,11 +123,12 @@ class PublicHealthChecker:
             status, headers, _ = self._request("HEAD", path)
             location = headers.get("Location", "") if headers else ""
             if status != 301 or urllib.parse.urljoin(self.BASE_URL, location) != destination:
-                raise ReleaseError("public canonical redirect health check failed")
+                raise ReleaseError(
+                    f"public canonical redirect health check failed: {path} (HTTP {status})")
         for path in ("/.git/HEAD", "/replit.md"):
             status, _, _ = self._request("HEAD", path)
             if status != 404:
-                raise ReleaseError("public privacy health check failed")
+                raise ReleaseError(f"public privacy health check failed: {path} (HTTP {status})")
 
     def __call__(self, root, payload):
         for name, data in payload.items():
@@ -143,7 +147,7 @@ class PublicHealthChecker:
                 last_error = exc
                 if attempt + 1 < self.ATTEMPTS:
                     self.sleep(1)
-        raise ReleaseError("public site health gate did not pass") from last_error
+        raise ReleaseError(f"public site health gate did not pass: {last_error}") from last_error
 
 
 def _safe_relative(path):

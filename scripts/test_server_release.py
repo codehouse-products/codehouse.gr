@@ -258,7 +258,12 @@ class PublicHealthTests(unittest.TestCase):
                         200, body=b'<img src="assets/studio/logo-user-white.png">'
                     )
                 if path == "/lead.php":
-                    return PublicHealthTests.Response(302, {"Location": "/prosfora/"})
+                    # The shipped PHP endpoint uses 301; urllib raises HTTPError
+                    # when the health check intentionally disables redirects.
+                    raise release.urllib.error.HTTPError(
+                        request.full_url, 301, "Moved Permanently",
+                        {"Location": "/prosfora/"}, io.BytesIO(b""),
+                    )
                 redirects = {
                     "/dimiourgia-site/": "https://codehouse.gr/dimioyrgia-site/",
                     "/blog/checklist-dorean-istoselida/":
@@ -282,6 +287,30 @@ class PublicHealthTests(unittest.TestCase):
                          ["/assets/studio/studio.css", "/contact/", "/blog/",
                           "/lead.php", "/dimiourgia-site/",
                           "/blog/checklist-dorean-istoselida/", "/.git/HEAD", "/replit.md"])
+
+    def test_lead_redirect_cannot_point_to_another_host(self):
+        class FakeOpener:
+            def open(_, request, timeout):
+                path = request.full_url.removeprefix("https://codehouse.gr")
+                if path.startswith("/?"):
+                    return PublicHealthTests.Response(
+                        200, body=b'assets/studio/logo-user-white.png')
+                if path == "/lead.php":
+                    return PublicHealthTests.Response(
+                        301, {"Location": "https://other.example/prosfora/"})
+                return PublicHealthTests.Response(200)
+        checker = release.PublicHealthChecker(opener=FakeOpener())
+        with self.assertRaisesRegex(release.ReleaseError, "lead endpoint"):
+            checker._check_once()
+
+    def test_failed_gate_reports_the_specific_check_without_response_contents(self):
+        class FakeOpener:
+            def open(_, request, timeout):
+                return PublicHealthTests.Response(503, body=b"DO NOT PRINT RESPONSE")
+        checker = release.PublicHealthChecker(opener=FakeOpener(), sleep=lambda _: None)
+        with self.assertRaisesRegex(release.ReleaseError, r"homepage.*HTTP 503") as result:
+            checker(Path("/unused"), {})
+        self.assertNotIn("DO NOT PRINT RESPONSE", str(result.exception))
 
 
 if __name__ == "__main__":

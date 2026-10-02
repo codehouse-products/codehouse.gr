@@ -361,6 +361,7 @@ class ServerPrerequisites:
         user_label = None
         basedir_values = []
         php_version_ini = None
+        php_version = None
         curl_enabled = False
         if len(matched) == 1:
             pool = matched[0]
@@ -378,6 +379,11 @@ class ServerPrerequisites:
             if pool["open_basedir"]:
                 basedir_values.append(pool["open_basedir"])
             php_version_ini, _ = self._php_config_for_pool(pool["source"])
+            if php_version_ini:
+                php_version = php_version_ini.parent.parent.name
+            version_parts = re.fullmatch(r"(\d+)\.(\d+)", php_version or "")
+            if not version_parts or tuple(map(int, version_parts.groups())) < (8, 2):
+                blockers.append("php_version_not_supported")
             global_basedir = self._filtered_ini_value(php_version_ini) if php_version_ini else None
             if global_basedir:
                 basedir_values.append(global_basedir)
@@ -407,6 +413,7 @@ class ServerPrerequisites:
             "blockers": sorted(set(blockers)),
             "servers": records[:32],
             "php": {"endpoint_count": len(endpoints), "pool_match_count": len(matched),
+                    "configured_version": php_version,
                     "user": user_label, "curl_enabled": curl_enabled,
                     "open_basedir_configured": bool(basedir_values),
                     "open_basedir_allows_required_paths": open_basedir_ok},

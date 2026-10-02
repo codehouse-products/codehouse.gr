@@ -217,6 +217,19 @@ class ReleaseManagerTests(unittest.TestCase):
 
 
 class PublicHealthTests(unittest.TestCase):
+    def test_real_urllib_http_errors_keep_status_and_headers(self):
+        class ErrorOpener:
+            def open(_, request, timeout):
+                raise release.urllib.error.HTTPError(
+                    request.full_url, 302, "redirect",
+                    {"Location": "/prosfora/"}, io.BytesIO(b""),
+                )
+        checker = release.PublicHealthChecker(opener=ErrorOpener())
+        status, headers, body = checker._request("HEAD", "/lead.php")
+        self.assertEqual(status, 302)
+        self.assertEqual(headers["Location"], "/prosfora/")
+        self.assertEqual(body, b"")
+
     class Response:
         def __init__(self, status, headers=None, body=b""):
             self.status = status

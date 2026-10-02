@@ -86,8 +86,9 @@ class PublicHealthChecker:
         request = urllib.request.Request(self.BASE_URL + path, method=method)
         try:
             response = self.opener.open(request, timeout=self.TIMEOUT)
-        except urllib.error.HTTPError as response:
-            pass
+        except urllib.error.HTTPError as error:
+            # Exception-target variables are cleared after the except block.
+            response = error
         except (urllib.error.URLError, OSError) as exc:
             raise ReleaseError("public site health request failed") from exc
         try:
@@ -608,6 +609,7 @@ def _prerequisite_summary(report):
         "private_directories_ready": all(item.get("valid") for item in private_dirs),
         "email_ready": bool(email.get("mail_enabled")),
         "php_curl_enabled": bool(php.get("curl_enabled")),
+        "php_configured_version": php.get("configured_version"),
     }
 
 

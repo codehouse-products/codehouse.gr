@@ -30,13 +30,14 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          ref: 2a45ab274e77ca9678926c761df33292a8da0a32
+          ref: 773421620b68630017ff9488b59590d537c39596
           path: site
           persist-credentials: false
       - name: Verify the reviewed website
         working-directory: site
         run: |
           python3 scripts/check_public_site.py
+          python3 scripts/test_contact_intro.py
           php -l lead.php
           python3 scripts/test_lead.py
       - name: Package public files only
@@ -47,7 +48,7 @@ jobs:
           mkdir -p upload
           python3 ops/scripts/build_site_release.py \
             --source site \
-            --commit 2a45ab274e77ca9678926c761df33292a8da0a32 \
+            --commit 773421620b68630017ff9488b59590d537c39596 \
             --output upload/site-release.tar.gz
           cp ops/scripts/server_release.py ops/scripts/server_release_prerequisites.py \
             ops/scripts/server_privacy.py upload/

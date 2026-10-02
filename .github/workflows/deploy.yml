@@ -1,51 +1,53 @@
-name: Server configuration check
+name: Server privacy maintenance
 
 on:
   workflow_dispatch:
+    inputs:
+      operation:
+        description: Inspect first; protect only after reviewing the result
+        type: choice
+        required: true
+        default: inspect
+        options:
+          - inspect
+          - protect
 
 permissions:
   contents: read
 
+concurrency:
+  group: codehouse-server-maintenance
+  cancel-in-progress: false
+
 jobs:
-  check:
+  maintenance:
     runs-on: ubuntu-latest
     steps:
-      - name: Check server via SSH without deploying
+      - uses: actions/checkout@v4
+        with:
+          ref: 50322b6582f7570dd93946974f04f50c6a9ed045
+          persist-credentials: false
+
+      - name: Prepare reviewed maintenance script
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo 'set -eu'
+            echo "python3 - <<'CODEHOUSE_PRIVATE_PY'"
+            cat scripts/server_privacy.py
+            echo
+            echo 'CODEHOUSE_PRIVATE_PY'
+          } > "$RUNNER_TEMP/server-privacy.sh"
+
+      - name: Run controlled server maintenance
         uses: appleboy/ssh-action@v1
+        env:
+          SITE_OPERATION: ${{ inputs.operation }}
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          command_timeout: 2m
-          script: |
-            set -eu
-            echo 'READ_ONLY_CHECK: no deploy or configuration changes'
-            printf 'USER_ID='
-            id -u
-
-            echo 'MATCHING_SITE_CONFIG_FILES'
-            for directory in /etc/nginx /usr/local/nginx/conf /www/server/panel/vhost/nginx /usr/local/openresty/nginx/conf; do
-              if [ -d "$directory" ]; then
-                grep -RIlE --exclude='*.key' --exclude='*.pem' --exclude='*.crt' '^[[:space:]]*(server_name[[:space:]].*codehouse[.]gr|root[[:space:]]+/home/websites/artivoai[.]com([/;[:space:]]|$))' "$directory" 2>/dev/null || true
-              fi
-            done
-
-            nginx_binary="$(command -v nginx || true)"
-            if [ -z "$nginx_binary" ]; then
-              for candidate in /usr/sbin/nginx /usr/local/nginx/sbin/nginx /www/server/nginx/sbin/nginx /usr/local/openresty/nginx/sbin/nginx; do
-                if [ -x "$candidate" ]; then
-                  nginx_binary="$candidate"
-                  break
-                fi
-              done
-            fi
-            if [ -z "$nginx_binary" ]; then
-              echo 'NGINX_NOT_FOUND'
-              exit 1
-            fi
-            echo 'NGINX_CONFIGURATION_TEST'
-            if [ "$(id -u)" -eq 0 ]; then
-              "$nginx_binary" -t
-            else
-              sudo -n "$nginx_binary" -t
-            fi
+          envs: SITE_OPERATION
+          command_timeout: 3m
+          script_path: ${{ runner.temp }}/server-privacy.sh

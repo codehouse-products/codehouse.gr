@@ -17,7 +17,7 @@ foreach (explode('/', str_replace('\\', '/', $requestPath)) as $segment) {
     }
 }
 $path = '/' . implode('/', $segments);
-$blocked = preg_match('~^/(?:leads|scripts|attached_assets|docs)(?:/|$)~i', $path)
+$blocked = preg_match('~^/(?:leads|scripts|attached_assets|docs|editorial|deployment)(?:/|$)~i', $path)
     || preg_match('~(?:^|/)\.(?!well-known(?:/|$))~i', $path)
     || preg_match('~\.(?:jsonl|log|env|sql|sqlite|ini|bak)(?:$|/)~i', $path)
     || in_array($path, ['/main.py', '/pyproject.toml', '/uv.lock', '/replit.md', '/router.php', '/nginx-private.conf', '/nginx-perf.conf'], true);

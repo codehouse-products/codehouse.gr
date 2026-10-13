@@ -1,0 +1,455 @@
+/* Codehouse editorial: quiet typographic structure, tuned to the studio shell. */
+.editorial-wrap {
+  width: 100%;
+  padding: 132px var(--gutter) 0;
+}
+
+.editorial-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font: 10px var(--mono);
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.editorial-breadcrumbs a,
+.editorial-contact a,
+.editorial-body a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.editorial-article {
+  max-width: 1380px;
+  margin: 74px auto 0;
+}
+
+.editorial-header {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 54px;
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-category {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.editorial-header h1 {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(44px, 8.4vw, 108px);
+  font-weight: 500;
+  line-height: .97;
+  letter-spacing: -.075em;
+  overflow-wrap: anywhere;
+}
+
+.editorial-deck {
+  max-width: 740px;
+  margin: 30px 0 26px;
+  color: #55544f;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.65;
+}
+
+.editorial-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font: 10px var(--mono);
+  letter-spacing: .025em;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 720px);
+  gap: clamp(48px, 9vw, 145px);
+  justify-content: center;
+  padding: 70px 0 110px;
+}
+
+.editorial-aside {
+  align-self: start;
+}
+
+.editorial-toc {
+  position: sticky;
+  top: 112px;
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+
+.editorial-toc .eyebrow {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.editorial-toc ol {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.editorial-toc li {
+  counter-increment: toc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.editorial-toc li::before {
+  content: "0" counter(toc) " / ";
+  color: var(--muted);
+  font: 9px var(--mono);
+}
+
+.editorial-toc a {
+  text-decoration: none;
+}
+
+.editorial-toc a:hover,
+.editorial-toc a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.editorial-body {
+  min-width: 0;
+  color: #34332f;
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.editorial-answer {
+  padding: 27px 30px 30px;
+  margin: 0 0 72px;
+  border: 1px solid var(--ink);
+}
+
+.editorial-answer .eyebrow,
+.editorial-contact .eyebrow,
+.editorial-related .eyebrow,
+.editorial-sources .eyebrow,
+.editorial-faq .eyebrow {
+  margin: 0;
+  color: var(--muted);
+}
+
+.editorial-answer h2 {
+  margin: 14px 0 8px;
+  font-size: 27px;
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  font-weight: 500;
+}
+
+.editorial-answer p:last-child {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.editorial-section {
+  margin: 0 0 66px;
+  scroll-margin-top: 112px;
+}
+
+.editorial-section h2,
+.editorial-related h2 {
+  margin: 0 0 21px;
+  color: var(--ink);
+  font-size: clamp(29px, 4vw, 43px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.06em;
+}
+
+.editorial-section p {
+  margin: 0 0 18px;
+}
+
+.editorial-section ul,
+.editorial-sources ol {
+  padding-left: 22px;
+  margin: 20px 0 0;
+}
+
+.editorial-section li {
+  padding-left: 5px;
+  margin: 0 0 10px;
+}
+
+.editorial-faq .faq-list {
+  max-width: none;
+  margin-top: 24px;
+}
+
+.editorial-faq .faq-list summary {
+  align-items: start;
+  gap: 18px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.editorial-faq .faq-list details p {
+  margin: 16px 0 0;
+}
+
+.editorial-sources li {
+  padding-left: 8px;
+  margin-bottom: 13px;
+  overflow-wrap: anywhere;
+}
+
+.editorial-external {
+  display: inline-block;
+  margin-left: 4px;
+  text-decoration: none;
+}
+
+.editorial-related {
+  padding-top: 31px;
+  border-top: 1px solid var(--line);
+}
+
+.editorial-related h2 {
+  margin-top: 13px;
+}
+
+.editorial-related ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.editorial-related li {
+  border-bottom: 1px solid var(--line);
+}
+
+.editorial-related li a {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.editorial-contact {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(340px, .72fr);
+  gap: clamp(48px, 9vw, 140px);
+  padding: clamp(65px, 9vw, 130px) max(var(--gutter), calc((100vw - 1100px) / 2));
+  margin-inline: calc(var(--gutter) * -1);
+  background: #f2f1ed;
+}
+
+.editorial-contact-intro h2 {
+  max-width: 620px;
+  margin: 22px 0;
+  font-size: clamp(38px, 5.4vw, 69px);
+  font-weight: 500;
+  line-height: .99;
+  letter-spacing: -.07em;
+}
+
+.editorial-contact-intro > p:not(.eyebrow) {
+  max-width: 480px;
+  color: #5c5b56;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.editorial-contact-intro > a {
+  display: inline-block;
+  margin-top: 17px;
+}
+
+.editorial-form-wrap h3 {
+  margin: 0 0 20px;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.editorial-contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 14px;
+}
+
+.editorial-contact-form .field {
+  min-width: 0;
+}
+
+.editorial-contact-form .field.full,
+.editorial-contact-form .form-submit,
+.editorial-contact-form .form-status {
+  grid-column: 1 / -1;
+}
+
+.editorial-contact-form label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.editorial-contact-form input:not(.visually-hidden),
+.editorial-contact-form select,
+.editorial-contact-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 13px;
+  color: var(--ink);
+  background: #faf9f6;
+  border: 1px solid #c9c7c1;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.editorial-contact-form textarea {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.editorial-contact-form :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.editorial-contact-form .form-submit {
+  min-height: 52px;
+  padding: 15px 18px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  font: 10px var(--mono);
+  letter-spacing: .025em;
+  text-align: left;
+  transition: background .2s ease, color .2s ease;
+}
+
+.editorial-contact-form .form-submit:hover {
+  color: var(--ink);
+  background: transparent;
+}
+
+.editorial-contact-form .form-submit:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.editorial-contact-form .form-status {
+  min-height: 1.5em;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.editorial-privacy-note {
+  margin: 14px 0 0;
+  color: #66655f;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .editorial-wrap {
+    padding-top: 112px;
+  }
+
+  .editorial-article {
+    margin-top: 48px;
+  }
+
+  .editorial-header {
+    padding-bottom: 35px;
+  }
+
+  .editorial-header h1 {
+    font-size: clamp(42px, 12vw, 72px);
+  }
+
+  .editorial-deck {
+    margin-top: 21px;
+    font-size: 17px;
+  }
+
+  .editorial-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding: 42px 0 75px;
+  }
+
+  .editorial-toc {
+    position: static;
+    padding: 0 0 0 14px;
+  }
+
+  .editorial-toc ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+  }
+
+  .editorial-body {
+    font-size: 15px;
+    line-height: 1.78;
+  }
+
+  .editorial-answer {
+    padding: 22px;
+    margin-bottom: 55px;
+  }
+
+  .editorial-section {
+    margin-bottom: 52px;
+  }
+
+  .editorial-contact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 43px;
+  }
+}
+
+@media (max-width: 440px) {
+  .editorial-breadcrumbs {
+    gap: 7px;
+    font-size: 9px;
+  }
+
+  .editorial-byline {
+    gap: 7px;
+    font-size: 9px;
+  }
+
+  .editorial-toc ol {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-contact-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .editorial-contact-form .field,
+  .editorial-contact-form .field.full {
+    grid-column: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-contact-form .form-submit {
+    transition: none;
+  }
+}

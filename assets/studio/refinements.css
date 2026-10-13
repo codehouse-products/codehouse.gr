@@ -25,6 +25,7 @@
 .service-image{height:auto;aspect-ratio:1/1}
 .service-rail.is-hovering .service-card:not(.is-active) .service-image img{opacity:.42;filter:blur(2px)}
 .service-rail.is-hovering .service-card:not(.is-active){opacity:1;filter:none}
+.horizontal-rail{scroll-padding-inline:var(--gutter)}
 .service-card:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
 .arrow-icon{width:17px;height:17px;display:inline-block;vertical-align:middle;overflow:visible;transition:transform .28s ease}
 .arrow-icon path{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:square;stroke-linejoin:miter}

@@ -59,7 +59,7 @@ if ($isStudio) {
         }
     }
 
-    $serviceAllowlist = ['web', 'ecommerce', 'apps', 'ai', 'booking', 'branding'];
+    $serviceAllowlist = ['web', 'ecommerce', 'apps', 'ai', 'booking', 'branding', 'seo'];
     $studioLimits = [
         'name' => 120,
         'company' => 160,

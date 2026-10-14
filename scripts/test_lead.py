@@ -178,6 +178,19 @@ class LeadEndpointHTTPTests(unittest.TestCase):
         self.assertEqual(records[0]["email"], "contact@example.test")
         self.assertNotIn("website", records[0])
 
+    def test_seo_service_is_accepted_and_preserved(self):
+        status, payload = self.post(json.dumps(self.studio_payload(service="seo")))
+        self.assertEqual(status, 202)
+        self.assertEqual(payload, {"ok": True, "saved": True, "mail": False})
+        record = json.loads(self.saved_leads_path().read_text(encoding="utf-8").splitlines()[0])
+        self.assertEqual(record["service"], "seo")
+
+    def test_unknown_service_is_rejected(self):
+        status, payload = self.post(json.dumps(self.studio_payload(service="unknown")))
+        self.assertEqual(status, 422)
+        self.assertFalse(payload["saved"])
+        self.assertFalse(self.saved_leads_path().exists())
+
     def test_legacy_name_and_phone_are_preserved(self):
         legacy = {
             "name": "Legacy Contact",
@@ -223,13 +236,15 @@ class LeadEndpointHTTPTests(unittest.TestCase):
         self.assertFalse((target / "leads.jsonl").exists())
 
     def test_get_still_redirects_to_offer(self):
-        connection = http.client.HTTPConnection("127.0.0.1", self.port, timeout=5)
-        connection.request("GET", "/lead.php")
-        response = connection.getresponse()
-        response.read()
-        connection.close()
-        self.assertEqual(response.status, 301)
-        self.assertEqual(response.getheader("Location"), "/prosfora/")
+        for method in ("GET", "HEAD"):
+            with self.subTest(method=method):
+                connection = http.client.HTTPConnection("127.0.0.1", self.port, timeout=5)
+                connection.request(method, "/lead.php")
+                response = connection.getresponse()
+                response.read()
+                connection.close()
+                self.assertEqual(response.status, 301)
+                self.assertEqual(response.getheader("Location"), "/prosfora/")
 
 
 if __name__ == "__main__":

@@ -4,10 +4,12 @@ from copy import deepcopy
 from datetime import datetime, timedelta
 import json
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
 import unittest
+from xml.etree import ElementTree as ET
 
 from editorial_commit import acknowledge
 from editorial_queue import EditorialError, load_queue, prepare, prose, validate
@@ -30,13 +32,36 @@ class EditorialQueueTests(unittest.TestCase):
             elif not item.name.startswith("."):
                 (self.source / item.name).symlink_to(item, target_is_directory=item.is_dir())
         self.now = datetime.fromisoformat("2026-10-14T10:00:00+03:00")
+        # Tests begin with an unpublished queue, even after a real release.
+        # Normalize only the temporary copy; never reset production history.
+        state_path = self.source / "editorial/published.json"
+        published = json.loads(state_path.read_text())
+        slugs = {record["slug"] for record in published}
+        for slug in slugs:
+            shutil.rmtree(self.source / "blog" / slug, ignore_errors=True)
+        state_path.write_text("[]\n")
+        blog_path = self.source / "blog/index.html"
+        blog_path.write_text(re.sub(
+            r"(<!-- daily-editorial:start -->).*?(<!-- daily-editorial:end -->)",
+            r"\1\n\2", blog_path.read_text(), flags=re.S,
+        ))
+        sitemap_path = self.source / "sitemap.xml"
+        sitemap = ET.parse(sitemap_path)
+        ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+        for entry in list(sitemap.getroot()):
+            if entry.findtext(ns + "loc") in {
+                f"https://codehouse.gr/blog/{slug}/" for slug in slugs
+            }:
+                sitemap.getroot().remove(entry)
+        ET.register_namespace("", ns[1:-1])
+        sitemap.write(sitemap_path, encoding="utf-8", xml_declaration=True)
         self.documents = load_queue(self.source)
 
     def tearDown(self):
         self.temp.cleanup()
 
-    def test_seven_original_source_backed_articles(self):
-        self.assertEqual(len(self.documents), 7)
+    def test_reviewed_source_backed_articles(self):
+        self.assertEqual(len(self.documents), 9)
         self.assertTrue(all(len(prose(d).split()) >= 550 for d in self.documents))
 
     def test_before_ten_never_publishes(self):
@@ -50,7 +75,7 @@ class EditorialQueueTests(unittest.TestCase):
         report = prepare(self.source, self.now)
         verify(self.source, report)
         self.assertEqual(len(report["changed"]), 4)
-        self.assertEqual(report["remaining"], 6)
+        self.assertEqual(report["remaining"], len(self.documents) - 1)
 
     def test_unconfirmed_same_day_retries_same_article(self):
         first = prepare(self.source, self.now)
@@ -81,15 +106,29 @@ class EditorialQueueTests(unittest.TestCase):
         acknowledge(self.source, first["slug"])
         second = prepare(self.source, self.now + timedelta(days=1))
         self.assertNotEqual(first["slug"], second["slug"])
-        self.assertEqual(second["remaining"], 5)
+        self.assertEqual(second["remaining"], len(self.documents) - 2)
+
+    def test_requested_search_topics_follow_published_first_article(self):
+        first = prepare(self.source, self.now - timedelta(days=1))
+        acknowledge(self.source, first["slug"])
+        page = self.source / f'blog/{first["slug"]}/index.html'
+        original = page.read_bytes()
+        second = prepare(self.source, self.now)
+        self.assertEqual(second["slug"], "pos-na-ftiaxo-website-pou-poulaei")
+        self.assertEqual(page.read_bytes(), original)
+        verify(self.source, second)
+        acknowledge(self.source, second["slug"])
+        third = prepare(self.source, self.now + timedelta(days=1))
+        self.assertEqual(third["slug"], "giati-den-mpainei-kosmos-sto-website-mou")
+        verify(self.source, third)
 
     def test_exhaustion_stops_and_preserves_existing_blog(self):
         original_blog = (self.source / "blog/index.html").read_text()
-        for day in range(7):
+        for day in range(len(self.documents)):
             report = prepare(self.source, self.now + timedelta(days=day))
             verify(self.source, report)
             acknowledge(self.source, report["slug"])
-        report = prepare(self.source, self.now + timedelta(days=7))
+        report = prepare(self.source, self.now + timedelta(days=len(self.documents)))
         self.assertFalse(report["ready"])
         self.assertEqual(report["reason"], "queue_exhausted")
         blog = (self.source / "blog/index.html").read_text()

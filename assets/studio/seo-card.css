@@ -1,0 +1,27 @@
+.seo-service-card .seo-card-art {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #181918;
+  color: #f4f3ee;
+  border: 1px solid #181918;
+}
+.seo-card-art::before,
+.seo-card-art::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(200,236,98,.42);
+  transform: rotate(-8deg);
+}
+.seo-card-art::after { inset: 21%; transform: rotate(8deg); }
+.seo-card-art span {
+  position: relative;
+  z-index: 1;
+  color: #f4f3ee;
+  font: 700 clamp(30px,4vw,55px)/.83 "Noto Sans",sans-serif;
+  letter-spacing: -.09em;
+  text-align: center;
+  text-shadow: 3px 3px 0 #718d23;
+}
+.seo-card-art i { color: #c8ec62; font-style: normal; font-size: .5em; }

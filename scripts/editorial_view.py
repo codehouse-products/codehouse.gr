@@ -63,6 +63,7 @@ def _contact_form() -> str:
           <select id="editorial-service" name="service" required>
             <option value="">Επίλεξε υπηρεσία</option><option value="web">Σχεδιασμός &amp; ανάπτυξη ιστοσελίδων</option>
             <option value="ecommerce">E-commerce</option><option value="apps">Custom εφαρμογές &amp; software</option>
+            <option value="seo">SEO / GEO · μηνιαία ανάπτυξη ιστοσελίδας</option>
             <option value="ai">AI &amp; αυτοματισμοί</option><option value="booking">Συστήματα κρατήσεων</option>
             <option value="branding">Branding &amp; digital marketing</option>
           </select>

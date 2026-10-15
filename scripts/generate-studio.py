@@ -2,6 +2,9 @@
 """Generate the bilingual, indexable Codehouse studio routes from central data."""
 from pathlib import Path
 import html, json, re
+import sys
+from sync_favicons import normalize_icons
+from seo_metadata import replace_metadata
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT
@@ -99,13 +102,20 @@ for service in DATA["services"]:
 if not had_project_facts:
     factual_projects={"web-design":["high-hope","gerakos","kc-travel","akri"],"e-commerce":[],"custom-apps":[],"ai-automations":[],"booking-systems":["kc-travel"],"branding":[]}
     for item in DATA["services"]:item["projects"]=factual_projects[item["slug"]]
-manifest_path.write_text(json.dumps({**DATA,"translations":T},ensure_ascii=False,indent=2)+"\n")
+if "--metadata-only" not in sys.argv:
+    manifest_path.write_text(json.dumps({**DATA,"translations":T},ensure_ascii=False,indent=2)+"\n")
 def esc(s):return html.escape(str(s),quote=True)
 def page_url(path,lang):
     return "/en"+path if lang=="en" else path
 def route(path,lang): return page_url(path,lang)
 def asset_prefix(depth): return "../"*depth
 def document(path,lang,title,desc,body,depth):
+    entry = DATA.get("pages", {}).get(path, {})
+    if path.startswith("/services/") and path != "/services/":
+        slug = path.strip("/").split("/")[-1]
+        entry = next((s for s in DATA["services"] if s["slug"] == slug), {})
+    title = entry.get("seoTitle", {}).get(lang) or title
+    desc = entry.get("seoDescription", {}).get(lang) or desc
     canonical="https://codehouse.gr"+route(path,lang)
     opposite="en" if lang=="el" else "el"
     altpath=page_url(path,opposite)
@@ -295,7 +305,26 @@ def write(path,content):
         # The independent watchdog also releases the page if that module fails.
         bootstrap='<script>if(!location.hash&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("intro-pending");setTimeout(()=>document.documentElement.classList.remove("intro-pending"),10000)}</script>'
         content=content.replace('</head>',f'<link rel="stylesheet" href="{assetroot}assets/studio/hero-video.css">{bootstrap}<script type="module" src="{assetroot}assets/studio/hero-video.js"></script></head>',1)
-    dest=OUT/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(content,encoding="utf-8")
+    dest=OUT/path
+    if "--metadata-only" in sys.argv:
+        if not dest.exists():
+            raise ValueError(f"Metadata-only generation requires an existing page: {path}")
+        title = html.unescape(re.search(r"<title>(.*?)</title>", content, re.S).group(1))
+        description = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', content).group(1))
+        original = dest.read_text(encoding="utf-8")
+        updated = replace_metadata(original, title, description)
+        # Preserve fallback-only routes byte-for-byte when they have no SEO overrides.
+        route_path = "/" + path.parent.as_posix().removeprefix("en/").strip("./") + "/"
+        if path in (Path("index.html"), Path("en/index.html")):
+            route_path = "/"
+        configured = route_path in DATA.get("pages", {}) or (
+            route_path.startswith("/services/") and route_path != "/services/"
+        )
+        if configured:
+            dest.write_text(updated, encoding="utf-8")
+    else:
+        dest.parent.mkdir(parents=True,exist_ok=True)
+        dest.write_text(normalize_icons(content),encoding="utf-8")
 for l in ("el","en"):
     write(Path("index.html") if l=="el" else Path("en/index.html"),home(l))
     write(Path("services/index.html") if l=="el" else Path("en/services/index.html"),services_listing(l))

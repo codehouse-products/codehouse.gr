@@ -29,6 +29,14 @@
         "akri"
       ],
       "image": "assets/studio/images/service-neon-web-design.webp",
+      "seoTitle": {
+        "el": "Web Design & Ανάπτυξη Ιστοσελίδων για Επιχειρήσεις",
+        "en": "Web Design & Website Development for Businesses"
+      },
+      "seoDescription": {
+        "el": "Σχεδιασμός και ανάπτυξη ιστοσελίδων για επιχειρήσεις: δομή περιεχομένου, UX/UI, responsive υλοποίηση, CMS και τεχνικό SEO. Δες έργα μας σε Αθήνα και Σαντορίνη.",
+        "en": "Business websites with content structure, UX/UI, responsive development, CMS and technical SEO. Explore our work in Athens and Santorini."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -60,6 +68,14 @@
       },
       "projects": [],
       "image": "assets/studio/images/service-neon-e-commerce.webp",
+      "seoTitle": {
+        "el": "Κατασκευή E-shop για Επιχειρήσεις",
+        "en": "E-commerce Website Development"
+      },
+      "seoDescription": {
+        "el": "Κατασκευή ηλεκτρονικού καταστήματος στα μέτρα της επιχείρησής σου: δομή καταλόγου, σελίδες προϊόντων, καλάθι και checkout, έλεγχος σε κινητά. Ζήτα προσφορά.",
+        "en": "E-commerce tailored to your business: catalogue structure, product pages, cart and checkout, plus mobile testing. Request a quote."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -91,6 +107,14 @@
       },
       "projects": [],
       "image": "assets/studio/images/service-neon-custom-apps.webp",
+      "seoTitle": {
+        "el": "Custom Εφαρμογές & Λογισμικό για Επιχειρήσεις",
+        "en": "Custom Software & Web Applications"
+      },
+      "seoDescription": {
+        "el": "Αναπτύσσουμε προσαρμοσμένες εφαρμογές και εργαλεία για επιχειρήσεις: ανάλυση απαιτήσεων, ροές χρηστών, interfaces και integrations. Συζήτησε το project σου.",
+        "en": "Custom business applications and tools: requirements analysis, user flows, interfaces and integrations. Discuss your project with us."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -122,6 +146,14 @@
       },
       "projects": [],
       "image": "assets/studio/images/service-neon-ai-automations.webp",
+      "seoTitle": {
+        "el": "AI & Αυτοματισμοί για Επιχειρήσεις",
+        "en": "AI & Business Automation"
+      },
+      "seoDescription": {
+        "el": "Αυτοματοποιούμε επαναλαμβανόμενες διαδικασίες και συνδέουμε τα εργαλεία της επιχείρησής σου με AI και integrations, με έλεγχο και σαφή τεκμηρίωση.",
+        "en": "Automate repetitive tasks and connect your business tools with AI and integrations, supported by testing and clear documentation."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -155,6 +187,14 @@
         "kc-travel"
       ],
       "image": "assets/studio/images/service-neon-booking-systems.webp",
+      "seoTitle": {
+        "el": "Συστήματα Κρατήσεων & Online Booking",
+        "en": "Booking Systems & Online Reservations"
+      },
+      "seoDescription": {
+        "el": "Online συστήματα κρατήσεων και dashboards διαχείρισης για τουριστικές και άλλες επιχειρήσεις, όπως το interface κράτησης για μεταφορές στη Σαντορίνη.",
+        "en": "Online booking systems and management dashboards for tourism and other businesses, including a transfer booking interface in Santorini."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -186,6 +226,14 @@
       },
       "projects": [],
       "image": "assets/studio/images/service-neon-branding.webp",
+      "seoTitle": {
+        "el": "Branding & Digital Marketing για Επιχειρήσεις",
+        "en": "Branding & Digital Marketing"
+      },
+      "seoDescription": {
+        "el": "Οπτική ταυτότητα, ψηφιακό περιεχόμενο και καμπάνιες με συνέπεια σε κάθε σημείο επαφής της επιχείρησής σου.",
+        "en": "Visual identity, digital content and campaigns that keep your business consistent across every customer touchpoint."
+      },
       "imageWidth": 1200,
       "imageHeight": 1600,
       "imageAlt": {
@@ -501,6 +549,48 @@
       "booking",
       "branding"
     ]
+  },
+  "pages": {
+    "/": {
+      "seoTitle": {
+        "el": "Κατασκευή Ιστοσελίδων, E-shop & Εφαρμογών",
+        "en": "Web Design, E-commerce & Custom Software Studio in Greece"
+      },
+      "seoDescription": {
+        "el": "Η Codehouse σχεδιάζει και κατασκευάζει ιστοσελίδες, e-shop, custom εφαρμογές και συστήματα κρατήσεων για επιχειρήσεις σε όλη την Ελλάδα, με τεχνικό SEO από την αρχή.",
+        "en": "Codehouse builds websites, e-commerce, custom software and booking systems for businesses across Greece, with technical SEO from the start."
+      }
+    },
+    "/services/": {
+      "seoTitle": {
+        "el": "Υπηρεσίες Web Design, E-shop & Εφαρμογών",
+        "en": "Web Design, E-commerce & Software Services"
+      },
+      "seoDescription": {
+        "el": "Web design, κατασκευή e-shop, custom εφαρμογές, αυτοματισμοί, συστήματα κρατήσεων και branding για επιχειρήσεις. Δες τι περιλαμβάνει κάθε υπηρεσία.",
+        "en": "Web design, e-commerce, custom software, automation, booking systems and branding for businesses. Explore what each service includes."
+      }
+    },
+    "/projects/": {
+      "seoTitle": {
+        "el": "Portfolio Ιστοσελίδων & Ψηφιακών Έργων",
+        "en": "Website & Digital Project Portfolio"
+      },
+      "seoDescription": {
+        "el": "Ιστοσελίδες και ψηφιακά συστήματα που σχεδιάσαμε: High Hope στη Γλυφάδα, Gerakos, KC Travel και Akri στη Σαντορίνη.",
+        "en": "Explore websites and digital systems we designed for High Hope in Glyfada and Gerakos, KC Travel and Akri in Santorini."
+      }
+    },
+    "/contact/": {
+      "seoTitle": {
+        "el": "Επικοινωνία — Ζήτα Προσφορά για Ιστοσελίδα ή E-shop",
+        "en": "Contact — Request a Website or E-shop Quote"
+      },
+      "seoDescription": {
+        "el": "Πες μας για το project σου: ιστοσελίδα, e-shop, εφαρμογή ή αυτοματισμοί. Επικοινωνία στο hello@codehouse.gr ή στο +30 698 680 4138.",
+        "en": "Discuss your website, e-shop, application or automation project. Contact hello@codehouse.gr or call +30 698 680 4138."
+      }
+    }
   },
   "homeProjects": [
     {

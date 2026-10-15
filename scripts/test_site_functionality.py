@@ -347,6 +347,50 @@ def test_privacy(browser):
     print("PASS: cross-tab consent revocation stops trackers on both legacy pages")
 
 
+def test_contact_click_tracking(browser):
+    links = [
+        ("mailto:hello@codehouse.gr", "email"),
+        ("https://wa.me/306986804138", "whatsapp"),
+        ("https://api.whatsapp.com/send?phone=306986804138", "whatsapp"),
+        ("tel:+306986804138", "phone_call"),
+        ("https://wa.me.example.com/", None),
+        ("https://example.com/?next=https://wa.me/", None),
+        ("https://example.com/", None),
+    ]
+    for consent in (None, "rejected", "accepted"):
+        safe = SafeBrowser(browser, consent=consent)
+        page = safe.context.new_page()
+        visit(page, "/contact/")
+        page.evaluate("""() => {
+            window.qaEvents = [];
+            window.gtag = (...args) => window.qaEvents.push(args);
+            document.addEventListener('click', e => e.preventDefault());
+        }""")
+        for href, label in links:
+            page.evaluate("""href => {
+                const a = document.createElement('a');
+                a.href = href;
+                a.innerHTML = '<span>QA contact link</span>';
+                document.body.appendChild(a);
+                a.firstChild.click();
+                a.remove();
+            }""", href)
+            events = page.evaluate("window.qaEvents.splice(0)")
+            expected = (
+                [["event", "contact", {"event_category": "engagement", "event_label": label}]]
+                if consent == "accepted" and label else []
+            )
+            assert events == expected, (consent, href, events)
+        page.evaluate("window.dispatchEvent(new CustomEvent('studio:lead-accepted'))")
+        events = page.evaluate("window.qaEvents")
+        assert events == (
+            [["event", "generate_lead", {"event_category": "engagement", "event_label": "contact_form"}]]
+            if consent == "accepted" else []
+        ), (consent, events)
+        safe.close()
+    print("PASS: consent-gated email/WhatsApp/tel events, nested clicks, exact host matching and unchanged generate_lead")
+
+
 def main():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(executable_path=CHROMIUM, args=["--no-sandbox"])
@@ -356,6 +400,7 @@ def main():
             test_legacy_forms(browser)
             test_galleries(browser)
             test_privacy(browser)
+            test_contact_click_tracking(browser)
         finally:
             browser.close()
     print("PASS: all functional checks; no real lead POSTs, emails or analytics calls.")

@@ -104,10 +104,16 @@
     }
   });
   document.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="tel:"]');
-    if (link && consent === 'accepted' && window.gtag) {
-      window.gtag('event', 'contact', { event_category: 'engagement', event_label: 'phone_call' });
-    }
+    const link = event.target.closest('a[href]');
+    if (!link || consent !== 'accepted' || !window.gtag) return;
+    let url;
+    try { url = new URL(link.href, location.href); } catch { return; }
+    let label;
+    if (url.protocol === 'tel:') label = 'phone_call';
+    else if (url.protocol === 'mailto:') label = 'email';
+    else if (['http:', 'https:'].includes(url.protocol) &&
+             ['wa.me', 'api.whatsapp.com'].includes(url.hostname)) label = 'whatsapp';
+    if (label) window.gtag('event', 'contact', { event_category: 'engagement', event_label: label });
   });
   if (consent === 'accepted') enableMeasurement();
   else if (consent !== 'rejected') showChoices();

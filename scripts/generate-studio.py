@@ -5,6 +5,7 @@ import html, json, re
 import sys
 from sync_favicons import normalize_icons
 from seo_metadata import replace_metadata
+from social_preview import update_home_preview
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT
@@ -305,6 +306,8 @@ def write(path,content):
         # The independent watchdog also releases the page if that module fails.
         bootstrap='<script>if(!location.hash&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("intro-pending");setTimeout(()=>document.documentElement.classList.remove("intro-pending"),10000)}</script>'
         content=content.replace('</head>',f'<link rel="stylesheet" href="{assetroot}assets/studio/hero-video.css">{bootstrap}<script type="module" src="{assetroot}assets/studio/hero-video.js"></script></head>',1)
+    if path in (Path("index.html"), Path("en/index.html")):
+        content = update_home_preview(content, lang)
     dest=OUT/path
     if "--metadata-only" in sys.argv:
         if not dest.exists():
@@ -313,6 +316,8 @@ def write(path,content):
         description = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', content).group(1))
         original = dest.read_text(encoding="utf-8")
         updated = replace_metadata(original, title, description)
+        if path in (Path("index.html"), Path("en/index.html")):
+            updated = update_home_preview(updated, lang)
         # Preserve fallback-only routes byte-for-byte when they have no SEO overrides.
         route_path = "/" + path.parent.as_posix().removeprefix("en/").strip("./") + "/"
         if path in (Path("index.html"), Path("en/index.html")):

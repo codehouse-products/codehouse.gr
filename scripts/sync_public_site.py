@@ -8,10 +8,12 @@ import re
 from pathlib import Path
 from datetime import date
 from xml.etree import ElementTree as ET
+from server_release_prerequisites import REDIRECTS
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://codehouse.gr"
 NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
+RETIRED = {path for path, _ in REDIRECTS}
 ET.register_namespace("", NS)
 
 
@@ -53,12 +55,17 @@ def main():
             greek_file = ROOT / english_file.relative_to(english_root)
             if greek_file.exists():
                 greek, english = route(greek_file), route(english_file)
+                if greek in RETIRED or english in RETIRED:
+                    continue
                 pair_html(greek_file, greek, english)
                 pair_html(english_file, greek, english)
                 pairs += 1
     sitemap = ROOT / "sitemap.xml"
     tree = ET.parse(sitemap)
     root = tree.getroot()
+    for entry in list(root):
+        if entry.findtext(f"{{{NS}}}loc", "").removeprefix(BASE) in RETIRED:
+            root.remove(entry)
     existing = {url.findtext(f"{{{NS}}}loc") for url in root}
     candidates = [ROOT / "index.html"]
     for folder in ("services", "projects", "studio", "contact", "en"):
@@ -67,6 +74,8 @@ def main():
             candidates.extend(directory.rglob("index.html"))
     added = 0
     for path in sorted(set(candidates)):
+        if route(path) in RETIRED:
+            continue
         source = path.read_text()
         if re.search(r'<meta\b[^>]*content=["\'][^"\']*noindex', source, re.I):
             continue

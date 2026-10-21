@@ -29,8 +29,22 @@ EMAIL_CONFIG = "/home/artivoai/htdocs/zoho_secrets/zoho.json"
 REDIRECTS = (
     ("/dimiourgia-site/", "https://codehouse.gr/dimioyrgia-site/"),
     ("/blog/checklist-dorean-istoselida/",
-     "https://codehouse.gr/blog/checklist-dorean-istoselida-epixeirisi/"),
+     "https://codehouse.gr/blog/dorean-istoselida/"),
+    ("/blog/checklist-dorean-istoselida-epixeirisi/",
+     "https://codehouse.gr/blog/dorean-istoselida/"),
+    ("/dorean-istoselida/", "https://codehouse.gr/prosfora/"),
+    ("/en/blog/checklist-dorean-istoselida/",
+     "https://codehouse.gr/en/blog/dorean-istoselida/"),
+    ("/en/blog/checklist-dorean-istoselida-epixeirisi/",
+     "https://codehouse.gr/en/blog/dorean-istoselida/"),
+    ("/en/dorean-istoselida/", "https://codehouse.gr/en/prosfora/"),
 )
+# Only this exact previously managed snippet is eligible for an upgrade.
+# Arbitrary operator-authored rules still require manual review.
+PREVIOUS_ROUTING = (
+    "location = /dimiourgia-site/ { return 301 https://codehouse.gr/dimioyrgia-site/; }\n"
+    "location = /blog/checklist-dorean-istoselida/ { return 301 https://codehouse.gr/blog/checklist-dorean-istoselida-epixeirisi/; }\n"
+).encode("utf-8")
 
 
 class PrerequisiteError(Exception):
@@ -583,10 +597,10 @@ class ServerPrerequisites:
                 raise PrerequisiteError("nginx snippet directory is unavailable") from exc
             snippet_old = None
             snippet_meta = (0o644, os.geteuid(), os.getegid())
-        if snippet_old is not None and snippet_old != shared_content:
-            # Idempotent install accepts exactly the managed content only.
+        if snippet_old is not None and snippet_old not in (shared_content, PREVIOUS_ROUTING):
+            # Accept only current or exact known previous managed content.
             raise PrerequisiteError("existing release-routing snippet differs from managed rules")
-        if not changes and snippet_old is not None:
+        if not changes and snippet_old == shared_content:
             self._transaction = None
             self._reload(nginx)
             return {"operation": "prepare", "changed": False}

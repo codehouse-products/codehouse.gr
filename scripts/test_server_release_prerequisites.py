@@ -13,12 +13,12 @@ from unittest import mock
 try:
     import server_privacy as privacy
     from server_release_prerequisites import (
-        PrerequisiteError, ServerPrerequisites, _endpoint, _pool_endpoint,
+        PrerequisiteError, ServerPrerequisites, PREVIOUS_ROUTING, _endpoint, _pool_endpoint,
     )
 except ModuleNotFoundError:
     from scripts import server_privacy as privacy
     from scripts.server_release_prerequisites import (
-        PrerequisiteError, ServerPrerequisites, _endpoint, _pool_endpoint,
+        PrerequisiteError, ServerPrerequisites, PREVIOUS_ROUTING, _endpoint, _pool_endpoint,
     )
 
 
@@ -160,6 +160,33 @@ class ReleasePrerequisiteTests(unittest.TestCase):
             self.assertEqual(config.read_bytes(), original)
             self.assertFalse(manager.routing_snippet.exists())
             self.assertGreaterEqual(len(calls), 4)
+
+    def test_known_previous_routing_upgrades_and_rollback_restores_it(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            manager, config = self._nginx_fixture(
+                Path(temporary), lambda args, **kwargs: subprocess.CompletedProcess(args, 0))
+            manager.prepare()
+            manager.routing_snippet.write_bytes(PREVIOUS_ROUTING)
+            manager._transaction = None
+            config_before = config.read_bytes()
+            self.assertTrue(manager.prepare()["changed"])
+            self.assertEqual(manager.routing_snippet.read_bytes(), manager._routing_content())
+            self.assertEqual(config.read_bytes(), config_before)
+            self.assertTrue(manager.rollback())
+            self.assertEqual(manager.routing_snippet.read_bytes(), PREVIOUS_ROUTING)
+            self.assertEqual(config.read_bytes(), config_before)
+
+    def test_unknown_routing_snippet_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            manager, config = self._nginx_fixture(
+                Path(temporary), lambda args, **kwargs: subprocess.CompletedProcess(args, 0))
+            manager.prepare()
+            unknown = manager._routing_content() + b"# operator change\n"
+            manager.routing_snippet.write_bytes(unknown)
+            manager._transaction = None
+            with self.assertRaises(PrerequisiteError):
+                manager.prepare()
+            self.assertEqual(manager.routing_snippet.read_bytes(), unknown)
 
     def test_nginx_validation_failure_restores_original_files(self):
         with tempfile.TemporaryDirectory() as temporary:

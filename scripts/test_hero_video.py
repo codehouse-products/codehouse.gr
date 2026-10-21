@@ -2,11 +2,12 @@
 """Check automatic hero playback without interacting with any contact form."""
 import json
 import os
+import shutil
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 BASE = "https://" + os.environ["REPLIT_DEV_DOMAIN"]
-CHROMIUM = "/nix/store/5afrhwm7zqn1vb7p5z1mc2rkh2grsfgz-ungoogled-chromium-138.0.7204.100/bin/chromium"
+CHROMIUM = os.environ.get("CHROMIUM_PATH") or shutil.which("chromium")
 OUTPUT = Path("/tmp/codehouse-video-qa")
 
 

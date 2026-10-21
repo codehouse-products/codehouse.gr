@@ -384,11 +384,14 @@ def test_contact_click_tracking(browser):
         page.evaluate("window.dispatchEvent(new CustomEvent('studio:lead-accepted'))")
         events = page.evaluate("window.qaEvents")
         assert events == (
-            [["event", "generate_lead", {"event_category": "engagement", "event_label": "contact_form"}]]
+            [
+                ["event", "generate_lead", {"event_category": "engagement", "event_label": "contact_form"}],
+                ["event", "contact", {"event_category": "engagement", "event_label": "contact_form"}],
+            ]
             if consent == "accepted" else []
         ), (consent, events)
         safe.close()
-    print("PASS: consent-gated email/WhatsApp/tel events, nested clicks, exact host matching and unchanged generate_lead")
+    print("PASS: consent-gated email/WhatsApp/tel events, nested clicks, exact host matching and form generate_lead plus contact events")
 
 
 def main():

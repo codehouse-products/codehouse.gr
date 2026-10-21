@@ -28,4 +28,20 @@ if ($blocked) {
     echo 'Not found';
     return true;
 }
+// Keep preview semantics aligned with the production nginx routing include.
+// Preserve query strings, but use fixed destinations (never user input).
+$redirects = [
+    '/dimiourgia-site' => '/dimioyrgia-site/',
+    '/blog/checklist-dorean-istoselida' => '/blog/dorean-istoselida/',
+    '/blog/checklist-dorean-istoselida-epixeirisi' => '/blog/dorean-istoselida/',
+    '/dorean-istoselida' => '/prosfora/',
+    '/en/blog/checklist-dorean-istoselida' => '/en/blog/dorean-istoselida/',
+    '/en/blog/checklist-dorean-istoselida-epixeirisi' => '/en/blog/dorean-istoselida/',
+    '/en/dorean-istoselida' => '/en/prosfora/',
+];
+if (isset($redirects[$path])) {
+    $query = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_QUERY);
+    header('Location: ' . $redirects[$path] . ($query !== null && $query !== '' ? '?' . $query : ''), true, 301);
+    return true;
+}
 return false;

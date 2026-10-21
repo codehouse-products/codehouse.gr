@@ -11,6 +11,14 @@ ICON_LINKS = (
 
 
 def normalize_icons(html):
+    # Correct icon tags need not be the final elements in <head>. Social
+    # metadata, hreflang and noindex may legitimately follow them.
+    icons = re.findall(
+        r'<link\b(?=[^>]*\brel=["\'](?:icon|shortcut icon|apple-touch-icon|apple-touch-icon-precomposed)["\'])[^>]*>',
+        html, flags=re.I,
+    )
+    if "".join(icons) == ICON_LINKS:
+        return html
     html = re.sub(
         r'<link\b(?=[^>]*\brel=["\'](?:icon|shortcut icon|apple-touch-icon|apple-touch-icon-precomposed)["\'])[^>]*>',
         "", html, flags=re.I,

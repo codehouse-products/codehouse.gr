@@ -131,6 +131,8 @@ def main():
                     response = page.goto(BASE + route, wait_until="domcontentloaded",
                                          timeout=60000)
                     assert response.status == 200, (route, response.status)
+                    if path == "/dorean-istoselida/":
+                        assert response.url.endswith(prefix + "/prosfora/"), response.url
                     page.wait_for_function(
                         "getComputedStyle(document.body).getPropertyValue('--sans')"
                         ".includes('Noto Sans')"
@@ -151,16 +153,12 @@ def main():
                             page, ".pf-lead, .pf-terms li, .pf-terms strong", route))
                         assert_option_focus(page, route, OUTPUT / f"{name}-focus.png")
                     if path == "/dorean-istoselida/":
+                        assert page.locator("#what-free-means").count() == 1
+                        assert page.locator(f'a[href="{prefix}/blog/dorean-istoselida/"]').count() >= 1
                         minimum_ratios["faq"].append(assert_contrast(
-                            page, ".df-faq summary", route))
-                        first = page.locator(".df-faq details").first
-                        first.locator("summary").click()
-                        minimum_ratios["faq"].append(assert_contrast(
-                            page, ".df-faq details[open] p", route))
-                        first.screenshot(path=str(OUTPUT / f"{name}-faq.png"))
-                    if path in ("/dorean-istoselida/", "/seo/", "/dimioyrgia-site/"):
-                        selector = (".df-visual-label" if path == "/dorean-istoselida/"
-                                    else ".lp-visual-label")
+                            page, "#what-free-means p", route))
+                    if path in ("/seo/", "/dimioyrgia-site/"):
+                        selector = ".lp-visual-label"
                         minimum_ratios["caption"].append(assert_contrast(
                             page, selector, route))
                         page.locator(selector).screenshot(

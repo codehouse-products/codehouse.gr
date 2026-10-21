@@ -101,6 +101,7 @@
   window.addEventListener('studio:lead-accepted', () => {
     if (consent === 'accepted' && window.gtag) {
       window.gtag('event', 'generate_lead', { event_category: 'engagement', event_label: 'contact_form' });
+      window.gtag('event', 'contact', { event_category: 'engagement', event_label: 'contact_form' });
     }
   });
   document.addEventListener('click', event => {

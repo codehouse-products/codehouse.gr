@@ -16,6 +16,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+try:
+    from server_release_prerequisites import REDIRECTS
+except ModuleNotFoundError:
+    from .server_release_prerequisites import REDIRECTS
+
 
 ROOT = "/home/websites/artivoai.com"
 ARCHIVE = "/var/lib/codehouse-release-incoming/site-release.tar.gz"
@@ -116,10 +121,7 @@ class PublicHealthChecker:
         if (status not in (301, 302, 303)
                 or urllib.parse.urljoin(self.BASE_URL, location) != self.BASE_URL + "/prosfora/"):
             raise ReleaseError(f"public lead endpoint health check failed (HTTP {status})")
-        for path, destination in (
-                ("/dimiourgia-site/", "https://codehouse.gr/dimioyrgia-site/"),
-                ("/blog/checklist-dorean-istoselida/",
-                 "https://codehouse.gr/blog/checklist-dorean-istoselida-epixeirisi/")):
+        for path, destination in REDIRECTS:
             status, headers, _ = self._request("HEAD", path)
             location = headers.get("Location", "") if headers else ""
             if status != 301 or urllib.parse.urljoin(self.BASE_URL, location) != destination:

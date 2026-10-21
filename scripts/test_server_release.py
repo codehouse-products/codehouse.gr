@@ -264,11 +264,7 @@ class PublicHealthTests(unittest.TestCase):
                         request.full_url, 301, "Moved Permanently",
                         {"Location": "/prosfora/"}, io.BytesIO(b""),
                     )
-                redirects = {
-                    "/dimiourgia-site/": "https://codehouse.gr/dimioyrgia-site/",
-                    "/blog/checklist-dorean-istoselida/":
-                        "https://codehouse.gr/blog/checklist-dorean-istoselida-epixeirisi/",
-                }
+                redirects = dict(release.REDIRECTS)
                 if path in redirects:
                     return PublicHealthTests.Response(301, {"Location": redirects[path]})
                 if path in ("/.git/HEAD", "/replit.md"):
@@ -281,12 +277,12 @@ class PublicHealthTests(unittest.TestCase):
         )
         self.assertTrue(checker(Path("/unused"), {}))
         self.assertEqual([method for method, _, _ in calls],
-                     ["GET"] + ["HEAD"] * 8)
+                     ["GET"] + ["HEAD"] * (6 + len(release.REDIRECTS)))
         self.assertTrue(calls[0][1].startswith("/?release_check=cache-buster"))
         self.assertEqual([path for _, path, _ in calls[1:]],
                          ["/assets/studio/studio.css", "/contact/", "/blog/",
-                          "/lead.php", "/dimiourgia-site/",
-                          "/blog/checklist-dorean-istoselida/", "/.git/HEAD", "/replit.md"])
+                          "/lead.php"] + [path for path, _ in release.REDIRECTS] +
+                         ["/.git/HEAD", "/replit.md"])
 
     def test_lead_redirect_cannot_point_to_another_host(self):
         class FakeOpener:

@@ -8,6 +8,10 @@ from server_release import PUBLIC_DIRS
 
 
 class FaviconsTest(unittest.TestCase):
+    def test_correct_icons_can_precede_other_head_metadata(self):
+        source = '<html><head>' + ICON_LINKS + '<meta name="robots" content="noindex, follow"></head></html>'
+        self.assertEqual(normalize_icons(source), source)
+
     def test_public_pages(self):
         pages = [ROOT / "index.html"]
         for folder in PUBLIC_DIRS:

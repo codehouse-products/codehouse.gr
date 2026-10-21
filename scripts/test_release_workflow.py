@@ -127,9 +127,10 @@ class ReleaseWorkflowTests(unittest.TestCase):
         self.assertEqual(output, "")
 
     def test_workflow_keeps_existing_release_safeguards(self):
-        self.assertIn(
-            "ref: decbc1d46f76f56463f6c101b919edc04177c72e\n"
-            "          path: ops", self.text,
+        # The reviewed operations revision changes when nginx rules change,
+        # but must always remain an immutable full commit, never a branch.
+        self.assertRegex(
+            self.text, r"ref: [0-9a-f]{40}\n          path: ops",
         )
         self.assertIn(
             "ref: ${{ steps.review.outputs.commit }}\n"

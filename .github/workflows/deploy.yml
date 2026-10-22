@@ -60,7 +60,7 @@ jobs:
           printf 'Reviewed public version: %s\n' "$REVIEWED_COMMIT"
       - uses: actions/checkout@v4
         with:
-          ref: decbc1d46f76f56463f6c101b919edc04177c72e
+          ref: 84e7b4670be2ff0aedc532d54a00567b0766b664
           path: ops
           persist-credentials: false
       - uses: actions/checkout@v4

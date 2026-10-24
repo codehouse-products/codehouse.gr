@@ -49,3 +49,14 @@ The scheduled workflow must be installed as
 The complete pinned candidate and one-time setup notes are in `deployment/`.
 Until installation and a successful Actions check, preparation is not evidence
 that unattended daily publication is active.
+
+## Individual bilingual articles
+
+Store both translations in `editorial/articles/<slug>.json`, with an explicit
+timezone-aware `published_at` and `dateModified`. Generate using
+`python3 scripts/build_editorial_article.py <slug>`. This uses the shared article
+renderer, adds one card per language and sitemap entries, and does not consume
+the daily queue or mark a production publication. Re-running updates only that
+article's generated pages and cards. Verify with
+`python3 scripts/test_editorial_article.py` and the public-site checks before
+requesting a reviewed release.

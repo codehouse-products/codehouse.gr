@@ -34,6 +34,19 @@ class FaviconsTest(unittest.TestCase):
                 self.assertEqual(r.tobytes(), g.tobytes())
                 self.assertEqual(g.tobytes(), b.tobytes())
 
+    def test_cache_busted_icons_and_apple_touch_icon(self):
+        for path, size in (
+            ("assets/img/codehouse-favicon-512.png", 512),
+            ("assets/img/codehouse-favicon-180.png", 180),
+            ("assets/img/apple-touch-icon.png", 180),
+        ):
+            with self.subTest(path=path):
+                im = Image.open(ROOT / path).convert("RGB")
+                self.assertEqual(im.size, (size, size))
+                r, g, b = im.split()
+                self.assertEqual(r.tobytes(), g.tobytes())
+                self.assertEqual(g.tobytes(), b.tobytes())
+
     def test_ico(self):
         with Image.open(ROOT / "favicon.ico") as im:
             self.assertTrue({(16, 16), (32, 32), (48, 48), (64, 64)} <= im.ico.sizes())

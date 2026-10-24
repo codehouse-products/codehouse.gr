@@ -5,8 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ICON_LINKS = (
-    '<link rel="icon" href="/assets/img/favicon-512.png" type="image/png" sizes="512x512">'
-    '<link rel="apple-touch-icon" href="/assets/img/favicon-180.png" sizes="180x180">'
+    '<link rel="icon" href="/assets/img/codehouse-favicon-512.png" type="image/png" sizes="512x512">'
+    '<link rel="apple-touch-icon" href="/assets/img/codehouse-favicon-180.png" sizes="180x180">'
 )
 
 
@@ -41,6 +41,10 @@ def build_icons():
         canvas.resize((size, size), Image.Resampling.LANCZOS).save(
             ROOT / f"assets/img/favicon-{size}.png"
         )
+    icon_180 = canvas.resize((180, 180), Image.Resampling.LANCZOS)
+    icon_180.save(ROOT / "assets/img/codehouse-favicon-180.png")
+    icon_180.save(ROOT / "assets/img/apple-touch-icon.png")
+    canvas.save(ROOT / "assets/img/codehouse-favicon-512.png")
     canvas.save(ROOT / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
     # Also replace the old SVG URL for cached pages still requesting it.
     png = base64.b64encode((ROOT / "assets/img/favicon-512.png").read_bytes()).decode()

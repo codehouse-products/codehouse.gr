@@ -2,6 +2,7 @@
 """Protect individual bilingual article generation and publication separation."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -10,7 +11,7 @@ import unittest
 
 from build_editorial_article import ROOT, build, MARKER, word_count
 
-SLUG = "pos-na-epilexeis-etaireia-seo-geo"
+SLUG = os.environ.get("EDITORIAL_SLUG", "pos-na-epilexeis-etaireia-seo-geo")
 
 
 class ArticleTests(unittest.TestCase):
@@ -63,7 +64,7 @@ class ArticleTests(unittest.TestCase):
             self.assertIn(f'href="/{prefix}contact/"', page)
             schemas = [json.loads(text) for text in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page)]
             article = next(schema for schema in schemas if schema.get("@type") == "Article")
-            self.assertEqual(article["dateModified"], "2026-10-24")
+            self.assertEqual(article["dateModified"], self.document["dateModified"])
             faq = next(schema for schema in schemas if schema.get("@type") == "FAQPage")
             self.assertEqual(len(faq["mainEntity"]), 6)
             listing = (self.root / f"{prefix}blog/index.html").read_text()

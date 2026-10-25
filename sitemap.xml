@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://codehouse.gr/blog/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://codehouse.gr/en/blog/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -503,5 +503,13 @@
   <url>
     <loc>https://codehouse.gr/en/blog/pos-na-epilexeis-etaireia-seo-geo/</loc>
     <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://codehouse.gr/blog/seo-geo-xenodoxeia-apeftheias-kratiseis/</loc>
+    <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://codehouse.gr/en/blog/seo-geo-xenodoxeia-apeftheias-kratiseis/</loc>
+    <lastmod>2026-10-25</lastmod>
   </url>
 </urlset>
